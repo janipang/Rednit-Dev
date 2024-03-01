@@ -1,0 +1,27 @@
+.wave[b-zih5pf5z6a]{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-size: cover;
+}
+
+.wave.wave1[b-zih5pf5z6a]{
+    z-index: 5;
+    opacity: 1;
+    bottom: 0;
+    background-image: url("/background/wavefeed1.png");
+}
+.wave.wave2[b-zih5pf5z6a]{
+    z-index: 5;
+    opacity: 1;
+    bottom: 0;
+    background-image: url("/background/wavefeed2.png");
+}
+.wave.wave3[b-zih5pf5z6a]{
+    z-index: 5;
+    opacity: 1;
+    bottom: 0px;
+    background-image: url("/background/wavefeed3.png");
+}
