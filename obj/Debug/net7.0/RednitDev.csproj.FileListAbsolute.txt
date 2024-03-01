@@ -26,7 +26,7 @@ D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\refint\RednitDev.dll
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\RednitDev.pdb
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\RednitDev.genruntimeconfig.cache
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\ref\RednitDev.dll
+D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Shared\_LayoutDiscover.cshtml.rz.scp.css
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Shared\_LayoutHome.cshtml.rz.scp.css
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\projectbundle\RednitDev.bundle.scp.css
-D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
