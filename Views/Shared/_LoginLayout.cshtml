@@ -13,6 +13,19 @@
 </head>
 
 <body>
+    <nav>
+        <div class="navGroup">
+            <div class = "leftSide">
+                <img src = "~/svg/firewhite.svg" alt = "Logo" height="35px">
+                <h1>Rednit</h1>
+            </div>
+            <div class = "rightSide">
+                <a class="discovery" asp-area="" asp-controller="Home" asp-action="Index">Discovery</a>
+                <a class="login" asp-area="" asp-controller="Login" asp-action="Index">Log in</a>
+            </div>
+        </div>
+        
+    </nav>
     <div class="container">
         <main>
             @RenderBody()
