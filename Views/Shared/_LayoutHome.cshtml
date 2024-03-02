@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RednitDev</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/page/home-index.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" /> *@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +16,7 @@
         rel="stylesheet">
 </head>
 
-<body
-    style="width:100vw; margin:0px; position:relative; min-height:100%; background-image: url('/background/homebgc.png'); background-size: cover;">
+<body>
     <div class="bg-container">
         <div class="background">
         </div>
@@ -30,10 +30,9 @@
     <div class="big-container">
 
         @* header *@
-        <header
-            style="display:flex; flex-direction:row; padding:10vh 0vw; height:10vh; max-height:50px; justify-content:space-between; align-items: center">
+        <header>
             <div class="logo">
-                <img src="~/svg/firewhite.svg" alt="fire_svg" height="40%" style="margin:0px 0px 5px 10px;" />
+                <img src="~/svg/firewhite.svg" alt="fire_svg" style="margin:0px 0px 5px 10px;"/>
                 <h1>Rednit</h1>
             </div>
             <div class="nav">
@@ -47,15 +46,14 @@
         </header>
 
         @* body *@
-        <div style="">
-            <main style="width:100%; padding:0px; margin:0px; display:flex; justify-content:center;">
+        <div class="context">
+            <main>
                 @RenderBody()
             </main>
         </div>
 
         @* footer *@
-        <footer class="footer"
-            style="display:flex; flex-direction:row; padding:20px 10px; height:15vh; justify-content:space-between; align-items: center">
+        <footer class="footer">
             <div class="footer-container">
                 @* logo *@
                 <div class="logo">
@@ -101,3 +99,10 @@
 </body>
 
 </html>
+
+Views/Home/Index.cshtml
+M       Views/Home/Index.cshtml.css
+M       Views/Shared/_LayoutDiscover.cshtml
+D       Views/Shared/_LayoutDiscover.cshtml.css
+M       Views/Shared/_LayoutHome.cshtml
+D       Views/Shared/_LayoutHome.cshtml.css

@@ -154,6 +154,8 @@ p {
 
     .cards-container {
         grid-template: 1fr 1fr 1fr/1fr;
+        max-height: 40vh;
+        border:2px solid black;
     }
 
     .activity-card {
