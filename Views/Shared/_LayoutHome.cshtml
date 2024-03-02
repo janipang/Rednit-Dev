@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RednitDev</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body
+    style="width:100vw; margin:0px; position:relative; min-height:100%; background-image: url('/background/homebgc.png'); background-size: cover;">
+    <div class="bg-container">
+        <div class="background">
+        </div>
+        <div class="wave-container">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </div>
+
+    <div class="big-container">
+
+        @* header *@
+        <header
+            style="display:flex; flex-direction:row; padding:10vh 0vw; height:10vh; max-height:50px; justify-content:space-between; align-items: center">
+            <div class="logo">
+                <img src="~/svg/firewhite.svg" alt="fire_svg" height="40%" style="margin:0px 0px 5px 10px;" />
+                <h1>Rednit</h1>
+            </div>
+            <div class="nav">
+                <button id="discover">
+                    Discover
+                </button>
+                <button id="login">
+                    Log In
+                </button>
+            </div>
+        </header>
+
+        @* body *@
+        <div style="">
+            <main style="width:100%; padding:0px; margin:0px; display:flex; justify-content:center;">
+                @RenderBody()
+            </main>
+        </div>
+
+        @* footer *@
+        <footer class="footer"
+            style="display:flex; flex-direction:row; padding:20px 10px; height:15vh; justify-content:space-between; align-items: center">
+            <div class="footer-container">
+                @* logo *@
+                <div class="logo">
+                    <img src="~/svg/firewhite.svg" alt="fire_svg" height="40%" style="margin:0px 0px 5px 10px;" />
+                    <h1>Rednit</h1>
+                </div>
+
+                @* follow us *@
+                <div class="follow">
+                    <h2>Follow us</h2>
+                    <div class="footer-logos-container">
+                        <img src="~/svg/instagramwhite.svg" alt="instagramwhite_svg" width="80%"
+                            style="margin-right: 5px;" />
+                        <img src="~/svg/facebookwhite.svg" alt="facebookwhite_svg" width="80%"
+                            style="margin-right: 5px;" />
+                        <img src="~/svg/githubwhite.svg" alt="githubwhite_svg" width="80%" style="margin-right: 5px;" />
+                        <img src="~/svg/youtubewhite.svg" alt="youtubewhite_svg" width="80%"
+                            style="margin-right: 5px;" />
+                    </div>
+                </div>
+
+                @* contact *@
+                <div class="contact">
+                    <h2>Contact us</h2>
+                    <div class="element-container">
+                        <div class="element">
+                            <img src="~/svg/callwhite.svg" alt="callwhite_svg" height="80%" style="margin-right:5px;" />
+                            <p>090-000-0000</p>
+                        </div>
+                        <div class="element">
+                            <img src="~/svg/mailwhite.svg" alt="mailwhite_svg" height="70%" style="margin-right:5px;" />
+                            <p>RednitGroup@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

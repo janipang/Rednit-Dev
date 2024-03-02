@@ -16,20 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Documents\Study\TERM4\miniweb\RednitDev
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Shared/_LayoutDiscover.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXREaXNjb3Zlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -44,6 +36,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-mby8s60e8w
+
 [D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-utsn0o6frq
+
+[D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Shared/_LayoutDiscover.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXREaXNjb3Zlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-zih5pf5z6a
+
+[D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Shared/_LayoutHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-suedg9s2v8
