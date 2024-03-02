@@ -16,6 +16,15 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Documents\Study\TERM4\miniweb\RednitDev
 build_property._RazorSourceGeneratorDebug = 
 
+
+[D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Discover/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Documents/Study/TERM4/miniweb/RednitDev/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
