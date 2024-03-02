@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    /*height: 1000px;*/
+    background-image: url('/background/LoginBG.png');
+    background-repeat:no-repeat;
+    background-size:100% 100vh;
+}
+p,h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat';
+}
+
+.logo,.phone,.mail {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+footer{
+    width: 100%;
+    padding:5vh 0vw; 
+    height:15vh; 
+}
+.position{
+    height:25vh;
+    background-color: white;
+    position: relative;
+    bottom : 116.5%;
+}
+.content{
+    position: relative;
+    top: 10%;
+    width:80%; 
+    display:grid; 
+    grid-template: 100%/ 60% 20% 20%;
+    margin: 0 auto;
+}
+.logo{
+    width:100%;
+    justify-content:flex-start; 
+    align-items:center;
+    margin-bottom: 55px;
+}
+.logo img{
+    margin:0px 10px;
+}
+.logo h1
+{
+    margin-top: 7px;
+    text-align:center; 
+    color:#FD5564; 
+    font-size:32px; 
+    font-weight:900;
+}
+.follow{
+    margin-top: 25.5px;
+}
+.follow p{
+    margin-bottom: 10px;
+    font-size:20px; 
+    font-weight:bold; 
+    color:#FD5564;
+}
+.follow div{
+    display:flex; 
+    flex-direction:row;
+}
+.follow div img{
+    margin-right: 15px;
+}
+.contact{
+    margin-top: 25.5px;
+}
+.contact p{
+    margin:0px; 
+    margin-bottom: 10px;
+    font-size:20px; 
+    font-weight:bold; 
+    color:#FD5564;
+}
+.phone{
+    align-items:center;
+    margin-bottom: 10px;
+}
+.phone img{
+    height: 80%;
+    margin-right:8px;
+}
+.phone p{
+    margin:0px; 
+    color:#FD5564;
+    font-weight:600;
+    font-size: 16px;
+}
+.mail{
+    align-items:center;
+}
+.mail img{
+    height: 70%;
+    margin-right:8px;
+}
+.mail p{
+    margin:0px; 
+    color:#FD5564;
+    font-weight:600;
+    font-size: 16px;
+}
+
+.bg{
+    position: relative;
+    height: 35vh;
+    /*top: 117%;*/
+}
+.bg img{
+    position: absolute;
+}
+.curve3{
+    bottom: 0;
+}
+.curve1{
+    bottom: 40%;
+}
+.curve2{
+    bottom: 50%;
+}
