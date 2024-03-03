@@ -4,7 +4,7 @@ using RednitDev.Models;
 
 namespace RednitDev.Controllers;
 
-public class LoginController : Controller
+public class NotiController : Controller
 {
     public IActionResult Index()
     {
