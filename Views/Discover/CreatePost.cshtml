@@ -1,0 +1,58 @@
+@{
+    Layout = "_LoginLayout";
+}
+
+<div class="container" style="width:100%; height:100%;">
+    <div class="view-box" style="display:flex; flex-direction:column; align-items:center">
+        <h1 style="font-size:40px; font-weight:bold; text-align:center; color:#FFFFFF;">Create new post</h1>
+        <div class="form-container">
+            <form onSubmit={createPost}>
+                <div class="form-text" style="display:flex; flex-direction:column;">
+                    <label for="header">Header</label>
+                    <input type="text" name="header" placeholder="Header" required</input><br>
+                    <label for="tag">Tag</label>
+                    <input type="text" name="tag" placeholder="Tag" </input><br>
+                    <label for="intro">Intro</label>
+                    <input type="text" name="intro" placeholder="Intro" required</input><br>
+                    <label for="detail">Detail</label>
+                    <input type="text" name="detail" placeholder="Detail" </input><br>
+                    <label for="place">Place</label>
+                    <input type="text" name="place" placeholder="Place" </input><br>
+                </div>
+                <div class="form-option">
+                    <fieldset class="event-date">
+                        <legend for="day-long">Event Date</legend>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="day-long" value="one">
+                                </input>
+                                <label htmlFor="one">One day event</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="day-long" value="multiple">
+                                </input>
+                                <label htmlFor="multiple">Multi-day event</label>
+                            </div>
+                        </div>
+                        <div class="duration">
+                            <div class="date-select-card">
+                                <div style="background-color:#a57525;">
+                                    <label for="start-day">Day</label>
+                                    <input type="text" name="start-day" placeholder="DD" required</input><br>
+                                </div>
+                                <div style="background-color:#75a525;">
+                                    <label for="start-month">Month</label>
+                                    <input type="text" name="start-month" placeholder="MM" required</input><br>
+                                </div>
+                                <div style="background-color:#a57525;">
+                                    <label for="start-day">Year</label>
+                                    <input type="text" name="start-day" placeholder="YYYY" required</input><br>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
