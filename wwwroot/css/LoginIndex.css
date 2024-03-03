@@ -40,6 +40,7 @@ a{
 form{
     position: relative;
     height: 30vh;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +48,7 @@ form{
 }
 form input{
     height: 7vh;
-    width: 70vh;
+    width: 80vh;
     background: #EEEEEE;
     border-radius: 5px;
     border-width: 0;
@@ -59,8 +60,9 @@ form input{
     font-size: 16px;
 }
 form button{
+    margin: 1.5%;
     height: 7vh;
-    width: 70vh;
+    width: 80vh;
     background: linear-gradient(0deg, #FE3C72, #FE3C72), linear-gradient(90deg, #FF4D00 0%, #FE3C72 100%, #944A33 100%);
     border-radius: 5px;
     border-width: 0;
@@ -75,18 +77,16 @@ form button{
     text-align: center;
     letter-spacing: 0.02em;
 
-    color: #FFFFFF;
-
 }
 
-.signup{
+.question{
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    width: 45%;
+    width: 44%;
     justify-content: space-between;
 }
-.signup p{
+.question p{
     font-style: normal;
     font-weight: 550;
     font-size: 16px;
@@ -94,7 +94,7 @@ form button{
     color: #AAAAAA;
 
 }
-.signup a{
+.question a{
     font-style: normal;
     font-weight: 650 !important;
     font-size: 16px;
