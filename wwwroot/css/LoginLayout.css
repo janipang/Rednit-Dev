@@ -7,7 +7,7 @@ body{
     /*height: 1000px;*/
     background-image: url('/background/LoginBG.png');
     background-repeat:no-repeat;
-    background-size:100% 100vh;
+    background-size:100% 100%;
 }
 p,h1,h2,h3,h4,h5,h6, a{
     font-family: 'Montserrat';
@@ -32,7 +32,7 @@ nav{
     width: 79%;
 }
 
-.leftSide h1
+.leftSide a h1
 {
     text-align:center; 
     color: #ffff; 
