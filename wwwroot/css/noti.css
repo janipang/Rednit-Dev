@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    /*height: 1000px;*/
+    background-image: url('/background/LoginBG.png');
+    background-repeat:no-repeat;
+    background-size:100% 100vh;
+}
+p,h1,h2,h3,h4,h5,h6, a{
+    font-family: 'Montserrat';
+}
+a{
+    text-decoration: none;
+}
+nav{
+    width: 100%;
+    padding:8vh 0vw; 
+    height:6vh; 
+}
+.navGroup{
+    /*margin-top: 20%;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.leftSide{
+    width: 79%;
+}
+
+.leftSide a h1
+{
+    text-align:center; 
+    color: #ffff; 
+    font-size:32px; 
+    font-weight:900;
+}
+.rightSide{
+    width: 21%;
+    align-items: center;
+    justify-content: space-between;
+}
+.discovery{
+    text-align: center;
+    font-size:20px; 
+    font-weight:600;
+    color:#ffff !important;
+}
+.login{
+    text-align: center;
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+
+    font-size:20px; 
+    font-weight:bold;
+    color:#FD5564 !important;
+}
+.logo,.phone,.mail, .leftSide, .rightSide {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+footer{
+    width: 100%;
+    padding:5vh 0vw; 
+    height:15vh; 
+}
+.position{
+    height:25vh;
+    background-color: white;
+    position: relative;
+    bottom : 117%;
+}
+.content{
+    position: relative;
+    top: 10%;
+    width:80%; 
+    display:grid; 
+    grid-template: 100%/ 60% 20% 20%;
+    margin: 0 auto;
+}
+.logo{
+    width:100%;
+    justify-content:flex-start; 
+    align-items:center;
+    margin-bottom: 7.5%;
+}
+.logo img, .leftSide img{
+    margin:0% 1.3%;
+}
+.logo h1
+{
+    margin-top: 0.9%;
+    text-align:center; 
+    color:#FD5564; 
+    font-size:32px; 
+    font-weight:900;
+}
+.follow{
+    margin-top: 10%
+}
+.follow p{
+    margin-bottom: 4%;
+    font-size:20px; 
+    font-weight:bold; 
+    color:#FD5564;
+}
+.follow div{
+    display:flex; 
+    flex-direction:row;
+}
+.follow div img{
+    margin-right: 6%;
+}
+.contact{
+    margin-top: 10%
+}
+.contact p{
+    margin:0px; 
+    margin-bottom: 4%;
+    font-size:20px; 
+    font-weight:bold; 
+    color:#FD5564;
+}
+.phone{
+    align-items:center;
+    /*margin-bottom: 10px;*/
+    margin-bottom: 4%;
+}
+.phone img{
+    height: 80%;
+    margin-right: 3.2%;
+}
+.phone p{
+    margin:0px; 
+    color:#FD5564;
+    font-weight:600;
+    font-size: 16px;
+}
+.mail{
+    align-items:center;
+}
+.mail img{
+    height: 70%;
+    margin-right: 3.2%;
+}
+.mail p{
+    margin: 0;
+    color:#FD5564;
+    font-weight:600;
+    font-size: 16px;
+}
+
+.bg{
+    position: relative;
+    height: 35vh;
+    /*top: 117%;*/
+}
+.bg img{
+    position: absolute;
+}
+.curve3{
+    bottom: 0;
+}
+.curve1{
+    bottom: 40%;
+}
+.curve2{
+    bottom: 50%;
+}
