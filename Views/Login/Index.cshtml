@@ -2,4 +2,19 @@
     ViewData["Title"] = "Login";
     Layout = "_LoginLayout";
 }
-<h1>Login</h1>
+<link href="~/css/LoginIndex.css" rel="stylesheet" />
+<div class="space">
+    <div class="loginGroup">
+        <h1>Welcome Back!</h1>
+        <form>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Log in</button>
+        </form>
+        <div class="signup">
+            <p>Don’t have an account yet?</p>
+            <a id="signup" asp-area="" asp-controller="Login" asp-action="Signup">Sign up</a>
+        </div>
+    </div>
+</div>
+
