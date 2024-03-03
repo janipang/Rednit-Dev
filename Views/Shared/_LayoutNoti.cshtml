@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - RednitDev</title>
+    @*<link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" />*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/LoginLayout.css" >
+</head>
+
+<body>
+    <nav>
+        <div class="navGroup">
+            <div class = "leftSide">
+                <img src = "~/svg/firewhite.svg" alt = "Logo" height="35px">
+                <a class="discovery" asp-area="" asp-controller="Home" asp-action="Index">
+                    <h1>Rednit</h1>
+                </a>
+            </div>
+            <div class = "rightSide">
+                <a class="discovery" asp-area="" asp-controller="Home" asp-action="Index">Discovery</a>
+                <a class="login" asp-area="" asp-controller="Login" asp-action="Index">Log in</a>
+            </div>
+        </div>
+        
+    </nav>
+    <div class="container">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class ="bg">
+            <img class="curve1" src = "~/background/curve1.png" alt = "curve1"  width="100%">
+            <img class="curve2" src = "~/background/curve2.png" alt = "curve2"  width="100%">
+            <img class="curve3" src = "~/background/curve3.png" alt = "curve3"  width="100%">
+        </div>
+        <div class = "position">
+            <div class = "content">
+                <div class="logo">
+                    <img src = "~/svg/footer2/LogoPink.svg" alt = "pinkLogo" height="35px">
+                    <h1>Rednit</h1>
+                </div>
+                <div class="follow">
+                    <p>Folllow us</p>
+                    <div>
+                        <img src="~/svg/footer2/InstagramPink.svg" alt = "pinkIG" height="100%">
+                        <img src="~/svg/footer2/FacebookPink.svg" alt = "pinkFacebook" height="100%">
+                        <img src="~/svg/footer2/GithubPink.svg" alt = "pinkGithub" height="100%">
+                        <img src="~/svg/footer2/YoutubePink.svg" alt = "pinkYoutube" height="100%">
+                    </div>
+                </div>
+                <div class="contact">
+                    <p>Contact us</p>
+                    <div class="phone">
+                        <img src="~/svg/footer2/PhonePink.svg" alt = "pinkPhone" height="100%">
+                        <p>090-000-0000</p>
+                    </div>
+                    <div class="mail">
+                        <img src="~/svg/footer2/MailPink.svg" alt = "pinkMail" height="100%">
+                        <p>RednitGroup@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
