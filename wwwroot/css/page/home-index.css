@@ -40,7 +40,7 @@ section.paragraph button {
     font-weight: bold;
     border: none;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 10px 20px;
     margin: 20px 0px;
     box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, .2);
 }

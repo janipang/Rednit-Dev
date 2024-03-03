@@ -1,0 +1,130 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+input,
+fieldset,
+legend,
+a {
+    font-family: 'Montserrat';
+}
+
+input {
+    background-color: #F4F4F4;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    height: 30px;
+}
+
+label,
+legend {
+    font-size: 15px;
+    font-weight: 500;
+    color: #434343;
+    margin: 5px;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+fieldset.event-date {
+    width: 60%;
+    border: 2px solid black;
+}
+
+.view-box h1 {
+    margin: 20px;
+}
+
+.form-container {
+    min-height: min-content;
+    min-width: 60vw;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.15)
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.option input {
+    margin-right: 3px;
+}
+
+form {
+    display: grid;
+    grid-template: 1fr / 6fr 4fr;
+    grid-gap: 40px;
+}
+.duration{
+    width:100%;
+    border:2px solid pink;
+}
+.date-select-card {
+    width: 80%;
+    display: grid;
+    grid-template: 1fr/1fr 1fr 1fr;
+    grid-gap:10px;
+    padding:3%;
+    border:2px solid grey;
+    border-radius: 5px;
+}
+
+.date-select-card input {
+    width: 90%;
+}
+@media screen and (max-width: 1200px) {
+
+    .options {
+        flex-direction: column;
+    }
+    fieldset.event-date {
+        width: 100%;
+    }
+    .date-select-card {
+        position:relative;
+        grid-template: 1fr/1fr 1fr 1fr;
+        grid-gap:10px;
+        padding:0%;
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 800px) {
+    form {
+        grid-template: 1fr 1fr / 1fr;
+    }
+
+    .options {
+        flex-direction: column;
+    }
+    fieldset.event-date {
+        width: 100%;
+    }
+    .date-select-card {
+        width: 100%;
+    }
+
+}

@@ -9,7 +9,13 @@ body {
     background-image: url('/background/feedbgc.png');
     background-size: cover;
 }
+p,h1,h2,h3,h4,h5,h6, a{
+    font-family: 'Montserrat';
+}
 
+button:hover{
+    cursor: pointer;
+}
 .bg-container {
     display: flex;
     flex-direction: column-reverse;
@@ -92,24 +98,24 @@ footer {
     color: #F2F2F2;
 }
 
-.nav button#discover {
+.nav button.discover {
     background-color: inherit;
     color: #F2F2F2;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
     border: none;
     border-radius: 10px;
     padding: 5px 20px;
 }
 
-.nav button#login {
+.nav button.login {
     background-color: #F2F2F2;
     color: #FE3C72;
     font-size: 18px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
-    padding: 5px 20px;
+    padding: 10px 20px;
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, .15);
 }
 
@@ -170,13 +176,13 @@ footer {
         font-size: 24px;
     }
 
-    .nav button#discover {
+    .nav button.discover {
         font-size: 16px;
         padding: 0px 15px;
 
     }
 
-    .nav button#login {
+    .nav button.login {
         font-size: 16px;
         padding: 5px 12px;
     }
