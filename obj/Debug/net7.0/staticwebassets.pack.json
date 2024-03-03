@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\RednitDev.bundle.scp.css"
     },
     {
+      "Id": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\background\\feedbgc.png",
+      "PackagePath": "staticwebassets\\background\\feedbgc.png"
+    },
+    {
       "Id": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\background\\homebgc.png",
       "PackagePath": "staticwebassets\\background\\homebgc.png"
     },
@@ -31,6 +35,14 @@
     {
       "Id": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\background\\wavefeed3.png",
       "PackagePath": "staticwebassets\\background\\wavefeed3.png"
+    },
+    {
+      "Id": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\css\\layout\\discover.css",
+      "PackagePath": "staticwebassets\\css\\layout\\discover.css"
+    },
+    {
+      "Id": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\css\\layout\\home.css",
+      "PackagePath": "staticwebassets\\css\\layout\\home.css"
     },
     {
       "Id": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\css\\site.css",

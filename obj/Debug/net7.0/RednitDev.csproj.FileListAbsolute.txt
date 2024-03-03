@@ -30,3 +30,5 @@ D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Shar
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Shared\_LayoutHome.cshtml.rz.scp.css
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\projectbundle\RednitDev.bundle.scp.css
 D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
+D:\Documents\Study\TERM4\miniweb\RednitDev\obj\Debug\net7.0\scopedcss\Views\Discover\Index.cshtml.rz.scp.css

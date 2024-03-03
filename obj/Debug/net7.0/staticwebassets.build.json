@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wu0AgHsHgBeYNDnlQ1VOx5mVnO0MYkjQvNR8vo9RprU=",
+  "Hash": "v3DFOblIa8iz2V+hWKKkbLIwP82eLaYw30yW9/OXVf0=",
   "Source": "RednitDev",
   "BasePath": "_content/RednitDev",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\RednitDev.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\background\\feedbgc.png",
+      "SourceId": "RednitDev",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\",
+      "BasePath": "_content/RednitDev",
+      "RelativePath": "background/feedbgc.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background\\feedbgc.png"
     },
     {
       "Identity": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\background\\homebgc.png",
@@ -168,6 +185,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\background\\wavefeed3.png"
+    },
+    {
+      "Identity": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\css\\layout\\discover.css",
+      "SourceId": "RednitDev",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\",
+      "BasePath": "_content/RednitDev",
+      "RelativePath": "css/layout/discover.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\layout\\discover.css"
+    },
+    {
+      "Identity": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\css\\layout\\home.css",
+      "SourceId": "RednitDev",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\",
+      "BasePath": "_content/RednitDev",
+      "RelativePath": "css/layout/home.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\layout\\home.css"
     },
     {
       "Identity": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\wwwroot\\css\\site.css",
