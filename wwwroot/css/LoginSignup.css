@@ -10,14 +10,14 @@ a{
 }
 .space{
     width: 100%;
-    height: 80vh;
+    height: 90vh;
 }
 .loginGroup{
     display: grid;
     align-items: center;
     grid-template-rows: 30% 50% 20%;
     width: 46%;
-    height: 82%;
+    height: 87%;
     margin: 0 auto;
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF), rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.15);
@@ -39,8 +39,8 @@ a{
 }
 form{
     position: relative;
-    height: 30vh;
-    
+    height: 42vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +60,7 @@ form input{
     font-size: 16px;
 }
 form button{
-    margin: 1.5%;
+    margin-top: 1.5%;
     height: 7vh;
     width: 80vh;
     background: linear-gradient(0deg, #FE3C72, #FE3C72), linear-gradient(90deg, #FF4D00 0%, #FE3C72 100%, #944A33 100%);
@@ -77,13 +77,15 @@ form button{
     text-align: center;
     letter-spacing: 0.02em;
 
+    color: #FFFFFF;
+
 }
 
 .question{
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    width: 44%;
+    width: 40%;
     justify-content: space-between;
 }
 .question p{
