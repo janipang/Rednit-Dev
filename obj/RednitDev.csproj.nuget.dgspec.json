@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjectWebDev\\RednitDev\\RednitDev.csproj": {}
+    "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\RednitDev.csproj": {}
   },
   "projects": {
-    "C:\\ProjectWebDev\\RednitDev\\RednitDev.csproj": {
+    "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\RednitDev.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjectWebDev\\RednitDev\\RednitDev.csproj",
+        "projectUniqueName": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\RednitDev.csproj",
         "projectName": "RednitDev",
-        "projectPath": "C:\\ProjectWebDev\\RednitDev\\RednitDev.csproj",
-        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjectWebDev\\RednitDev\\obj\\",
+        "projectPath": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\RednitDev.csproj",
+        "packagesPath": "C:\\Users\\pangj\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Study\\TERM4\\miniweb\\RednitDev\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\pangj\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
