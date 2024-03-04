@@ -4,7 +4,6 @@
 }
 body{
     position: relative;
-    /*height: 1000px;*/
     background-image: url('/background/LoginBG.png');
     background-repeat:no-repeat;
     background-size:100% 100%;
@@ -21,7 +20,6 @@ nav{
     height:6vh; 
 }
 .navGroup{
-    /*margin-top: 20%;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -68,17 +66,12 @@ nav{
 footer{
     width: 100%;
     padding:5vh 0vw; 
-    height:15vh; 
+    height: 30vh;
 }
-.position{
-    height:25vh;
-    background-color: white;
-    position: relative;
-    bottom : 117%;
-}
+
 .content{
     position: relative;
-    top: 10%;
+    top: 50%;
     width:80%; 
     display:grid; 
     grid-template: 100%/ 60% 20% 20%;
@@ -129,7 +122,6 @@ footer{
 }
 .phone{
     align-items:center;
-    /*margin-bottom: 10px;*/
     margin-bottom: 4%;
 }
 .phone img{
@@ -158,18 +150,13 @@ footer{
 
 .bg{
     position: relative;
-    height: 35vh;
-    /*top: 117%;*/
+    top: 60%;
 }
 .bg img{
     position: absolute;
-}
-.curve3{
     bottom: 0;
 }
-.curve1{
-    bottom: 40%;
-}
-.curve2{
-    bottom: 50%;
+.block{
+    height: 10vh;
+    background-color: #FFFFFF;
 }
