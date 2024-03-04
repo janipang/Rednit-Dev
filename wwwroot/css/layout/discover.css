@@ -9,9 +9,6 @@ body {
     background-image: url('/background/feedbgc.png');
     background-size: cover;
 }
-p,h1,h2,h3,h4,h5,h6, a{
-    font-family: 'Montserrat';
-}
 
 header {
     grid-area: 1 / 2 / 1 / 2;
@@ -75,21 +72,6 @@ footer {
     grid-template: 10vh 75vh 15vh / 10vw 80vw 10vw;
     min-height: 100vh;
     padding: 0px 0px;
-}
-
-
-.logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.logo h1 {
-    padding: 0px 5px;
-    margin: 0px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #F2F2F2;
 }
 
 .nav button.discover {
@@ -164,10 +146,6 @@ footer {
 
     .big-container {
         grid-template: 10vh 75vh 15vh / 2vw 96vw 2vw;
-    }
-
-    .logo h1 {
-        font-size: 24px;
     }
 
     .nav button.discover {

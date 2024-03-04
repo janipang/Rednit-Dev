@@ -1,3 +1,7 @@
+p,h1,h2,h3,h4,h5,h6, a{
+    font-family: 'Montserrat';
+}
+
 section.paragraph {
     width: 60%;
     padding: 0px 0vw 5vh 0vw;
@@ -8,13 +12,17 @@ section.cards {
 }
 
 section.statistics {
+    display:flex;
+    justify-content:center;
+    align-content:center;
     margin: 0% -10vw;
-    padding: 5px 10%;
+    padding: 0px 10vw;
+    height:25vh;
     background: linear-gradient(to right, #FF4D00, #FE3C72);
 }
 
 section.hotpost {
-    margin: 5vh 0px
+    margin: 5vh 0px;
 }
 
 section.paragraph>h1 {
@@ -22,6 +30,7 @@ section.paragraph>h1 {
     color: #FFFFFF;
     margin: 30px 0px;
     text-align: left;
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 }
 
 section.paragraph>p {
@@ -29,6 +38,7 @@ section.paragraph>p {
     color: #FFFFFF;
     margin: 30px 0px;
     text-align: left;
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 }
 
 section.paragraph button {
@@ -75,16 +85,27 @@ section.paragraph button {
     max-width: 90%;
 }
 
-.activity-card h3,
-p {
+.activity-card p {
     margin-top: 5%;
     text-align: center;
+    font-family: 'Kanit';
+    font-size: 16px;
+    color:#696969;
+}
+.activity-card h3{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5%;
+    text-align: center;
+    color:#E5001B;
 }
 
 .stat-container {
-    margin: 20px 5vw;
+    width:100%;
+    margin: 8vh 0vw 4vh 0vw;
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
+    align-items:start;
 }
 
 .stat-card h2 {
@@ -140,7 +161,7 @@ p {
     }
 
     section.paragraph>h1 {
-        font-size: 36px;
+        font-size: 34px;
         margin: 15px 0px;
     }
 
@@ -150,7 +171,8 @@ p {
     }
 
     section.paragraph button {
-        margin: 5px 0px;
+        font-size: 16px;
+        padding: 8px 12px;
     }
 
     .fontgradient {
@@ -161,6 +183,7 @@ p {
 
     .cards-container {
         grid-template: 1fr 1fr 1fr/1fr;
+        grid-gap: 40px;
     }
 
     .activity-card {
@@ -174,13 +197,14 @@ p {
     .activity-info {}
 
     section.statistics {
-        margin: 5vh -3vw 0px -3vw;
+        margin: 5vh -4vw 0px -4vw;
+        height: 20vh;
     }
 
     .stat-container {
-        padding-top: 2%;
         justify-items: center;
-        margin: 10px 0px;
+        align-items:start;
+        margin: 5vh 0vw 2vh 0vw;
     }
 
     .stat-card h2 {
