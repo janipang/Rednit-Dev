@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RednitDev</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/layout/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/page/home-index.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" /> *@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,82 +16,77 @@
         rel="stylesheet">
 </head>
 
-<body style="margin:0px; position:relative; min-height:100%; background-image: url('/background/homebgc.png'); background-size: cover;">
-    <div style="display:flex; flex-direction:column-reverse; justify-content:flex-start; position:absolute; width:100%; height:86%; bottom:15vh; left:0;">
-        <div class="background"
-            style="z-index:-1; background-color:#FFFFFF; width:100%; height:67%;">
+<body>
+    <div class="bg-container">
+        <div class="background">
         </div>
-        <div class="wave-container" style="position:relative; z-index:-1; height:270px; width:100%;">
+        <div class="wave-container">
             <div class="wave wave1"></div>
             <div class="wave wave2"></div>
             <div class="wave wave3"></div>
         </div>
     </div>
 
-    <div class="big-container" style="margin:0vh 10vw; padding:0px 0px;">
+    <div class="big-container">
 
         @* header *@
-        <header
-            style="display:flex; flex-direction:row; padding:10vh 0vw; height:10vh; justify-content:space-between; align-items: center">
-            <div style="display:flex; flex-direction:row; ">
-                <img src="~/svg/firewhite.svg" alt="fire_svg" height="35px" style="margin:0px 10px;" />
-                <p style="padding:0px 5px; font-size:24px; font-weight:bold; color:#F2F2F2;">Rednit</p>
+        <header>
+            <div class="logo">
+                <img src="~/svg/firewhite.svg" alt="fire_svg" style="margin:0px 0px 5px 10px;"/>
+                <h1>Rednit</h1>
             </div>
-            <div>
-                <button
-                    style="background-color:inherit; color:#F2F2F2; font-size:20px; font-weight:500; border:none; border-radius: 10px; padding:5px 20px;">
+            <div class="nav">
+                <button class="discover" onClick=toDiscover()>
                     Discover
                 </button>
-                <button style="background-color:#F2F2F2; color:#FE3C72; font-size:20px; font-weight:bold; border:none; border-radius: 10px; padding:5px 20px; box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, .15);">
+                <button class="login" onClick=toLogin()>
                     Log In
                 </button>
             </div>
         </header>
 
         @* body *@
-        <div style="">
-            <main
-                style="width:100%; padding:0px; margin:0px; display:flex; justify-content:center;">
+        <div class="context">
+            <main>
                 @RenderBody()
             </main>
         </div>
 
         @* footer *@
-        <footer
-            style="display:flex; flex-direction:row; padding:5vh 0vw; height:15vh; justify-content:space-between; align-items: center">
-            <div style="width:100%; display:grid; grid-template: 100%/ 50% 30% 20%;">
+        <footer class="footer">
+            <div class="footer-container">
                 @* logo *@
-                <div
-                    style="width:100%; display:flex; flex-direction:row; justify-content:flex-start; align-items:center;">
-                    <img src="~/svg/firewhite.svg" alt="fire_svg" height="35px" style="margin:0px 10px;" />
-                    <h1 style="text-align:center; color:#FFFFFF; font-size:36px; font-weight:bold;">Rednit</h1>
+                <div class="logo">
+                    <img src="~/svg/firewhite.svg" alt="fire_svg" height="40%" style="margin:0px 0px 5px 10px;" />
+                    <h1>Rednit</h1>
                 </div>
 
                 @* follow us *@
-                <div style="width:100%;">
-                    <p style="font-size:20px; font-weight:bold; color:#FFFFFF;">Follow us</p>
-                    <div style="display:flex; flex-direction:row; ">
-                        <img src="~/svg/instagramwhite.svg" alt="instagramwhite_svg" height="100%"
+                <div class="follow">
+                    <h2>Follow us</h2>
+                    <div class="footer-logos-container">
+                        <img src="~/svg/instagramwhite.svg" alt="instagramwhite_svg" width="80%"
                             style="margin-right: 5px;" />
-                        <img src="~/svg/facebookwhite.svg" alt="facebookwhite_svg" height="100%"
+                        <img src="~/svg/facebookwhite.svg" alt="facebookwhite_svg" width="80%"
                             style="margin-right: 5px;" />
-                        <img src="~/svg/githubwhite.svg" alt="githubwhite_svg" height="100%" 
-                            style="margin-right: 5px;" />
-                        <img src="~/svg/youtubewhite.svg" alt="youtubewhite_svg" height="100%"
+                        <img src="~/svg/githubwhite.svg" alt="githubwhite_svg" width="80%" style="margin-right: 5px;" />
+                        <img src="~/svg/youtubewhite.svg" alt="youtubewhite_svg" width="80%"
                             style="margin-right: 5px;" />
                     </div>
                 </div>
 
                 @* contact *@
-                <div style="display:flex; flex-direction:column;">
-                    <p style="margin:0px; font-size:20px; font-weight:bold; color:#FFFFFF">Contact us</p>
-                    <div style="display:flex; flex-direction:row; align-items:center;">
-                        <img src="~/svg/callwhite.svg" alt="callwhite_svg" height="80%" style="margin-right:5px;" />
-                        <p style="margin:0px; color:#FFFFFF">090-000-0000</p>
-                    </div>
-                    <div style="display:flex; flex-direction:row; align-items:center;">
-                        <img src="~/svg/mailwhite.svg" alt="mailwhite_svg" height="70%" style="margin-right:5px;" />
-                        <p style="margin:0px; color:#FFFFFF">RednitGroup@gmail.com</p>
+                <div class="contact">
+                    <h2>Contact us</h2>
+                    <div class="element-container">
+                        <div class="element">
+                            <img src="~/svg/callwhite.svg" alt="callwhite_svg" height="80%" style="margin-right:5px;" />
+                            <p>090-000-0000</p>
+                        </div>
+                        <div class="element">
+                            <img src="~/svg/mailwhite.svg" alt="mailwhite_svg" height="70%" style="margin-right:5px;" />
+                            <p>RednitGroup@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,7 +94,7 @@
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/layout/home.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
