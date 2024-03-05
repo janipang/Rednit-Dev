@@ -318,15 +318,19 @@ footer{
     }
     .logo img{
         margin-right: 5%;
-        width: 26px;
+        width: 20px;
     }
     .logo h1
     {
         margin-top: 3%;
         text-align:center; 
         color:#FD5564; 
-        font-size:22px; 
-        font-weight:900;
+        font-size:18px; 
+        font-weight:800;
+    }
+    .follow img{
+        height: 70%;
+        width: 13%;
     }
     .follow p{
         margin-bottom: 4%;
@@ -347,6 +351,13 @@ footer{
         font-weight:600;
         font-size: 8px;
     }
+    .phone img{
+        width: 9%;
+        margin-right: 3.2%;
+    }
+    .mail{
+        margin-top: 2%;
+    }
     .mail p{
         margin: 0;
         color:#FD5564;
@@ -355,6 +366,7 @@ footer{
     }
     .mail img{
         height: 70%;
+        width: 9%;
         margin-right: 3.2%;
     }
 
