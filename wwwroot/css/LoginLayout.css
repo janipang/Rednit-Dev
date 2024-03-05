@@ -4,10 +4,9 @@
 }
 body{
     position: relative;
-    /*height: 1000px;*/
     background-image: url('/background/LoginBG.png');
     background-repeat:no-repeat;
-    background-size:100% 100%;
+    background-size:100% 100vh;
 }
 p,h1,h2,h3,h4,h5,h6, a{
     font-family: 'Montserrat';
@@ -21,7 +20,6 @@ nav{
     height:6vh; 
 }
 .navGroup{
-    /*margin-top: 20%;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -68,18 +66,13 @@ nav{
 footer{
     width: 100%;
     padding:5vh 0vw; 
-    height:15vh; 
+    height: 30vh;
 }
-.position{
-    height:25vh;
-    background-color: white;
-    position: relative;
-    bottom : 117%;
-}
+
 .content{
     position: relative;
-    top: 10%;
-    width:80%; 
+    top: 50%; 
+    width: 80%;
     display:grid; 
     grid-template: 100%/ 60% 20% 20%;
     margin: 0 auto;
@@ -129,7 +122,6 @@ footer{
 }
 .phone{
     align-items:center;
-    /*margin-bottom: 10px;*/
     margin-bottom: 4%;
 }
 .phone img{
@@ -158,18 +150,124 @@ footer{
 
 .bg{
     position: relative;
-    height: 35vh;
-    /*top: 117%;*/
+    top: 60%;
 }
 .bg img{
     position: absolute;
-}
-.curve3{
     bottom: 0;
 }
-.curve1{
-    bottom: 40%;
+.block{
+    height: 10vh;
+    background-color: #FFFFFF;
 }
-.curve2{
-    bottom: 50%;
+
+/*Labtop*/
+@media screen and (max-width: 1024px) {
+    .content{
+        position: relative;
+        top: 50%;
+        width:80%; 
+        display:grid; 
+        grid-template: 100%/ 40% 30% 30%;
+        margin: 0 auto;
+    }
+    .logo{
+        width:100%;
+        justify-content:flex-start; 
+        align-items:center;
+        margin-bottom: 7.5%;
+    }
+    .logo img{
+        margin-right: 3%;
+    }
+    .logo h1
+    {
+        margin-top: 1%;
+        text-align:center; 
+        color:#FD5564; 
+        font-size:32px; 
+        font-weight:900;
+    }
+    .follow, .contact{
+        margin-top: 20%
+    }
+    .bg{
+        position: relative;
+        top: 50%;
+    }
+    .block{
+        height: 13vh;
+        background-color: #FFFFFF;
+        position: relative;
+        bottom: 15%;
+        z-index: -1;
+    }
+}
+
+/*Tablet*/
+@media screen and (max-width: 768px) {
+    .content{
+        position: relative;
+        top: 50%;
+        width:80%; 
+        display:grid; 
+        grid-template: 100%/ 35% 32.5% 32.5%;
+        margin: 0 auto;
+    }
+    .bg{
+        position: relative;
+        top: 35%;
+    }
+    .block{
+        height: 13vh;
+        background-color: #FFFFFF;
+        position: relative;
+        bottom: 20%;
+        z-index: -1;
+    }
+    .logo img{
+        margin-right: 5%;
+        width: 28px;
+
+    }
+    .logo h1
+    {
+        margin-top: 3%;
+        text-align:center; 
+        color:#FD5564; 
+        font-size:25.6px; 
+        font-weight:900;
+    }
+    .follow, .contact{
+        margin-top: 27%
+    }
+    .follow p{
+        margin-bottom: 4%;
+        font-size:14px; 
+        font-weight:bold; 
+        color:#FD5564;
+    }
+    .contact p{
+        margin:0px; 
+        margin-bottom: 4%;
+        font-size:14px; 
+        font-weight:bold; 
+        color:#FD5564;
+    }
+    .phone p{
+        margin:0px; 
+        color:#FD5564;
+        font-weight:600;
+        font-size: 12.8px;
+    }
+    .mail p{
+        margin: 0;
+        color:#FD5564;
+        font-weight:600;
+        font-size: 12.8px;
+    }
+    .mail img{
+        height: 70%;
+        margin-right: 3.2%;
+    }
 }

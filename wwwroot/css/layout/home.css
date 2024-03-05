@@ -23,7 +23,7 @@ button:hover{
     position: absolute;
     width: 100vw;
     height: 86%;
-    bottom: 15vh;
+    bottom: 25vh;
     left: 0;
 }
 
@@ -43,7 +43,7 @@ button:hover{
 
 .big-container {
     display: grid;
-    grid-template: 10vh 1fr 15vh / 10vw 80vw 10vw;
+    grid-template: 10vh 1fr 25vh / 10vw 80vw 10vw;
     min-height: 100vh;
     padding: 0px 0px;
     margin: 0px;
@@ -76,7 +76,7 @@ main {
 
 footer {
     grid-area: 3 / 2 / 3 / 2;
-    height: 15vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
     padding: 0px;
@@ -84,24 +84,10 @@ footer {
     align-items: center;
 }
 
-.logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.logo h1 {
-    padding: 0px 5px;
-    margin: 0px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #F2F2F2;
-}
-
 .nav button.discover {
     background-color: inherit;
     color: #F2F2F2;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
@@ -111,7 +97,7 @@ footer {
 .nav button.login {
     background-color: #F2F2F2;
     color: #FE3C72;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
@@ -121,26 +107,36 @@ footer {
 
 .footer-container {
     width: 100%;
-    margin: 20px 10px;
+    height:55%;
+    margin:auto;
     display: grid;
     grid-template: 100%/ 40% 30% 30%;
+    align-items: start;
 }
 
 .footer .follow {
     width: 100%;
+    height:100%;
+    padding:0px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .footer .contact {
+    width: 100%;
+    height:100%;
     display: flex;
     flex-direction: column;
     padding: 0px 0px;
 }
 
 .element-container {
+    margin-top:2%;
+    height:98%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .element {
@@ -150,30 +146,42 @@ footer {
 }
 
 .footer-logos-container {
+    margin-top:2%;
     display: grid;
     max-width: 130px;
     grid-template: 1fr/1fr 1fr 1fr 1fr;
 }
 
+.footer h1,
+.footer h2,
+.footer p {
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
 .footer h2 {
+    margin:0px;
     font-size: 20px;
-    font-weight: 600px;
+    font-weight: bold;
     color: #FFFFFF;
 }
 
 .footer p {
     margin: 0px;
+    font-weight: 600px;
     color: #FFFFFF;
 }
 
+.footer img{
+    margin-right: 5px;
+    filter: drop-shadow(0px 4px 4px rgb(0 0 0 / 0.25));
+}
 @media screen and (max-width: 450px) {
 
-    .big-container {
-        grid-template: 10vh 1fr 15vh / 2vw 96vw 2vw;
+    .bg-container {
+        height: 93%;
     }
-
-    .logo h1 {
-        font-size: 24px;
+    .big-container {
+        grid-template: 10vh 1fr 25vh / 4vw 92vw 4vw;
     }
 
     .nav button.discover {
@@ -189,13 +197,12 @@ footer {
 
 
     .footer-container {
-        width: 100%;
-        height: 100%;
-        padding: 10px 10px;
-        margin: 0px;
+        width: 95%;
+        height: 50%;
+        margin: auto;
         display: grid;
         align-items: start;
-        grid-template: 100%/ 50% 50%;
+        grid-template: 100%/ 40% 60%;
     }
 
     .footer .follow {
@@ -206,6 +213,7 @@ footer {
     .footer .contact {
         height: 100%;
         align-items: start;
+        overflow: hidden;
     }
     .footer .follow .h2 {
         text-align: center;
