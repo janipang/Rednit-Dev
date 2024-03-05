@@ -2,6 +2,10 @@
     ViewData["Title"] = "Discover";
     Layout = "_LayoutDiscover";
 }
+@model IEnumerable<RednitDev.Models.Post>
 <div>
-    Hello Feed
+    @foreach (var post in Model)
+    {
+        @await Component.InvokeAsync("Post", new { post = post })
+    }
 </div>
