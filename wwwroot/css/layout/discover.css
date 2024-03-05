@@ -69,7 +69,7 @@ footer {
 
 .big-container {
     display: grid;
-    grid-template: 10vh 75vh 15vh / 10vw 80vw 10vw;
+    grid-template: 10vh 90vh 15vh / 10vw 80vw 10vw;
     min-height: 100vh;
     padding: 0px 0px;
 }

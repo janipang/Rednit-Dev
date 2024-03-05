@@ -1,8 +1,8 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using RednitDev.Models;
+using ann.Models;
 
-namespace RednitDev.Controllers;
+namespace ann.Controllers;
 
 public class HomeController : Controller
 {
@@ -23,9 +23,22 @@ public class HomeController : Controller
         return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    public IActionResult Feed(){
+        List<Post> posts = new List<Post>();
+        posts.Add(new Post{
+            Header = "หาคนทำสมุดระบายสีแจกเด็ก",
+            Intro = "ต้องการเพื่อนเข้าร่วมกลุ่มอีก 4 คน ขอคนตั้งใจทำงาน ขยัน ไม่อู้ รักศิลปะ ไม่ใช้เอไอในการเจนรูป",
+            request = false,
+            memberCount = 3,
+            dayLeft = 1
+            });
+        posts.Add(new Post{
+            Header = "หาเพื่อนไปเที่ยวภูเก็ตสิ้นเดือน",
+            Intro = "ขอคนชอบช้อปปิ้ง เดินเก่ง เที่ยวเก่ง ที่พักและการเดินทางจะจัดเตรียมให้ค่ะ ไม่เอาคนกลัวแดดนะคะ ขอลุย ๆ ค่ะ",
+            request = true,
+            memberCount = 5,
+            dayLeft = 2
+            });
+        return View(posts);
     }
 }

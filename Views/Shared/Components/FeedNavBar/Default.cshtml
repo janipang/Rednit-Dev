@@ -1,0 +1,41 @@
+<nav class="feed-nav">
+    <nav class="feed-nav-type-container">
+        <div>
+            <button class="feed-nav-toggle feed-nav-button" onclick="OnButtonToggleClick(event)">Ann</button>
+        </div>
+        <div class="feed-nav-type" id="feedType">
+            <button class="feed-nav-button">All</button>
+            <button class="feed-nav-button">Food</button>
+            <button class="feed-nav-button">Lifestyle</button>
+            <button class="feed-nav-button">Sports</button>
+            <button class="feed-nav-button">Travel</button>
+            <button class="feed-nav-button">Education</button>
+            <button class="feed-nav-button">Animal</button>
+            <button class="feed-nav-button">Art</button>
+        </div>
+
+    </nav>
+    <div class="feed-nav-search-section">
+        <input class="search-text-input" type="text" onfocus="OnSearchFocus()" onblur="OnSearchBlur()">
+        <button class="search-button">Search</button>
+    </div>
+</nav>
+
+<script>
+    function OnButtonToggleClick(event) {
+        var feedType = document.getElementById("feedType");
+        feedType.classList.toggle("active");
+        
+    }
+
+    function OnSearchFocus(){
+        var searchArea = document.getElementById("searchArea");
+        searchArea.classList.add("active");
+    }
+
+    function OnSearchBlur(){
+        var searchArea = document.getElementById("searchArea");
+        searchArea.classList.remove("active");
+    }
+
+</script>
