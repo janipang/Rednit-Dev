@@ -12,21 +12,8 @@ public class DiscoverController : Controller
 {
     public IActionResult Index()
     {
-        List<Post> posts = new List<Post>();
-        var post = new Post();
-        post.Header = "Amanda Obdam";
-        post.Tag = "beauty";
-        post.Intro = "who is the gorgeous girl";
-        post.Detail = "hello everyone I love thsilsnd for all the time";
-        post.Place = "Ladphrao, BKK";
-        post.request = true;
-        post.memberCount = 5;
-        post.dayLeft = 15;
-        posts.Add(post);
-        posts.Add(post);
-        posts.Add(post);
 
-        return View(posts);
+        return View();
     }
 
     public IActionResult CreatePost()
@@ -35,7 +22,14 @@ public class DiscoverController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreatePost(string header, string tag, string intro, string detail, string place)
+    public IActionResult CreatePost(
+        string header, string tag, string intro, string detail, string place,
+        int memberMax, string dateType,
+        int startDay, int startMonth, int startYear,
+        int endDay, int endMonth, int endYear,
+        int closeDay, int closeMonth, int closeYear,
+        string requestType, string visibility
+    )
     {
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
@@ -48,15 +42,35 @@ public class DiscoverController : Controller
             posts = new List<Post>();
         }
 
-        Post newpost = new Post();
-        newpost.Header = header;
-        newpost.Tag = tag;
-        newpost.Intro = intro;
-        newpost.Detail = detail;
-        newpost.Place = place;
-        newpost.request = true;
-        newpost.memberCount = 5;
-        newpost.dayLeft = 3;
+        Post newpost = new Post
+        {
+            Author = new User{
+                Account = "pang.janista@gmail.com",
+                Username = "janipang",
+                Profile = new Profile{
+                    PiKachu = "pang.png"
+                }
+            },
+            Detail = new PostDetail
+            {
+                Header = header,
+                Tag = [tag,tag,tag],
+                Intro = intro,
+                Detail = detail,
+                Place = place
+            },
+            EventDate = new EventDate()
+            {
+                Start = new DateOnly(startYear, startMonth, startDay),
+                End = new DateOnly(endYear, endMonth, endDay),
+                CloseSubmit = new DateOnly(closeYear, closeMonth, closeDay),
+            },
+            Requesting = requestType == "request", //(request,open)
+            Visible = visibility == "public", //(public,draft)
+            MemberCount = 5,
+            MemberMax = memberMax,
+            DayLeft = 3,
+        };
         posts.Add(newpost);
 
         var serializeOption = new JsonSerializerOptions();
@@ -65,6 +79,6 @@ public class DiscoverController : Controller
         Console.WriteLine(jsondata);
         System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
 
-        return View(newpost);
+        return View();
     }
 }

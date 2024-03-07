@@ -25,10 +25,10 @@ button:hover{
     height: 86%;
     bottom: 25vh;
     left: 0;
+    z-index: -30;
 }
 
 .bg-container .background {
-    z-index: -1;
     background-color: #FFFFFF;
     width: 100%;
     height: 72%;
@@ -36,7 +36,6 @@ button:hover{
 
 .bg-container .wave-container {
     position: relative;
-    z-index: -1;
     height: 270px;
     width: 100%;
 }
@@ -47,6 +46,7 @@ button:hover{
     min-height: 100vh;
     padding: 0px 0px;
     margin: 0px;
+    z-index: -20;
 }
 
 /* this body is disabled cause of some structure reason */
@@ -57,12 +57,14 @@ header {
     padding: 5vh 0vw 0vh 0vw;
     justify-content: space-between;
     align-items: center;
+    z-index: 0;
 }
 
 .context {
     grid-area: 2 / 2 / 2 / 2;
     min-height: 75vh;
-    padding: 10vh 0vw;
+    padding: 10vh 0vw 5vh 0vw;
+    z-index: 0;
 }
 
 main {
@@ -82,6 +84,7 @@ footer {
     padding: 0px;
     justify-content: space-between;
     align-items: center;
+    z-index: 0;
 }
 
 .nav button.discover {
@@ -175,7 +178,8 @@ footer {
     margin-right: 5px;
     filter: drop-shadow(0px 4px 4px rgb(0 0 0 / 0.25));
 }
-@media screen and (max-width: 450px) {
+
+@media screen and (max-width: 670px) {
 
     .bg-container {
         height: 93%;
@@ -278,7 +282,7 @@ footer {
 
 .wave.wave1 {
     animation: animate 40s linear infinite;
-    z-index: 5;
+    z-index: -10;
     opacity: 1;
     animation-delay: 0s;
     bottom: 0;
@@ -287,7 +291,7 @@ footer {
 
 .wave.wave2 {
     animation: animate2 34s linear infinite;
-    z-index: 5;
+    z-index: -10;
     opacity: 1;
     animation-delay: 0s;
     bottom: 0;
@@ -296,7 +300,7 @@ footer {
 
 .wave.wave3 {
     animation: animate 32s linear infinite;
-    z-index: 5;
+    z-index: -10;
     opacity: 1;
     animation-delay: -2s;
     bottom: 0px;
