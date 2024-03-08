@@ -1,8 +1,13 @@
 namespace RednitDev.Models;
+
 public class User
 {
-    public string? Account { get; set; }
-    public string? Username { get; set; }
-    public Profile? Profile { get; set; }
+    Account Account { get; set; }
+    Profile Profile { get; set; }
 
+    public Account AccountSetter   // property
+  {
+    get { return Account; }
+    set { Account = value; }
+  }
 }

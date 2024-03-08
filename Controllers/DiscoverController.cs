@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Linq.Expressions;
 
 namespace RednitDev.Controllers;
+using RednitDev.Models;
 
 public class DiscoverController : Controller
 {
@@ -32,6 +33,7 @@ public class DiscoverController : Controller
     )
     {
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
+        var accountsjson = System.IO.File.ReadAllText("./Datacenter/account.json");
         List<Post> posts;
         try
         {
@@ -42,14 +44,20 @@ public class DiscoverController : Controller
             posts = new List<Post>();
         }
 
+        List<Account> accounts;
+        try
+        {
+            accounts = JsonSerializer.Deserialize<List<Account>>(accountsjson)!; //! is for not to warning me,jezz
+        }
+        catch (JsonException)
+        {
+            accounts = new List<Account>();
+        }
+
         Post newpost = new Post
         {
             Author = new User{
-                Account = "pang.janista@gmail.com",
-                Username = "janipang",
-                Profile = new Profile{
-                    PiKachu = "pang.png"
-                }
+                AccountSetter = accounts[0]
             },
             Detail = new PostDetail
             {
@@ -61,6 +69,7 @@ public class DiscoverController : Controller
             },
             EventDate = new EventDate()
             {
+                DateType = dateType,
                 Start = new DateOnly(startYear, startMonth, startDay),
                 End = new DateOnly(endYear, endMonth, endDay),
                 CloseSubmit = new DateOnly(closeYear, closeMonth, closeDay),
