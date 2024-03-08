@@ -1,233 +1,386 @@
 [
-    {
-      "Author": {
-        "Username": "Rut"
-      },
-      "Detail": {
-        "Header": "go to chonburi",
-        "Tag": [
-          "beach",
-          "beach",
-          "beach"
-        ],
-        "Intro": "go to have a scuba diver",
-        "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-        "Place": "sataheep, chonburi"
-      },
-      "EventDate": {
-        "DateType": "one",
-        "Start": "2022-12-31",
-        "End": "2024-11-25",
-        "CloseSubmit": "2024-11-25"
-      },
-      "Requesting": false,
-      "Visible": false,
-      "MemberCount": 5,
-      "MemberMax": 0,
-      "DayLeft": 3,
-      "Comments": [],
-      "Liked": [],
-      "Joined": [
-        {
-            "Account" :
-            {
-                "Username" : "janipang"
-            }
-        }
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
       ],
-      "Requested": []
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
     },
-    {
-      "Author": {
-        "Username": "Kor"
-      },
-      "Detail": {
-        "Header": "go to chonburi",
-        "Tag": [
-          "beach",
-          "beach",
-          "beach"
-        ],
-        "Intro": "go to have a scuba diver",
-        "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-        "Place": "sataheep, chonburi"
-      },
-      "EventDate": {
-        "DateType": "one",
-        "Start": "2022-12-31",
-        "End": "2024-11-25",
-        "CloseSubmit": "2024-11-25"
-      },
-      "Requesting": false,
-      "Visible": false,
-      "MemberCount": 5,
-      "MemberMax": 0,
-      "DayLeft": 3,
-      "Comments": [],
-      "Liked": [
-        {
-            "Account" :
-            {
-                "Username" : "janipang"
-            }
-        }
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
       ],
-      "Joined": [],
-      "Requested": []
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
     },
-    {
-      "Author": {
-        "Username": "janipang"
-      },
-      "Detail": {
-        "Header": "go to chonburi",
-        "Tag": [
-          "beach",
-          "beach",
-          "beach"
-        ],
-        "Intro": "go to have a scuba diver",
-        "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-        "Place": "sataheep, chonburi"
-      },
-      "EventDate": {
-        "DateType": "one",
-        "Start": "2022-12-31",
-        "End": "2024-11-25",
-        "CloseSubmit": "2024-11-25"
-      },
-      "Requesting": false,
-      "Visible": false,
-      "MemberCount": 5,
-      "MemberMax": 0,
-      "DayLeft": 3,
-      "Comments": [],
-      "Liked": [],
-      "Joined": [],
-      "Requested": []
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
     },
-    {
-      "Author": {
-        "Username": "janipang"
-      },
-      "Detail": {
-        "Header": "go to chonburi",
-        "Tag": [
-          "beach",
-          "beach",
-          "beach"
-        ],
-        "Intro": "go to have a scuba diver",
-        "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-        "Place": "sataheep, chonburi"
-      },
-      "EventDate": {
-        "DateType": "one",
-        "Start": "2022-12-31",
-        "End": "2024-11-25",
-        "CloseSubmit": "2024-11-25"
-      },
-      "Requesting": false,
-      "Visible": false,
-      "MemberCount": 5,
-      "MemberMax": 0,
-      "DayLeft": 3,
-      "Comments": [],
-      "Liked": [],
-      "Joined": [],
-      "Requested": []
+    "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     },
-    {
-      "Author": {
-        "Username": "janipang"
-      },
-      "Detail": {
-        "Header": "go to chonburi",
-        "Tag": [
-          "beach",
-          "beach",
-          "beach"
-        ],
-        "Intro": "go to have a scuba diver",
-        "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-        "Place": "sataheep, chonburi"
-      },
-      "EventDate": {
-        "DateType": "one",
-        "Start": "2022-12-31",
-        "End": "2024-11-25",
-        "CloseSubmit": "2024-11-25"
-      },
-      "Requesting": false,
-      "Visible": false,
-      "MemberCount": 5,
-      "MemberMax": 0,
-      "DayLeft": 3,
-      "Comments": [],
-      "Liked": [],
-      "Joined": [],
-      "Requested": []
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
     },
-    {
-      "Author": {
-        "Username": "janipang"
-      },
-      "Detail": {
-        "Header": "go to chonburi",
-        "Tag": [
-          "beach",
-          "beach",
-          "beach"
-        ],
-        "Intro": "go to have a scuba diver",
-        "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-        "Place": "sataheep, chonburi"
-      },
-      "EventDate": {
-        "DateType": "one",
-        "Start": "2022-12-31",
-        "End": "2024-11-25",
-        "CloseSubmit": "2024-11-25"
-      },
-      "Requesting": false,
-      "Visible": false,
-      "MemberCount": 5,
-      "MemberMax": 0,
-      "DayLeft": 3,
-      "Comments": [],
-      "Liked": [],
-      "Joined": [],
-      "Requested": []
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
     },
-    {
-      "Author": {
-        "Username": "janipang"
-      },
-      "Detail": {
-        "Header": "go to chonburi",
-        "Tag": [
-          "beach",
-          "beach",
-          "beach"
-        ],
-        "Intro": "go to have a scuba diver",
-        "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-        "Place": "sataheep, chonburi"
-      },
-      "EventDate": {
-        "DateType": "one",
-        "Start": "2022-12-31",
-        "End": "2024-11-25",
-        "CloseSubmit": "2024-11-25"
-      },
-      "Requesting": false,
-      "Visible": false,
-      "MemberCount": 5,
-      "MemberMax": 0,
-      "DayLeft": 3,
-      "Comments": [],
-      "Liked": [],
-      "Joined": [],
-      "Requested": []
-    }
-  ]
+    "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "find some cat",
+      "Tag": [
+        "pet",
+        "pet",
+        "pet"
+      ],
+      "Intro": "fint seeswat cat",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "my home"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": true,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "find some cat",
+      "Tag": [
+        "pet",
+        "pet",
+        "pet"
+      ],
+      "Intro": "fint seeswat cat",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "my home"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": true,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  }
+]

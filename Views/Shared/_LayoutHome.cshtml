@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/css/layout/home.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/page/home-index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/component/hotPostCard.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/page/discover-createpost.css">
     @* <link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" /> *@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,21 +36,21 @@
     <div class="big-container">
 
         @* header *@
-        <header>
-            <div class="logo">
-                <img src="~/svg/firewhite.svg" alt="fire_svg"/>
-                <h1>Rednit</h1>
-            </div>
-            <div class="nav">
-                <button class="discover" onClick=toDiscover()>
-                    Discover
-                </button>
-                <button class="login" onClick=toLogin()>
-                    Log in
-                </button>
-                <a class="logout" asp-area="" asp-controller="Access" asp-action="LogOut">Log out</a>
-            </div>
-        </header>
+        <nav>
+            <div class="navGroup">
+                <div class="leftSide">
+                    <img src="~/svg/firewhite.svg" alt="Logo" height="35px">
+                    <a class="discovery" asp-area="" asp-controller="Home" asp-action="Index">
+                        <h1>Rednit</h1>
+                    </a>
+                </div>
+                <div class="rightSide">
+                    <a class="discovery" asp-area="" asp-controller="Home" asp-action="Index">Discovery</a>
+                    <a class="login" asp-area="" asp-controller="Login" asp-action="Index">Log in</a>
+                    <a class="logout" asp-area="" asp-controller="Access" asp-action="LogOut">Log out</a>
+                </div>
+              </div>
+        </nav>
 
         @* body *@
         <div class="context">

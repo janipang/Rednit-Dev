@@ -7,7 +7,7 @@
         <h1 style="font-size:40px; font-weight:bold; text-align:center; color:#FFFFFF;">Create new post</h1>
         <div class="form-container">
             <form method="post" asp-controller="Discover" asp-action="CreatePost">
-                <div class="form-text" style="display:flex; flex-direction:column;">
+                <div class="form-text">
                     <fieldset class="form-text-fieldset">
                         <legend for="header">Header
                             <input type="text" name="header" placeholder="Header" required>
@@ -15,8 +15,8 @@
                         <legend for="tag">Tag
                             <input type="text" name="tag" placeholder="Tag" required>
                         </legend>
-                        <legend for="title">Title
-                            <input type="text" name="title" placeholder="Title" required>
+                        <legend for="intro">Intro
+                            <input type="text" name="intro" placeholder="Intro" required>
                         </legend>
                         <legend for="detail">Detail
                             <textarea type="text" name="detail" placeholder="Detail" required></textarea>
@@ -27,16 +27,31 @@
                     </fieldset>
                 </div>
                 <div class="form-option">
+                    @* <fieldset class="member-max-fieldset">
+                        <legend for="memberMax">Members</legend>
+                        <div class="options">
+                            <label class="option" htmlFor="three">
+                                <input type="radio" name="memberMax" value="three">
+                                <span class="checkmark"></span>
+                                3 peoples
+                            </label>
+                            <label class="option" htmlFor="5">
+                                <input type="radio" name="memberMax" value="5">
+                                <span class="checkmark"></span>
+                                5 peoples
+                            </label>
+                        </div>
+                    </fieldset> *@
                     <fieldset class="date-type-fieldset">
-                        <legend for="date-type">Event Date</legend>
+                        <legend for="dateType">Event Date</legend>
                         <div class="options">
                             <label class="option" htmlFor="one">
-                                <input type="radio" name="date-type" value="one">
+                                <input type="radio" name="dateType" value="one">
                                 <span class="checkmark"></span>
                                 One day event
                             </label>
-                            <label class="option" htmlFor="one">
-                                <input type="radio" name="date-type" value="multiple">
+                            <label class="option" htmlFor="multiple">
+                                <input type="radio" name="dateType" value="multiple">
                                 <span class="checkmark"></span>
                                 Multi-day event
                             </label>
@@ -44,33 +59,33 @@
                     </fieldset>
                     <fieldset class="duration-fieldset">
                         <div class="duration">
-                            <div class="date-select-card">
+                            <div class="date-select-card start">
                                 <div>
-                                    <label for="start-day">Day</label>
-                                    <input type="text" name="start-day" placeholder="DD" required><br>
+                                    <label for="startDay">Day</label>
+                                    <input type="number" name="startDay" placeholder="DD" required><br>
                                 </div>
                                 <div>
-                                    <label for="start-month">Month</label>
-                                    <input type="text" name="start-month" placeholder="MM" required><br>
+                                    <label for="startMnth">Month</label>
+                                    <input type="number" name="startMonth" placeholder="MM" required><br>
                                 </div>
                                 <div>
-                                    <label for="start-day">Year</label>
-                                    <input type="text" name="start-day" placeholder="YYYY" required><br>
+                                    <label for="startYear">Year</label>
+                                    <input type="number" name="startYear" placeholder="YYYY" required><br>
                                 </div>
                             </div>
                             <div class="to"> - </div>
-                            <div class="date-select-card">
+                            <div class="date-select-card end">
                                 <div>
-                                    <label for="start-day">Day</label>
-                                    <input type="text" name="start-day" placeholder="DD" required><br>
+                                    <label for="endDay">Day</label>
+                                    <input type="number" name="endDay" placeholder="DD" required><br>
                                 </div>
                                 <div>
-                                    <label for="start-month">Month</label>
-                                    <input type="text" name="start-month" placeholder="MM" required><br>
+                                    <label for="endMonth">Month</label>
+                                    <input type="number" name="endMonth" placeholder="MM" required><br>
                                 </div>
                                 <div>
-                                    <label for="start-day">Year</label>
-                                    <input type="text" name="start-day" placeholder="YYYY" required><br>
+                                    <label for="endYear">Year</label>
+                                    <input type="number" name="endYear" placeholder="YYYY" required><br>
                                 </div>
                             </div>
                         </div>
@@ -78,32 +93,32 @@
                     <fieldset class="close-date-fieldset">
                         <legend for="close-date">Submission closing date</legend>
                         <div class="close-date">
-                            <div class="date-select-card">
+                            <div class="date-select-card close">
                                 <div>
-                                    <label for="start-day">Day</label>
-                                    <input type="text" name="start-day" placeholder="DD" required><br>
+                                    <label for="CloseDay">Day</label>
+                                    <input type="number" name="closeDay" placeholder="DD" required><br>
                                 </div>
                                 <div>
-                                    <label for="start-month">Month</label>
-                                    <input type="text" name="start-month" placeholder="MM" required><br>
+                                    <label for="CloseMonth">Month</label>
+                                    <input type="number" name="CloseMonth" placeholder="MM" required><br>
                                 </div>
                                 <div>
-                                    <label for="start-day">Year</label>
-                                    <input type="text" name="start-day" placeholder="YYYY" required><br>
+                                    <label for="CloseYear">Year</label>
+                                    <input type="number" name="CloseYear" placeholder="YYYY" required><br>
                                 </div>
                             </div>
                         </div>
                     </fieldset>
                     <fieldset class="post-type-fieldset">
-                        <legend for="post-type">Post type</legend>
+                        <legend for="requestType">Post type</legend>
                         <div class="options">
                             <div class="option">
-                                <input type="radio" name="post-type" value="one">
-                                <label htmlFor="one"><b>Open</b> — Everyone can join this group</label>
+                                <input type="radio" name="requestType" value="open">
+                                <label htmlFor="open"><b>Open</b> — Everyone can join this group</label>
                             </div>
                             <div class="option">
-                                <input type="radio" name="post-type" value="multiple">
-                                <label htmlFor="multiple"><b>Request</b> — Others can join when you accept</label>
+                                <input type="radio" name="requestType" value="request">
+                                <label htmlFor="request"><b>Request</b> — Others can join when you accept</label>
                             </div>
                         </div>
                     </fieldset>
@@ -111,12 +126,12 @@
                         <legend for="visibility">Visibility & access</legend>
                         <div class="options">
                             <div class="option">
-                                <input type="radio" name="visibility" value="one">
-                                <label htmlFor="one"><b>Draft</b> — Only you can edit this post</label>
+                                <input type="radio" name="visibility" value="draft">
+                                <label htmlFor="draft"><b>Draft</b> — Only you can edit this post</label>
                             </div>
                             <div class="option">
-                                <input type="radio" name="visibility" value="multiple">
-                                <label htmlFor="multiple"><b>Public</b> — Anyone can view this post</label>
+                                <input type="radio" name="Visibility" value="public">
+                                <label htmlFor="public"><b>Public</b> — Anyone can view this post</label>
                             </div>
                         </div>
                     </fieldset>
@@ -126,5 +141,33 @@
         </div>
     </div>
 </div>
+
+<script>
+    console.log("hello jeezzzzzzzz");
+    var dateTypeAns = document.getElementsByName("dateType");
+
+    var to = document.getElementsByClassName("to")[0];
+    var endCard = document.getElementsByClassName("end")[0];
+
+    function toggleEndDateFields() {
+        dateTypeAns.forEach(choice => {
+            if (choice.checked && choice.value === "one") {
+                to.style.display = "none";
+                endCard.style.display = "none";
+                console.log(choice.value);
+            }
+            else if (choice.checked && choice.value === "multiple") {
+                to.style.display = "flex";
+                endCard.style.display = "grid";
+                console.log(choice.value);
+            }
+        });
+    }
+
+    dateTypeAns.forEach(choice => {
+        choice.addEventListener("change", toggleEndDateFields);
+    });
+</script>
+
 
 @* if (ViewContext.HttpContext.Request.Method == "POST"){<div>new post posted</div>} *@
