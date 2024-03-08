@@ -9,7 +9,7 @@ namespace RednitDev.Services
         private List<Account> account;
         public AccountServiceImpl()
         {
-            var accountsJson = System.IO.File.ReadAllText("./Datacenter/user.json"); //Byte Stream
+            var accountsJson = System.IO.File.ReadAllText("./Datacenter/account.json"); //Byte Stream
             try
             {
                 account = JsonSerializer.Deserialize<List<Account>>(accountsJson); // can read 
@@ -42,7 +42,7 @@ namespace RednitDev.Services
             var serializeOption = new JsonSerializerOptions();
             serializeOption.WriteIndented = true;
             string jsonData = JsonSerializer.Serialize<List<Account>>(account, serializeOption);
-            System.IO.File.WriteAllText("./Datacenter/user.json", jsonData);
+            System.IO.File.WriteAllText("./Datacenter/account.json", jsonData);
             return newAccount;
         }
     }
