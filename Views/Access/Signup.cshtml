@@ -3,17 +3,17 @@
     ViewData["Title"] = "Sign up";
     Layout = "_LoginLayout";
 }
-<link href="~/css/LoginSignup.css" rel="stylesheet" />
+<link href="~/css/Access/LoginSignup.css" rel="stylesheet" />
 <div class="space">
     <div class="loginGroup">
         <h1>Create account</h1>
         <form asp-controller="Access" asp-action="Signup" method="post">
             <input asp-for="Username" type="text" id="username" placeholder="Username" required>
-            <input asp-for="Email" type="text" id="Email" placeholder="Email" required>
+            <input asp-for="Email" type="text" id="email" placeholder="Email" required>
             <input asp-for="Password" type="password" id="password" placeholder="Password" required>
             @if (ViewData["ValidateMessage"] != null)
             {
-                <label>@ViewData["ValidateMessage"]</label>
+                <p>@ViewData["ValidateMessage"]</p>
             }
             <button type="submit">Sign up</button>
         </form>
