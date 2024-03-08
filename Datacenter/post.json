@@ -1,7 +1,7 @@
 [
   {
     "Author": {
-      "Username": "janipang"
+      "AccountSetter": null
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -32,7 +32,7 @@
   },
   {
     "Author": {
-      "Username": "janipang"
+      "AccountSetter": null
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -63,7 +63,7 @@
   },
   {
     "Author": {
-      "Username": "janipang"
+      "AccountSetter": null
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -94,7 +94,7 @@
   },
   {
     "Author": {
-      "Username": "janipang"
+      "AccountSetter": null
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -125,7 +125,7 @@
   },
   {
     "Author": {
-      "Username": "janipang"
+      "AccountSetter": null
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -156,7 +156,7 @@
   },
   {
     "Author": {
-      "Username": "janipang"
+      "AccountSetter": null
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -187,7 +187,7 @@
   },
   {
     "Author": {
-      "Username": "janipang"
+      "AccountSetter": null
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -207,6 +207,146 @@
       "CloseSubmit": "2024-11-25"
     },
     "Requesting": false,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "go to chonburi",
+      "Tag": [
+        "beach",
+        "beach",
+        "beach"
+      ],
+      "Intro": "go to have a scuba diver",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "sataheep, chonburi"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "find some cat",
+      "Tag": [
+        "pet",
+        "pet",
+        "pet"
+      ],
+      "Intro": "fint seeswat cat",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "my home"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": true,
+    "Visible": false,
+    "MemberCount": 5,
+    "MemberMax": 0,
+    "DayLeft": 3,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Author": {
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    },
+    "Detail": {
+      "Header": "find some cat",
+      "Tag": [
+        "pet",
+        "pet",
+        "pet"
+      ],
+      "Intro": "fint seeswat cat",
+      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+      "Place": "my home"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2022-12-31",
+      "End": "2024-11-25",
+      "CloseSubmit": "2024-11-25"
+    },
+    "Requesting": true,
     "Visible": false,
     "MemberCount": 5,
     "MemberMax": 0,

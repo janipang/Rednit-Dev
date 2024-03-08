@@ -10,7 +10,7 @@ public class Post
     public int MemberMax { get; set; }
     public int? DayLeft { get; set; } //pls help me to calc this
     public List<Comment> Comments { get; set; } = [];
-    public List<User> Liked { get; set; }  = []; //User that liked post
-    public List<User> Joined { get; set; }  = []; //When user click join (open), //When user request has accepted(request)
-    public List<User>?Requested { get; set; }  = []; //User that request to join
+    public List<Account> Liked { get; set; }  = []; //User that liked post
+    public List<Account> Joined { get; set; }  = []; //When User click join (open), //When User request has accepted(request)
+    public List<Account>?Requested { get; set; }  = []; //User that request to join
 }
