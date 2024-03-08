@@ -1,8 +1,8 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using ann.Models;
+using RednitDev.Models;
 
-namespace ann.Components{
+namespace RednitDev.Components{
     public class PostViewComponent: ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync(Post post)
