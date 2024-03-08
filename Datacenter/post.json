@@ -1,7 +1,11 @@
 [
   {
     "Author": {
-      "AccountSetter": null
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -32,7 +36,11 @@
   },
   {
     "Author": {
-      "AccountSetter": null
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -63,7 +71,11 @@
   },
   {
     "Author": {
-      "AccountSetter": null
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -94,7 +106,11 @@
   },
   {
     "Author": {
-      "AccountSetter": null
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -125,7 +141,11 @@
   },
   {
     "Author": {
-      "AccountSetter": null
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -156,7 +176,11 @@
   },
   {
     "Author": {
-      "AccountSetter": null
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     },
     "Detail": {
       "Header": "go to chonburi",
@@ -187,8 +211,11 @@
   },
   {
     "Author": {
-      "AccountSetter": null
-    },
+      "AccountSetter": {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
     "Detail": {
       "Header": "go to chonburi",
       "Tag": [

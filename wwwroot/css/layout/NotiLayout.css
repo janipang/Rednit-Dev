@@ -29,7 +29,7 @@ nav{
     margin: 0 auto;
 }
 .leftSide{
-    width: 79%;
+    width: 70%;
 }
 
 .leftSide a h1
@@ -39,8 +39,13 @@ nav{
     font-size:32px; 
     font-weight:900;
 }
+.logo,.phone,.mail, .leftSide, .rightSide{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
 .rightSide{
-    width: 21%;
+    width: 28%;
     align-items: center;
     justify-content: space-between;
 }
@@ -50,21 +55,13 @@ nav{
     font-weight:600;
     color:#ffff !important;
 }
-.login{
+.creat-post{
     text-align: center;
-    padding: 10px 20px;
-    background: #FFFFFF;
-    border-radius: 10px;
-
     font-size:20px; 
-    font-weight:bold;
-    color:#FD5564 !important;
+    font-weight:600;
+    color:#ffff !important;
 }
-.logo,.phone,.mail, .leftSide, .rightSide {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-}
+
 footer{
     width: 100%;
     padding:5vh 0vw; 
