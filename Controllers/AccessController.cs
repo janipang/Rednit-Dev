@@ -55,7 +55,7 @@ public class AccessController : Controller
             httpContextAccessor.HttpContext.Session.SetString("username", account.Username);
             return RedirectToAction("Index", "Home");
         }
-        ViewData["ValidateMessage"] = "user not found";
+        ViewData["ValidateMessage"] = "Username or Password is invalid.";
         return View();
     }
 
@@ -100,7 +100,7 @@ public class AccessController : Controller
             httpContextAccessor.HttpContext.Session.SetString("username", newAccount.Username);
             return RedirectToAction("Index", "Home");
         }
-        ViewData["ValidateMessage"] = "this username or email can't use.";
+        ViewData["ValidateMessage"] = "Username or E-mail already in use.";
         return View();
     }
 }

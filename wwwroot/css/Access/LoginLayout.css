@@ -2,12 +2,15 @@
     margin: 0;
     padding: 0;
 }
+::-webkit-scrollbar
+{
+    display: none;
+}
 body{
     position: relative;
-    /*height: 1000px;*/
     background-image: url('/background/LoginBG.png');
     background-repeat:no-repeat;
-    background-size:100% 100vh;
+    background-size:100% 100%;
 }
 p,h1,h2,h3,h4,h5,h6, a{
     font-family: 'Montserrat';
@@ -21,15 +24,10 @@ nav{
     height:6vh; 
 }
 .navGroup{
-    /*margin-top: 20%;*/
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 79% 21%;;
     width: 80%;
     margin: 0 auto;
-}
-.leftSide{
-    width: 79%;
 }
 
 .leftSide a h1
@@ -40,7 +38,6 @@ nav{
     font-weight:900;
 }
 .rightSide{
-    width: 21%;
     align-items: center;
     justify-content: space-between;
 }
@@ -68,18 +65,15 @@ nav{
 footer{
     width: 100%;
     padding:5vh 0vw; 
-    height:15vh; 
+    height: 30vh;
 }
 .position{
-    height:25vh;
-    background-color: white;
-    position: relative;
-    bottom : 117%;
+    height: 25vh;
 }
 .content{
     position: relative;
-    top: 10%;
-    width:80%; 
+    top: 80%; 
+    width: 80%;
     display:grid; 
     grid-template: 100%/ 60% 20% 20%;
     margin: 0 auto;
@@ -120,7 +114,7 @@ footer{
 .contact{
     margin-top: 10%
 }
-.contact p{
+.contact>p{
     margin:0px; 
     margin-bottom: 4%;
     font-size:20px; 
@@ -129,14 +123,13 @@ footer{
 }
 .phone{
     align-items:center;
-    /*margin-bottom: 10px;*/
     margin-bottom: 4%;
 }
-.phone img{
+.phone>img{
     height: 80%;
     margin-right: 3.2%;
 }
-.phone p{
+.phone>p{
     margin:0px; 
     color:#FD5564;
     font-weight:600;
@@ -145,7 +138,7 @@ footer{
 .mail{
     align-items:center;
 }
-.mail img{
+.mail>img{
     height: 70%;
     margin-right: 3.2%;
 }
@@ -157,19 +150,19 @@ footer{
 }
 
 .bg{
+    z-index: -1;
     position: relative;
-    height: 35vh;
-    /*top: 117%;*/
+    top: 125%;
 }
 .bg img{
     position: absolute;
-}
-.curve3{
     bottom: 0;
 }
-.curve1{
-    bottom: 40%;
+.block{
+    position: relative;
+    top: 50%;
+    height: 5vh;
+    background-color: #FFFFFF;
 }
-.curve2{
-    bottom: 50%;
-}
+
+

@@ -1,0 +1,6 @@
+@model IEnumerable<RednitDev.Models.Post>
+
+@foreach (var post in Model) @*จะใช้ใน session เรียกดีไหม*@
+{
+    @await Component.InvokeAsync("Post", new { post = post })
+}
