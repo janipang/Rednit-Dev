@@ -1,4 +1,4 @@
-namespace ann.Models;
+namespace RednitDev.Models;
 public class Post
 {
     public string? Header;
