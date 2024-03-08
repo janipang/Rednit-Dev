@@ -28,9 +28,9 @@ public class HomeController : Controller
         catch (JsonException)
         {
             posts = new List<Post>();
-        }
-        
-        return View(posts);
+        };
+        List<Post> hotposts = posts.Take(2).ToList();
+        return View(hotposts);
     }
 
 
