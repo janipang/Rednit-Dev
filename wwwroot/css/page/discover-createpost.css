@@ -5,6 +5,7 @@ h3,
 h4,
 h5,
 h6,
+span,
 label,
 input,
 textarea,
@@ -12,6 +13,14 @@ fieldset,
 legend,
 a {
     font-family: 'Montserrat';
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 b {
@@ -29,7 +38,8 @@ input[type="number"] {
     margin: 5px 0px;
     font-size: 16px;
 }
-input[type="number"]{
+
+input[type="number"] {
     -moz-appearance: textfield;
 }
 
@@ -44,6 +54,13 @@ textarea {
     margin: 5px 0px;
 }
 
+.length-label{
+    font-size: 12px;
+    font-weight: 500;
+    text-align: end;
+    color:#C4C4C4;
+    /* padding:0px 10px; */
+}
 
 .form-text {
     width: 100%;
@@ -63,8 +80,64 @@ textarea {
     width: 100%;
     box-sizing: border-box;
 }
-.date-type-fieldset{
-    margin-bottom:0px;
+
+.member-max-fieldset {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+.member-max-fieldset * {}
+
+.member-max-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.member-max-input-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    width: 40%;
+    background-color: #F4F4F4;
+    border-radius: 2000px;
+}
+
+.stepper {
+    margin: 0px;
+    padding: 5px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+.stepper:hover {
+    cursor: pointer;
+}
+
+input[name="memberMax"] {
+    width: 45%;
+    height: 80%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    border-radius: 0px;
+    background: none;
+    border: none;
+    border-left: 1px solid #E9E9E9;
+    border-right: 1px solid #E9E9E9;
+}
+
+
+.date-type-fieldset {
+    margin-bottom: 0px;
 }
 
 input[type="radio"]::before {
@@ -80,7 +153,7 @@ input[type="radio"]::before {
     transform: scale(0);
 }
 
-input[type="radio"]:checked::before{
+input[type="radio"]:checked::before {
     margin-top: -2px;
     margin-left: -2px;
     transform: scale(1);
@@ -99,6 +172,7 @@ input[type="radio"] {
     box-sizing: border-box;
     border-radius: 100%;
 }
+
 input[type="number"]::-webkit-inner-spin-button,
 .no-spinners::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -157,7 +231,7 @@ fieldset {
     align-items: flex-start;
 }
 
-.options:not(.date-type-fieldset .options) {
+.options:not(.date-type-options, .member-max-options) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -234,11 +308,14 @@ form {
     font-weight: 400;
     font-size: 16px;
 }
+
 @media screen and (min-width: 1440px) {
-    .duration{
-        display:flex;
+
+    .duration {
+        display: flex;
         flex-direction: row;
     }
+
     .date-select-card {
         width: 40%;
     }
@@ -249,9 +326,22 @@ form {
         padding: 0px 10px;
     }
 }
-@media screen and (max-width: 1200px) {
 
-    .options {
+@media screen and (max-width: 1440px) {
+    .member-max-fieldset {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .member-max-fieldset {
+        width: 80%;
+    }
+    .member-max-input-field{
+        width: 70%;
+    }
+
+    .options:not(.member-max-options) {
         flex-direction: column;
     }
 
@@ -277,6 +367,14 @@ form {
         flex-direction: column;
     }
 
+    .member-max-fieldset {
+        width: 60%;
+    }
+
+    .member-max-input-field {
+        width: 50%;
+    }
+
     .options {
         flex-direction: row;
     }
@@ -300,6 +398,15 @@ form {
 }
 
 @media screen and (max-width: 550px) {
+
+    .member-max-fieldset {
+        width: 70%;
+    }
+
+    .member-max-input-field {
+        width: 70%;
+    }
+
     .form-text {
         padding: 0px;
         width: 100%;
@@ -322,6 +429,14 @@ form {
         justify-content: space-between;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .member-max-fieldset {
+        width: 90%;
+    }
+
+}
+
 @media screen and (max-width: 350px) {
     .date-select-card {
         width: calc(100% - 30px)
