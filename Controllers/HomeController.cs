@@ -19,6 +19,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        string username = HttpContext.Session.GetString("username")!;
+        string state = HttpContext.Session.GetString("state")!;
+        Console.WriteLine("state: " + state);
+        // ViewBag.Username = username;
+        ViewBag.state = state;
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try
@@ -30,13 +35,7 @@ public class HomeController : Controller
             posts = new List<Post>();
         };
         List<Post> hotposts = posts.Take(2).ToList();
+    
         return View(hotposts);
-    }
-
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

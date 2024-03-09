@@ -62,6 +62,7 @@ public class AccessController : Controller
     public async Task<IActionResult> LogOut()
     {
         httpContextAccessor.HttpContext.Session.Remove("username");
+        httpContextAccessor.HttpContext.Session.Remove("state");
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction("Index", "Home");
     }

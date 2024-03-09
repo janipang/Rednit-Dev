@@ -45,8 +45,13 @@
                     </a>
                 </div>
                 <div class="rightSide">
-                    <a class="discovery" asp-area="" asp-controller="Home" asp-action="Index">Discovery</a>
+                    <a class="discovery" asp-area="" asp-controller="Discover" asp-action="Index">Discovery</a>
+
                     <a class="login" asp-area="" asp-controller="Access" asp-action="LogIn">Log in</a>
+
+                    <a class="create-post" asp-area="" asp-controller="Discover" asp-action="CreatePost">Create post</a>
+                    <a class="profile-pic" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/svg/ProfilePic.svg" alt="profile pic"></a>
+
                     @* for debugging *@
                     @* <a class="logout" asp-area="" asp-controller="Access" asp-action="LogOut">Log out</a> *@
                 </div>
@@ -100,6 +105,25 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/layout/home.js" asp-append-version="true"></script>
+    <script>
+            var navGroup = document.getElementsByClassName("navGroup")[0];
+            var loginLink = document.getElementsByClassName("login")[0];
+            var CreatePostLink = document.getElementsByClassName("create-post")[0];
+            var ProfileLink = document.getElementsByClassName("profile-pic")[0];
+            console.log("<Home Page> state: '@ViewBag.state'")
+        if ('@ViewBag.state' === 'online'){
+            navGroup.classList.add("isLogin");
+            loginLink.style.display = "none";
+            CreatePostLink.style.display = "flex";
+            ProfileLink.style.display = "flex";
+        }
+        else{
+            navGroup.classList.remove("isLogin");
+            loginLink.style.display = "flex";
+            CreatePostLink.style.display = "none";
+            ProfileLink.style.display = "none";
+        }
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
