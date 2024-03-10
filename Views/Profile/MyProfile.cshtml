@@ -1,6 +1,13 @@
-@model IEnumerable<RednitDev.Models.Post>
+@*
+@model IEnumerable<RednitDev.Models.Post>;
 
-@foreach (var post in Model) @*จะใช้ใน session เรียกดีไหม*@
+@foreach (var post in Model) จะใช้ใน session เรียกดีไหม
 {
     @await Component.InvokeAsync("Post", new { post = post })
 }
+*@
+@{
+    ViewData["Title"] = "My Profile";
+    Layout = "_LayoutNoti";
+}
+<h1>My Profile @ViewBag.Profile.Caption</h1>
