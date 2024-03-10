@@ -8,7 +8,7 @@ public class Post
     public bool Visible { get; set; }
     public int MemberCount { get; set; } = 0;
     public int MemberMax { get; set; }
-    public int? DayLeft { get; set; } //pls help me to calc this
+    public int? DayLeft { get; set; } //pls help me to calc this Day submit - Datetime()
     public List<Comment> Comments { get; set; } = [];
     public List<Account> Liked { get; set; }  = []; //User that liked post
     public List<Account> Joined { get; set; }  = []; //When User click join (open), //When User request has accepted(request)
