@@ -98,7 +98,8 @@ public class AccessController : Controller
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity), properties);
 
-            httpContextAccessor.HttpContext.Session.SetString("username", newAccount.Username);
+            httpContextAccessor.HttpContext.Session.SetString("state", "online");
+            httpContextAccessor.HttpContext.Session.SetString("username", account.Username);
             return RedirectToAction("Index", "Home");
         }
         ViewData["ValidateMessage"] = "Username or E-mail already in use.";
