@@ -1,4 +1,11 @@
-p,h1,h2,h3,h4,h5,h6, a{
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
     font-family: 'Montserrat';
 }
 
@@ -12,12 +19,12 @@ section.cards {
 }
 
 section.statistics {
-    display:flex;
-    justify-content:center;
-    align-content:center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin: 0% -10vw;
     padding: 0px 10vw;
-    height:25vh;
+    height: 25vh;
     background: linear-gradient(to right, #FF4D00, #FE3C72);
 }
 
@@ -30,7 +37,7 @@ section.paragraph>h1 {
     color: #FFFFFF;
     margin: 30px 0px;
     text-align: left;
-    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 section.paragraph>p {
@@ -38,7 +45,7 @@ section.paragraph>p {
     color: #FFFFFF;
     margin: 30px 0px;
     text-align: left;
-    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 section.paragraph button {
@@ -74,7 +81,7 @@ section.paragraph button {
     padding: 5% 15%;
     background-color: #FFFFFF;
     border-radius: 20px;
-    box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, .2);
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, .2);
     display: grid;
     grid-template: 45% 55% / 1fr;
 }
@@ -85,27 +92,32 @@ section.paragraph button {
     max-width: 90%;
 }
 
+.activity-card > img[alt="join_svg"]{
+    height: 63%;
+}
+
 .activity-card p {
     margin-top: 5%;
     text-align: center;
     font-family: 'Kanit';
     font-size: 16px;
-    color:#696969;
+    color: #696969;
 }
-.activity-card h3{
+
+.activity-card h3 {
     font-size: 24px;
     font-weight: bold;
     margin-top: 5%;
     text-align: center;
-    color:#E5001B;
+    color: #E5001B;
 }
 
 .stat-container {
-    width:100%;
+    width: 100%;
     margin: 8vh 0vw 4vh 0vw;
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
-    align-items:start;
+    align-items: start;
 }
 
 .stat-card h2 {
@@ -123,36 +135,73 @@ section.paragraph button {
     color: #FFFFFF;
 }
 
-.hotpost .heading {
-    margin: 3vh;
+.hotpost-heading {
+    margin: 1vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.hotpost .heading h1 {
+.hotpost-heading h1 {
     text-align: center;
     color: #FF4D00;
     font-size: 36px;
     font-weight: bold;
+}
+.hotpost-heading img{
+    margin: 0px 10px;
 }
 
 .posts-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    overflow-x: auto;
-    height: 30vh;
+    height: 45vh;
     width: 100%;
 }
 
-.post-card {
-    width: 45%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .1);
-    padding: 15px;
-    margin: 30px;
+@media screen and (max-width: 940px) {
+    .posts-container {
+        flex-direction: column;
+        height: 85vh;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .cards-container {
+        grid-template: 50vh / 1fr 1fr 1fr;
+    }
+
+    .activity-card {
+        grid-template: 35% 65% / 1fr;
+    }
+
+}
+
+@media screen and (max-width: 670px) {
+    section.statistics {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 0% -4vw;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .cards-container {
+        grid-template: 1fr 1fr 1fr/1fr;
+        grid-gap: 40px;
+    }
+
+    .activity-card {
+        height: 100%;
+        display: grid;
+        grid-template: 1fr / 1fr 2fr;
+        grid-gap: 10px;
+        padding: 10px 15px;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -181,19 +230,6 @@ section.paragraph button {
 
     section.cards {}
 
-    .cards-container {
-        grid-template: 1fr 1fr 1fr/1fr;
-        grid-gap: 40px;
-    }
-
-    .activity-card {
-        height: 100%;
-        display: grid;
-        grid-template: 1fr / 1fr 2fr;
-        grid-gap: 10px;
-        padding: 10px 15px;
-    }
-
     .activity-info {}
 
     section.statistics {
@@ -203,7 +239,7 @@ section.paragraph button {
 
     .stat-container {
         justify-items: center;
-        align-items:start;
+        align-items: start;
         margin: 5vh 0vw 2vh 0vw;
     }
 
@@ -213,5 +249,10 @@ section.paragraph button {
 
     .stat-card p {
         font-size: 14px;
+    }
+
+    .posts-container {
+        flex-direction: column;
+        height: 100vh;
     }
 }
