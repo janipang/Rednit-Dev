@@ -24,7 +24,20 @@ public class ProfileController : Controller
         Console.WriteLine("User: " + user.Account.Username);
         //ส่งข้อมูล user ให้ไปแสดงออก 
         ViewBag.Username = user.Account.Username;
-        ViewBag.Profile = user.Profile;
+        ViewBag.Caption = user.Profile.Caption;
+        ViewBag.CreatedPosts = user.Profile.CreatedPosts;
+        var requestPost = new List<Post>{};
+        foreach(Post post in user.Profile.JoinningPosts)
+        {
+            if (post.Requesting)
+            {
+                requestPost.Append(post);
+            }
+        }
+        ViewBag.RequestPost = requestPost;
+        ViewBag.Image = user.Profile.Image;
+        ViewBag.InterestedTag = user.Profile.InterestedTag;
+        
         return View();
     }
 
