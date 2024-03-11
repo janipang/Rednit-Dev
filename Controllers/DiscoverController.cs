@@ -13,8 +13,39 @@ public class DiscoverController : Controller
 {
     public IActionResult Index()
     {
-
-        return View();
+        var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
+        List<Post> posts;
+        try
+        {
+            posts = JsonSerializer.Deserialize<List<Post>>(postsjson)!; //! is for not to warning me,jezz
+        }
+        catch (JsonException)
+        {
+            posts = new List<Post>();
+        };
+        List<Post> hotposts = posts.Take(2).ToList();
+        // List<Post> posts = new List<Post>();
+        // posts.Add(new Post{
+        //     Detail = new PostDetail{
+        //         Header = "หาคนทำสมุดระบายสีแจกเด็ก",
+        //         Intro = "ต้องการเพื่อนเข้าร่วมกลุ่มอีก 4 คน ขอคนตั้งใจทำงาน ขยัน ไม่อู้ รักศิลปะ ไม่ใช้เอไอในการเจนรูป"
+        //     },
+        //     Requesting = false,
+        //     MemberCount = 3,
+        //     MemberMax = 4,
+        //     DayLeft = 1
+        //     });
+        // posts.Add(new Post{
+        //     Detail = new PostDetail{
+        //         Header = "หาเพื่อนไปเที่ยวภูเก็ตสิ้นเดือน",
+        //         Intro = "ขอคนชอบช้อปปิ้ง เดินเก่ง เที่ยวเก่ง ที่พักและการเดินทางจะจัดเตรียมให้ค่ะ ไม่เอาคนกลัวแดดนะคะ ขอลุย ๆ ค่ะ"
+        //     },
+        //     Requesting = true,
+        //     MemberCount = 5,
+        //     MemberMax = 8,
+        //     DayLeft = 2
+        //     });
+        return View(posts);
     }
 
     public IActionResult CreatePost()
