@@ -4,15 +4,11 @@ using RednitDev.Models;
 
 namespace RednitDev.Controllers;
 
-public class LoginController : Controller
+public class NotiController : Controller
 {
     public IActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Signup()
-    {
-        return View();
-    }
 }

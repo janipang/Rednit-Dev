@@ -19,11 +19,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        
-        /*string username = HttpContext.Session.GetString("username")!;
+        string username = HttpContext.Session.GetString("username")!;
         string state = HttpContext.Session.GetString("state")!;
         Console.WriteLine("state: " + state);
-        ViewBag.state = state;*/
+        // ViewBag.Username = username;
+        ViewBag.state = state;
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try

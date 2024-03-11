@@ -87,14 +87,13 @@ public class DiscoverController : Controller
 
         Post newpost = new Post
         {
-            Author = new User
-            {
+            Author = new User{
                 AccountSetter = accounts[0]
             },
             Detail = new PostDetail
             {
                 Header = header,
-                Tag = [tag, tag, tag],
+                Tag = [tag,tag,tag],
                 Intro = intro,
                 Detail = detail,
                 Place = place

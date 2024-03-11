@@ -5,6 +5,7 @@ h3,
 h4,
 h5,
 h6,
+span,
 label,
 input,
 textarea,
@@ -13,18 +14,33 @@ legend,
 a {
     font-family: 'Montserrat';
 }
-b{
-    font-weight:600;
+
+button:hover {
+    cursor: pointer;
 }
-input[type="text"] {
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+b {
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"] {
     height: 30px;
     width: 98%;
     background-color: #F4F4F4;
     border: none;
     border-radius: 5px;
     padding: 5px 1%;
-    margin:5px 0px;
+    margin: 5px 0px;
     font-size: 16px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 textarea {
@@ -35,40 +51,133 @@ textarea {
     border-radius: 5px;
     padding: 10px 1%;
     font-size: 16px;
-    margin:5px 0px;
+    margin: 5px 0px;
 }
 
-.form-text-fieldset legend{
-    margin:10px 0px;
-    width:100%;
+.length-label{
+    font-size: 12px;
+    font-weight: 500;
+    text-align: end;
+    color:#C4C4C4;
+    /* padding:0px 10px; */
+}
+
+.form-text {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-text-fieldset {
+    width: 100%;
+    padding: 0px;
+}
+
+.form-text-fieldset legend {
+    margin: 10px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.member-max-fieldset {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+.member-max-fieldset * {}
+
+.member-max-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.member-max-input-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    width: 40%;
+    background-color: #F4F4F4;
+    border-radius: 2000px;
+}
+
+.stepper {
+    margin: 0px;
+    padding: 5px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+.stepper:hover {
+    cursor: pointer;
+}
+
+input[name="memberMax"] {
+    width: 45%;
+    height: 80%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    border-radius: 0px;
+    background: none;
+    border: none;
+    border-left: 1px solid #E9E9E9;
+    border-right: 1px solid #E9E9E9;
+}
+
+
+.date-type-fieldset {
+    margin-bottom: 0px;
 }
 
 input[type="radio"]::before {
     content: '';
     display: block;
-    width: 15px;
-    height: 15px;
-    margin: 0px;
-    border-radius: 100%;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-}
-
-/* checked */
-input[type="radio"]:checked::before {
-    transform: scale(1);
-    background-color: #434343;
-}
-/* unchecked */
-input[type="radio"] {
-    appearance: none;
     background-color: #ffffff;
+    border: 2px solid #434343;
     margin-right: 3px;
     width: 15px;
     height: 15px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    transform: scale(0);
+}
+
+input[type="radio"]:checked::before {
+    margin-top: -2px;
+    margin-left: -2px;
+    transform: scale(1);
+    background-color: #434343;
+    box-sizing: border-box;
+    transition: 120ms transform ease-in-out;
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: #ffffff;
     border: 2px solid #434343;
+    margin-right: 3px;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
     border-radius: 100%;
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+.no-spinners::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
 input#submit {
     color: #FFFFFF;
     background-color: #FD5564;
@@ -77,7 +186,7 @@ input#submit {
     align-self: flex-end;
     border: none;
     border-radius: 5px;
-    padding:10px 15px;
+    padding: 10px 15px;
 }
 
 legend {
@@ -87,42 +196,48 @@ legend {
     margin: 0px;
 }
 
-label{
+label {
     font-size: 15px;
     font-weight: 400;
     color: #434343;
     margin: 0px;
 }
 
-.form-option{
-    display:flex;
-    flex-direction:column;
+.form-option {
+    display: flex;
+    flex-direction: column;
 }
+
 fieldset {
-    width:100%;
-    margin:0px 0px 20px 0px;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
     border: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
-.options{
+
+.options {
     display: flex;
-    width:100%;
+    width: 100%;
     margin: 5px 0px;
 }
-.date-type-fieldset .options{
+
+.date-type-fieldset .options {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
 }
-.options:not(.date-type-fieldset .options){
+
+.options:not(.date-type-options, .member-max-options) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
-.duration-fieldset{
+
+.duration-fieldset {
     border-radius: 10px;
 }
 
@@ -140,10 +255,10 @@ fieldset {
 }
 
 .option {
-    width:fit-content;
-    display:flex;
+    width: fit-content;
+    display: flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: flex-start;
     margin: 5px 15px 5px 0px;
 }
@@ -153,6 +268,7 @@ form {
     display: grid;
     grid-template: 1fr / 6fr 4fr;
     grid-gap: 40px;
+    width: 100%
 }
 
 .duration {
@@ -169,13 +285,14 @@ form {
     border-radius: 5px;
     border: 1px solid #D9D9D9;
 }
-.to{
+
+.to {
     display: flex;
     flex-direction: column;
+    text-align: center;
     width: 50%;
     margin: 0px 0px;
     padding: 0px 15px;
-    text-align: center;
     font-size: 15px;
     font-weight: 500;
 }
@@ -187,46 +304,145 @@ form {
 .date-select-card input {
     margin-top: 5px;
     width: 90%;
-    text-align:center;
+    text-align: center;
     font-weight: 400;
-    font-size:16px;
+    font-size: 16px;
 }
 
+@media screen and (min-width: 1440px) {
+
+    .duration {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .date-select-card {
+        width: 40%;
+    }
+
+    .to {
+        width: 1%;
+        justify-content: center;
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .member-max-fieldset {
+        width: 60%;
+    }
+}
 
 @media screen and (max-width: 1200px) {
+    .member-max-fieldset {
+        width: 80%;
+    }
+    .member-max-input-field{
+        width: 70%;
+    }
 
-    .options {
+    .options:not(.member-max-options) {
         flex-direction: column;
     }
 
     .date-select-card {
         width: 60%;
     }
-    .to{
-        width:60%;
+
+    .to {
+        width: 60%;
     }
 
 }
 
+@media screen and (max-width: 970px) {
+    .date-type-fieldset .options {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 800px) {
     form {
-        grid-template: 1fr 1fr / 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .member-max-fieldset {
+        width: 60%;
+    }
+
+    .member-max-input-field {
+        width: 50%;
     }
 
     .options {
         flex-direction: row;
     }
-    .duration{
-        display:flex;
+
+    .duration {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
+
     .date-select-card {
         width: 40%;
     }
-    .to{
-        width:2%;
+
+    .to {
+        width: 1%;
         justify-content: center;
+        padding: 0px 10px;
     }
 
+}
+
+@media screen and (max-width: 550px) {
+
+    .member-max-fieldset {
+        width: 70%;
+    }
+
+    .member-max-input-field {
+        width: 70%;
+    }
+
+    .form-text {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .date-select-card {
+        width: 70%;
+    }
+
+    .to {
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 70%;
+    }
+
+    .duration {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .member-max-fieldset {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .date-select-card {
+        width: calc(100% - 30px)
+    }
+
+    .to {
+        width: calc(100% - 30px)
+    }
 }
