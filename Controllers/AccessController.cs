@@ -115,6 +115,7 @@ public class AccessController : Controller
             httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", newAccount.Username);
             HttpContext.Response.Cookies.Append("username", newAccount.Username, cookieOptions);
+
             return RedirectToAction("Index", "Home");
         }
         ViewData["ValidateMessage"] = "Username or E-mail already in use.";

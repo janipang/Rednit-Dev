@@ -96,7 +96,6 @@ footer {
     align-items: center;
 }
 
-
 /* header detail */
 .navGroup {
     display: grid;
@@ -228,7 +227,7 @@ footer {
     font-weight: 600px;
     color: #FFFFFF;
 }
-/* 
+
 @media screen and (max-width: 1240px) {
     .navGroup {
         grid-template-columns: 68% 32%;
@@ -338,7 +337,7 @@ footer {
         margin-left: 0;
         margin-right: 4%;
     }
-} */
+}
 
 
 

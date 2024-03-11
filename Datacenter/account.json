@@ -1,32 +1,37 @@
 [
-    {
-      "Username": "rut",
-      "Email": "rut@gmail.com",
-      "Password": "123"
-    },
-    {
-      "Username": "pang",
-      "Email": "pang@gmail.com",
-      "Password": "456"
-    },
-    {
-      "Username": "chom",
-      "Email": "chom@gmail.com",
-      "Password": "789"
-    },
-    {
-      "Username": "kor",
-      "Email": "kor@gmail.com",
-      "Password": "111"
-    },
-    {
-      "Username": "pre",
-      "Email": "pre@gmail.com",
-      "Password": "147"
-    },
-    {
-      "Username": "janipang",
-      "Email": "janipang@gmail.com",
-      "Password": "456"
-    }
-  ]
+  {
+    "Username": "rut",
+    "Email": "rut@gmail.com",
+    "Password": "123"
+  },
+  {
+    "Username": "pang",
+    "Email": "pang@gmail.com",
+    "Password": "456"
+  },
+  {
+    "Username": "chom",
+    "Email": "chom@gmail.com",
+    "Password": "789"
+  },
+  {
+    "Username": "kor",
+    "Email": "kor@gmail.com",
+    "Password": "111"
+  },
+  {
+    "Username": "pre",
+    "Email": "pre@gmail.com",
+    "Password": "147"
+  },
+  {
+    "Username": "janipang",
+    "Email": "janipang@gmail.com",
+    "Password": "456"
+  },
+  {
+    "Username": "tak",
+    "Email": "tak@gmail.com",
+    "Password": "123"
+  }
+]
