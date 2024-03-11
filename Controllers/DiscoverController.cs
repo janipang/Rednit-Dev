@@ -54,10 +54,20 @@ public class DiscoverController : Controller
             accounts = new List<Account>();
         }
 
+        //get account from username
+        Account CurrentAccount;
+        string username = HttpContext.Session.GetString("username")!;
+        foreach(var account in accounts){
+            if (username == account.Username){
+                CurrentAccount = account;
+                break;
+            }
+        };
+
         Post newpost = new Post
         {
             Author = new User{
-                AccountSetter = accounts[0]
+                // AccountSetter = CurrentAccount
             },
             Detail = new PostDetail
             {
