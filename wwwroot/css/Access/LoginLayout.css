@@ -29,6 +29,12 @@ nav{
     width: 80%;
     margin: 0 auto;
 }
+.navGroup.isLogin {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    width: 80%;
+    margin: 0 auto;
+}
 
 .leftSide a h1
 {
@@ -41,11 +47,17 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-.discovery{
+.discovery {
     text-align: center;
-    font-size:20px; 
-    font-weight:600;
-    color:#ffff !important;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffff !important;
+}
+.create-post {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffff !important;
 }
 .login{
     text-align: center;

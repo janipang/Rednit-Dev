@@ -13,6 +13,11 @@ public class DiscoverController : Controller
 {
     public IActionResult Index()
     {
+        string username = HttpContext.Request.Cookies["username"]!;
+        bool state = @User.Identity.IsAuthenticated;
+        ViewBag.state = username;
+        ViewBag.state = state;
+
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try
@@ -50,6 +55,11 @@ public class DiscoverController : Controller
 
     public IActionResult CreatePost()
     {
+        string username = HttpContext.Request.Cookies["username"]!;
+        bool state = @User.Identity.IsAuthenticated;
+        ViewBag.state = username;
+        ViewBag.state = state;
+
         return View();
     }
 
@@ -129,6 +139,7 @@ public class DiscoverController : Controller
         Console.WriteLine(jsondata);
         System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
 
-        return View();
+        return RedirectToAction("Index", "Discover");
+        // return View();
     }
 }

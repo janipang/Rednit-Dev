@@ -50,9 +50,16 @@ public class AccessController : Controller
             };
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity), properties);
+            var cookieOptions = new CookieOptions
+            {
+                Expires = DateTimeOffset.Now.AddDays(1),
+                Secure = true,
+                HttpOnly = true
+            };
 
             httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", account.Username);
+            HttpContext.Response.Cookies.Append("username", account.Username, cookieOptions);
             return RedirectToAction("Index", "Home");
         }
         ViewData["ValidateMessage"] = "Username or Password is invalid.";
@@ -98,7 +105,16 @@ public class AccessController : Controller
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity), properties);
 
+            var cookieOptions = new CookieOptions
+            {
+                Expires = DateTimeOffset.Now.AddDays(1),
+                Secure = true,
+                HttpOnly = true
+            };
+
+            httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", newAccount.Username);
+            HttpContext.Response.Cookies.Append("username", newAccount.Username, cookieOptions);
             return RedirectToAction("Index", "Home");
         }
         ViewData["ValidateMessage"] = "Username or E-mail already in use.";
