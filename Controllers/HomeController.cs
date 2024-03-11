@@ -1,6 +1,10 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using RednitDev.Models;
+using System.IO;
+using System.Text.Json;
+using System.Linq.Expressions;
 
 namespace RednitDev.Controllers;
 
@@ -15,30 +19,23 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    public IActionResult Feed(){
-        List<Post> posts = new List<Post>();
-        posts.Add(new Post{
-            Header = "หาคนทำสมุดระบายสีแจกเด็ก",
-            Intro = "ต้องการเพื่อนเข้าร่วมกลุ่มอีก 4 คน ขอคนตั้งใจทำงาน ขยัน ไม่อู้ รักศิลปะ ไม่ใช้เอไอในการเจนรูป",
-            request = false,
-            memberCount = 3,
-            dayLeft = 1
-            });
-        posts.Add(new Post{
-            Header = "หาเพื่อนไปเที่ยวภูเก็ตสิ้นเดือน",
-            Intro = "ขอคนชอบช้อปปิ้ง เดินเก่ง เที่ยวเก่ง ที่พักและการเดินทางจะจัดเตรียมให้ค่ะ ไม่เอาคนกลัวแดดนะคะ ขอลุย ๆ ค่ะ",
-            request = true,
-            memberCount = 5,
-            dayLeft = 2
-            });
-        return View(posts);
+        
+        /*string username = HttpContext.Session.GetString("username")!;
+        string state = HttpContext.Session.GetString("state")!;
+        Console.WriteLine("state: " + state);
+        ViewBag.state = state;*/
+        var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
+        List<Post> posts;
+        try
+        {
+            posts = JsonSerializer.Deserialize<List<Post>>(postsjson)!; //! is for not to warning me,jezz
+        }
+        catch (JsonException)
+        {
+            posts = new List<Post>();
+        };
+        List<Post> hotposts = posts.Take(2).ToList();
+    
+        return View(hotposts);
     }
 }
