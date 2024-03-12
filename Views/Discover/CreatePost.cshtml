@@ -64,7 +64,7 @@
                                     <input type="number" name="startDay" placeholder="DD" required><br>
                                 </div>
                                 <div>
-                                    <label for="startMnth">Month</label>
+                                    <label for="startMonth">Month</label>
                                     <input type="number" name="startMonth" placeholder="MM" required><br>
                                 </div>
                                 <div>
@@ -88,6 +88,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p class="errorText error-text-duration"></p>
                     </fieldset>
                     <fieldset class="close-date-fieldset">
                         <legend for="close-date">Submission closing date</legend>
@@ -95,28 +96,29 @@
                             <div class="date-select-card close">
                                 <div>
                                     <label for="CloseDay">Day</label>
-                                    <input type="number" name="closeDay" placeholder="DD" required><br>
+                                    <input type="number" name="closeDay" placeholder="DD"><br>
                                 </div>
                                 <div>
                                     <label for="CloseMonth">Month</label>
-                                    <input type="number" name="CloseMonth" placeholder="MM" required><br>
+                                    <input type="number" name="closeMonth" placeholder="MM"><br>
                                 </div>
                                 <div>
                                     <label for="CloseYear">Year</label>
-                                    <input type="number" name="CloseYear" placeholder="YYYY" required><br>
+                                    <input type="number" name="closeYear" placeholder="YYYY"><br>
                                 </div>
                             </div>
+                            <p class="errorText error-text-submission"></p>
                         </div>
                     </fieldset>
                     <fieldset class="post-type-fieldset">
                         <legend for="requestType">Post type</legend>
                         <div class="options">
                             <div class="option">
-                                <input type="radio" name="requestType" value="open">
+                                <input type="radio" name="requestType" value="open" required>
                                 <label htmlFor="open"><b>Open</b> — Everyone can join this group</label>
                             </div>
                             <div class="option">
-                                <input type="radio" name="requestType" value="request">
+                                <input type="radio" name="requestType" value="request" required>
                                 <label htmlFor="request"><b>Request</b> — Others can join when you accept</label>
                             </div>
                         </div>
@@ -125,43 +127,88 @@
                         <legend for="visibility">Visibility & access</legend>
                         <div class="options">
                             <div class="option">
-                                <input type="radio" name="visibility" value="draft">
+                                <input type="radio" name="visibility" value="draft" required>
                                 <label htmlFor="draft"><b>Draft</b> — Only you can edit this post</label>
                             </div>
                             <div class="option">
-                                <input type="radio" name="Visibility" value="public">
+                                <input type="radio" name="visibility" value="public" required>
                                 <label htmlFor="public"><b>Public</b> — Anyone can view this post</label>
                             </div>
                         </div>
                     </fieldset>
-                    <input type="submit" id="submit" placeholder="Post" onclick="console.log('submitted')">
+                    <input type="submit" id="submit" placeholder="Post" onClick="setEndDate">
                 </div>
             </form>
         </div>
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
 <script>
-    console.log("hello jeezzzzzzzz");
     var dateTypeAns = document.getElementsByName("dateType");
+    var requestAns = document.getElementsByName("requestType");
+    var visibilityAns = document.getElementsByName("visibility");
+    
+
+    var startDay = document.getElementsByName("startDay")[0];
+    var startMonth = document.getElementsByName("startMonth")[0];
+    var startYear = document.getElementsByName("startYear")[0];
+    var endDay = document.getElementsByName("endDay")[0];
+    var endMonth = document.getElementsByName("endMonth")[0];
+    var endYear = document.getElementsByName("endYear")[0];
+    var closeDay = document.getElementsByName("closeDay")[0];
+    var closeMonth = document.getElementsByName("closeMonth")[0];
+    var closeYear = document.getElementsByName("closeYear")[0];
+    var dateSelectCards = document.getElementsByClassName("date-select-card");
+
+
+    dateTypeAns.forEach(choice => {
+        if (choice.value === "one") {
+            choice.checked = true;
+            console.log(choice.value);
+        }
+    });
+    requestAns.forEach(choice => {
+        if (choice.value === "open") {
+            choice.checked = true;
+            console.log(choice.value);
+        }
+    });
+    visibilityAns.forEach(choice => {
+        if (choice.value === "public") {
+            choice.checked = true;
+            console.log(choice.value);
+        }
+    });
 
     var to = document.getElementsByClassName("to")[0];
     var endCard = document.getElementsByClassName("end")[0];
+    var endInput = endCard.querySelectorAll("input");
 
     function toggleEndDateFields() {
         dateTypeAns.forEach(choice => {
             if (choice.checked && choice.value === "one") {
                 to.style.display = "none";
                 endCard.style.display = "none";
+                endInput.forEach((input) => { input.removeAttribute("required"); })
                 console.log(choice.value);
+                endDay.value = 0;
+                endMonth.value = 0;
+                endYear.value = 0;
             }
             else if (choice.checked && choice.value === "multiple") {
                 to.style.display = "flex";
                 endCard.style.display = "grid";
+                endInput.forEach((input) => { input.setAttribute("required", "") })
                 console.log(choice.value);
+                endDay.value = "";
+                endMonth.value = "";
+                endYear.value = "";
             }
         });
     }
+    toggleEndDateFields();
+
     dateTypeAns.forEach(choice => {
         choice.addEventListener("change", toggleEndDateFields);
     });
@@ -195,8 +242,58 @@
 
     });
 
+    dateSelectCards[0].addEventListener("change", () => {
+        DateErrorHandler(startDay.value, startMonth.value, startYear.value, "duration");
+    });
 
+    dateSelectCards[1].addEventListener("change", () => {
+        DateErrorHandler(endDay.value, endMonth.value, endYear.value, "duration");
+    });
+
+    dateSelectCards[2].addEventListener("change", () => {
+        DateErrorHandler(closeDay.value, closeMonth.value, closeYear.value, "submission");
+    });
+
+    function DateErrorHandler(day, month, year, card) {
+        var errorCode = ValidateInput(day, month, year);
+        if (card == "duration") {
+            errorText = document.getElementsByClassName("error-text-duration")[0];
+        }
+        else if (card == "submission") {
+            errorText = document.getElementsByClassName("error-text-submission")[0];
+        }
+
+        if (errorCode === "correct date") {
+            errorText.innerText = "correct date"; //this wil not appear
+            errorText.style.display = "none";
+        }
+        else if (errorCode === "incorrect date") {
+            errorText.innerText = "please input the correct date";
+            errorText.style.display = "flex";
+        }
+        else if (errorCode === "wait for input") {
+
+        }
+    }
+
+    //working after input 3 field
+    function ValidateInput(day, month, year) {
+        if (day != "" && month != "" && year != "") {
+            if (isDateValid(day, month, year)) {
+                return "correct date"
+            }
+            else {
+                return "incorrect date"
+            }
+        }
+        return "wait for input"
+    }
+    function isDateValid(day, month, year) {
+        if (moment(`${day}/${month}/${year}`, 'DD/MM/YYYY').isValid()) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 </script>
-
-
-@* if (ViewContext.HttpContext.Request.Method == "POST"){<div>new post posted</div>} *@
