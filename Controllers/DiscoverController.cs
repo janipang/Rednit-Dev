@@ -7,6 +7,9 @@ using System.Text.Json;
 using System.Linq.Expressions;
 
 namespace RednitDev.Controllers;
+
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Identity.Client;
 using RednitDev.Models;
 
 public class DiscoverController : Controller
@@ -29,27 +32,6 @@ public class DiscoverController : Controller
             posts = new List<Post>();
         };
         List<Post> hotposts = posts.Take(2).ToList();
-        // List<Post> posts = new List<Post>();
-        // posts.Add(new Post{
-        //     Detail = new PostDetail{
-        //         Header = "หาคนทำสมุดระบายสีแจกเด็ก",
-        //         Intro = "ต้องการเพื่อนเข้าร่วมกลุ่มอีก 4 คน ขอคนตั้งใจทำงาน ขยัน ไม่อู้ รักศิลปะ ไม่ใช้เอไอในการเจนรูป"
-        //     },
-        //     Requesting = false,
-        //     MemberCount = 3,
-        //     MemberMax = 4,
-        //     DayLeft = 1
-        //     });
-        // posts.Add(new Post{
-        //     Detail = new PostDetail{
-        //         Header = "หาเพื่อนไปเที่ยวภูเก็ตสิ้นเดือน",
-        //         Intro = "ขอคนชอบช้อปปิ้ง เดินเก่ง เที่ยวเก่ง ที่พักและการเดินทางจะจัดเตรียมให้ค่ะ ไม่เอาคนกลัวแดดนะคะ ขอลุย ๆ ค่ะ"
-        //     },
-        //     Requesting = true,
-        //     MemberCount = 5,
-        //     MemberMax = 8,
-        //     DayLeft = 2
-        //     });
         return View(posts);
     }
 
@@ -94,26 +76,30 @@ public class DiscoverController : Controller
         {
             accounts = new List<Account>();
         }
+        int idGenerator = posts.Count > 0 ? posts.Max(post => post.Id) + 1 : 1;
+
+        Console.WriteLine("last post id now:" + idGenerator);
 
         //get account from username
-        Account CurrentAccount;
+        Account? CurrentAccount = null;
         string username = HttpContext.Session.GetString("username")!;
-        foreach(var account in accounts){
-            if (username == account.Username){
+        foreach (var account in accounts)
+        {
+            if (username == account.Username)
+            {
                 CurrentAccount = account;
                 break;
             }
-        };
+        }
 
         Post newpost = new Post
         {
-            Author = new User{
-                // AccountSetter = CurrentAccount
-            },
+            Id = idGenerator,
+            Author = CurrentAccount,
             Detail = new PostDetail
             {
                 Header = header,
-                Tag = [tag,tag,tag],
+                Tag = new List<string> { tag, tag, tag },
                 Intro = intro,
                 Detail = detail,
                 Place = place
@@ -122,11 +108,11 @@ public class DiscoverController : Controller
             {
                 DateType = dateType,
                 Start = new DateOnly(startYear, startMonth, startDay),
-                End = new DateOnly(endYear, endMonth, endDay),
+                End = dateType == "multiple" ? new DateOnly(endYear, endMonth, endDay) : null,
                 CloseSubmit = new DateOnly(closeYear, closeMonth, closeDay),
             },
-            Requesting = requestType == "request", //(request,open)
-            Visible = visibility == "public", //(public,draft)
+            Requesting = requestType == "request",
+            Visible = visibility == "public",
             MemberCount = 5,
             MemberMax = memberMax,
             DayLeft = 3,
@@ -140,6 +126,6 @@ public class DiscoverController : Controller
         System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
 
         return RedirectToAction("Index", "Discover");
-        // return View();
+
     }
 }
