@@ -29,6 +29,12 @@ nav{
     width: 80%;
     margin: 0 auto;
 }
+.navGroup.isLogin {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    width: 80%;
+    margin: 0 auto;
+}
 
 .leftSide a h1
 {
@@ -41,11 +47,17 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-.discovery{
+.discovery {
     text-align: center;
-    font-size:20px; 
-    font-weight:600;
-    color:#ffff !important;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffff !important;
+}
+.create-post {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffff !important;
 }
 .login{
     text-align: center;
@@ -57,6 +69,54 @@ nav{
     font-weight:bold;
     color:#FD5564 !important;
 }
+
+.dropdown-hover-area {
+    display: none;
+    padding: 30px;
+    position: absolute;
+    right: calc(10vw - 4vw - 30px);
+    top: 10vh;
+
+}
+
+.dropdown-box {
+    width: 8vw;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.dropdown-item:hover {
+    color: #1E1E1E;
+}
+
+.dropdown-hover-area:hover {
+    display: flex;
+}
+
+.profile-pic:hover+.dropdown-hover-area {
+    display: flex;
+    z-index: 50;
+}
+
+.dropdown-item {
+    color: #696969;
+}
+
+.dropdown-item p {
+    color: #1E1E1E;
+    font-weight: 700;
+    margin: 3px 0px;
+    padding: 15px 0px 0px 0px;
+    border-top: 1px solid #696969;
+}
+
 .logo,.phone,.mail, .leftSide, .rightSide {
     display: flex;
     flex-direction: row;
