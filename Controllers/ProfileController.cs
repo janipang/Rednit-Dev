@@ -18,26 +18,12 @@ public class ProfileController : Controller
 
         //อ่านไฟล์ user 
         var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json");
-        List<User> users = JsonSerializer.Deserialize<List<User>>(usersJson);
+        List<User> users = JsonSerializer.Deserialize<List<User>>(usersJson)!;
         Console.WriteLine("Users: " + users);
-        var user = users.SingleOrDefault(x => x.Account.Username == username);
-        Console.WriteLine("User: " + user.Account.Username);
+        var user = users.SingleOrDefault(x => x.Account?.Username == username);
+        Console.WriteLine("User: " + user?.Account?.Username);
         //ส่งข้อมูล user ให้ไปแสดงออก 
-        ViewBag.Username = user.Account.Username;
-        ViewBag.Caption = user.Profile.Caption;
-        ViewBag.CreatedPosts = user.Profile.CreatedPosts;
-        var requestPost = new List<Post>{};
-        foreach(Post post in user.Profile.JoinningPosts)
-        {
-            if (post.Requesting)
-            {
-                requestPost.Append(post);
-            }
-        }
-        ViewBag.RequestPost = requestPost;
-        ViewBag.Image = user.Profile.Image;
-        ViewBag.InterestedTag = user.Profile.InterestedTag;
-        
+        ViewBag.user = user;
         return View();
     }
 
