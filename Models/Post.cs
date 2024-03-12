@@ -1,7 +1,7 @@
 namespace RednitDev.Models;
 public class Post
 {
-    public User? Author { get; set; }
+    public User Author { get; set; }
     public PostDetail? Detail { get; set; }
     public EventDate? EventDate { get; set; }
     public bool Requesting { get; set; }
