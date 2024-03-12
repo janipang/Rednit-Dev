@@ -8,6 +8,4 @@ public class Profile
     public string? Image {get; set;}
     public List<string> InterestedTag {get; set;} = [];
     public List<string>? Contact {get; set;}
-    public string? Noti {get; set;}
-
 }
