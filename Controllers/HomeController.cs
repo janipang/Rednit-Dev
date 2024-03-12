@@ -19,11 +19,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        string username = HttpContext.Session.GetString("username")!;
-        string state = HttpContext.Session.GetString("state")!;
-        Console.WriteLine("state: " + state);
-        // ViewBag.Username = username;
+        // string username = HttpContext.Session.GetString("username")!;
+        // string state = HttpContext.Session.GetString("state")!;
+        // Console.WriteLine("Session state: " + state);
+        string username = HttpContext.Request.Cookies["username"]!;
+        bool state = @User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = username;
         ViewBag.state = state;
+        
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try
