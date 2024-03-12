@@ -412,6 +412,10 @@
     justify-content: space-around;
 }
 
+.selected {
+    background-color: #AAAAAA;
+}
+
 @media screen and (max-width: 1250px) {
     .post-detail-top-section {
         flex-direction: column;
