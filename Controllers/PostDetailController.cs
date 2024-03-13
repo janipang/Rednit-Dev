@@ -29,3 +29,5 @@ public class PostDetailController : Controller
     }
 }
 
+//no use laew
+
