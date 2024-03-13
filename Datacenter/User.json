@@ -1,105 +1,117 @@
 [
-    {
-        "Account" : {
-            "Username": "rut",
-            "Email": "rut@gmail.com",
-            "Password": "123"
-        },
-        "Profile" : {
-            "Caption" : "รูปแป้ง Account รุจน์",
-            "CreatedPosts" : [
-              
+  {
+    "Account": {
+      "Username": "rut1",
+      "Email": "rut@gmail.com",
+      "Password": "123"
+    },
+    "Profile": {
+      "Caption": "1",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [
+        {
+          "Id": 0,
+          "Active": true,
+          "Author": {
+            "Username": null,
+            "Email": null,
+            "Password": null
+          },
+          "Detail": {
+            "Header": "go to chonburi",
+            "Tag": [
+              "beach",
+              "beach",
+              "beach"
             ],
-            "InterestedPosts " : [],
-            "JoinningPosts" : [
-                {
-                    "Author": {
-                      "AccountSetter": {
-                        "Username": "chom",
-                        "Email": "chom@gmail.com",
-                        "Password": "789"
-                      }
-                    },
-                    "Detail": {
-                      "Header": "go to chonburi",
-                      "Tag": ["beach", "beach", "beach"],
-                      "Intro": "go to have a scuba diver",
-                      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                      "Place": "sataheep, chonburi"
-                    },
-                    "EventDate": {
-                      "DateType": "one",
-                      "Start": "2022-12-31",
-                      "End": "2024-11-25",
-                      "CloseSubmit": "2024-11-25"
-                    },
-                    "Requesting": false,
-                    "Visible": false,
-                    "MemberCount": 5,
-                    "MemberMax": 0,
-                    "DayLeft": 3,
-                    "Comments": [],
-                    "Liked": [],
-                    "Joined": [],
-                    "Requested": []
-                  },
-                  {
-                    "Author": {
-                      "AccountSetter": {
-                        "Username": "chom",
-                        "Email": "chom@gmail.com",
-                        "Password": "789"
-                      }
-                    },
-                    "Detail": {
-                      "Header": "go to chonburi แบบ request ",
-                      "Tag": ["beach", "beach", "beach"],
-                      "Intro": "go to have a scuba diver",
-                      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                      "Place": "sataheep, chonburi"
-                    },
-                    "EventDate": {
-                      "DateType": "one",
-                      "Start": "2022-12-31",
-                      "End": "2024-11-25",
-                      "CloseSubmit": "2024-11-25"
-                    },
-                    "Requesting": true,
-                    "Visible": false,
-                    "MemberCount": 5,
-                    "MemberMax": 0,
-                    "DayLeft": 3,
-                    "Comments": [],
-                    "Liked": [],
-                    "Joined": [],
-                    "Requested": []
-                  }
-            ],
-            "Image" : "https://user-images.githubusercontent.com/93817826/140603872-5b96a956-32f1-4bc4-86ce-343f7a0f5aea.jpg",
-            "InterestedTag" : ["gaming", "tft player"],
-            "Contact" : ["asdfghjkl"]
-            
+            "Intro": "go to have a scuba diver",
+            "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+            "Place": "sataheep, chonburi"
+          },
+          "EventDate": {
+            "DateType": "one",
+            "Start": "2022-12-31",
+            "End": "2024-11-25",
+            "CloseSubmit": "2024-11-25"
+          },
+          "Requesting": false,
+          "Visible": false,
+          "MemberCount": 5,
+          "MemberMax": 0,
+          "DayLeft": 3,
+          "Comments": [],
+          "Liked": [],
+          "Joined": [],
+          "Requested": []
         },
-        "Noti" : [
-            {
-                "Type" : "Success",
-                "IdPost" : 999999,
-                "WhoRequest" : null
-            },
-            {
-                "Type" : "Failed",
-                "IdPost" : 999997,
-                "WhoRequest" : null
-            },
-            {
-                "Type" : "Request",
-                "IdPost" : 999998,
-                "WhoRequest" : {
-                    "Username": "chom",
-                    "Email": "chom@gmail.com",
-                    "Password": "789"
-                }
-            }
-        ]
-    }
+        {
+          "Id": 0,
+          "Active": true,
+          "Author": {
+            "Username": null,
+            "Email": null,
+            "Password": null
+          },
+          "Detail": {
+            "Header": "go to chonburi \u0E41\u0E1A\u0E1A request ",
+            "Tag": [
+              "beach",
+              "beach",
+              "beach"
+            ],
+            "Intro": "go to have a scuba diver",
+            "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
+            "Place": "sataheep, chonburi"
+          },
+          "EventDate": {
+            "DateType": "one",
+            "Start": "2022-12-31",
+            "End": "2024-11-25",
+            "CloseSubmit": "2024-11-25"
+          },
+          "Requesting": true,
+          "Visible": false,
+          "MemberCount": 5,
+          "MemberMax": 0,
+          "DayLeft": 3,
+          "Comments": [],
+          "Liked": [],
+          "Joined": [],
+          "Requested": []
+        }
+      ],
+      "Image": "https://i.pinimg.com/736x/b8/c6/30/b8c630260439f0ac05e715a463da1831.jpg",
+      "InterestedTag": [
+        "Food",
+        "Travel",
+        "Art"
+      ],
+      "Contact": [
+        "asdfghjkl"
+      ]
+    },
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 999999,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 999997,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Request",
+        "IdPost": 999998,
+        "WhoRequest": {
+          "Username": "chom",
+          "Email": "chom@gmail.com",
+          "Password": "789"
+        }
+      }
+    ],
+    "Id": 0
+  }
 ]

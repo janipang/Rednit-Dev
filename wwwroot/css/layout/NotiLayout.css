@@ -12,6 +12,7 @@ body{
     background-repeat:no-repeat;
     background-size:100% 100%;
     font-family: 'Montserrat', sans-serif;
+    /* background-size: cover; */
 }
 
 
@@ -43,6 +44,7 @@ nav{
 .rightSide{
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 .discovery{
     text-align: center;
@@ -172,4 +174,22 @@ footer{
     top: 50%;
     height: 5vh;
     background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 1380px) {
+    .navGroup{
+        display: grid;
+        grid-template-columns: 65% 35%;;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .navGroup{
+        display: grid;
+        grid-template-columns: 55% 45%;;
+        width: 80%;
+        margin: 0 auto;
+    }
 }

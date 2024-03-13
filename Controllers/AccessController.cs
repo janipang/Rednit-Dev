@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using RednitDev.Models;
 using RednitDev.Services;
-
+using System.IO;
+using System.Text.Json;
 namespace RednitDev.Controllers;
+
 
 public class AccessController : Controller
 {
@@ -17,7 +19,6 @@ public class AccessController : Controller
         accountService = _accountService;
         httpContextAccessor = _httpContextAccessor;
     }
-
 
     public IActionResult Login()
     {
@@ -64,6 +65,9 @@ public class AccessController : Controller
         }
         ViewData["ValidateMessage"] = "Username or Password is invalid.";
         return View();
+    }
+    public async void changeUsername(string newUsername){
+        httpContextAccessor.HttpContext.Session.SetString("username", newUsername);
     }
 
     public async Task<IActionResult> LogOut()

@@ -413,4 +413,42 @@ public class DiscoverController : Controller
         return RedirectToAction("Index", "Discover");
 
     }
+
+    public static List<User> GetUsers(){
+        var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json");
+        List<User> users;
+        try
+        {
+            users = JsonSerializer.Deserialize<List<User>>(usersJson)!;
+        }
+        catch (JsonException)
+        {
+            users = new List<User>();
+        };
+        return users;
+    }
+
+    public static User GetUser(string username){
+        List<User> users = GetUsers();
+        foreach(User user in users){
+            if(user.Account.Username == username){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public static void UpdateUser(User edittedUser){
+        List<User> users = GetUsers();
+        for(int i = 0; i < users.Count; i++){
+            if(users[i].Id == edittedUser.Id){
+                users[i] = edittedUser;
+                break;
+            }
+        }
+        var serializeOption = new JsonSerializerOptions();
+        serializeOption.WriteIndented = true;
+        string jsondata = JsonSerializer.Serialize<List<User>>(users, serializeOption);
+        System.IO.File.WriteAllText("./Datacenter/user.json", jsondata);
+    }
 }
