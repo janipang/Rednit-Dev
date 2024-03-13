@@ -8,7 +8,8 @@ namespace RednitDev.Controllers;
 
 public class ManagerController : Controller
 {
-    public Post? GetPostById(int id){
+    public Post? GetPostById(int id)
+    {
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try
@@ -19,14 +20,17 @@ public class ManagerController : Controller
         {
             posts = new List<Post>();
         }
-        foreach(Post post in posts){
-            if (post.Id == id){
+        foreach (Post post in posts)
+        {
+            if (post.Id == id)
+            {
                 return post;
             }
         }
         return null;
     }
-    public Account? GetAccountByusername(string username){
+    public Account? GetAccountByusername(string username)
+    {
         var accountsjson = System.IO.File.ReadAllText("./Datacenter/account.json");
         List<Account> accounts;
         try
@@ -37,15 +41,18 @@ public class ManagerController : Controller
         {
             accounts = new List<Account>();
         }
-        foreach(Account account in accounts){
-            if (account.Username == username){
+        foreach (Account account in accounts)
+        {
+            if (account.Username == username)
+            {
                 return account;
             }
         }
         return null;
     }
 
-        public User? GetUserByusername(string username){
+    public User? GetUserByusername(string username)
+    {
         var usersjson = System.IO.File.ReadAllText("./Datacenter/User.json");
         List<User> users;
         try
@@ -56,11 +63,31 @@ public class ManagerController : Controller
         {
             users = new List<User>();
         }
-        foreach(User user in users){
-            if (user.Account.Username == username){
+        foreach (User user in users)
+        {
+            if (user.Account.Username == username)
+            {
                 return user;
             }
         }
         return null;
+    }
+
+    public void UpdateTimeForPost()
+    {
+        var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
+        List<Post> posts;
+        try
+        {
+            posts = JsonSerializer.Deserialize<List<Post>>(postsjson)!; //! is for not to warning me,jezz
+        }
+        catch (JsonException)
+        {
+            posts = new List<Post>();
+        }
+        foreach (Post post in posts)
+        {
+            post.DayLeft = (post.EventDate.Start.ToDateTime(new TimeOnly()) - new DateTime()).Days;
+        }
     }
 }
