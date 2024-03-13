@@ -16,6 +16,16 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
+
+    public IActionResult ChooseTag()
+    {
+        return View();
+    }
+    public IActionResult Setting()
+    {
+        return View();
+    }
+
     public IActionResult Index()
     {
 
