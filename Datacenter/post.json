@@ -31,20 +31,92 @@
     "DayLeft": -439,
     "Comments": [
       {
-        "User": null,
-        "Content": null,
-        "Date": null,
+        "User": {
+          "Id": 3,
+          "Account": {
+            "Username": "Anchilee",
+            "Email": "Anna@gmail.com",
+            "Password": "mut27"
+          },
+          "Profile": {
+            "Caption": "Real size beauty",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": "\u0E2A\u0E2D\u0E07\u0E21\u0E37\u0E2D\u0E01\u0E23\u0E32\u0E1A\u0E25\u0E07",
+        "Date": "2024-03-14T04:09:24.2089015+07:00",
         "Reply": null
       },
       {
-        "User": null,
-        "Content": "\u0E23\u0E30\u0E22\u0E2D\u0E07\u0E44\u0E1B\u0E17\u0E32\u0E07\u0E44\u0E2B\u0E19\u0E04\u0E30",
-        "Date": null,
+        "User": {
+          "Id": 3,
+          "Account": {
+            "Username": "Anchilee",
+            "Email": "Anna@gmail.com",
+            "Password": "mut27"
+          },
+          "Profile": {
+            "Caption": "Real size beauty",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": "\u0E17\u0E35\u0E48\u0E15\u0E23\u0E07\u0E40\u0E2B\u0E19\u0E37\u0E2D\u0E2D\u0E32\u0E2A\u0E19\u0E4C",
+        "Date": "2024-03-14T04:09:26.4345866+07:00",
+        "Reply": null
+      },
+      {
+        "User": {
+          "Id": 3,
+          "Account": {
+            "Username": "Anchilee",
+            "Email": "Anna@gmail.com",
+            "Password": "mut27"
+          },
+          "Profile": {
+            "Caption": "Real size beauty",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": "\u0E41\u0E17\u0E1A\u0E1A\u0E32\u0E17\u0E22\u0E48\u0E32\u0E42\u0E21",
+        "Date": "2024-03-14T04:18:01.2552976+07:00",
         "Reply": null
       }
     ],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "Anchilee",
+        "Email": "Anna@gmail.com",
+        "Password": "mut27"
+      }
+    ],
     "Requested": []
   },
   {
@@ -77,10 +149,49 @@
     "MemberCount": 0,
     "MemberMax": 6,
     "DayLeft": -439,
-    "Comments": [],
+    "Comments": [
+      {
+        "User": {
+          "Id": 3,
+          "Account": {
+            "Username": "Anchilee",
+            "Email": "Anna@gmail.com",
+            "Password": "mut27"
+          },
+          "Profile": {
+            "Caption": "Real size beauty",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": "Love you from Philipines.",
+        "Date": "2024-03-14T04:18:13.1399985+07:00",
+        "Reply": null
+      }
+    ],
     "Liked": [],
-    "Joined": [],
-    "Requested": []
+    "Joined": [
+      {
+        "Username": "Anchilee",
+        "Email": "Anna@gmail.com",
+        "Password": "mut27"
+      }
+    ],
+    "Requested": [
+      {
+        "Username": "Anchilee",
+        "Email": "Anna@gmail.com",
+        "Password": "mut27"
+      }
+    ]
   },
   {
     "Id": 1003,
@@ -112,25 +223,7 @@
     "MemberCount": 0,
     "MemberMax": 7,
     "DayLeft": -439,
-    "Comments": [
-      {
-        "User": null,
-        "Content": "Love you from Philipines.",
-        "Date": null,
-        "Reply": {
-          "User": null,
-          "Content": "\u0E2A\u0E2D\u0E07\u0E21\u0E37\u0E2D\u0E01\u0E23\u0E32\u0E1A\u0E25\u0E07",
-          "Date": null,
-          "Reply": null
-        }
-      },
-      {
-        "User": null,
-        "Content": "gfhhg",
-        "Date": null,
-        "Reply": null
-      }
-    ],
+    "Comments": [],
     "Liked": [],
     "Joined": [],
     "Requested": []
@@ -249,7 +342,42 @@
       "Password": "456"
     },
     "Detail": {
-      "Header": "play boardgames at luck n roll",
+      "Header": "play boardgames at luck n rollggggggggg",
+      "Tag": [
+        "game",
+        "game",
+        "game"
+      ],
+      "Intro": "play with cute cate and kitten chicken pig pork duck bug bird",
+      "Detail": "if you ever play game of thrones and tou suffer ,we offer you to play with a cat instead.",
+      "Place": "Luck and Roll Cafe"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-03-19",
+      "End": null,
+      "CloseSubmit": "2024-03-17"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 5,
+    "DayLeft": 5,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1008,
+    "Active": true,
+    "Author": {
+      "Username": "Anchilee",
+      "Email": "Anchilee@gmail.com",
+      "Password": "mut27"
+    },
+    "Detail": {
+      "Header": "play boardgames at luck n rolllllllllllll",
       "Tag": [
         "game",
         "game",

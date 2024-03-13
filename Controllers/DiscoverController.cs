@@ -10,6 +10,8 @@ namespace RednitDev.Controllers;
 
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
+using Microsoft.CodeAnalysis.CodeStyle;
 using Microsoft.Identity.Client;
 using RednitDev.Models;
 using RednitDev.Services;
@@ -32,13 +34,24 @@ public class DiscoverController : Controller
         Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
         ViewBag.state = state;
 
-        for (int i = 0; i < 3; i++)
-        {
+       for(int i = 0 ; i < 3; i++){
             FeedPosts.Add(posts[i]);
         }
         HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
-        TempData["FilteredPosts"] = "";
+        HttpContext.Session.SetString("FilteredPosts", "");
+        ViewBag.HasMorePost = true;
 
+        List<string> topSearch = GetTopSearch();
+        ViewBag.TopSearch = new List<HotSearch>();
+        foreach(var e in topSearch){
+            List<HotSearch> hotSearches = GetHotSearch();
+            foreach(var h in hotSearches){
+                if(h.Keyword == e){
+                    ViewBag.TopSearch.Add(h);
+                    break;
+                }
+            }
+        }
         Console.WriteLine(FeedPosts.Count);
         return View(FeedPosts);
     }
@@ -46,13 +59,13 @@ public class DiscoverController : Controller
     public IActionResult SearchResult()
     {
         List<Post> posts = null;
-        if (TempData["FilteredPosts"] == null)
-        {
+        if(HttpContext.Session.GetString("FilteredPosts") == ""){
             posts = new List<Post>();
+            Console.WriteLine("nulll");
         }
-        else
-        {
-            posts = JsonSerializer.Deserialize<List<Post>>(TempData["FilteredPosts"] as string);
+        else{
+            posts = JsonSerializer.Deserialize<List<Post>>(HttpContext.Session.GetString("FilteredPosts"));
+            Console.WriteLine("post.count " + posts.Count);
         }
 
         List<Post> FeedPosts = new List<Post>();
@@ -62,6 +75,25 @@ public class DiscoverController : Controller
             FeedPosts.Add(posts[i]);
         }
         HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
+        if(HttpContext.Session.GetString("SearchedTag") != ""){
+            ViewBag.SearchTag = HttpContext.Session.GetString("SearchedTag");
+        }
+        else{
+            ViewBag.SearchTag = "";
+        }
+        ViewBag.HasMorePost = posts.Count > FeedPosts.Count;
+
+        List<string> topSearch = GetTopSearch();
+        ViewBag.TopSearch = new List<HotSearch>();
+        foreach(var e in topSearch){
+            List<HotSearch> hotSearches = GetHotSearch();
+            foreach(var h in hotSearches){
+                if(h.Keyword == e){
+                    ViewBag.TopSearch.Add(h);
+                    break;
+                }
+            }
+        }
         return View(FeedPosts);
     }
 
@@ -72,19 +104,18 @@ public class DiscoverController : Controller
         int NumberOfFeedPost = (int)HttpContext.Session.GetInt32("NumberOfFeedPost");
         List<Post> posts = null;
 
-        if (TempData["FilteredPosts"] == null || TempData["FilteredPosts"] == "")
-        {
-            posts = GetPosts();
+        if(HttpContext.Session.GetString("FilteredPosts") == null || HttpContext.Session.GetString("FilteredPosts") == ""){
+            posts = GetPosts(); 
         }
-        else
-        {
-            posts = JsonSerializer.Deserialize<List<Post>>(TempData["FilteredPosts"] as string);
+        else{
+            posts = JsonSerializer.Deserialize<List<Post>>(HttpContext.Session.GetString("FilteredPosts"));
         }
 
         Console.WriteLine("post.count == " + posts.Count);
 
         for (int i = 0; i < 3 && NumberOfFeedPost < posts.Count; i++)
         {
+            Console.WriteLine(posts[NumberOfFeedPost].Author.Username);
             morePosts.Add(posts[NumberOfFeedPost]);
             NumberOfFeedPost++;
         }
@@ -109,13 +140,37 @@ public class DiscoverController : Controller
 
     public IActionResult ViewPost(string id)
     {
-        Console.WriteLine("ViewPost -> " + HttpContext.Session.GetInt32("CurrentCommentId"));
+        Console.WriteLine("ViewPost -> " + HttpContext.Session.GetInt32("CurrentPostId"));
+        Console.WriteLine("post id = " + id);
         int Id = int.Parse(id);
         Post post = GetPost(Id);
         bool state = User.Identity.IsAuthenticated;
         Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
         ViewBag.state = state;
         HttpContext.Session.SetInt32("CurrentPostId", Id);
+
+        string username = HttpContext.Session.GetString("username");
+        User user = GetUser(username);
+
+        if(user == null){
+            ViewBag.PostType = 3;
+        }
+        else if(user.Account.Equals(post.Author)){
+            if(post.Requesting){
+                ViewBag.PostType = 1;
+            }
+            else{
+                ViewBag.PostType = 0;
+            }
+        }
+        else{
+            if(post.Requesting){
+                ViewBag.PostType = 3;
+            }
+            else{
+                ViewBag.PostType = 2;
+            }
+        }
         return View(post);
     }
 
@@ -129,8 +184,17 @@ public class DiscoverController : Controller
         }
 
         int id = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        string username = HttpContext.Session.GetString("username");
+        User user = GetUser(username);
         Post currentPost = GetPost(id);
-        Comment newComment = new Comment { Content = detail };
+
+        Comment newComment = new Comment
+        {
+            User = user,
+            Date = DateTime.Now,
+            Content = detail
+        };
+
         currentPost.Comments.Add(newComment);
 
         UpdatePost(currentPost);
@@ -229,6 +293,21 @@ public class DiscoverController : Controller
         {
             currentPost.Joined.Add(account);
             currentPost.Requested.Remove(account);
+
+            Noti notification = new Noti{
+                Type = "Success",
+                IdPost = postId,
+                WhoRequest = null 
+            };
+
+            User user = GetUser(_username);
+            Console.WriteLine("send success noti to" + _username + " " + user);
+            user.Noti.Add(notification);
+            UpdateUser(user);
+
+            if(currentPost.Joined.Count == currentPost.MemberMax){
+                SendRejectNotificationToOthers(currentPost, postId);
+            }
         }
         Console.WriteLine(_username + " was added to post " + postId);
         UpdatePost(currentPost);
@@ -239,31 +318,20 @@ public class DiscoverController : Controller
         );
     }
 
-    public IActionResult SearchKeyword(string key)
-    {
-        List<Post> posts = GetPosts();
-        List<Post> filteredPost = new List<Post>();
-        foreach (Post post in posts)
-        {
-            if (post.Detail.Header == "Anntonia Porsild")
-            {
-                Console.WriteLine(post.Detail.Header.Contains(key) + "  ->  " + key);
-            }
-            if (
-                post.Detail.Header.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0
-                || post.Detail.Intro.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0
-            )
-            {
-                filteredPost.Add(post);
-            }
+    public void SendRejectNotificationToOthers(Post post, int postId){
+        for(int i = 0; i < post.Requested.Count; i++){
+            User user = GetUser(post.Requested[i].Username);
+            Console.WriteLine("send reject noti to" + post.Requested[i].Username + " " + user);
+            Noti notification = new Noti{
+                Type = "Failed",
+                IdPost = postId,
+                WhoRequest = null 
+            };
+            user.Noti.Add(notification);
+            UpdateUser(user);
         }
-        Console.WriteLine("search for " + key + " found " + filteredPost.Count);
-        string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(
-            filteredPost,
-            new JsonSerializerOptions()
-        );
-        HttpContext.Session.SetString("FilteredPosts", filteredPostsJson);
-        return RedirectToAction("Index", "Discover", new { posts = filteredPost });
+
+        post.Requested = new List<Account>();
     }
 
     public IActionResult DeclineRequest(string _username)
@@ -274,15 +342,58 @@ public class DiscoverController : Controller
         Console.WriteLine("Decline " + _username);
         Console.WriteLine(account);
         currentPost.Requested.Remove(account);
+        User user = GetUser(_username);
+        Noti notification = new Noti{
+            Type = "Failed",
+            IdPost = postId,
+            WhoRequest = null
+        };
+        user.Noti.Add(notification);
+        UpdateUser(user);
         Console.WriteLine(_username + " was rejected from post " + postId);
         UpdatePost(currentPost);
-        return RedirectToAction(
-            "ViewPost",
-            "Discover",
-            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
-        );
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
     }
 
+    public IActionResult SearchKeyword(string key){
+        List<Post> posts = GetPosts();
+        List<Post> filteredPost = new List<Post>();
+        foreach(Post post in posts){
+            if(
+                post.Detail.Header.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0 || 
+                post.Detail.Intro.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0
+            ){
+                filteredPost.Add(post);
+            }
+        }
+        Console.WriteLine("search for " + key + " found " + filteredPost.Count);
+        AddToHotSearch(key);
+        string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(
+            filteredPost,
+            new JsonSerializerOptions()
+        );
+        HttpContext.Session.SetString("FilteredPosts", filteredPostsJson);
+        HttpContext.Session.SetString("SearchedTag", "");
+        return RedirectToAction("SearchResult", "Discover");
+    }
+
+    public IActionResult SearchByTag(string tag){
+        List<Post> posts = GetPosts();
+        List<Post> filteredPost = new List<Post>();
+        foreach(Post post in posts){
+            foreach(var _tag in post.Detail.Tag){
+                if(_tag.IndexOf(tag, StringComparison.OrdinalIgnoreCase) >= 0){
+                    filteredPost.Add(post);
+                }
+            }
+        }
+        Console.WriteLine("search for tag" + tag + " found " + filteredPost.Count);
+        string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(filteredPost, new JsonSerializerOptions());
+        HttpContext.Session.SetString("FilteredPosts", filteredPostsJson);
+        HttpContext.Session.SetString("SearchedTag", tag);
+        return RedirectToAction("SearchResult", "Discover");
+    }
+    
     public static List<Post> GetPosts()
     {
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
@@ -356,6 +467,101 @@ public class DiscoverController : Controller
             }
         }
         return null;
+    }
+
+    public static List<User> GetUsers(){
+        var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json");
+        List<User> users;
+        try
+        {
+            users = JsonSerializer.Deserialize<List<User>>(usersJson)!;
+        }
+        catch (JsonException)
+        {
+            users = new List<User>();
+        };
+        return users;
+    }
+
+    public static User GetUser(string username){
+        List<User> users = GetUsers();
+        foreach(User user in users){
+            if(user.Account.Username == username){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public static void UpdateUser(User edittedUser){
+        List<User> users = GetUsers();
+        for(int i = 0; i < users.Count; i++){
+            if(users[i].Account.Username == edittedUser.Account.Username){
+                users[i] = edittedUser;
+                break;
+            }
+        }
+        var serializeOption = new JsonSerializerOptions();
+        serializeOption.WriteIndented = true;
+        string jsondata = JsonSerializer.Serialize<List<User>>(users, serializeOption);
+        System.IO.File.WriteAllText("./Datacenter/user.json", jsondata);
+    }
+
+    public List<string> GetTopSearch(){
+        List<HotSearch> hotSearch = GetHotSearch();
+        List<string> searched = new List<string>();
+        for(int i = 0 ;i < 5; i++){
+            string keyword = GetHighestSearch(searched);
+            searched.Add(keyword);
+        }
+        return searched;
+    }
+
+    public string GetHighestSearch(List<string> searched){
+        List<HotSearch> hotSearch = GetHotSearch();
+        int max = 0;
+        string keyword = "";
+        foreach(var e in hotSearch){
+            if(!searched.Contains(e.Keyword)){
+                int cnt = e.Count;
+                if(cnt > max){
+                    max = cnt;
+                    keyword = e.Keyword;
+                }
+            }
+        }
+        return keyword;
+    }
+    public static void AddToHotSearch(string keyword){
+        List<HotSearch> hotSearch = GetHotSearch();
+        bool added = false;
+        foreach(var e in hotSearch){
+            if(e.Keyword == keyword){
+                e.Count++;
+                added = true;
+            }
+        }
+        if(!added){
+            hotSearch.Add(new HotSearch{Keyword = keyword, Count = 1});
+        }
+        var serializeOption = new JsonSerializerOptions();
+        serializeOption.WriteIndented = true;
+        string jsondata = JsonSerializer.Serialize<List<HotSearch>>(hotSearch, serializeOption);
+        System.IO.File.WriteAllText("./Datacenter/hotSearch.json", jsondata);
+    }
+
+    public static List<HotSearch> GetHotSearch(){
+        var hotsearchJson = System.IO.File.ReadAllText("./Datacenter/hotSearch.json");
+        List<HotSearch> hotSearch;
+        try
+        {
+            hotSearch = JsonSerializer.Deserialize<List<HotSearch>>(hotsearchJson)!;
+        }
+        catch (JsonException)
+        {
+            hotSearch = new List<HotSearch>();
+        };
+        return hotSearch;
     }
 
     public static bool HaveJoined(Post post, Account myAccount)

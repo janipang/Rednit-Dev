@@ -12,6 +12,7 @@ namespace RednitDev.Components
             {
                 post.Comments[i].Id = (uint)i;
             }
+            ViewBag.CurrentCommentId = HttpContext.Session.GetInt32("CurrentCommentId");
             return View(post);
         }
     }

@@ -8,7 +8,7 @@
                     alt="profile image">
             </button>
             <div class="side-user-image">
-                <button class="post-username">Anntonia</button>
+                <button class="post-username">@Model.Author.Username</button>
                 <div class="other-detail">
                     <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round"/>
@@ -68,7 +68,9 @@
                     d="M1.88889 18.8889H15.1111C16.1528 18.8889 17 18.0417 17 17V3.77778C17 2.73606 16.1528 1.88889 15.1111 1.88889H13.2222V0H11.3333V1.88889H5.66667V0H3.77778V1.88889H1.88889C0.847167 1.88889 0 2.73606 0 3.77778V17C0 18.0417 0.847167 18.8889 1.88889 18.8889ZM15.1111 5.66667L15.1121 17H1.88889V5.66667H15.1111Z"
                     fill="#434343" />
             </svg>
-            <span>20/4/2024</span>
+            <span>
+                @("" + Model.EventDate.Start + (Model.EventDate.DateType != "one" ? " - " + Model.EventDate.End : ""))
+            </span>
         </div>
         <div>
             <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,8 +99,9 @@
 
 <script>
     function onMoreDetailButtonClick(postID){
-        console.log(postID);
+        
         var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
+        console.log(url);
         window.location.href = url;
     }
 
