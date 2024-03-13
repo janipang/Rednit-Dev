@@ -341,7 +341,8 @@
 
 
     //this is doesn't work
-    @* var errors = document.getElementsByClassName("errorText");
+    var errors = document.getElementsByClassName("errorText");
+    
     function haveTextError() {
         if (errors[0].style.display == "none" && errors[1].style.display == "none") {
             return false
@@ -361,5 +362,5 @@
     }
 
     var submitButton = document.getElementById("submit");
-    submitButton.addEventListener("click", CheckErrorBeforeSubmit); *@
+    submitButton.addEventListener("click", CheckErrorBeforeSubmit);
 </script>
