@@ -1,0 +1,144 @@
+@model RednitDev.Models.Post
+<div class="post-detail-container">
+    <div class="post-detail-top-section">
+        <div class="post-header-top-left-section">
+            <h1 class="post-detail-header">@Model.Detail.Header</h1>
+            <div class="post-detail-day-left">
+                <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z"
+                        stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M9 4V8.5L12 10" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="post-detail-remaining-day ">
+                    20 Days left
+                </span>
+            </div>
+        </div>
+        <div class="post-header-top-right-section">
+            @foreach (var tag in Model.Detail.Tag)
+            {
+                <div class="tag">@tag</div>
+            }
+            <button>
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="margin-left: 5px">
+                    <path
+                        d="M10.8889 18H18M18 18H25.1111M18 18V25.1111M18 18V10.8889M18 34C15.8989 34 13.8183 33.5861 11.8771 32.7821C9.93586 31.978 8.17203 30.7994 6.68629 29.3137C5.20055 27.828 4.022 26.0641 3.21793 24.1229C2.41385 22.1817 2 20.1012 2 18C2 15.8989 2.41385 13.8183 3.21793 11.8771C4.022 9.93586 5.20055 8.17203 6.68629 6.68629C8.17203 5.20055 9.93586 4.022 11.8771 3.21793C13.8183 2.41385 15.8989 2 18 2C22.2435 2 26.3131 3.68571 29.3137 6.68629C32.3143 9.68687 34 13.7565 34 18C34 22.2435 32.3143 26.3131 29.3137 29.3137C26.3131 32.3143 22.2435 34 18 34Z"
+                        stroke="#FE3C72" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="post-creator-section">
+        <button class="post-user-image-container">
+            <img class="post-user-image"
+                src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                alt="profile image">
+        </button>
+        <p class="post-detail-username">Anntonia</p>
+    </div>
+    <div class="post-detail-detail-section">
+        @Model.Detail.Detail
+    </div>
+    <div class="post-detail-bottom-section">
+        <div>
+            <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M9.49938 19.7426C9.49938 19.7426 2.00234 15.5255 2.00234 8.68446C1.97733 7.68427 2.15277 6.6892 2.51831 5.75788C2.88386 4.82655 3.43212 3.97781 4.13079 3.26168C4.82946 2.54554 5.66441 1.97649 6.58642 1.58806C7.50844 1.19964 8.49888 0.999688 9.49938 1C10.4999 0.999688 11.4903 1.19964 12.4123 1.58806C13.3343 1.97649 14.1693 2.54554 14.868 3.26168C15.5666 3.97781 16.1149 4.82655 16.4804 5.75788C16.846 6.6892 17.0214 7.68427 16.9964 8.68446C16.9964 15.5255 9.49938 19.7426 9.49938 19.7426Z"
+                    stroke="#434343" stroke-width="2" />
+                <path
+                    d="M9.49938 11.3084C11.0521 11.3084 12.3108 10.0497 12.3108 8.49706C12.3108 6.94437 11.0521 5.68567 9.49938 5.68567C7.94669 5.68567 6.68799 6.94437 6.68799 8.49706C6.68799 10.0497 7.94669 11.3084 9.49938 11.3084Z"
+                    stroke="#434343" stroke-width="2" />
+            </svg>
+            <span>@Model.Detail.Place</span>
+        </div>
+
+        <div>
+            <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3.77734 8.5H5.66623V10.3889H3.77734V8.5ZM3.77734 12.2778H5.66623V14.1667H3.77734V12.2778ZM7.55512 8.5H9.44401V10.3889H7.55512V8.5ZM7.55512 12.2778H9.44401V14.1667H7.55512V12.2778ZM11.3329 8.5H13.2218V10.3889H11.3329V8.5ZM11.3329 12.2778H13.2218V14.1667H11.3329V12.2778Z"
+                    fill="#434343" />
+                <path
+                    d="M1.88889 18.8889H15.1111C16.1528 18.8889 17 18.0417 17 17V3.77778C17 2.73606 16.1528 1.88889 15.1111 1.88889H13.2222V0H11.3333V1.88889H5.66667V0H3.77778V1.88889H1.88889C0.847167 1.88889 0 2.73606 0 3.77778V17C0 18.0417 0.847167 18.8889 1.88889 18.8889ZM15.1111 5.66667L15.1121 17H1.88889V5.66667H15.1111Z"
+                    fill="#434343" />
+            </svg>
+            <span>20/4/2024</span>
+        </div>
+        <div>
+            <div class="post-detail-member-container">
+                <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.5556 2.75C12.9694 2.75025 13.3776 2.84533 13.7477 3.02772C14.1178 3.21011 14.4397 3.47479 14.6879 3.80083C14.9361 4.12686 15.1038 4.5053 15.1777 4.90617C15.2516 5.30704 15.2298 5.71935 15.1138 6.11045C14.9978 6.50156 14.791 6.86073 14.5096 7.15952C14.2282 7.45832 13.8801 7.68854 13.4927 7.83197C13.1053 7.97539 12.6893 8.02809 12.2776 7.98587C11.866 7.94366 11.4699 7.8077 11.1209 7.58875M13.4444 10.625C14.3874 10.625 15.2918 10.9937 15.9586 11.6501C16.6254 12.3065 17 13.1967 17 14.125V15H14.024M9 4.0625C9 4.46467 8.91953 4.86291 8.76318 5.23447C8.60683 5.60603 8.37767 5.94364 8.08878 6.22801C7.79988 6.51239 7.45692 6.73798 7.07946 6.89188C6.702 7.04579 6.29745 7.125 5.88889 7.125C5.48033 7.125 5.07578 7.04579 4.69832 6.89188C4.32086 6.73798 3.97789 6.51239 3.689 6.22801C3.40011 5.94364 3.17094 5.60603 3.0146 5.23447C2.85825 4.86291 2.77778 4.46467 2.77778 4.0625C2.77778 3.25027 3.10555 2.47132 3.689 1.89699C4.27245 1.32266 5.06377 1 5.88889 1C6.71401 1 7.50533 1.32266 8.08878 1.89699C8.67222 2.47132 9 3.25027 9 4.0625ZM4.55556 9.75H7.22222C8.16521 9.75 9.06958 10.1187 9.73638 10.7751C10.4032 11.4315 10.7778 12.3217 10.7778 13.25V15H1V13.25C1 12.3217 1.3746 11.4315 2.0414 10.7751C2.70819 10.1187 3.61256 9.75 4.55556 9.75Z"
+                        stroke="#434343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="post-member-section">
+                    <div>@(Model.Joined.Count)/@(Model.MemberMax)</div>
+                    <div class="post-member-icon-container">
+                        @for (int i = (int)MathF.Min(4, Model.Joined.Count); i > 0; i--)
+                        {
+                            <img class="member-icon member-z-index-@(i)"
+                                src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                                alt="member image">
+                        }
+                        @if (Model.Joined.Count > 4)
+                        {
+                            <div class="member-icon member-z-index-@(0)">...</div>
+                        }
+                    </div>
+                </span>
+            </div>
+            @if(ViewBag.HaveJoined){
+                <button class="request-button" style="background: orange">
+                        Joined
+                </button>
+            }
+            else if (!ViewBag.HaveRequested)
+            {
+                <form method="post" asp-controller="Discover" asp-action="SendRequest" style="display: block;width: auto">
+                    <button class="request-button" type="submit">
+                        Send request
+                    </button>
+                </form>
+            }
+            else{
+                <button class="request-button" style="background: purple">
+                        Request sent
+                </button>
+            }
+
+        </div>
+    </div>
+    <hr>
+    <div class="post-detail-comment-section">
+        @foreach (var comment in Model.Comments)
+        {
+            @await Component.InvokeAsync("CommentInOthersPost", new { comment = comment })
+        }
+    </div>
+    <form method="post" asp-controller="Discover" asp-action="AddComment" class="post-detail-comment-input">
+        <input type="text" name="detail">
+        <button class="comment-button" type="submit">Comment</button>
+    </form>
+</div>
+
+<script>
+    function onJoinButtonClick() {
+        console.log("Hello");
+        // Make AJAX request to the controller action
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '@Url.Action("SetCommentID", "Discover")?id=' + commentID);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Request was successful
+                console.log('Data set successfully.');
+            } else {
+                // Request failed
+                console.error('Failed to set data.');
+            }
+        };
+        xhr.send();
+
+    }
+</script>

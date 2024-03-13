@@ -1,7 +1,10 @@
 namespace RednitDev.Models;
 public class Post
 {
-    public User? Author { get; set; }
+    public int Id { get; set; }
+
+    public bool Active { get; set; } = true;
+    public Account? Author { get; set; }
     public PostDetail? Detail { get; set; }
     public EventDate? EventDate { get; set; }
     public bool Requesting { get; set; }

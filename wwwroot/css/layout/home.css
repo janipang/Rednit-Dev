@@ -17,7 +17,6 @@ a {
     text-decoration: none;
 }
 
-/* this body is disabled cause of some structure reason */
 body {
     width: 100vw;
     min-height: 100vh;
@@ -72,7 +71,7 @@ nav {
     padding: 8vh 0vw;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 5;
 }
 
 .context {
@@ -149,11 +148,11 @@ footer {
     color: #ffff !important;
 }
 
-.create-post{
+.create-post {
     text-align: center;
-    font-size: 20px; 
+    font-size: 20px;
     font-weight: 600;
-    color:#ffff !important;
+    color: #ffff !important;
 }
 
 .login {
@@ -165,6 +164,53 @@ footer {
     font-size: 20px;
     font-weight: bold;
     color: #FD5564 !important;
+}
+
+.dropdown-hover-area {
+    display: none;
+    padding: 30px;
+    position: absolute;
+    right: calc(10vw - 4vw - 30px);
+    top: 10vh;
+
+}
+
+.dropdown-box {
+    width: 8vw;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.dropdown-item:hover {
+    color: #1E1E1E;
+}
+
+.dropdown-hover-area:hover {
+    display: flex;
+}
+
+.profile-pic:hover+.dropdown-hover-area {
+    display: flex;
+    z-index: 50;
+}
+
+.dropdown-item {
+    color: #696969;
+}
+
+.dropdown-item p {
+    color: #1E1E1E;
+    font-weight: 700;
+    margin: 3px 0px;
+    padding: 15px 0px 0px 0px;
+    border-top: 1px solid #696969;
 }
 
 /* footer detail */
@@ -239,24 +285,45 @@ footer {
     filter: drop-shadow(0px 4px 4px rgb(0 0 0 / 0.25));
 }
 
-@media screen and (max-width: 1240px){
+@media screen and (max-width: 1240px) {
     .navGroup {
         grid-template-columns: 68% 32%;
     }
+
     .navGroup.isLogin {
         grid-template-columns: 55% 45%;
     }
+
+    .dropdown-hover-area {
+        right: calc(10vw - 5vw - 30px);
+    }
+
+    .dropdown-box {
+        width: 10vw;
+    }
 }
-@media screen and (max-width: 800px){
+
+@media screen and (max-width: 800px) {
     .navGroup.isLogin {
         grid-template-columns: 45% 55%;
     }
+
+    .dropdown-hover-area {
+        padding: 15px;
+        right: calc(10vw - 7vw - 15px);
+        top: 10vh;
+    }
+
+    .dropdown-box {
+        width: 14vw;
+    }
 }
+
 @media screen and (max-width: 768px) {
     .navGroup {
         grid-template-columns: 58% 42%;
     }
-    
+
     .leftSide img {
         margin-top: 0;
         margin-bottom: 0;
@@ -328,12 +395,30 @@ footer {
     .footer .logo {
         display: none;
     }
+    
+    .dropdown-hover-area {
+        right: calc(4vw - 15px);
+    }
+
+    .dropdown-box {
+        width: 16vw;
+    }
 }
+
 @media screen and (max-width: 540px) {
     .navGroup.isLogin {
         grid-template-columns: 45% 55%;
     }
+    .dropdown-hover-area {
+        padding: 25px 15px;
+        right: calc(4vw - 15px);
+    }
+
+    .dropdown-box {
+        width: 24vw;
+    }
 }
+
 @media screen and (max-width: 430px) {
 
     .leftSide img {
