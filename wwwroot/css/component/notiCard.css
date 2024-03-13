@@ -53,3 +53,23 @@ button {
     color: white;
     font-weight: 600;
 }
+@media screen and (max-width: 1275px) {
+    .noti-card {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1160px) {
+    .noti-card {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 1065px) {
+    .noti-card {
+        width: 58%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .noti-card {
+        width: 60%;
+    }
+}
