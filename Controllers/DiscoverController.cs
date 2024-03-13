@@ -7,6 +7,8 @@ using System.Text.Json;
 using System.Linq.Expressions;
 
 namespace RednitDev.Controllers;
+
+using System.ComponentModel;
 using RednitDev.Models;
 
 public class DiscoverController : Controller
@@ -14,7 +16,69 @@ public class DiscoverController : Controller
     public IActionResult Index()
     {
         List<Post> posts = GetPosts();
-        return View(posts);
+        List<Post> FeedPosts = new List<Post>();
+
+        for(int i = 0 ; i < 3; i++){
+            FeedPosts.Add(posts[i]);
+        }
+        HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
+        TempData["FilteredPosts"] = "";
+        return View(FeedPosts);
+    }
+    public IActionResult SearchResult()
+    {
+        List<Post> posts = null;
+        if(TempData["FilteredPosts"] == null){
+            posts = new List<Post>();
+        }
+        else{
+            posts = JsonSerializer.Deserialize<List<Post>>(TempData["FilteredPosts"] as string);
+        }
+        
+        List<Post> FeedPosts = new List<Post>();
+        Console.WriteLine("posts.count = " + posts.Count);
+        for(int i = 0 ; i < 3 && i < posts.Count; i++){
+            FeedPosts.Add(posts[i]);
+        }
+        HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
+        return View(FeedPosts);
+    }
+
+    [HttpGet]
+    public IActionResult GetMorePosts()
+    {
+        List<Post> morePosts = new List<Post>();
+        int NumberOfFeedPost = (int)HttpContext.Session.GetInt32("NumberOfFeedPost");
+        List<Post> posts = null;
+
+        if(TempData["FilteredPosts"] == null || TempData["FilteredPosts"] == ""){
+            posts = GetPosts(); 
+        }
+        else{
+            posts = JsonSerializer.Deserialize<List<Post>>(TempData["FilteredPosts"] as string);
+        }
+
+        Console.WriteLine("post.count == " + posts.Count);
+
+        for(int i = 0 ; i < 3 && NumberOfFeedPost < posts.Count; i++){
+            morePosts.Add(posts[NumberOfFeedPost]);
+            NumberOfFeedPost++;
+        }
+         
+        HttpContext.Session.SetInt32("NumberOfFeedPost", NumberOfFeedPost);
+
+        var html = "";
+        foreach(Post post in morePosts){
+            html += Components.PostViewComponent.GetViewComponent(post);
+        }
+
+        Console.WriteLine(NumberOfFeedPost);
+        
+        if(NumberOfFeedPost >= posts.Count){
+            html += "a";
+        }
+
+        return Json(html);
     }
 
     public IActionResult ViewPost(string id)
@@ -126,6 +190,26 @@ public class DiscoverController : Controller
         Console.WriteLine(_username + " was added to post " + postId);
         UpdatePost(currentPost);
         return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    public IActionResult SearchKeyword(string key){
+        List<Post> posts = GetPosts();
+        List<Post> filteredPost = new List<Post>();
+        foreach(Post post in posts){
+            if(post.Detail.Header == "Anntonia Porsild"){
+                Console.WriteLine(post.Detail.Header.Contains(key) + "  ->  " + key);
+            }
+            if(
+                post.Detail.Header.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0 || 
+                post.Detail.Intro.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0
+            ){
+                filteredPost.Add(post);
+            }
+        }
+        Console.WriteLine("search for " + key + " found " + filteredPost.Count);
+        string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(filteredPost, new JsonSerializerOptions());
+        HttpContext.Session.SetString("FilteredPosts", filteredPostsJson);
+        return RedirectToAction("Index", "Discover", new { posts =  filteredPost });
     }
 
     public IActionResult DeclineRequest(string _username)
