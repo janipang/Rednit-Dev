@@ -21,6 +21,10 @@ public class DiscoverController : Controller
         List<Post> posts = GetPosts();
         List<Post> FeedPosts = new List<Post>();
 
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
+
         for(int i = 0 ; i < 3; i++){
             FeedPosts.Add(posts[i]);
         }
@@ -91,6 +95,9 @@ public class DiscoverController : Controller
         Console.WriteLine("ViewPost -> " + HttpContext.Session.GetInt32("CurrentCommentId"));
         int Id = int.Parse(id);
         Post post = GetPost(Id);
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
         HttpContext.Session.SetInt32("CurrentPostId", Id);
         return View(post);
     }
@@ -191,6 +198,8 @@ public class DiscoverController : Controller
         {
             currentPost.Joined.Add(account);
             currentPost.Requested.Remove(account);
+
+            
         }
         Console.WriteLine(_username + " was added to post " + postId);
         UpdatePost(currentPost);

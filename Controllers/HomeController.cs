@@ -23,9 +23,9 @@ public class HomeController : Controller
         // string state = HttpContext.Session.GetString("state")!;
         // Console.WriteLine("Session state: " + state);
         string username = HttpContext.Request.Cookies["username"]!;
-        bool state = @User.Identity.IsAuthenticated;
+        bool state = User.Identity.IsAuthenticated;
         Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
-        ViewBag.state = username;
+        ViewBag.state = state;
 
         
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
