@@ -107,9 +107,7 @@ public class DiscoverController : Controller
 
         Post newpost = new Post
         {
-            Author = new User{
-                // AccountSetter = CurrentAccount
-            },
+            Author = new Account(),
             Detail = new PostDetail
             {
                 Header = header,

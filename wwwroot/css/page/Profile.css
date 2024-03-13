@@ -1,19 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-input {
     font-family: "Montserrat";
 }
+
 
 a {
     text-decoration: none;
@@ -22,7 +12,6 @@ a {
 .container {
     width: 88%;
     margin: 0 auto;
-    height: 160vh;
 }
 
 .container h1 {
@@ -39,18 +28,42 @@ a {
     background: #ffffff;
     box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    border: solid red;
 }
 
 #content {
     grid-template: 10% 30% 30% 30%/ 100%;
-    margin-inline: 3%;
+    padding: 4%;
 }
 
 .profile {
     display: grid;
     grid-template-columns: 20% 50% 30%;
-    margin-top: 3%;
+}
+
+.content-profile {
+    display: grid;
+    grid-template-rows: 35% 45% 20%;
+}
+
+.caption {
+    align-self: first baseline;
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #696969;
+}
+
+.username {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    color: #FD5564;
 }
 
 .img-container {
@@ -65,55 +78,115 @@ a {
     border-radius: 5px;
 }
 
-.stat div {
-    display: flex;
+.stat {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
-.posts-row{
-    height: 45vh;
+.rigth-stat {
+    position: relative;
+}
+
+.rigth-stat a {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    background: #AAAAAA;
+    border-radius: 5px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.num-create-group, #joining-group-number{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.num-create-group .text, #joining-group-number .text  {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #1E1E1E;
+}
+
+.num-create-group p, #joining-group-number p {
+
+
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1E1E1E;
+
+
+}
+
+
+
+#posts-row {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
-.post-container
-{
-    width: 32%;
+.post-container {
+    width: 70%;
 }
 
-.your-posts p {
+#your-posts p,
+.Groups-joined p,
+.request-status p {
     font-family: "Kanit";
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;
-
     color: #1e1e1e;
+    margin-bottom: 3%;
 }
 
 .post-container {
-
     background: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    height: 40vh;
 }
 
-.top-section
-{
+
+.top-section {
     margin-top: 4%;
     margin-left: 5%;
     margin-right: 5%;
 }
 
-.bottom-section
-{
+.bottom-section {
+    position: relative;
     margin-left: 5%;
     margin-right: 5%;
 }
+
 .header p {
     font-family: "Kanit";
     font-style: normal;
@@ -123,13 +196,11 @@ a {
     color: #1e1e1e;
 }
 
-.day-container
-{
+.day-container {
     height: 5vh;
 }
 
-.day-container svg
-{
+.day-container svg {
     margin-top: 1%;
 }
 
@@ -165,6 +236,13 @@ a {
     color: #FFFFFF;
 }
 
+.bar-line {
+    border: 1px solid #D9D9D9;
+    margin: 3% 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
 .post-container .bar-line {
     border: 1px solid #D9D9D9;
     margin: 5% 0;
@@ -172,41 +250,52 @@ a {
     margin-right: 5%;
 }
 
+.place img,
+.calendar img,
+.group img {
+    margin-right: 3%;
+}
+
+.place span,
+.calendar span,
+.group div {
+
+
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+
+    color: #696969;
+
+
+}
+
 .group {
     display: flex;
     flex-direction: row;
+    margin-bottom: 6%;
 }
 
-.post-member-icon-container {
-    display: flex;
-    flex-direction: row;
-}
 
-.post-member-section {
-    display: flex;
-    flex-direction: row;
-}
-
-.post-member-icon-container img {
-    border-radius: 50%;
-    height: 25px;
-}
 
 .edit-button {
+    position: absolute;
+    right: 0px;
+    bottom: 20%;
     padding: 5px 10px;
     background: #FD5564;
     border-radius: 5px;
-
-
     font-family: 'Kanit';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height */
     text-align: center;
     letter-spacing: 0.02em;
-
     color: #FFFFFF;
+    border: 0;
 
 }

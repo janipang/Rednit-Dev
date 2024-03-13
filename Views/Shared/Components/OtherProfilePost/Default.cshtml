@@ -39,6 +39,14 @@
                 <div>@(Model.MemberCount)/@(Model.MemberMax)</div>
             </div>
         </div>
-        <button Class="edit-button">Edit Posts</button>
+        <button Class="edit-button" onclick="onMoreDetailButtonClick(@Model.Id)">More Detail</button>
     </div>
 </div>
+<script>
+    function onMoreDetailButtonClick(postID){
+
+        var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
+        console.log(url);
+        window.location.href = url;
+    }
+</script>
