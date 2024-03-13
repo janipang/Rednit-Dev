@@ -115,6 +115,7 @@ public class DiscoverController : Controller
 
         for (int i = 0; i < 3 && NumberOfFeedPost < posts.Count; i++)
         {
+            Console.WriteLine(posts[NumberOfFeedPost].Author.Username);
             morePosts.Add(posts[NumberOfFeedPost]);
             NumberOfFeedPost++;
         }

@@ -223,8 +223,7 @@
     "MemberCount": 0,
     "MemberMax": 7,
     "DayLeft": -439,
-    "Comments": [
-    ],
+    "Comments": [],
     "Liked": [],
     "Joined": [],
     "Requested": []
@@ -343,7 +342,42 @@
       "Password": "456"
     },
     "Detail": {
-      "Header": "play boardgames at luck n roll",
+      "Header": "play boardgames at luck n rollggggggggg",
+      "Tag": [
+        "game",
+        "game",
+        "game"
+      ],
+      "Intro": "play with cute cate and kitten chicken pig pork duck bug bird",
+      "Detail": "if you ever play game of thrones and tou suffer ,we offer you to play with a cat instead.",
+      "Place": "Luck and Roll Cafe"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-03-19",
+      "End": null,
+      "CloseSubmit": "2024-03-17"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 5,
+    "DayLeft": 5,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1008,
+    "Active": true,
+    "Author": {
+      "Username": "Anchilee",
+      "Email": "Anchilee@gmail.com",
+      "Password": "mut27"
+    },
+    "Detail": {
+      "Header": "play boardgames at luck n rolllllllllllll",
       "Tag": [
         "game",
         "game",
