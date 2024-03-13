@@ -15,6 +15,7 @@ namespace RednitDev.Components{
             Account myAccount = DiscoverController.GetAccount(username);
             ViewBag.HaveJoined = DiscoverController.HaveJoined(post, myAccount);
             ViewBag.HaveRequested = DiscoverController.HaveRequested(post, myAccount);
+            ViewBag.CurrentCommentId = HttpContext.Session.GetInt32("CurrentCommentId");
             return View(post);
         }
     }
