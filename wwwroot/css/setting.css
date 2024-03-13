@@ -1,0 +1,156 @@
+
+.SettingBox {
+    background-color: white;
+    margin: 80px 200px 20px 200px ;
+    width: auto;
+    height: auto;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.EditHeader {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.EditContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    font-weight: 600;
+    font-size: 15px;
+    column-gap: 50px;
+}
+
+.EditDetail {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.EditPicture {
+    width: 50%;
+}
+
+.InputBox {
+    margin: 20px 0px 30px;
+    position: relative;
+}
+
+#usernameInput {
+    width: 500px;
+    height: 40px;
+    border: none;
+    background-color: #F4F4F4;
+    padding-left: 8px;
+    font-size: 16px;
+    font-family: "Kanit", sans-serif;
+}
+
+#usernameInput::placeholder {
+    color: #AAAAAA;
+}
+
+#bioInput {
+    width: 500px;
+    height: 200px;
+    border: none;
+    background-color: #F4F4F4;
+    padding-left: 8px;
+    font-size: 16px;
+    resize: none; 
+    font-family: "Kanit", sans-serif;
+}
+
+#bioInput::placeholder {
+    color: #AAAAAA;
+}
+
+.charLimit {
+    font-size: 13px;
+    color: #696969;
+    text-align: right;
+    width: 500px ;
+    margin-top: 10px;
+}
+
+#changePasswordButton {
+    background-color: #FE3C72;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+#newPassword {
+    width: 500px;
+    height: 40px;
+    border: none;
+    background-color: #F4F4F4;
+    padding-left: 8px;
+    font-size: 16px;
+    font-family: "Kanit", sans-serif;
+}
+
+#confirmPassword {
+    width: 500px;
+    height: 40px;
+    border: none;
+    background-color: #F4F4F4;
+    padding-left: 8px;
+    font-size: 16px;
+    font-family: "Kanit", sans-serif;
+}
+
+.SaveButton{
+    font-weight: 600;
+    background-color: #3CCE77;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1300px) {
+    .EditContainer{
+        flex-direction: column; /* Stack items in a column */
+        align-items: flex-start;
+    }
+
+    .EditContainer > div {
+        width: 100%; 
+    }
+    
+    .EditPicture{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #usernameInput,
+    #bioInput,
+    #newPassword,
+    .charLimit,
+    #previewImage,
+    #confirmPassword {
+        width: 100%; /* Make input fields full width */
+        max-width: 100%; /* Ensure they don't overflow their containers */
+    }
+
+    .EditContainer {
+        flex-direction: column; /* Stack items in a column */
+    }
+
+    .EditPicture {
+        width: 100%; /* Make picture container full width */
+    }
+
+    .EditDetail {
+        padding-right: 0; /* Remove right padding */
+    }
+}
