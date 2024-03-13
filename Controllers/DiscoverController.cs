@@ -10,6 +10,7 @@ namespace RednitDev.Controllers;
 
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using Microsoft.CodeAnalysis.CodeStyle;
 using Microsoft.Identity.Client;
 using RednitDev.Models;
@@ -40,6 +41,17 @@ public class DiscoverController : Controller
         HttpContext.Session.SetString("FilteredPosts", "");
         ViewBag.HasMorePost = true;
 
+        List<string> topSearch = GetTopSearch();
+        ViewBag.TopSearch = new List<HotSearch>();
+        foreach(var e in topSearch){
+            List<HotSearch> hotSearches = GetHotSearch();
+            foreach(var h in hotSearches){
+                if(h.Keyword == e){
+                    ViewBag.TopSearch.Add(h);
+                    break;
+                }
+            }
+        }
         Console.WriteLine(FeedPosts.Count);
         return View(FeedPosts);
     }
@@ -70,6 +82,18 @@ public class DiscoverController : Controller
             ViewBag.SearchTag = "";
         }
         ViewBag.HasMorePost = posts.Count > FeedPosts.Count;
+
+        List<string> topSearch = GetTopSearch();
+        ViewBag.TopSearch = new List<HotSearch>();
+        foreach(var e in topSearch){
+            List<HotSearch> hotSearches = GetHotSearch();
+            foreach(var h in hotSearches){
+                if(h.Keyword == e){
+                    ViewBag.TopSearch.Add(h);
+                    break;
+                }
+            }
+        }
         return View(FeedPosts);
     }
 
@@ -127,7 +151,10 @@ public class DiscoverController : Controller
         string username = HttpContext.Session.GetString("username");
         User user = GetUser(username);
 
-        if(user.Account.Equals(post.Author)){
+        if(user == null){
+            ViewBag.PostType = 3;
+        }
+        else if(user.Account.Equals(post.Author)){
             if(post.Requesting){
                 ViewBag.PostType = 1;
             }
@@ -339,6 +366,7 @@ public class DiscoverController : Controller
             }
         }
         Console.WriteLine("search for " + key + " found " + filteredPost.Count);
+        AddToHotSearch(key);
         string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(
             filteredPost,
             new JsonSerializerOptions()
@@ -364,26 +392,7 @@ public class DiscoverController : Controller
         HttpContext.Session.SetString("SearchedTag", tag);
         return RedirectToAction("SearchResult", "Discover");
     }
-
-    public IActionResult DeclineRequest(string _username)
-    {
-        int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
-        Account account = GetAccount(_username);
-        Post currentPost = GetPost(postId);
-        Console.WriteLine("Decline " + _username);
-        Console.WriteLine(account);
-        currentPost.Requested.Remove(account);
-        Console.WriteLine(_username + " was rejected from post " + postId);
-        UpdatePost(currentPost);
-        return RedirectToAction(
-            "ViewPost",
-            "Discover",
-            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
-        );
-    }
-
     
-
     public static List<Post> GetPosts()
     {
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
@@ -495,6 +504,63 @@ public class DiscoverController : Controller
         serializeOption.WriteIndented = true;
         string jsondata = JsonSerializer.Serialize<List<User>>(users, serializeOption);
         System.IO.File.WriteAllText("./Datacenter/user.json", jsondata);
+    }
+
+    public List<string> GetTopSearch(){
+        List<HotSearch> hotSearch = GetHotSearch();
+        List<string> searched = new List<string>();
+        for(int i = 0 ;i < 5; i++){
+            string keyword = GetHighestSearch(searched);
+            searched.Add(keyword);
+        }
+        return searched;
+    }
+
+    public string GetHighestSearch(List<string> searched){
+        List<HotSearch> hotSearch = GetHotSearch();
+        int max = 0;
+        string keyword = "";
+        foreach(var e in hotSearch){
+            if(!searched.Contains(e.Keyword)){
+                int cnt = e.Count;
+                if(cnt > max){
+                    max = cnt;
+                    keyword = e.Keyword;
+                }
+            }
+        }
+        return keyword;
+    }
+    public static void AddToHotSearch(string keyword){
+        List<HotSearch> hotSearch = GetHotSearch();
+        bool added = false;
+        foreach(var e in hotSearch){
+            if(e.Keyword == keyword){
+                e.Count++;
+                added = true;
+            }
+        }
+        if(!added){
+            hotSearch.Add(new HotSearch{Keyword = keyword, Count = 1});
+        }
+        var serializeOption = new JsonSerializerOptions();
+        serializeOption.WriteIndented = true;
+        string jsondata = JsonSerializer.Serialize<List<HotSearch>>(hotSearch, serializeOption);
+        System.IO.File.WriteAllText("./Datacenter/hotSearch.json", jsondata);
+    }
+
+    public static List<HotSearch> GetHotSearch(){
+        var hotsearchJson = System.IO.File.ReadAllText("./Datacenter/hotSearch.json");
+        List<HotSearch> hotSearch;
+        try
+        {
+            hotSearch = JsonSerializer.Deserialize<List<HotSearch>>(hotsearchJson)!;
+        }
+        catch (JsonException)
+        {
+            hotSearch = new List<HotSearch>();
+        };
+        return hotSearch;
     }
 
     public static bool HaveJoined(Post post, Account myAccount)
