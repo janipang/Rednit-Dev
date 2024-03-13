@@ -8,19 +8,228 @@ using System.Linq.Expressions;
 
 namespace RednitDev.Controllers;
 
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.Identity.Client;
+
 using RednitDev.Models;
 
 public class DiscoverController : Controller
 {
     public IActionResult Index()
     {
-        string username = HttpContext.Request.Cookies["username"]!;
-        bool state = @User.Identity.IsAuthenticated;
-        ViewBag.state = username;
-        ViewBag.state = state;
+        List<Post> posts = GetPosts();
+        List<Post> FeedPosts = new List<Post>();
 
+        for(int i = 0 ; i < 3; i++){
+            FeedPosts.Add(posts[i]);
+        }
+        HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
+        TempData["FilteredPosts"] = "";
+        return View(FeedPosts);
+    }
+    public IActionResult SearchResult()
+    {
+        List<Post> posts = null;
+        if(TempData["FilteredPosts"] == null){
+            posts = new List<Post>();
+        }
+        else{
+            posts = JsonSerializer.Deserialize<List<Post>>(TempData["FilteredPosts"] as string);
+        }
+        
+        List<Post> FeedPosts = new List<Post>();
+        Console.WriteLine("posts.count = " + posts.Count);
+        for(int i = 0 ; i < 3 && i < posts.Count; i++){
+            FeedPosts.Add(posts[i]);
+        }
+        HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
+        return View(FeedPosts);
+    }
+
+    [HttpGet]
+    public IActionResult GetMorePosts()
+    {
+        List<Post> morePosts = new List<Post>();
+        int NumberOfFeedPost = (int)HttpContext.Session.GetInt32("NumberOfFeedPost");
+        List<Post> posts = null;
+
+        if(TempData["FilteredPosts"] == null || TempData["FilteredPosts"] == ""){
+            posts = GetPosts(); 
+        }
+        else{
+            posts = JsonSerializer.Deserialize<List<Post>>(TempData["FilteredPosts"] as string);
+        }
+
+        Console.WriteLine("post.count == " + posts.Count);
+
+        for(int i = 0 ; i < 3 && NumberOfFeedPost < posts.Count; i++){
+            morePosts.Add(posts[NumberOfFeedPost]);
+            NumberOfFeedPost++;
+        }
+         
+        HttpContext.Session.SetInt32("NumberOfFeedPost", NumberOfFeedPost);
+
+        var html = "";
+        foreach(Post post in morePosts){
+            html += Components.PostViewComponent.GetViewComponent(post);
+        }
+
+        Console.WriteLine(NumberOfFeedPost);
+        
+        if(NumberOfFeedPost >= posts.Count){
+            html += "a";
+        }
+
+        return Json(html);
+    }
+
+    public IActionResult ViewPost(string id)
+    {
+        Console.WriteLine("ViewPost -> " + HttpContext.Session.GetInt32("CurrentCommentId"));
+        int Id = int.Parse(id);
+        Post post = GetPost(Id);
+        HttpContext.Session.SetInt32("CurrentPostId", Id);
+        return View(post);
+    }
+
+    [HttpPost]
+    public IActionResult AddComment(string detail)
+    {
+        Console.WriteLine("AddComment -> " + HttpContext.Session.GetInt32("CurrentCommentId"));
+        if (HttpContext.Session.GetInt32("CurrentCommentId") >= 0)
+        {
+            return RedirectToAction("ReplyComment", "Discover", new { detail = detail });
+        }
+
+        int id = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        Post currentPost = GetPost(id);
+        Comment newComment = new Comment
+        {
+            Content = detail
+        };
+        currentPost.Comments.Add(newComment);
+
+        UpdatePost(currentPost);
+
+        HttpContext.Session.SetInt32("CurrentCommentId", -1);
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    public IActionResult ReplyComment(string detail)
+    {
+        Console.WriteLine("ReplyComment -> " + HttpContext.Session.GetInt32("CurrentCommentId"));
+        
+        int id = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        int commentId = (int)HttpContext.Session.GetInt32("CurrentCommentId");
+        Post currentPost = GetPost(id);
+        Comment newComment = new Comment
+        {
+            Content = detail
+        };
+        currentPost.Comments[commentId].Reply = newComment;
+
+        UpdatePost(currentPost);
+
+        HttpContext.Session.SetInt32("CurrentCommentId", -1);
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    [HttpPost]
+    public IActionResult SetCommentID(string id)
+    {
+        int Id = int.Parse(id);
+        HttpContext.Session.SetInt32("CurrentCommentId", Id);
+        Console.WriteLine("Set to " + HttpContext.Session.GetInt32("CurrentCommentId"));
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    [HttpPost]
+    public IActionResult JoinEvent()
+    {
+        int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        string username = HttpContext.Request.Cookies["username"];
+        Post currentPost = GetPost(postId);
+        Account account = GetAccount(username);
+        if (!HaveJoined(currentPost, account))
+        {
+            currentPost.Joined.Add(account);
+        }
+        Console.WriteLine(username + " has joined post " + postId);
+
+        UpdatePost(currentPost);
+
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    [HttpPost]
+    public IActionResult SendRequest()
+    {
+        int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        string username = HttpContext.Request.Cookies["username"];
+        Post currentPost = GetPost(postId);
+        Account account = GetAccount(username);
+        if (!HaveJoined(currentPost, account) && !HaveRequested(currentPost, account))
+        {
+            currentPost.Requested.Add(account);
+        }
+        Console.WriteLine(username + " send request to post " + postId);
+        UpdatePost(currentPost);
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    public IActionResult AcceptRequest(string _username)
+    {
+        int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        Account account = GetAccount(_username);
+        Post currentPost = GetPost(postId);
+        Console.WriteLine("Accept " + _username);
+        Console.WriteLine(account);
+        if (!HaveJoined(currentPost, account))
+        {
+            currentPost.Joined.Add(account);
+            currentPost.Requested.Remove(account);
+        }
+        Console.WriteLine(_username + " was added to post " + postId);
+        UpdatePost(currentPost);
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    public IActionResult SearchKeyword(string key){
+        List<Post> posts = GetPosts();
+        List<Post> filteredPost = new List<Post>();
+        foreach(Post post in posts){
+            if(post.Detail.Header == "Anntonia Porsild"){
+                Console.WriteLine(post.Detail.Header.Contains(key) + "  ->  " + key);
+            }
+            if(
+                post.Detail.Header.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0 || 
+                post.Detail.Intro.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0
+            ){
+                filteredPost.Add(post);
+            }
+        }
+        Console.WriteLine("search for " + key + " found " + filteredPost.Count);
+        string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(filteredPost, new JsonSerializerOptions());
+        HttpContext.Session.SetString("FilteredPosts", filteredPostsJson);
+        return RedirectToAction("Index", "Discover", new { posts =  filteredPost });
+    }
+
+    public IActionResult DeclineRequest(string _username)
+    {
+        int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        Account account = GetAccount(_username);
+        Post currentPost = GetPost(postId);
+        Console.WriteLine("Decline " + _username);
+        Console.WriteLine(account);
+        currentPost.Requested.Remove(account);
+        Console.WriteLine(_username + " was rejected from post " + postId);
+        UpdatePost(currentPost);
+        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+    }
+
+    public static List<Post> GetPosts()
+    {
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try
@@ -31,10 +240,84 @@ public class DiscoverController : Controller
         {
             posts = new List<Post>();
         };
-        List<Post> hotposts = posts.Take(2).ToList();
-        return View(posts);
+        return posts;
     }
 
+    public static Post GetPost(int id){
+        List<Post> posts = GetPosts();
+        foreach(Post post in posts){
+            if(post.Id == id){
+                return post;
+            }
+        }
+        return null;
+    }
+
+    public static void UpdatePost(Post edittedPost){
+        List<Post> posts = GetPosts();
+        for(int i = 0; i < posts.Count; i++){
+            if(posts[i].Id == edittedPost.Id){
+                posts[i] = edittedPost;
+                break;
+            }
+        }
+        var serializeOption = new JsonSerializerOptions();
+        serializeOption.WriteIndented = true;
+        string jsondata = JsonSerializer.Serialize<List<Post>>(posts, serializeOption);
+        System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
+    }
+
+    public static List<Account> GetAccounts()
+    {
+        var accountsJson = System.IO.File.ReadAllText("./Datacenter/account.json");
+        List<Account> accounts;
+        try
+        {
+            accounts = JsonSerializer.Deserialize<List<Account>>(accountsJson)!;
+        }
+        catch (JsonException)
+        {
+            accounts = new List<Account>();
+        };
+        return accounts;
+    }
+
+    public static Account GetAccount(string username)
+    {
+        List<Account> accounts = GetAccounts();
+        foreach (Account account in accounts)
+        {
+            if (account.Username == username)
+            {
+                return account;
+            }
+        }
+        return null;
+    }
+
+    public static bool HaveJoined(Post post, Account myAccount)
+    {
+        foreach (Account account in post.Joined)
+        {
+            if (account.Equals(myAccount))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static bool HaveRequested(Post post, Account myAccount)
+    {
+        foreach (Account account in post.Requested)
+        {
+            if (account.Equals(myAccount))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public IActionResult CreatePost()
     {
         string username = HttpContext.Request.Cookies["username"]!;

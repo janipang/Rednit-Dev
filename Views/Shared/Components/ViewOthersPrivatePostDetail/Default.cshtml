@@ -1,7 +1,8 @@
+@model RednitDev.Models.Post
 <div class="post-detail-container">
     <div class="post-detail-top-section">
         <div class="post-header-top-left-section">
-            <h1 class="post-detail-header">หาคนทำสมุดระบายสีแจกเด็กหาคนทำสมุดระบายสีแจกเด็กหาคนทำสมุดระบายสีแจกเด็ก</h1>
+            <h1 class="post-detail-header">@Model.Detail.Header</h1>
             <div class="post-detail-day-left">
                 <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -15,9 +16,10 @@
             </div>
         </div>
         <div class="post-header-top-right-section">
-            <div class="tag">Volunteer</div>
-            <div class="tag">Charity</div>
-            <div class="tag">Lifestyle</div>
+            @foreach (var tag in Model.Detail.Tag)
+            {
+                <div class="tag">@tag</div>
+            }
             <button>
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"
                     style="margin-left: 5px">
@@ -37,13 +39,7 @@
         <p class="post-detail-username">Anntonia</p>
     </div>
     <div class="post-detail-detail-section">
-        ต้องการทีมจิตอาสาทำสมุดระบายสีไปแจกให้กับเด็กที่โรงเรียนอนุบาลค่ะ คุณสมบัติมีดังนี้<br>
-        1. มีจิตใจดี อยากช่วยเหลือเด็กน้อย<br>
-        2. มีความขยัน ตั้งใจ ไม่อู้งาน<br>
-        3. สามารถวาดรูปได้ ไม่ใช้เอไอในการเจนรูป<br>
-        4. สะดวกเดินทางไปยังโรงเรียนอนุบาล<br>
-        ใครสนใจสามารถกดเข้าร่วมได้เลยนะคะ<br>
-        ปล. ถ้าขับรถเป็นจะดีมากค่ะ
+        @Model.Detail.Detail
     </div>
     <div class="post-detail-bottom-section">
         <div>
@@ -55,7 +51,7 @@
                     d="M9.49938 11.3084C11.0521 11.3084 12.3108 10.0497 12.3108 8.49706C12.3108 6.94437 11.0521 5.68567 9.49938 5.68567C7.94669 5.68567 6.68799 6.94437 6.68799 8.49706C6.68799 10.0497 7.94669 11.3084 9.49938 11.3084Z"
                     stroke="#434343" stroke-width="2" />
             </svg>
-            <span>Bangkok, Thailand</span>
+            <span>@Model.Detail.Place</span>
         </div>
 
         <div>
@@ -77,33 +73,72 @@
                         stroke="#434343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="post-member-section">
-                    <div>@(Model.MemberCount)/@(Model.MemberMax)</div>
+                    <div>@(Model.Joined.Count)/@(Model.MemberMax)</div>
                     <div class="post-member-icon-container">
-                        @for (int i = (int)MathF.Min(4, Model.MemberCount); i > 0; i--)
+                        @for (int i = (int)MathF.Min(4, Model.Joined.Count); i > 0; i--)
                         {
                             <img class="member-icon member-z-index-@(i)"
                                 src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
                                 alt="member image">
                         }
-                        @if (Model.MemberCount > 4)
+                        @if (Model.Joined.Count > 4)
                         {
                             <div class="member-icon member-z-index-@(0)">...</div>
                         }
                     </div>
                 </span>
             </div>
-            <button class="request-button">
-                Send request
-            </button>
+            @if(ViewBag.HaveJoined){
+                <button class="request-button" style="background: orange">
+                        Joined
+                </button>
+            }
+            else if (!ViewBag.HaveRequested)
+            {
+                <form method="post" asp-controller="Discover" asp-action="SendRequest" style="display: block;width: auto">
+                    <button class="request-button" type="submit">
+                        Send request
+                    </button>
+                </form>
+            }
+            else{
+                <button class="request-button" style="background: purple">
+                        Request sent
+                </button>
+            }
+
         </div>
     </div>
     <hr>
     <div class="post-detail-comment-section">
-        @await Component.InvokeAsync("Comment")
-        @await Component.InvokeAsync("Comment")
+        @foreach (var comment in Model.Comments)
+        {
+            @await Component.InvokeAsync("CommentInOthersPost", new { comment = comment })
+        }
     </div>
-    <div class="post-detail-comment-input">
-        <input type="text">
-        <button class="comment-button">Comment</button>
-    </div>
+    <form method="post" asp-controller="Discover" asp-action="AddComment" class="post-detail-comment-input">
+        <input type="text" name="detail">
+        <button class="comment-button" type="submit">Comment</button>
+    </form>
 </div>
+
+<script>
+    function onJoinButtonClick() {
+        console.log("Hello");
+        // Make AJAX request to the controller action
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '@Url.Action("SetCommentID", "Discover")?id=' + commentID);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Request was successful
+                console.log('Data set successfully.');
+            } else {
+                // Request failed
+                console.error('Failed to set data.');
+            }
+        };
+        xhr.send();
+
+    }
+</script>
