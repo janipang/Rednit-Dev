@@ -21,6 +21,7 @@
     flex-direction: row;
     background-color: inherit;
     justify-content: space-between;
+    height:120vh;
 }
 
 .feed-container * {
@@ -40,6 +41,9 @@ p {
 .feed-area {
     width: 70%;
     background-color: inherit;
+    height: 100%;
+    overflow-y: scroll;
+    /* padding: 5px; */
 }
 
 .search-area {

@@ -9,6 +9,9 @@ using System.Linq.Expressions;
 namespace RednitDev.Controllers;
 
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Identity.Client;
+
 using RednitDev.Models;
 
 public class DiscoverController : Controller
@@ -317,6 +320,11 @@ public class DiscoverController : Controller
     }
     public IActionResult CreatePost()
     {
+        string username = HttpContext.Request.Cookies["username"]!;
+        bool state = @User.Identity.IsAuthenticated;
+        ViewBag.state = username;
+        ViewBag.state = state;
+
         return View();
     }
 
@@ -351,17 +359,30 @@ public class DiscoverController : Controller
         {
             accounts = new List<Account>();
         }
+        int idGenerator = posts.Count > 0 ? posts.Max(post => post.Id) + 1 : 1;
+
+        Console.WriteLine("last post id now:" + idGenerator);
+
+        //get account from username
+        Account? CurrentAccount = null;
+        string username = HttpContext.Session.GetString("username")!;
+        foreach (var account in accounts)
+        {
+            if (username == account.Username)
+            {
+                CurrentAccount = account;
+                break;
+            }
+        }
 
         Post newpost = new Post
         {
-            Author = new User
-            {
-                AccountSetter = accounts[0]
-            },
+            Id = idGenerator,
+            Author = CurrentAccount,
             Detail = new PostDetail
             {
                 Header = header,
-                Tag = [tag, tag, tag],
+                Tag = new List<string> { tag, tag, tag },
                 Intro = intro,
                 Detail = detail,
                 Place = place
@@ -370,11 +391,11 @@ public class DiscoverController : Controller
             {
                 DateType = dateType,
                 Start = new DateOnly(startYear, startMonth, startDay),
-                End = new DateOnly(endYear, endMonth, endDay),
+                End = dateType == "multiple" ? new DateOnly(endYear, endMonth, endDay) : null,
                 CloseSubmit = new DateOnly(closeYear, closeMonth, closeDay),
             },
-            Requesting = requestType == "request", //(request,open)
-            Visible = visibility == "public", //(public,draft)
+            Requesting = requestType == "request",
+            Visible = visibility == "public",
             MemberCount = 5,
             MemberMax = memberMax,
             DayLeft = 3,
@@ -387,6 +408,7 @@ public class DiscoverController : Controller
         Console.WriteLine(jsondata);
         System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
 
-        return View();
+        return RedirectToAction("Index", "Discover");
+
     }
 }

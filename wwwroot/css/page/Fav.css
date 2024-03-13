@@ -1,4 +1,20 @@
 h1{
     color: white;
     text-align: center;
+    padding-bottom: 2%;
+}
+.posts-container {
+    /* padding: 25px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 45vh;
+    width: 100%;
+}
+@media screen and (max-width: 940px) {
+    .posts-container {
+        flex-direction: column;
+        height: 85vh;
+        align-items: center;
+    }
 }
