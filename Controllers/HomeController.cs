@@ -53,4 +53,32 @@ public class HomeController : Controller
 
         return View(hotposts);
     }
+
+    public bool AddToFav(int postId)
+    {
+        string username = HttpContext.Request.Cookies["username"]!;
+        bool state = User.Identity.IsAuthenticated;
+        ViewBag.state = state;
+        bool isLiked;
+
+        Account userAccount = _Manager.GetAccountByUsername(username);
+        User user = _Manager.GetUserByUsername(username);
+        Post post = _Manager.GetPostById(postId);
+
+        if (user.Profile.InterestedPosts.Contains(postId)) //user dind't like this post yet
+        {
+            user.Profile.InterestedPosts.Remove(postId);
+            isLiked = false;
+            Console.WriteLine("remove post " + postId + " from fav");
+        }
+        else //dislike
+        {
+            user.Profile.InterestedPosts.Add(postId);
+            isLiked = true;
+            Console.WriteLine("add post " + postId + " to fav");
+        }
+        _Manager.UpdateUser(user);
+
+        return (isLiked);
+    }
 }
