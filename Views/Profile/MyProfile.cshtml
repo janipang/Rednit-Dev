@@ -1,6 +1,104 @@
-@model IEnumerable<RednitDev.Models.Post>
+@* @model IEnumerable<RednitDev.Models.Post>
 
-@foreach (var post in Model) @*จะใช้ใน session เรียกดีไหม*@
-{
-    @await Component.InvokeAsync("Post", new { post = post })
+@{
+    ViewData["Title"] = "My Profile";
+    Layout = "_LayoutProfile";
 }
+<link href="~/css/page/Profile.css" rel="stylesheet" />
+<div class="container">
+    <h1>Your profile</h1>
+    <div class="block-container">
+        <div id="content">
+            <div class="profile">
+                <div class="img-container">
+                    <img src="@ViewBag.user.Profile.Image" alt="profile_pic">
+                </div>
+                <div class="content-profile">
+                    <p>@ViewBag.user.Account.Username</p>
+                    <p>@ViewBag.user.Profile.Caption</p>
+                    <div class="tag-section">
+                        @foreach (var tag in ViewBag.user.Profile.InterestedTag)
+                        {
+                            <div class="tag">@tag</div>
+                        }
+                    </div>
+                </div>
+                <div class="stat">
+                    <div>
+                        <p>number of create group</p>
+                        <p>number of join group</p>
+                    </div>
+                    <a>Edit</a>
+                </div>
+            </div>
+            <div class="bar-line"></div>
+            <div class="your-posts">
+                <p>Your posts</p>
+                <div class="posts-row">
+                    @for (var i = 0; i < 3 && i < ViewBag.user.Profile.CreatedPosts.Count; i += 1)
+                    {
+                        var post = ViewBag.user.Profile.CreatedPosts[i];
+
+                        @await Component.InvokeAsync("ProfilePost", new { post = post })
+
+                    }
+                </div>
+                @if (ViewBag.user.Profile.CreatedPosts.Count > 3)
+                {
+                    <a href="#">show more</a>
+                }
+
+            </div>
+            <div class="bar-line"></div>
+            <div class="Groups-joined">
+                <p>Groups you've joined</p>
+                <div class="posts-row">
+                    @{
+                        var i = 0;
+
+                        for (i = 0; i < 3 && i < ViewBag.user.Profile.JoinningPosts.Count;)
+                        {
+                            var post = ViewBag.user.Profile.JoinningPosts[i];
+                            if (!post.Requesting)
+                            {
+                                i += 1;
+                                @await Component.InvokeAsync("ProfilePost", new { post = post })
+                            }
+
+                        }
+
+                    }
+                </div>
+                @if (ViewBag.user.Profile.JoinningPosts.Count > 3)
+                {
+                    <a href="#">show more</a>
+                }
+            </div>
+            <div class="bar-line"></div>
+            <div class="request-status">
+                <p>Request status</p>
+                @{
+                    var requestPost = new List<Post>();
+                    foreach (Post rPost in ViewBag.user.Profile.JoinningPosts)
+                    {
+                        if (rPost.Requesting)
+                        {
+                            requestPost.Add(rPost);
+                        }
+                    }
+                    for (var i = 0; i < 3 && i < requestPost.Count; i += 1)
+                    {
+                        var post = ViewBag.user.Profile.JoinningPosts[i];
+                        @await Component.InvokeAsync("ProfilePost", new { post = post })
+
+
+                    }
+                    if (requestPost.Count > 3)
+                    {
+                        <a href="#">show more</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div> *@

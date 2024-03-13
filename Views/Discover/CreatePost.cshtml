@@ -96,15 +96,15 @@
                             <div class="date-select-card close">
                                 <div>
                                     <label for="CloseDay">Day</label>
-                                    <input type="number" name="closeDay" placeholder="DD"><br>
+                                    <input type="number" name="closeDay" placeholder="DD" required><br>
                                 </div>
                                 <div>
                                     <label for="CloseMonth">Month</label>
-                                    <input type="number" name="closeMonth" placeholder="MM"><br>
+                                    <input type="number" name="closeMonth" placeholder="MM" required><br>
                                 </div>
                                 <div>
                                     <label for="CloseYear">Year</label>
-                                    <input type="number" name="closeYear" placeholder="YYYY"><br>
+                                    <input type="number" name="closeYear" placeholder="YYYY" required><br>
                                 </div>
                             </div>
                             <p class="errorText error-text-submission"></p>
@@ -148,7 +148,7 @@
     var dateTypeAns = document.getElementsByName("dateType");
     var requestAns = document.getElementsByName("requestType");
     var visibilityAns = document.getElementsByName("visibility");
-    
+
 
     var startDay = document.getElementsByName("startDay")[0];
     var startMonth = document.getElementsByName("startMonth")[0];
@@ -160,6 +160,7 @@
     var closeMonth = document.getElementsByName("closeMonth")[0];
     var closeYear = document.getElementsByName("closeYear")[0];
     var dateSelectCards = document.getElementsByClassName("date-select-card");
+    var durationCard = document.getElementsByClassName("duration")[0];
 
 
     dateTypeAns.forEach(choice => {
@@ -195,6 +196,9 @@
                 endDay.value = 0;
                 endMonth.value = 0;
                 endYear.value = 0;
+                var errorText = document.getElementsByClassName("error-text-duration")[0];
+                errorText.innerText = "correct date";
+                errorText.style.display = "none";
             }
             else if (choice.checked && choice.value === "multiple") {
                 to.style.display = "flex";
@@ -232,6 +236,7 @@
         console.log(memberMaxInput.value);
     });
 
+    //display maxlenght input
     var maxLenghtLabels = document.getElementsByClassName("length-label");
     Array.from(maxLenghtLabels).forEach((eachLabel) => {
         var inputField = document.getElementsByName(eachLabel.id.slice(4))[0];
@@ -241,7 +246,9 @@
         eachLabel.innerText = 0 + " / " + inputField.maxLength;
 
     });
+    //zone of validating date input
 
+    //add validate function to all date-select-card (start, end, close)
     dateSelectCards[0].addEventListener("change", () => {
         DateErrorHandler(startDay.value, startMonth.value, startYear.value, "duration");
     });
@@ -254,13 +261,47 @@
         DateErrorHandler(closeDay.value, closeMonth.value, closeYear.value, "submission");
     });
 
+    durationCard.addEventListener("change", () => {
+        CheckNegativeDuration(startDay.value, startMonth.value, startYear.value, endDay.value, endMonth.value, endYear.value);
+    });
+
+    function CheckNegativeDuration(startDay, startMonth, startYear, endDay, endMonth, endYear) {
+        if (dateTypeAns[1].checked) {
+            if (startDay != "" && startMonth != "" && startYear != "" && endDay != "" && endMonth != "" && endYear != "") {
+                var errorText = document.getElementsByClassName("error-text-duration")[0];
+                if (errorText.innerText == "correct date") {
+                    if (NegativeDuration(startDay, startMonth, startYear, endDay, endMonth, endYear)) {
+                        errorText.innerText = "please input correct event duration"
+                        errorText.style.display = "flex";
+                        console.log("wrong duration");
+                    }
+                    else {
+                        errorText.innerText = "correct date"
+                        errorText.style.display = "none";
+                    }
+                }
+            }
+        }
+    }
+
+    function NegativeDuration(startDay, startMonth, startYear, endDay, endMonth, endYear) {
+        if (moment(`${endDay}/${endMonth}/${endYear}`, 'DD/MM/YYYY') - moment(`${startDay}/${startMonth}/${startYear}`, 'DD/MM/YYYY') > 0) {
+            return false //it's correct
+        }
+        else {
+            return true
+        }
+    }
+
+
+    //check error in each card
     function DateErrorHandler(day, month, year, card) {
         var errorCode = ValidateInput(day, month, year);
         if (card == "duration") {
-            errorText = document.getElementsByClassName("error-text-duration")[0];
+            errorText = document.getElementsByClassName("error-text-duration")[0]; //errorText in duration box 
         }
         else if (card == "submission") {
-            errorText = document.getElementsByClassName("error-text-submission")[0];
+            errorText = document.getElementsByClassName("error-text-submission")[0]; //errorText in close-submission box 
         }
 
         if (errorCode === "correct date") {
@@ -276,7 +317,7 @@
         }
     }
 
-    //working after input 3 field
+    //working after input 3 field of each card
     function ValidateInput(day, month, year) {
         if (day != "" && month != "" && year != "") {
             if (isDateValid(day, month, year)) {
@@ -288,6 +329,7 @@
         }
         return "wait for input"
     }
+
     function isDateValid(day, month, year) {
         if (moment(`${day}/${month}/${year}`, 'DD/MM/YYYY').isValid()) {
             return true
@@ -296,4 +338,29 @@
             return false
         }
     }
+
+
+    //this is doesn't work
+    var errors = document.getElementsByClassName("errorText");
+    
+    function haveTextError() {
+        if (errors[0].style.display == "none" && errors[1].style.display == "none") {
+            return false
+        }
+        else {
+            return true;
+        }
+    }
+
+    function CheckErrorBeforeSubmit() {
+        console.log("click submit button");
+        if (haveTextError()) {
+            setTimeout(CheckErrorBeforeSubmit, 100);
+        } else {
+            console.log("will validate");
+        }
+    }
+
+    var submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", CheckErrorBeforeSubmit);
 </script>

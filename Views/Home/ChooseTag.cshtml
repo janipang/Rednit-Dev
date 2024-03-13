@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "ChooseTag";
+    Layout = "_LayoutNoti";
+}
+
+
+<link rel="stylesheet" href="/css/chooseTag.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<h1 style="color:white; text-align:center; font-weight:bold; margin-top:10px; margin-bottom:30px; font-size:40px;">Choose your interests</h1>
+<p style="color:white; text-align:center; font-size: 16px; margin-bottom:80px; ">Get better posts recommendation</p>
+
+<section style="margin: 50px;">
+    <div class="TagRow">
+        <div class="TagBox" onclick="clickButton(this, 'food')">
+            <img class="SvgImage" src="/svg/food.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Food</span>
+        </div>
+        <div class="TagBox" onclick="clickButton(this, 'lifeStyle')">
+            <img class="SvgImage" src="/svg/lifeStyle.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Lifestyle</span>
+        </div>
+        <div class="TagBox" onclick="clickButton(this, 'sport')">
+            <img class="SvgImage" src="/svg/sport.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Sport</span>
+        </div>
+        <div class="TagBox" onclick="clickButton(this, 'travel')">
+            <img class="SvgImage" src="/svg/travel.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Travel</span>
+        </div>
+        <div class="TagBox" onclick="clickButton(this, 'education')">
+            <img class="SvgImage" src="/svg/education.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Education</span>
+        </div>
+        <div class="TagBox" onclick="clickButton(this, 'animal')">
+            <img class="SvgImage" src="/svg/animal.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Animal</span>
+        </div>
+        <div class="TagBox" onclick="clickButton(this, 'art')">
+            <img class="SvgImage" src="/svg/art.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">art</span>
+        </div>
+    </div>
+</section>
+
+<div style="display: flex; justify-content:center; align-items:center;">
+    <button class="SubmitButton">
+        Submit
+    </button>
+</div>
+
+<script>
+    function clickButton(button, svgName) {
+        var svgImage = button.querySelector('.SvgImage');
+        var spanText = button.querySelector('.TextInBox');
+
+        if (svgImage && spanText) {
+            if (svgImage.src.endsWith(svgName + ".svg")) {
+                svgImage.src = "/svg/" + svgName + "Clicked.svg";
+                spanText.style.color = "#FE3C72";
+                button.style.backgroundColor = "white";
+            } else {
+                svgImage.src = "/svg/" + svgName + ".svg";
+                spanText.style.color = "rgb(255, 255, 255)";
+                button.style.backgroundColor = "transparent";
+            }
+        } else {
+            console.error("SVG image or span text not found.");
+        }
+    }
+</script>
+
