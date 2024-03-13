@@ -76,6 +76,7 @@ public class DiscoverController : Controller
         {
             accounts = new List<Account>();
         }
+        // RedirectToAction("GetAccountByUsername", "Manager");
         int idGenerator = posts.Count > 0 ? posts.Max(post => post.Id) + 1 : 1;
 
         Console.WriteLine("last post id now:" + idGenerator);

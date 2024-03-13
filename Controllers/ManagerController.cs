@@ -29,7 +29,7 @@ public class ManagerController : Controller
         }
         return null;
     }
-    public Account? GetAccountByusername(string username)
+    public Account? GetAccountByUsername(string username)
     {
         var accountsjson = System.IO.File.ReadAllText("./Datacenter/account.json");
         List<Account> accounts;
