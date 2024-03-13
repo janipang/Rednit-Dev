@@ -26,515 +26,20 @@
     },
     "Requesting": false,
     "Visible": false,
-    "MemberCount": 5,
-    "MemberMax": 1,
-    "DayLeft": 3,
+    "MemberCount": 0,
+    "MemberMax": 5,
+    "DayLeft": -439,
     "Comments": [
       {
-        "User": {
-          "Id": 0,
-          "Account": {
-            "Username": "rut",
-            "Email": "rut@gmail.com",
-            "Password": "123"
-          },
-          "Profile": {
-            "Caption": "\u0E23\u0E39\u0E1B\u0E41\u0E1B\u0E49\u0E07 Account \u0E23\u0E38\u0E08\u0E19\u0E4C",
-            "CreatedPosts": [],
-            "InterestedPosts": null,
-            "JoinningPosts": [
-              {
-                "Id": 0,
-                "Active": true,
-                "Author": {
-                  "Username": null,
-                  "Email": null,
-                  "Password": null
-                },
-                "Detail": {
-                  "Header": "go to chonburi",
-                  "Tag": [
-                    "beach",
-                    "beach",
-                    "beach"
-                  ],
-                  "Intro": "go to have a scuba diver",
-                  "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                  "Place": "sataheep, chonburi"
-                },
-                "EventDate": {
-                  "DateType": "one",
-                  "Start": "2022-12-31",
-                  "End": "2024-11-25",
-                  "CloseSubmit": "2024-11-25"
-                },
-                "Requesting": false,
-                "Visible": false,
-                "MemberCount": 5,
-                "MemberMax": 0,
-                "DayLeft": 3,
-                "Comments": [],
-                "Liked": [],
-                "Joined": [],
-                "Requested": []
-              },
-              {
-                "Id": 0,
-                "Active": true,
-                "Author": {
-                  "Username": null,
-                  "Email": null,
-                  "Password": null
-                },
-                "Detail": {
-                  "Header": "go to chonburi \u0E41\u0E1A\u0E1A request ",
-                  "Tag": [
-                    "beach",
-                    "beach",
-                    "beach"
-                  ],
-                  "Intro": "go to have a scuba diver",
-                  "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                  "Place": "sataheep, chonburi"
-                },
-                "EventDate": {
-                  "DateType": "one",
-                  "Start": "2022-12-31",
-                  "End": "2024-11-25",
-                  "CloseSubmit": "2024-11-25"
-                },
-                "Requesting": true,
-                "Visible": false,
-                "MemberCount": 5,
-                "MemberMax": 0,
-                "DayLeft": 3,
-                "Comments": [],
-                "Liked": [],
-                "Joined": [],
-                "Requested": []
-              }
-            ],
-            "Image": "https://user-images.githubusercontent.com/93817826/140603872-5b96a956-32f1-4bc4-86ce-343f7a0f5aea.jpg",
-            "InterestedTag": [
-              "gaming",
-              "tft player"
-            ],
-            "Contact": [
-              "asdfghjkl"
-            ]
-          },
-          "Noti": [
-            {
-              "Type": "Success",
-              "IdPost": 999999,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 999997,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Request",
-              "IdPost": 999998,
-              "WhoRequest": {
-                "Username": "chom",
-                "Email": "chom@gmail.com",
-                "Password": "789"
-              }
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            }
-          ]
-        },
-        "Content": "\u0E2A\u0E2D\u0E07\u0E21\u0E37\u0E2D\u0E01\u0E23\u0E32\u0E1A\u0E25\u0E07",
-        "Date": "2024-03-14T02:55:23.9728086+07:00",
+        "User": null,
+        "Content": null,
+        "Date": null,
         "Reply": null
       },
       {
-        "User": {
-          "Id": 0,
-          "Account": {
-            "Username": "rut",
-            "Email": "rut@gmail.com",
-            "Password": "123"
-          },
-          "Profile": {
-            "Caption": "\u0E23\u0E39\u0E1B\u0E41\u0E1B\u0E49\u0E07 Account \u0E23\u0E38\u0E08\u0E19\u0E4C",
-            "CreatedPosts": [],
-            "InterestedPosts": null,
-            "JoinningPosts": [
-              {
-                "Id": 0,
-                "Active": true,
-                "Author": {
-                  "Username": null,
-                  "Email": null,
-                  "Password": null
-                },
-                "Detail": {
-                  "Header": "go to chonburi",
-                  "Tag": [
-                    "beach",
-                    "beach",
-                    "beach"
-                  ],
-                  "Intro": "go to have a scuba diver",
-                  "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                  "Place": "sataheep, chonburi"
-                },
-                "EventDate": {
-                  "DateType": "one",
-                  "Start": "2022-12-31",
-                  "End": "2024-11-25",
-                  "CloseSubmit": "2024-11-25"
-                },
-                "Requesting": false,
-                "Visible": false,
-                "MemberCount": 5,
-                "MemberMax": 0,
-                "DayLeft": 3,
-                "Comments": [],
-                "Liked": [],
-                "Joined": [],
-                "Requested": []
-              },
-              {
-                "Id": 0,
-                "Active": true,
-                "Author": {
-                  "Username": null,
-                  "Email": null,
-                  "Password": null
-                },
-                "Detail": {
-                  "Header": "go to chonburi \u0E41\u0E1A\u0E1A request ",
-                  "Tag": [
-                    "beach",
-                    "beach",
-                    "beach"
-                  ],
-                  "Intro": "go to have a scuba diver",
-                  "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                  "Place": "sataheep, chonburi"
-                },
-                "EventDate": {
-                  "DateType": "one",
-                  "Start": "2022-12-31",
-                  "End": "2024-11-25",
-                  "CloseSubmit": "2024-11-25"
-                },
-                "Requesting": true,
-                "Visible": false,
-                "MemberCount": 5,
-                "MemberMax": 0,
-                "DayLeft": 3,
-                "Comments": [],
-                "Liked": [],
-                "Joined": [],
-                "Requested": []
-              }
-            ],
-            "Image": "https://user-images.githubusercontent.com/93817826/140603872-5b96a956-32f1-4bc4-86ce-343f7a0f5aea.jpg",
-            "InterestedTag": [
-              "gaming",
-              "tft player"
-            ],
-            "Contact": [
-              "asdfghjkl"
-            ]
-          },
-          "Noti": [
-            {
-              "Type": "Success",
-              "IdPost": 999999,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 999997,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Request",
-              "IdPost": 999998,
-              "WhoRequest": {
-                "Username": "chom",
-                "Email": "chom@gmail.com",
-                "Password": "789"
-              }
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            }
-          ]
-        },
-        "Content": "\u0E17\u0E35\u0E48\u0E15\u0E23\u0E07\u0E40\u0E2B\u0E19\u0E37\u0E2D\u0E2D\u0E32\u0E2A\u0E19\u0E4C",
-        "Date": "2024-03-14T02:55:26.835637+07:00",
-        "Reply": null
-      },
-      {
-        "User": {
-          "Id": 0,
-          "Account": {
-            "Username": "rut",
-            "Email": "rut@gmail.com",
-            "Password": "123"
-          },
-          "Profile": {
-            "Caption": "\u0E23\u0E39\u0E1B\u0E41\u0E1B\u0E49\u0E07 Account \u0E23\u0E38\u0E08\u0E19\u0E4C",
-            "CreatedPosts": [],
-            "InterestedPosts": null,
-            "JoinningPosts": [
-              {
-                "Id": 0,
-                "Active": true,
-                "Author": {
-                  "Username": null,
-                  "Email": null,
-                  "Password": null
-                },
-                "Detail": {
-                  "Header": "go to chonburi",
-                  "Tag": [
-                    "beach",
-                    "beach",
-                    "beach"
-                  ],
-                  "Intro": "go to have a scuba diver",
-                  "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                  "Place": "sataheep, chonburi"
-                },
-                "EventDate": {
-                  "DateType": "one",
-                  "Start": "2022-12-31",
-                  "End": "2024-11-25",
-                  "CloseSubmit": "2024-11-25"
-                },
-                "Requesting": false,
-                "Visible": false,
-                "MemberCount": 5,
-                "MemberMax": 0,
-                "DayLeft": 3,
-                "Comments": [],
-                "Liked": [],
-                "Joined": [],
-                "Requested": []
-              },
-              {
-                "Id": 0,
-                "Active": true,
-                "Author": {
-                  "Username": null,
-                  "Email": null,
-                  "Password": null
-                },
-                "Detail": {
-                  "Header": "go to chonburi \u0E41\u0E1A\u0E1A request ",
-                  "Tag": [
-                    "beach",
-                    "beach",
-                    "beach"
-                  ],
-                  "Intro": "go to have a scuba diver",
-                  "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-                  "Place": "sataheep, chonburi"
-                },
-                "EventDate": {
-                  "DateType": "one",
-                  "Start": "2022-12-31",
-                  "End": "2024-11-25",
-                  "CloseSubmit": "2024-11-25"
-                },
-                "Requesting": true,
-                "Visible": false,
-                "MemberCount": 5,
-                "MemberMax": 0,
-                "DayLeft": 3,
-                "Comments": [],
-                "Liked": [],
-                "Joined": [],
-                "Requested": []
-              }
-            ],
-            "Image": "https://user-images.githubusercontent.com/93817826/140603872-5b96a956-32f1-4bc4-86ce-343f7a0f5aea.jpg",
-            "InterestedTag": [
-              "gaming",
-              "tft player"
-            ],
-            "Contact": [
-              "asdfghjkl"
-            ]
-          },
-          "Noti": [
-            {
-              "Type": "Success",
-              "IdPost": 999999,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 999997,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Request",
-              "IdPost": 999998,
-              "WhoRequest": {
-                "Username": "chom",
-                "Email": "chom@gmail.com",
-                "Password": "789"
-              }
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Success",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            },
-            {
-              "Type": "Failed",
-              "IdPost": 1001,
-              "WhoRequest": null
-            }
-          ]
-        },
-        "Content": "\u0E41\u0E17\u0E1A\u0E1A\u0E32\u0E17\u0E22\u0E48\u0E32\u0E42\u0E21",
-        "Date": "2024-03-14T02:55:29.943853+07:00",
+        "User": null,
+        "Content": "\u0E23\u0E30\u0E22\u0E2D\u0E07\u0E44\u0E1B\u0E17\u0E32\u0E07\u0E44\u0E2B\u0E19\u0E04\u0E30",
+        "Date": null,
         "Reply": null
       }
     ],
@@ -575,9 +80,9 @@
     },
     "Requesting": false,
     "Visible": false,
-    "MemberCount": 5,
-    "MemberMax": 0,
-    "DayLeft": 3,
+    "MemberCount": 0,
+    "MemberMax": 6,
+    "DayLeft": -439,
     "Comments": [],
     "Liked": [],
     "Joined": [
@@ -616,10 +121,28 @@
     },
     "Requesting": true,
     "Visible": false,
-    "MemberCount": 5,
-    "MemberMax": 0,
-    "DayLeft": 3,
-    "Comments": [],
+    "MemberCount": 0,
+    "MemberMax": 7,
+    "DayLeft": -439,
+    "Comments": [
+      {
+        "User": null,
+        "Content": "Love you from Philipines.",
+        "Date": null,
+        "Reply": {
+          "User": null,
+          "Content": "\u0E2A\u0E2D\u0E07\u0E21\u0E37\u0E2D\u0E01\u0E23\u0E32\u0E1A\u0E25\u0E07",
+          "Date": null,
+          "Reply": null
+        }
+      },
+      {
+        "User": null,
+        "Content": "gfhhg",
+        "Date": null,
+        "Reply": null
+      }
+    ],
     "Liked": [],
     "Joined": [],
     "Requested": [
@@ -657,9 +180,9 @@
     },
     "Requesting": false,
     "Visible": true,
-    "MemberCount": 5,
+    "MemberCount": 0,
     "MemberMax": 20,
-    "DayLeft": 3,
+    "DayLeft": -7304,
     "Comments": [],
     "Liked": [],
     "Joined": [
@@ -698,9 +221,9 @@
     },
     "Requesting": false,
     "Visible": true,
-    "MemberCount": 5,
+    "MemberCount": 0,
     "MemberMax": 10,
-    "DayLeft": 3,
+    "DayLeft": -3756,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -722,7 +245,7 @@
         "my home"
       ],
       "Intro": "35 december let\u0027s go eat out at AKA siam the take a photo centralworld",
-      "Detail": "wwwwwwwwwwwwwwwwwwwwwwww",
+      "Detail": "my stomach will be very fill, please bring me to toilet",
       "Place": "aaaaaaaaa"
     },
     "EventDate": {
@@ -733,9 +256,44 @@
     },
     "Requesting": false,
     "Visible": true,
-    "MemberCount": 5,
+    "MemberCount": 0,
     "MemberMax": 10,
-    "DayLeft": 3,
+    "DayLeft": -3756,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1007,
+    "Active": true,
+    "Author": {
+      "Username": "pang",
+      "Email": "pang@gmail.com",
+      "Password": "456"
+    },
+    "Detail": {
+      "Header": "play boardgames at luck n roll",
+      "Tag": [
+        "game",
+        "game",
+        "game"
+      ],
+      "Intro": "play with cute cate and kitten chicken pig pork duck bug bird",
+      "Detail": "if you ever play game of thrones and tou suffer ,we offer you to play with a cat instead.",
+      "Place": "Luck and Roll Cafe"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-03-19",
+      "End": null,
+      "CloseSubmit": "2024-03-17"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 5,
+    "DayLeft": 5,
     "Comments": [],
     "Liked": [],
     "Joined": [],

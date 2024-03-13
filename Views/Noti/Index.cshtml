@@ -11,4 +11,12 @@
     <h1>@noti.Type </h1>
     <h1>@noti.Text </h1>
     <h1>@noti.IdPost</h1>
+    
+}
+@foreach(ShowRequestedNoti noti in ViewBag.requestedNoti)
+{
+    <h1>@noti.Header </h1>
+    <h1>@noti.Type </h1>
+    <h1>@noti.IdPost</h1>
+    <img src=@noti.Img>
 }

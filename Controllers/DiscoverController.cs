@@ -1,10 +1,10 @@
 using System.Diagnostics;
+using System.IO;
+using System.Linq.Expressions;
+using System.Text.Json;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using RednitDev.Models;
-using System.IO;
-using System.Text.Json;
-using System.Linq.Expressions;
 
 namespace RednitDev.Controllers;
 
@@ -12,23 +12,38 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.CodeAnalysis.CodeStyle;
 using Microsoft.Identity.Client;
-using NuGet.Protocol;
 using RednitDev.Models;
+using RednitDev.Services;
 
 public class DiscoverController : Controller
 {
+    private ManagerService _Manager;
+
+    public DiscoverController(ManagerService managerService)
+    {
+        _Manager = managerService;
+    }
+
     public IActionResult Index()
     {
         List<Post> posts = GetPosts();
         List<Post> FeedPosts = new List<Post>();
-        for(int i = 0 ; i < 3; i++){
+
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
+
+       for(int i = 0 ; i < 3; i++){
             FeedPosts.Add(posts[i]);
         }
         HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
         HttpContext.Session.SetString("FilteredPosts", "");
         ViewBag.HasMorePost = true;
+
+        Console.WriteLine(FeedPosts.Count);
         return View(FeedPosts);
     }
+
     public IActionResult SearchResult()
     {
         List<Post> posts = null;
@@ -40,10 +55,11 @@ public class DiscoverController : Controller
             posts = JsonSerializer.Deserialize<List<Post>>(HttpContext.Session.GetString("FilteredPosts"));
             Console.WriteLine("post.count " + posts.Count);
         }
-        
+
         List<Post> FeedPosts = new List<Post>();
         Console.WriteLine("posts.count = " + posts.Count);
-        for(int i = 0 ; i < 3 && i < posts.Count; i++){
+        for (int i = 0; i < 3 && i < posts.Count; i++)
+        {
             FeedPosts.Add(posts[i]);
         }
         HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
@@ -73,21 +89,24 @@ public class DiscoverController : Controller
 
         Console.WriteLine("post.count == " + posts.Count);
 
-        for(int i = 0 ; i < 3 && NumberOfFeedPost < posts.Count; i++){
+        for (int i = 0; i < 3 && NumberOfFeedPost < posts.Count; i++)
+        {
             morePosts.Add(posts[NumberOfFeedPost]);
             NumberOfFeedPost++;
         }
-         
+
         HttpContext.Session.SetInt32("NumberOfFeedPost", NumberOfFeedPost);
 
         var html = "";
-        foreach(Post post in morePosts){
+        foreach (Post post in morePosts)
+        {
             html += Components.PostViewComponent.GetViewComponent(post);
         }
 
         Console.WriteLine(NumberOfFeedPost);
-        
-        if(NumberOfFeedPost >= posts.Count){
+
+        if (NumberOfFeedPost >= posts.Count)
+        {
             html += "a";
         }
 
@@ -100,6 +119,9 @@ public class DiscoverController : Controller
         Console.WriteLine("post id = " + id);
         int Id = int.Parse(id);
         Post post = GetPost(Id);
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
         HttpContext.Session.SetInt32("CurrentPostId", Id);
 
         string username = HttpContext.Session.GetString("username");
@@ -137,37 +159,44 @@ public class DiscoverController : Controller
         string username = HttpContext.Session.GetString("username");
         User user = GetUser(username);
         Post currentPost = GetPost(id);
+
         Comment newComment = new Comment
         {
             User = user,
             Date = DateTime.Now,
             Content = detail
         };
+
         currentPost.Comments.Add(newComment);
 
         UpdatePost(currentPost);
 
         HttpContext.Session.SetInt32("CurrentCommentId", -1);
-        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+        return RedirectToAction(
+            "ViewPost",
+            "Discover",
+            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
+        );
     }
 
     public IActionResult ReplyComment(string detail)
     {
         Console.WriteLine("ReplyComment -> " + HttpContext.Session.GetInt32("CurrentCommentId"));
-        
+
         int id = (int)HttpContext.Session.GetInt32("CurrentPostId");
         int commentId = (int)HttpContext.Session.GetInt32("CurrentCommentId");
         Post currentPost = GetPost(id);
-        Comment newComment = new Comment
-        {
-            Content = detail
-        };
+        Comment newComment = new Comment { Content = detail };
         currentPost.Comments[commentId].Reply = newComment;
 
         UpdatePost(currentPost);
 
         HttpContext.Session.SetInt32("CurrentCommentId", -1);
-        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+        return RedirectToAction(
+            "ViewPost",
+            "Discover",
+            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
+        );
     }
 
     [HttpPost]
@@ -176,7 +205,11 @@ public class DiscoverController : Controller
         int Id = int.Parse(id);
         HttpContext.Session.SetInt32("CurrentCommentId", Id);
         Console.WriteLine("Set to " + HttpContext.Session.GetInt32("CurrentCommentId"));
-        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+        return RedirectToAction(
+            "ViewPost",
+            "Discover",
+            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
+        );
     }
 
     [HttpPost]
@@ -194,7 +227,11 @@ public class DiscoverController : Controller
 
         UpdatePost(currentPost);
 
-        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+        return RedirectToAction(
+            "ViewPost",
+            "Discover",
+            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
+        );
     }
 
     [HttpPost]
@@ -210,7 +247,11 @@ public class DiscoverController : Controller
         }
         Console.WriteLine(username + " send request to post " + postId);
         UpdatePost(currentPost);
-        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+        return RedirectToAction(
+            "ViewPost",
+            "Discover",
+            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
+        );
     }
 
     public IActionResult AcceptRequest(string _username)
@@ -242,7 +283,11 @@ public class DiscoverController : Controller
         }
         Console.WriteLine(_username + " was added to post " + postId);
         UpdatePost(currentPost);
-        return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
+        return RedirectToAction(
+            "ViewPost",
+            "Discover",
+            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
+        );
     }
 
     public void SendRejectNotificationToOthers(Post post, int postId){
@@ -294,7 +339,10 @@ public class DiscoverController : Controller
             }
         }
         Console.WriteLine("search for " + key + " found " + filteredPost.Count);
-        string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(filteredPost, new JsonSerializerOptions());
+        string filteredPostsJson = JsonSerializer.Serialize<List<Post>>(
+            filteredPost,
+            new JsonSerializerOptions()
+        );
         HttpContext.Session.SetString("FilteredPosts", filteredPostsJson);
         HttpContext.Session.SetString("SearchedTag", "");
         return RedirectToAction("SearchResult", "Discover");
@@ -317,6 +365,23 @@ public class DiscoverController : Controller
         return RedirectToAction("SearchResult", "Discover");
     }
 
+    public IActionResult DeclineRequest(string _username)
+    {
+        int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
+        Account account = GetAccount(_username);
+        Post currentPost = GetPost(postId);
+        Console.WriteLine("Decline " + _username);
+        Console.WriteLine(account);
+        currentPost.Requested.Remove(account);
+        Console.WriteLine(_username + " was rejected from post " + postId);
+        UpdatePost(currentPost);
+        return RedirectToAction(
+            "ViewPost",
+            "Discover",
+            new { id = HttpContext.Session.GetInt32("CurrentPostId") }
+        );
+    }
+
     
 
     public static List<Post> GetPosts()
@@ -330,24 +395,31 @@ public class DiscoverController : Controller
         catch (JsonException)
         {
             posts = new List<Post>();
-        };
+        }
+        ;
         return posts;
     }
 
-    public static Post GetPost(int id){
+    public static Post GetPost(int id)
+    {
         List<Post> posts = GetPosts();
-        foreach(Post post in posts){
-            if(post.Id == id){
+        foreach (Post post in posts)
+        {
+            if (post.Id == id)
+            {
                 return post;
             }
         }
         return null;
     }
 
-    public static void UpdatePost(Post edittedPost){
+    public static void UpdatePost(Post edittedPost)
+    {
         List<Post> posts = GetPosts();
-        for(int i = 0; i < posts.Count; i++){
-            if(posts[i].Id == edittedPost.Id){
+        for (int i = 0; i < posts.Count; i++)
+        {
+            if (posts[i].Id == edittedPost.Id)
+            {
                 posts[i] = edittedPost;
                 break;
             }
@@ -369,7 +441,8 @@ public class DiscoverController : Controller
         catch (JsonException)
         {
             accounts = new List<Account>();
-        };
+        }
+        ;
         return accounts;
     }
 
@@ -460,12 +533,24 @@ public class DiscoverController : Controller
 
     [HttpPost]
     public IActionResult CreatePost(
-        string header, string tag, string intro, string detail, string place,
-        int memberMax, string dateType,
-        int startDay, int startMonth, int startYear,
-        int endDay, int endMonth, int endYear,
-        int closeDay, int closeMonth, int closeYear,
-        string requestType, string visibility
+        string header,
+        string tag,
+        string intro,
+        string detail,
+        string place,
+        int memberMax,
+        string dateType,
+        int startDay,
+        int startMonth,
+        int startYear,
+        int endDay,
+        int endMonth,
+        int endYear,
+        int closeDay,
+        int closeMonth,
+        int closeYear,
+        string requestType,
+        string visibility
     )
     {
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
@@ -526,9 +611,10 @@ public class DiscoverController : Controller
             },
             Requesting = requestType == "request",
             Visible = visibility == "public",
-            MemberCount = 5,
+            MemberCount = 0,
             MemberMax = memberMax,
-            DayLeft = 3,
+            DayLeft = (int)
+                (new DateTime(startYear, startMonth, startDay) - DateTime.Today).TotalDays,
         };
         posts.Add(newpost);
 
@@ -539,6 +625,33 @@ public class DiscoverController : Controller
         System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
 
         return RedirectToAction("Index", "Discover");
+    }
 
+    public bool AddToFav(int postId)
+    {
+        string username = HttpContext.Request.Cookies["username"]!;
+        bool state = User.Identity.IsAuthenticated;
+        ViewBag.state = state;
+        bool isLiked;
+
+        Account userAccount = _Manager.GetAccountByUsername(username);
+        User user = _Manager.GetUserByUsername(username);
+        Post post = _Manager.GetPostById(postId);
+
+        if (user.Profile.InterestedPosts.Contains(postId)) //user dind't like this post yet
+        {
+            user.Profile.InterestedPosts.Remove(postId);
+            isLiked = false;
+            Console.WriteLine("remove post " + postId + " from fav");
+        }
+        else //dislike
+        {
+            user.Profile.InterestedPosts.Add(postId);
+            isLiked = true;
+            Console.WriteLine("add post " + postId + " to fav");
+        }
+        _Manager.UpdateUser(user);
+
+        return (isLiked);
     }
 }

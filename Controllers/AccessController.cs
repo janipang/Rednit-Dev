@@ -1,8 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using RednitDev.Models;
 using RednitDev.Services;
 
@@ -10,14 +9,18 @@ namespace RednitDev.Controllers;
 
 public class AccessController : Controller
 {
+
     private readonly AccountService accountService;
     private readonly IHttpContextAccessor httpContextAccessor;
-    public AccessController(AccountService _accountService, IHttpContextAccessor _httpContextAccessor)
+
+    public AccessController(
+        AccountService _accountService,
+        IHttpContextAccessor _httpContextAccessor
+    )
     {
         accountService = _accountService;
         httpContextAccessor = _httpContextAccessor;
     }
-
 
     public IActionResult Login()
     {
@@ -32,24 +35,30 @@ public class AccessController : Controller
     [HttpPost]
     public async Task<IActionResult> Login(string username, string password)
     {
-        // check user 
+        // check user
         var account = accountService.Authenticate(username, password);
         if (account != null)
         {
-            List<Claim> claims = new List<Claim>() {
-                    new Claim(ClaimTypes.NameIdentifier, account.Username),
-                    new Claim("OtherProperties", "Example Role")
-                };
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, account.Username),
+                new Claim("OtherProperties", "Example Role")
+            };
 
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims,
-                CookieAuthenticationDefaults.AuthenticationScheme);
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(
+                claims,
+                CookieAuthenticationDefaults.AuthenticationScheme
+            );
 
             AuthenticationProperties properties = new AuthenticationProperties()
             {
                 AllowRefresh = true,
             };
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity), properties);
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                properties
+            );
             var cookieOptions = new CookieOptions
             {
                 Expires = DateTimeOffset.Now.AddDays(1),
@@ -83,6 +92,7 @@ public class AccessController : Controller
         }
         return View();
     }
+
     [HttpPost]
     public async Task<IActionResult> Signup(string username, string email, string password)
     {
@@ -90,20 +100,26 @@ public class AccessController : Controller
         if (account == null)
         {
             var newAccount = accountService.AddAccount(username, email, password);
-            List<Claim> claims = new List<Claim>() {
-                    new Claim(ClaimTypes.NameIdentifier, newAccount.Username),
-                    new Claim("OtherProperties", "Example Role")
-                };
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, newAccount.Username),
+                new Claim("OtherProperties", "Example Role")
+            };
 
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims,
-                CookieAuthenticationDefaults.AuthenticationScheme);
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(
+                claims,
+                CookieAuthenticationDefaults.AuthenticationScheme
+            );
 
             AuthenticationProperties properties = new AuthenticationProperties()
             {
                 AllowRefresh = true,
             };
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity), properties);
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                properties
+            );
 
             var cookieOptions = new CookieOptions
             {
