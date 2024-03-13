@@ -8,14 +8,14 @@
                     alt="profile image">
             </button>
             <div>
-                <p class="post-detail-username">Anntonia</p>
-                <p class="post-comment-time">5 days ago</p>
+                <p class="post-detail-username">@Model.User.Account.Username</p>
+                <p class="post-comment-time">@Model.Date</p>
             </div>
         </div>
         <div class="comment-detail-section">
             @Model.Content
         </div>
-        @if (Model.Reply == null)
+        @* @if (Model.Reply == null)
         {
             <button class="comment-reply-button" onclick="onReplyButtonClick(@Model.Id)">
                 Reply
@@ -23,7 +23,7 @@
         }
         <button class="comment-reply-button">
             Delete
-        </button>
+        </button> *@
     </div>
     @if (@Model.Reply != null)
     {

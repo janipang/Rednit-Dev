@@ -14,6 +14,7 @@ namespace RednitDev.Components{
             string username = HttpContext.Request.Cookies["username"];
             Account myAccount = DiscoverController.GetAccount(username);
             ViewBag.HaveJoined = DiscoverController.HaveJoined(post, myAccount);
+            ViewBag.CurrentCommentId = HttpContext.Session.GetInt32("CurrentCommentId");
             return View(post);
         }
     }
