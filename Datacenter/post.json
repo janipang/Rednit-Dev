@@ -274,5 +274,39 @@
     "Liked": [],
     "Joined": [],
     "Requested": []
+  },
+  {
+    "Id": 1008,
+    "Active": true,
+    "Author": {
+      "Username": "pang",
+      "Email": "pang@gmail.com",
+      "Password": "456"
+    },
+    "Detail": {
+      "Header": "toh rung pan web dev",
+      "Tag": [
+        "Lifestyle",
+        " Education"
+      ],
+      "Intro": "khob ta pee man dam",
+      "Detail": "tireddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "Place": "KMITL"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-03-18",
+      "End": null,
+      "CloseSubmit": "2024-03-15"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 5,
+    "DayLeft": 4,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
   }
 ]

@@ -458,7 +458,7 @@ public class DiscoverController : Controller
             Detail = new PostDetail
             {
                 Header = header,
-                Tag = new List<string> { tag, tag, tag },
+                Tag = tag.Split(',').ToList(),
                 Intro = intro,
                 Detail = detail,
                 Place = place
@@ -514,5 +514,16 @@ public class DiscoverController : Controller
         _Manager.UpdateUser(user);
 
         return (isLiked);
+    }
+
+    public IActionResult AddTag(string tag){
+        return Json(TagString(tag));
+    }
+
+    public string TagString(string tag){
+
+        return $"""
+        <div class="tagElement">{tag}</div>
+        """;
     }
 }
