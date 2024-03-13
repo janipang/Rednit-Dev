@@ -24,7 +24,18 @@
         "tft player"
       ]
     },
-    "Noti": []
+    "Noti": [
+          {
+              "Type" : "Success",
+              "IdPost" : 1001,
+              "WhoRequest" : null
+          },
+          {
+              "Type" : "Failed",
+              "IdPost" : 1002,
+              "WhoRequest" : null
+          }
+      ]
   },
   {
     "Account": {
@@ -44,7 +55,18 @@
       "Image": "",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+          {
+              "Type" : "Success",
+              "IdPost" : 1001,
+              "WhoRequest" : null
+          },
+          {
+              "Type" : "Failed",
+              "IdPost" : 1002,
+              "WhoRequest" : null
+          }
+      ]
   },
   {
     "Account": {
