@@ -15,7 +15,7 @@
                         <path d="M9 4V8.5L12 10" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                     <span class="ramaining-day">
-                        @(Model.DayLeft) Day@(Model.DayLeft > 1 ? "s" : "") left
+                        @(Model.DayLeft) Day@(Model.DayLeft > 1 ? "s" : "") left 
                     </span>
                     @if (Model.Requesting)
                     {
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="post-top-right-section">
-            @foreach(var tag in Model.Detail.Tag){
+            @foreach(var tag in @Model.Detail.Tag){
                 <div class="tag">@tag</div>
             }
             <button>
@@ -43,8 +43,8 @@
         </div>
     </div>
     <div class="post-detail-section">
-        <p class="post-title">@Model.Detail.Header</p>
-        <p class="post-intro">@Model.Detail.Intro</p>
+            <p class="post-title">@Model.Detail.Header</p>
+            <p class="post-intro">@Model.Detail.Intro</p>
     </div>
     <div class="post-bottom-section">
         <div>
@@ -77,30 +77,28 @@
                     stroke="#434343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <span class="post-member-section">
-                <div>@(Model.MemberCount)/@(Model.MemberMax)</div>
+                <div>@(Model.Joined.Count)/@(Model.MemberMax)</div>
                 <div class="post-member-icon-container">
-                @for (int i = (int)MathF.Min(4, Model.MemberCount); i > 0; i--)
+                @for (int i = (int)MathF.Min(4, Model.Joined.Count); i > 0; i--)
                 {
                         <img class="member-icon member-z-index-@(i)"
                             src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
                             alt="member image">
                 }
-                @if(Model.MemberCount > 4){
+                @if(Model.Joined.Count > 4){
                     <div class="member-icon member-z-index-@(0)">...</div>
                 }
                 </div>
             </span>
         </div>
-        <button onclick="redirectToAnotherView()" class="show-detail-button">More Detail</button>
-
+        <button class="show-detail-button" onclick="onMoreDetailButtonClick(@Model.Id)">More Detail</button>
     </div>
 </div>
 
 <script>
-    function redirectToAnotherView(){
-        console.log("hello");
-        var url = '@Url.Action("Index", "PostDetail")';
-        //setData();
+    function onMoreDetailButtonClick(postID){
+        console.log(postID);
+        var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
         window.location.href = url;
     }
 </script>

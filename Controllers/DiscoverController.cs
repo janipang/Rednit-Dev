@@ -26,6 +26,8 @@ public class DiscoverController : Controller
         }
         HttpContext.Session.SetInt32("NumberOfFeedPost", 3);
         TempData["FilteredPosts"] = "";
+
+        Console.WriteLine(FeedPosts.Count);
         return View(FeedPosts);
     }
     public IActionResult SearchResult()

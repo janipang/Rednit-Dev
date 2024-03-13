@@ -259,6 +259,8 @@ p {
     border: none;
     border-radius: 10px;
     padding: 8px 20px;
+    z-index: 999;
+    transform: translate(0, -200px);
 }
 
 @media screen and (max-width: 992px){
