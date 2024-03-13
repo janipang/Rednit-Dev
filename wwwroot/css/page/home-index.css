@@ -15,7 +15,7 @@ section.paragraph {
 }
 
 section.cards {
-    padding: 10% 0vw;
+    padding: 270px 0px 200px;
 }
 
 section.statistics {
@@ -33,19 +33,17 @@ section.hotpost {
 }
 
 section.paragraph>h1 {
-    font-size: 55px;
+    font-size: 65px;
     color: #FFFFFF;
     margin: 30px 0px;
     text-align: left;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 section.paragraph>p {
-    font-size: 20px;
+    font-size: 24px;
     color: #FFFFFF;
     margin: 30px 0px;
     text-align: left;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 section.paragraph button {
@@ -63,7 +61,8 @@ section.paragraph button {
 }
 
 .fontgradient {
-    margin: 0px;
+    margin: 10px;
+    font-weight: 800;
     background: linear-gradient(45deg, #FE3C72, #FF4D00);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -77,8 +76,8 @@ section.paragraph button {
 }
 
 .activity-card {
-    height: 100%;
-    padding: 5% 15%;
+    height: 80%;
+    padding: 40px 55px 40px;
     background-color: #FFFFFF;
     border-radius: 20px;
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, .2);
@@ -87,13 +86,13 @@ section.paragraph button {
 }
 
 .activity-card img {
-    height: 70%;
+    height: 100%;
     margin: auto;
     max-width: 90%;
 }
 
 .activity-card > img[alt="join_svg"]{
-    height: 63%;
+    height: 80%;
 }
 
 .activity-card p {
@@ -110,6 +109,14 @@ section.paragraph button {
     margin-top: 5%;
     text-align: center;
     color: #E5001B;
+}
+
+.activity-pic{
+    padding-top: 60px;
+}
+
+.activity-info{
+    padding-top: 70px;
 }
 
 .stat-container {
