@@ -29,7 +29,20 @@
     "MemberCount": 5,
     "MemberMax": 0,
     "DayLeft": 3,
-    "Comments": [],
+    "Comments": [
+      {
+        "User": null,
+        "Content": null,
+        "Date": null,
+        "Reply": null
+      },
+      {
+        "User": null,
+        "Content": null,
+        "Date": null,
+        "Reply": null
+      }
+    ],
     "Liked": [],
     "Joined": [],
     "Requested": []

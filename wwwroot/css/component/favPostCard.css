@@ -15,7 +15,8 @@ p {
 
 .post-container {
     padding: 20px;
-    width: 35%;
+    width: 70%;
+    height: 60%;
     display: grid;
     grid-template: 2fr 6fr 3fr / 1fr;
     border-radius: 5px;
@@ -283,6 +284,7 @@ p {
     .post-container {
         width: calc(100% - 200px);
         height: 43%;
+        margin: 2%;
     }
 
     .post-bottom--down {

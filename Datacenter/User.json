@@ -83,17 +83,17 @@
         "Noti" : [
             {
                 "Type" : "Success",
-                "IdPost" : 999999,
+                "IdPost" : 1001,
                 "WhoRequest" : null
             },
             {
                 "Type" : "Failed",
-                "IdPost" : 999997,
+                "IdPost" : 1002,
                 "WhoRequest" : null
             },
             {
                 "Type" : "Request",
-                "IdPost" : 999998,
+                "IdPost" : 1003,
                 "WhoRequest" : {
                     "Username": "chom",
                     "Email": "chom@gmail.com",

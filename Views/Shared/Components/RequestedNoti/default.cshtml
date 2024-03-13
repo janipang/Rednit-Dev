@@ -1,0 +1,24 @@
+@model RednitDev.Models.ShowRequestedNoti
+<div class="Re-noti-card">
+    <div class="Re-left-side">
+        <div class="Re-top-text">group request!</div>
+        <div class="Re-post-name">
+            <img class="profile-image" src="@Model.Img"/>
+            <div class="user-name">@Model.WhoRequest</div>
+            <div class="detail">requested to join your group</div>
+        </div>
+        <div class="Re-bot-text">@Model.Header</div>
+    </div>
+    <div class="Re-right-side">
+        <div class="Re-post-bottom-right-section">
+            <button class="Re-show-detail-button" onclick="onMoreDetailButtonClick(@Model.IdPost)">View request list</button>
+        </div>
+    </div>
+</div>
+<script>
+    function onMoreDetailButtonClick(postID){
+        console.log(postID);
+        var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
+        window.location.href = url;
+    }
+</script>
