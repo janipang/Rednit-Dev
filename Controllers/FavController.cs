@@ -15,6 +15,7 @@ public class FavController : Controller
         Console.WriteLine("state: " + state);
         // ViewBag.Username = username;
         ViewBag.state = state;
+        /*-------------------------------------*/
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try
