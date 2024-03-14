@@ -11,9 +11,9 @@ public class NotiController : Controller
     public IActionResult Index()
     {
 
-        // bool state = User.Identity.IsAuthenticated;
-        // Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
-        // ViewBag.state = state;
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
 
         var username =  HttpContext.Request.Cookies["username"]; 
         var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json"); //Byte Stream
