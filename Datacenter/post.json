@@ -188,6 +188,11 @@
         "Username": "tak",
         "Email": "tak@gmail.com",
         "Password": "123"
+      },
+      {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
       }
     ],
     "Requested": []
@@ -445,7 +450,13 @@
     "DayLeft": 6,
     "Comments": [],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {

@@ -7,6 +7,5 @@ h1{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 70vh;
     margin: 2%;
 }
