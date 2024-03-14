@@ -117,7 +117,7 @@ public class HomeController : Controller
         }
         
         DiscoverController.UpdateUser(user);
-        return RedirectToAction("Setting", "Home");
+        return RedirectToAction("MyProfile", "Profile");
     }
         
     public bool AddToFav(int postId)

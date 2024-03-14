@@ -21,15 +21,16 @@ using Microsoft.Identity.Client;
 
 public class ProfileController : Controller
 {
-    public User onlineUser;
+
     [Authorize]
     public IActionResult MyProfile()
     {
+        bool state = User.Identity.IsAuthenticated;
+        ViewBag.state = state;
         // ดึง username
-        int idPost = (int)HttpContext.Session.GetInt32("Id");
+        int idUser = (int)HttpContext.Session.GetInt32("Id");
 
-        var user = GetUser(idPost);
-        onlineUser = user;
+        var user = GetUser(idUser);
 
         Console.WriteLine("User: +" + user.Account.Email);
         Console.WriteLine("RequesingPosts: +" + user.Profile.RequesingPosts);
@@ -40,6 +41,13 @@ public class ProfileController : Controller
     
     public IActionResult ViewProfile(int idUser)
     {
+        bool state = User.Identity.IsAuthenticated;
+        ViewBag.state = state;
+        var user = GetUser(idUser);
+
+        Console.WriteLine(" View User: +" + user.Account.Email);
+        Console.WriteLine("RequesingPosts: +");
+        ViewBag.user = user;
         return View();
     }
     public static User GetUser(int idUser)
@@ -56,7 +64,6 @@ public class ProfileController : Controller
         {
             users = new List<User>();
         };
-        Console.WriteLine("users: " + users.Count);
         var user = users.SingleOrDefault(x => x.Id == idUser);
         return user;
     }
