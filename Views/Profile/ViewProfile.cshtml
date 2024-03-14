@@ -1,0 +1,60 @@
+@model IEnumerable<RednitDev.Models.Post>
+
+@{
+    ViewData["Title"] = "My Profile";
+    Layout = "_LayoutProfile";
+}
+<link href="~/css/page/Profile.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<div class="container">
+    <div class="block-container">
+        <div id="content">
+            <div class="profile">
+                <div class="img-container">
+                    <img src="@ViewBag.user.Profile.Image" alt="profile_pic">
+                </div>
+                <div class="content-profile">
+                    <p class="username">@ViewBag.user.Account.Username</p>
+                    <p class="caption">@ViewBag.user.Profile.Caption</p>
+                    <div class="tag-section">
+                        @foreach (var tag in ViewBag.user.Profile.InterestedTag)
+                        {
+                            <p class="tag">@tag</p>
+                        }
+                    </div>
+                </div>
+                <div class="rigth-stat">
+                    <div class = "stat">
+                        <div class = "num-create-group">
+                            <div class = "text">@ViewBag.user.Profile.CreatedPosts.Count</div>
+                            <p>Groups created</p>
+                        </div>
+                        <div id= "joining-group-number">
+                            <div class = "text">@ViewBag.user.Profile.JoinningPosts.Count</div>
+                            <p>Groups joined</p>
+                        </div>
+                        
+                    </div>
+                    <a>Edit</a>
+                </div>
+            </div>
+            @{
+                @if (ViewBag.user.Profile.CreatedPosts != null && ViewBag.user.Profile.CreatedPosts.Count > 0)
+                {
+                    <div class="bar-line"></div>
+                    <div id="your-posts">
+                        <p>All posts</p>
+                        <div id="posts-row">
+                            @foreach (var idPost in ViewBag.user.Profile.CreatedPosts)
+                            {
+                                @await Component.InvokeAsync("OtherProfilePost", new { idPost = idPost })
+                            }
+
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
