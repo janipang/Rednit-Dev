@@ -175,13 +175,7 @@
       "Image": "",
       "InterestedTag": []
     },
-    "Noti": [
-      {
-        "Type": "Success",
-        "IdPost": 1008,
-        "WhoRequest": null
-      }
-    ]
+    "Noti": []
   },
   {
     "Id": 6,
@@ -199,12 +193,116 @@
       "Image": "https://i.pinimg.com/564x/6b/70/fe/6b70fee009636ca399925a3a40e82179.jpg",
       "InterestedTag": []
     },
-    "Noti": [
-      {
-        "Type": "Failed",
-        "IdPost": 1008,
-        "WhoRequest": null
-      }
-    ]
+    "Noti": []
+  },
+  {
+    "Id": 7,
+    "Account": {
+      "Username": "rb123",
+      "Email": "123",
+      "Password": "123"
+    },
+    "Profile": {
+      "Caption": "",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "",
+      "InterestedTag": [
+        "Lifestyle",
+        "Sport",
+        "Travel"
+      ]
+    },
+    "Noti": []
+  },
+  {
+    "Id": 8,
+    "Account": {
+      "Username": "123",
+      "Email": "12345",
+      "Password": "123"
+    },
+    "Profile": {
+      "Caption": "",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "",
+      "InterestedTag": [
+        "Sport",
+        "Animal",
+        "Art"
+      ]
+    },
+    "Noti": []
+  },
+  {
+    "Id": 9,
+    "Account": {
+      "Username": "acc1",
+      "Email": "acc1",
+      "Password": "1"
+    },
+    "Profile": {
+      "Caption": "",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "https://i0.wp.com/www.stignatius.co.uk/wp-content/uploads/2020/10/default-user-icon.jpg?fit=415%2C415\u0026ssl=1",
+      "InterestedTag": [
+        "Sport",
+        "Animal",
+        "Art"
+      ]
+    },
+    "Noti": []
+  },
+  {
+    "Id": 10,
+    "Account": {
+      "Username": "newUser",
+      "Email": "newuser@gmail.com",
+      "Password": "newuser"
+    },
+    "Profile": {
+      "Caption": "",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "https://i0.wp.com/www.stignatius.co.uk/wp-content/uploads/2020/10/default-user-icon.jpg?fit=415%2C415\u0026ssl=1",
+      "InterestedTag": [
+        "Lifestyle",
+        "Animal",
+        "Art"
+      ]
+    },
+    "Noti": []
+  },
+  {
+    "Id": 11,
+    "Account": {
+      "Username": "newuser00",
+      "Email": "newuser00@gmail.com",
+      "Password": "123"
+    },
+    "Profile": {
+      "Caption": "",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "https://i0.wp.com/www.stignatius.co.uk/wp-content/uploads/2020/10/default-user-icon.jpg?fit=415%2C415\u0026ssl=1",
+      "InterestedTag": [
+        "Lifestyle",
+        "Sport",
+        "Animal"
+      ]
+    },
+    "Noti": []
   }
 ]
