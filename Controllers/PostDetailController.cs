@@ -13,6 +13,7 @@ public class PostDetailController : Controller
 {
     public IActionResult Index()
     {
+
         Post post = new Post{
             Detail = new PostDetail{
                 Header = "หาคนทำสมุดระบายสีแจกเด็ก",
@@ -27,3 +28,6 @@ public class PostDetailController : Controller
         return View(post);
     }
 }
+
+//no use laew
+

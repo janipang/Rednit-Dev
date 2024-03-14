@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "PostDetail";
+    Layout = "_LoginLayout";
+}
+@if(ViewBag.PostType == 0){
+    @await Component.InvokeAsync("ViewMyPostDetail", new { post = Model})
+}
+else if(ViewBag.PostType == 1){
+    @await Component.InvokeAsync("ViewMyPrivatePostDetail", new { post = Model})
+}
+else if(ViewBag.PostType == 2){
+    @await Component.InvokeAsync("ViewOthersPostDetail", new { post = Model})
+}
+else{
+    @await Component.InvokeAsync("ViewOthersPrivatePostDetail", new { post = Model})
+}

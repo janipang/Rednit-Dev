@@ -5,13 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RednitDev</title>
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <link rel="stylesheet" href="~/css/layout/home.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/page/home-index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/component/hotPostCard.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/page/discover-createpost.css">
-    @* <link rel="stylesheet" href="~/RednitDev.styles.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/css/page/discover-createpost.css"> *@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +59,7 @@
                                     asp-action="Index">Notification</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-controller="Fav"
                                     asp-action="Index">Favorite</a></li>
-                            <li><a class="dropdown-item" asp-area="" asp-controller="Profile"
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Home"
                                     asp-action="Setting">Setting</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-controller="Access" asp-action="Logout">
                                     <p>Logout</p></b>
@@ -71,6 +69,7 @@
 
                     @* for debugging *@
                     @*<a class="logout" asp-area="" asp-controller="Access" asp-action="LogOut">Log out</a> *@
+
                 </div>
             </div>
         </nav>

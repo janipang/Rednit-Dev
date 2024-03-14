@@ -3,7 +3,6 @@
     background-color: white;
     width: 80%;
     margin: 0 auto;
-    z-index: 10;
     border-radius: 5px;
     padding: 60px;
     box-sizing: border-box;
@@ -410,6 +409,10 @@
     width: 40%;
     display: flex;
     justify-content: space-around;
+}
+
+.selected {
+    background-color: #AAAAAA;
 }
 
 @media screen and (max-width: 1250px) {

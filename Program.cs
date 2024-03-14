@@ -18,6 +18,8 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddScoped<AccountService, AccountServiceImpl>();
 
+builder.Services.AddScoped<ManagerService,ManagerServiceImpl>();
+
 //cookies
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)

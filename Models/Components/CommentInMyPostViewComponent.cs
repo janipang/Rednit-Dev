@@ -5,9 +5,9 @@ using RednitDev.Models;
 namespace RednitDev.Components{
     public class CommentInMyPostViewComponent: ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(Comment comment)
         {
-            return View();
+            return View(comment);
         }
     }
 }

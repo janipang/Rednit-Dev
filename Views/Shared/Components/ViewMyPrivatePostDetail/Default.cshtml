@@ -1,7 +1,7 @@
 <div class="post-detail-container">
     <div class="post-detail-top-section-v2">
         <div class="post-header-top-left-section">
-            <h1 class="post-detail-header">หาคนทำสมุดระบายสีแจกเด็กหาคนทำสมุดระบายสีแจกเด็กหาคนทำสมุดระบายสีแจกเด็ก</h1>
+            <h1 class="post-detail-header">@Model.Detail.Header</h1>
             <div class="post-detail-day-left">
                 <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -10,124 +10,58 @@
                     <path d="M9 4V8.5L12 10" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
                 <span class="post-detail-remaining-day ">
-                    20 Days left
+                    @(Model.DayLeft) Day@(Model.DayLeft > 1 ? "s" : "") left
                 </span>
             </div>
         </div>
         <div class="post-header-top-right-section-v2">
-            <div class="tag">Volunteer</div>
-            <div class="tag">Charity</div>
-            <div class="tag">Lifestyle</div>
-            <div class="post-detail-manage-button" onclick="toggleManageSection()">
+            @foreach (var tag in Model.Detail.Tag)
+            {
+                <div class="tag">@tag</div>
+            }
+            <div class="post-detail-manage-button" onclick="showManageSection()">
                 Manage requests
                 <div class="manage-request-container" id="manageSection">
                     <div class="manage-request-top-row">
                         <p>User</p>
                         <p>Request Date</p>
-                        <button><svg width="17" height="17" viewBox="0 0 17 17" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                        <button onclick="hideManageSection()"><svg width="17" height="17" viewBox="0 0 17 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L8.5 8.5M8.5 8.5L16 16M8.5 8.5L16 1M8.5 8.5L1 16" stroke="#C4C4C4"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                     </div>
                     <div class="manage-user-section">
-                        @*<p class="no-user-request">No requests received yet</p>*@
-                        
-                        <div class="manage-request-row">
-                            <div class="user-request">
-                                <img class="request-user-image"
-                                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
-                                    alt="profile image">
-                                <p class="user-request-name">Anntonia</p>
-                            </div>
-                            <p class="request-date">14 March 2024</p>
-                            <div class="manage-button">
-                                <button class="accept-button">accept</button>
-                                <button class="decline-button">decline</button>
-                            </div>
-                        </div>
-                        <div class="manage-request-row">
-                            <div class="user-request">
-                                <img class="request-user-image"
-                                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
-                                    alt="profile image">
-                                <p class="user-request-name">Anntonia</p>
-                            </div>
-                            <p class="request-date">14 March 2024</p>
-                            <div class="manage-button">
-                                <button class="accept-button">accept</button>
-                                <button class="decline-button">decline</button>
-                            </div>
-                        </div>
-                        <div class="manage-request-row">
-                            <div class="user-request">
-                                <img class="request-user-image"
-                                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
-                                    alt="profile image">
-                                <p class="user-request-name">Anntonia</p>
-                            </div>
-                            <p class="request-date">14 March 2024</p>
-                            <div class="manage-button">
-                                <button class="accept-button">accept</button>
-                                <button class="decline-button">decline</button>
-                            </div>
-                        </div>
-                        <div class="manage-request-row">
-                            <div class="user-request">
-                                <img class="request-user-image"
-                                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
-                                    alt="profile image">
-                                <p class="user-request-name">Anntonia</p>
-                            </div>
-                            <p class="request-date">14 March 2024</p>
-                            <div class="manage-button">
-                                <button class="accept-button">accept</button>
-                                <button class="decline-button">decline</button>
-                            </div>
-                        </div>
-                        <div class="manage-request-row">
-                            <div class="user-request">
-                                <img class="request-user-image"
-                                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
-                                    alt="profile image">
-                                <p class="user-request-name">Anntonia</p>
-                            </div>
-                            <p class="request-date">14 March 2024</p>
-                            <div class="manage-button">
-                                <button class="accept-button">accept</button>
-                                <button class="decline-button">decline</button>
-                            </div>
-                        </div>
-                        <div class="manage-request-row">
-                            <div class="user-request">
-                                <img class="request-user-image"
-                                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
-                                    alt="profile image">
-                                <p class="user-request-name">Anntonia</p>
-                            </div>
-                            <p class="request-date">14 March 2024</p>
-                            <div class="manage-button">
-                                <button class="accept-button">accept</button>
-                                <button class="decline-button">decline</button>
-                            </div>
-                        </div>
-                        <div class="manage-request-row">
-                            <div class="user-request">
-                                <img class="request-user-image"
-                                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
-                                    alt="profile image">
-                                <p class="user-request-name">Anntonia</p>
-                            </div>
-                            <p class="request-date">14 March 2024</p>
-                            <div class="manage-button">
-                                <button class="accept-button">accept</button>
-                                <button class="decline-button">decline</button>
-                            </div>
-                        </div>
-                        
-                    </div>
+                        @if (Model.Requested.Count == 0)
+                        {
+                            <p class="no-user-request">No requests received yet</p>
+                        }
+                        else
+                        {
+                            foreach (var accout in Model.Requested)
+                            {
+                                <div class="manage-request-row">
+                                    <div class="user-request">
+                                        <img class="request-user-image"
+                                            src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                                            alt="profile image">
+                                        <p class="user-request-name">@accout.Username</p>
+                                    </div>
+                                    <p class="request-date">14 March 2024</p>
+                                    <div class="manage-button">
+                                        <button class="accept-button" onclick="onAcceptButtonClick('@accout.Username')">
+                                            accept
+                                        </button>
+                                        <button class="decline-button" onclick="onDeclineButtonClick('@accout.Username')">
+                                            decline
+                                        </button>
+                                    </div>
+                                </div>
 
+                            }
+                        }
+                    </div>
                 </div>
             </div>
             <button class="post-detail-edit-button-v2">
@@ -138,19 +72,13 @@
     <div class="post-creator-section">
         <button class="post-user-image-container">
             <img class="post-user-image"
-                src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                src=@ViewBag.ProfileImage
                 alt="profile image">
         </button>
-        <p class="post-detail-username">Anntonia</p>
+        <p class="post-detail-username">@Model.Author.Username</p>
     </div>
     <div class="post-detail-detail-section">
-        ต้องการทีมจิตอาสาทำสมุดระบายสีไปแจกให้กับเด็กที่โรงเรียนอนุบาลค่ะ คุณสมบัติมีดังนี้<br>
-        1. มีจิตใจดี อยากช่วยเหลือเด็กน้อย<br>
-        2. มีความขยัน ตั้งใจ ไม่อู้งาน<br>
-        3. สามารถวาดรูปได้ ไม่ใช้เอไอในการเจนรูป<br>
-        4. สะดวกเดินทางไปยังโรงเรียนอนุบาล<br>
-        ใครสนใจสามารถกดเข้าร่วมได้เลยนะคะ<br>
-        ปล. ถ้าขับรถเป็นจะดีมากค่ะ
+        @Model.Detail.Detail
     </div>
     <div class="post-detail-bottom-section">
         <div>
@@ -162,7 +90,7 @@
                     d="M9.49938 11.3084C11.0521 11.3084 12.3108 10.0497 12.3108 8.49706C12.3108 6.94437 11.0521 5.68567 9.49938 5.68567C7.94669 5.68567 6.68799 6.94437 6.68799 8.49706C6.68799 10.0497 7.94669 11.3084 9.49938 11.3084Z"
                     stroke="#434343" stroke-width="2" />
             </svg>
-            <span>Bangkok, Thailand</span>
+            <span>@Model.Detail.Place</span>
         </div>
 
         <div>
@@ -174,7 +102,7 @@
                     d="M1.88889 18.8889H15.1111C16.1528 18.8889 17 18.0417 17 17V3.77778C17 2.73606 16.1528 1.88889 15.1111 1.88889H13.2222V0H11.3333V1.88889H5.66667V0H3.77778V1.88889H1.88889C0.847167 1.88889 0 2.73606 0 3.77778V17C0 18.0417 0.847167 18.8889 1.88889 18.8889ZM15.1111 5.66667L15.1121 17H1.88889V5.66667H15.1111Z"
                     fill="#434343" />
             </svg>
-            <span>20/4/2024</span>
+            <span>@("" + Model.EventDate.Start + (Model.EventDate.DateType != "one" ? " - " + Model.EventDate.End : ""))</span>
         </div>
         <div style="margin-top: 0;">
             <div class="post-detail-member-container">
@@ -184,15 +112,15 @@
                         stroke="#434343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="post-member-section">
-                    <div>@(Model.MemberCount)/@(Model.MemberMax)</div>
+                    <div>@(Model.Joined.Count)/@(Model.MemberMax)</div>
                     <div class="post-member-icon-container">
-                        @for (int i = (int)MathF.Min(4, Model.MemberCount); i > 0; i--)
+                        @for (int i = (int)MathF.Min(4, Model.Joined.Count); i > 0; i--)
                         {
                             <img class="member-icon member-z-index-@(i)"
-                                src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                                src=@(ViewBag.JoinedImage[i - 1])
                                 alt="member image">
                         }
-                        @if (Model.MemberCount > 4)
+                        @if (Model.Joined.Count > 4)
                         {
                             <div class="member-icon member-z-index-@(0)">...</div>
                         }
@@ -203,17 +131,44 @@
     </div>
     <hr>
     <div class="post-detail-comment-section">
-        @await Component.InvokeAsync("CommentInMyPost")
-        @await Component.InvokeAsync("CommentInMyPost")
+        @foreach (var comment in Model.Comments)
+        {
+            @await Component.InvokeAsync("CommentInMyPost", new { comment = comment })
+        }
     </div>
-    <div class="post-detail-comment-input">
-        <input type="text">
-        <button class="comment-button">Comment</button>
-    </div>
+    <form method="post" asp-controller="Discover" asp-action="AddComment" class="post-detail-comment-input">
+        <input type="text" name="detail">
+        <button class="comment-button" type="submit">Comment</button>
+    </form>
 </div>
 <script>
-    function toggleManageSection() {
+    var cnt = 0;
+    function showManageSection() {
+        if (cnt <= 0) {
+            cnt++;
+        }
+        if (cnt > 0) {
+            var navbarLinks = document.getElementById("manageSection");
+            navbarLinks.classList.add("active");
+        }
+
+    }
+
+    function hideManageSection() {
+        cnt -= 2;
         var navbarLinks = document.getElementById("manageSection");
-        navbarLinks.classList.toggle("active");
+        navbarLinks.classList.remove("active");
+    }
+
+    function onAcceptButtonClick(username) {
+        console.log(username);
+        var url = '@Url.Action("AcceptRequest", "Discover")' + '?_username=' + encodeURIComponent(username + "");
+        window.location.href = url;
+    }
+
+    function onDeclineButtonClick(username) {
+        console.log(username);
+        var url = '@Url.Action("DeclineRequest", "Discover")' + '?_username=' + encodeURIComponent(username + "");
+        window.location.href = url;
     }
 </script>

@@ -31,8 +31,8 @@
         {
             <li>
                 <div>
-                    <span class="hot-search-keyword">แอนโทเนีย@(i)</span>
-                    <span class="keyword-search-times">@(100 - i) searches</span>
+                    <span class="hot-search-keyword">@ViewBag.TopSearch[i].Keyword</span>
+                    <span class="keyword-search-times">@ViewBag.TopSearch[i].Count</span>
                 </div>
             </li>
         }

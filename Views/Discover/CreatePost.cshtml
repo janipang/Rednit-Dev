@@ -13,8 +13,46 @@
                             <input type="text" name="header" placeholder="Header" maxlength="50" required>
                             <p class="length-label" id="max-header"></p>
                         </legend>
-                        <legend for="tag">Tag
-                            <input type="text" name="tag" placeholder="Tag" required>
+                        <legend for="tag" class="showtag">Tag
+                            <input name="tag" maxlength="3">
+                            <div class="tagInput">
+                                Tag
+                            </div>
+                            <p class="length-label" id="max-tag"></p>
+                            <button type="button" class="addTag">
+                                <svg width="30" height="30" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px">
+                                    <path class="favIcon"
+                                        d="M10.8889 18H18M18 18H25.1111M18 18V25.1111M18 18V10.8889M18 34C15.8989 34 13.8183 33.5861 11.8771 32.7821C9.93586 31.978 8.17203 30.7994 6.68629 29.3137C5.20055 27.828 4.022 26.0641 3.21793 24.1229C2.41385 22.1817 2 20.1012 2 18C2 15.8989 2.41385 13.8183 3.21793 11.8771C4.022 9.93586 5.20055 8.17203 6.68629 6.68629C8.17203 5.20055 9.93586 4.022 11.8771 3.21793C13.8183 2.41385 15.8989 2 18 2C22.2435 2 26.3131 3.68571 29.3137 6.68629C32.3143 9.68687 34 13.7565 34 18C34 22.2435 32.3143 26.3131 29.3137 29.3137C26.3131 32.3143 22.2435 34 18 34Z"
+                                        stroke="#FE3C72" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="dropdown-hover-area">
+                                <ul class="dropdown-tag-box">
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Food">Food</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Lifestyle">Lifestyle</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Sports">Sports</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Travel">Travel</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Education">Education</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Animal">Animal</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Art">Art</div>
+                                    </li>
+                                </ul>
+                            </div>
                         </legend>
                         <legend for="intro">Intro
                             <input type="text" name="intro" placeholder="Intro" maxlength="120" required>
@@ -96,15 +134,15 @@
                             <div class="date-select-card close">
                                 <div>
                                     <label for="CloseDay">Day</label>
-                                    <input type="number" name="closeDay" placeholder="DD"><br>
+                                    <input type="number" name="closeDay" placeholder="DD" required><br>
                                 </div>
                                 <div>
                                     <label for="CloseMonth">Month</label>
-                                    <input type="number" name="closeMonth" placeholder="MM"><br>
+                                    <input type="number" name="closeMonth" placeholder="MM" required><br>
                                 </div>
                                 <div>
                                     <label for="CloseYear">Year</label>
-                                    <input type="number" name="closeYear" placeholder="YYYY"><br>
+                                    <input type="number" name="closeYear" placeholder="YYYY" required><br>
                                 </div>
                             </div>
                             <p class="errorText error-text-submission"></p>
@@ -145,10 +183,51 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
 <script>
+
+    //add tag in field
+    var tagItems = document.getElementsByClassName("dropdown-tag-item");
+    var dropDownBox = document.getElementsByClassName("dropdown-tag-box")[0];
+    var tagInput = document.getElementsByClassName("tagInput")[0];
+    var maxTag = document.getElementById("max-tag");
+    var tagNameSetter = document.querySelector("input[name='tag']");
+    var count = 0;
+    tagNameSetter.style.visibility = "hidden";
+    var tagValues = [];
+
+    maxTag.textContent = `${count} / 3`
+    Array.from(tagItems).forEach((tagItem) => {
+        console.log("hello" + tagItem);
+        tagItem.addEventListener("click", () => {
+            $.ajax({
+                url: '/Discover/AddTag',
+                type: 'GET',
+                data: { tag: tagItem.getAttribute("name") },
+                success: function (tagDiv) {
+                    if (count == 0) {
+                        tagInput.innerHTML = "";
+                    }
+                    if (count < 3) {
+                        console.log("Received tag HTML:", tagDiv);
+                        tagInput.innerHTML += tagDiv;
+                        count++;
+                        tagValues.push(tagItem.getAttribute("name"));
+                        tagNameSetter.value = tagValues.join(", ");
+                        console.log("tag value", tagNameSetter.value);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', status, error);
+                }
+            });
+        });
+    });
+
+
+
     var dateTypeAns = document.getElementsByName("dateType");
     var requestAns = document.getElementsByName("requestType");
     var visibilityAns = document.getElementsByName("visibility");
-    
+
 
     var startDay = document.getElementsByName("startDay")[0];
     var startMonth = document.getElementsByName("startMonth")[0];
@@ -160,6 +239,7 @@
     var closeMonth = document.getElementsByName("closeMonth")[0];
     var closeYear = document.getElementsByName("closeYear")[0];
     var dateSelectCards = document.getElementsByClassName("date-select-card");
+    var durationCard = document.getElementsByClassName("duration")[0];
 
 
     dateTypeAns.forEach(choice => {
@@ -195,6 +275,9 @@
                 endDay.value = 0;
                 endMonth.value = 0;
                 endYear.value = 0;
+                var errorText = document.getElementsByClassName("error-text-duration")[0];
+                errorText.innerText = "correct date";
+                errorText.style.display = "none";
             }
             else if (choice.checked && choice.value === "multiple") {
                 to.style.display = "flex";
@@ -232,6 +315,7 @@
         console.log(memberMaxInput.value);
     });
 
+    //display maxlenght input
     var maxLenghtLabels = document.getElementsByClassName("length-label");
     Array.from(maxLenghtLabels).forEach((eachLabel) => {
         var inputField = document.getElementsByName(eachLabel.id.slice(4))[0];
@@ -241,7 +325,9 @@
         eachLabel.innerText = 0 + " / " + inputField.maxLength;
 
     });
+    //zone of validating date input
 
+    //add validate function to all date-select-card (start, end, close)
     dateSelectCards[0].addEventListener("change", () => {
         DateErrorHandler(startDay.value, startMonth.value, startYear.value, "duration");
     });
@@ -254,13 +340,47 @@
         DateErrorHandler(closeDay.value, closeMonth.value, closeYear.value, "submission");
     });
 
+    durationCard.addEventListener("change", () => {
+        CheckNegativeDuration(startDay.value, startMonth.value, startYear.value, endDay.value, endMonth.value, endYear.value);
+    });
+
+    function CheckNegativeDuration(startDay, startMonth, startYear, endDay, endMonth, endYear) {
+        if (dateTypeAns[1].checked) {
+            if (startDay != "" && startMonth != "" && startYear != "" && endDay != "" && endMonth != "" && endYear != "") {
+                var errorText = document.getElementsByClassName("error-text-duration")[0];
+                if (errorText.innerText == "correct date") {
+                    if (NegativeDuration(startDay, startMonth, startYear, endDay, endMonth, endYear)) {
+                        errorText.innerText = "please input correct event duration"
+                        errorText.style.display = "flex";
+                        console.log("wrong duration");
+                    }
+                    else {
+                        errorText.innerText = "correct date"
+                        errorText.style.display = "none";
+                    }
+                }
+            }
+        }
+    }
+
+    function NegativeDuration(startDay, startMonth, startYear, endDay, endMonth, endYear) {
+        if (moment(`${endDay}/${endMonth}/${endYear}`, 'DD/MM/YYYY') - moment(`${startDay}/${startMonth}/${startYear}`, 'DD/MM/YYYY') > 0) {
+            return false //it's correct
+        }
+        else {
+            return true
+        }
+    }
+
+
+    //check error in each card
     function DateErrorHandler(day, month, year, card) {
         var errorCode = ValidateInput(day, month, year);
         if (card == "duration") {
-            errorText = document.getElementsByClassName("error-text-duration")[0];
+            errorText = document.getElementsByClassName("error-text-duration")[0]; //errorText in duration box 
         }
         else if (card == "submission") {
-            errorText = document.getElementsByClassName("error-text-submission")[0];
+            errorText = document.getElementsByClassName("error-text-submission")[0]; //errorText in close-submission box 
         }
 
         if (errorCode === "correct date") {
@@ -276,7 +396,7 @@
         }
     }
 
-    //working after input 3 field
+    //working after input 3 field of each card
     function ValidateInput(day, month, year) {
         if (day != "" && month != "" && year != "") {
             if (isDateValid(day, month, year)) {
@@ -288,6 +408,7 @@
         }
         return "wait for input"
     }
+
     function isDateValid(day, month, year) {
         if (moment(`${day}/${month}/${year}`, 'DD/MM/YYYY').isValid()) {
             return true
@@ -296,4 +417,29 @@
             return false
         }
     }
+
+
+    //this is doesn't work
+    var errors = document.getElementsByClassName("errorText");
+
+    function haveTextError() {
+        if (errors[0].style.display == "none" && errors[1].style.display == "none") {
+            return false
+        }
+        else {
+            return true;
+        }
+    }
+
+    function CheckErrorBeforeSubmit() {
+        console.log("click submit button");
+        if (haveTextError()) {
+            setTimeout(CheckErrorBeforeSubmit, 100);
+        } else {
+            console.log("will validate");
+        }
+    }
+
+    var submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", CheckErrorBeforeSubmit);
 </script>
