@@ -39,19 +39,21 @@
                     <p style="font-size: 13px; color:#434343; margin-top:10px; margin-left: 5px;">Make sure they match!</p>
                 </div>
             </div>
+                
         </div>
 
         <div class=EditPicture>
             <p style="margin-top:30px">Profile picture</p>
-            <form action="/upload" method="post" enctype="multipart/form-data">
+            @* <form action="/upload" method="post" enctype="multipart/form-data">
                 <img id="previewImage" src="#" alt="Preview Image" style="display: none; max-width: 450px; max-height: 450px;">
                 <br>
                 <label for="fileInput"></label>
                 <input type="file" id="fileInput" name="fileInput" accept="image/*">
-            </form>
+            </form> *@
+            <input type="text" id="imageInput" name="imageInput" placeholder="Profile Picture Link">
         </div>
     </div>
-    <button class="SaveButton">Save setting</button>
+<button class="SaveButton" onclick="submit()">Save setting</button>
 </div>
 
 <script>
@@ -59,6 +61,10 @@
     const bioInput = document.getElementById('bioInput');
     const charUserLimit = 15;
     const charBioLimit = 200;
+
+    @* usernameInput.value = @ViewBag.username;
+    bioInput.value = @ViewBag.bio;
+    document.getElementById("imageInput").value = @ViewBag.image; *@
 
     usernameInput.addEventListener('input', function() {
         const inputLength = this.value.length;
@@ -78,22 +84,7 @@
         }
     });
 
-    const fileInput = document.getElementById('fileInput');
     const previewImage = document.getElementById('previewImage');
-
-    fileInput.addEventListener('change', function(event) {
-        const selectedFile = event.target.files[0];
-        if (selectedFile) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                previewImage.src = reader.result;
-                previewImage.style.display = 'block';
-            };
-            reader.readAsDataURL(selectedFile);
-        } else {
-            previewImage.style.display = 'none';
-        }
-    });
 
     const changePasswordBox = document.getElementsByClassName('ChangePasswordBox')[0];
     const changePasswordButton = document.getElementById('changePasswordButton');
@@ -109,4 +100,13 @@
         }
     });
 
+    function submit() {
+        var url = '@Url.Action("EditProfile", "Home")' + "?" + "username=" + usernameInput.value + "&" + 
+        "bio=" + bioInput.value + "&" + 
+        "newPass=" + document.getElementById("newPassword").value + "&" +
+        "confirmPass=" + document.getElementById("confirmPassword").value + "&" +
+        "image=" + document.getElementById("imageInput").value;
+        console.log(url);
+        window.location.href = url;
+    }
 </script>

@@ -6,6 +6,7 @@
     height: auto;
     padding: 50px;
     border-radius: 10px;
+    display: block;
 }
 
 .EditHeader {
@@ -20,6 +21,11 @@
     font-weight: 600;
     font-size: 15px;
     column-gap: 50px;
+}
+
+.ButtonContainer{
+    display: flex;
+    flex-direction: column;
 }
 
 .EditDetail {
@@ -82,6 +88,7 @@
     color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     font-weight: 600;
+    width: 180px;
 }
 
 #newPassword {
@@ -106,6 +113,7 @@
 
 .SaveButton{
     font-weight: 600;
+    width: 135px;
     background-color: #3CCE77;
     font-size: 16px;
     padding: 10px 15px;
