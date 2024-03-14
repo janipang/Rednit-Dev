@@ -3,18 +3,19 @@
     "Id": 1001,
     "Active": true,
     "Author": {
-      "Username": "pang",
-      "Email": "pang@gmail.com",
-      "Password": "456"
+      "Username": "rut",
+      "Email": "rut@gmail.com",
+      "Password": "123"
     },
     "Detail": {
       "Header": "Let\u0027s Go Cheer Up MUT 2024",
       "Tag": [
         "Lifestyle",
-        " Education"
+        " Education",
+        " Lifestyle"
       ],
       "Intro": "have an EXCELLENT trip to fly across many town ,then enjoy with the gorgeous thing in the world",
-      "Detail": "the most interesting thing that you will never forgot it , the new experience, i will fly i will survive eheh, i will fly with Singapore Airlines and go relax in a lounge before take off 2 hrs. i will bring a fire label to cheer up!. meet me at suvarnabhumi airport",
+      "Detail": "is on fire is on fire is on fire is on fire is on fire is on fire is on fire is on fire is on fire is on fire is on fire ",
       "Place": "Mexico"
     },
     "EventDate": {
@@ -48,8 +49,34 @@
           },
           "Noti": []
         },
-        "Content": " \u0E02\u0E2D\u0E04\u0E19\u0E44\u0E21\u0E48\u0E41\u0E1E\u0E49\u0E41\u0E14\u0E14\u0E19\u0E30\u0E04\u0E30",
+        "Content": "\u0E02\u0E2D\u0E04\u0E19\u0E44\u0E21\u0E48\u0E41\u0E1E\u0E49\u0E41\u0E14\u0E14\u0E19\u0E30\u0E04\u0E30",
         "Date": "2024-03-14T07:54:49.0824802+07:00",
+        "Reply": null
+      },
+      {
+        "User": {
+          "Id": 0,
+          "Account": {
+            "Username": "rutto",
+            "Email": "rutto@gmail.com",
+            "Password": "345"
+          },
+          "Profile": {
+            "Caption": "",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "",
+            "InterestedTag": []
+          },
+          "Noti": null
+        },
+        "Content": "\u0E21\u0E07\u0E25\u0E07\u0E41\u0E19\u0E48\u0E19\u0E2D\u0E19",
+        "Date": "2024-03-14T09:58:09.6921529+07:00",
         "Reply": null
       }
     ],
@@ -59,6 +86,11 @@
         "Username": "tak",
         "Email": "tak@gmail.com",
         "Password": "123"
+      },
+      {
+        "Username": "rutto",
+        "Email": "rutto@gmail.com",
+        "Password": "345"
       }
     ],
     "Requested": []
@@ -67,18 +99,18 @@
     "Id": 1002,
     "Active": true,
     "Author": {
-      "Username": "pang",
-      "Email": "pang@gmail.com",
-      "Password": "456"
+      "Username": "rut",
+      "Email": "rut@gmail.com",
+      "Password": "123"
     },
     "Detail": {
       "Header": "go Sansiri Backyard to feed a sheep",
       "Tag": [
         "Lifestyle",
-        " Animal"
+        "   Lifestyle"
       ],
       "Intro": "feed a cute animal in semi cafe semi farm to relax your mind make it a therapy by nature ",
-      "Detail": "go by BTS then bus or Taxi , or see you at destination before noon",
+      "Detail": "kayyyyyyyyyyyykay    sanuk makkkkkk",
       "Place": "Sansiri, Onnut"
     },
     "EventDate": {
@@ -87,11 +119,11 @@
       "End": null,
       "CloseSubmit": "2024-03-20"
     },
-    "Requesting": false,
+    "Requesting": true,
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 3,
-    "DayLeft": 10,
+    "DayLeft": 6,
     "Comments": [],
     "Liked": [],
     "Joined": [
@@ -115,7 +147,7 @@
       "Header": "exercise for prevent allergic",
       "Tag": [
         "Sports",
-        " Lifestyle"
+        "Lifestyle"
       ],
       "Intro": "go running every thursday and thuesday after school",
       "Detail": "please bring your backpack and water to drink preventing heatstroke, and beware of PM 2.5",
@@ -261,7 +293,7 @@
       "Header": "\u0E44\u0E01\u0E48\u0E17\u0E2D\u0E14\u0E44\u0E2E\u0E42\u0E0B\u0E1E\u0E23\u0E38\u0E48\u0E07\u0E19\u0E35\u0E49",
       "Tag": [
         "Food",
-        " Lifestyle"
+        "Lifestyle"
       ],
       "Intro": "\u0E1D\u0E32\u0E01\u0E08\u0E2D\u0E07\u0E42\u0E15\u0E4A\u0E30\u0E01\u0E48\u0E2D\u0E19\u0E23\u0E49\u0E32\u0E19\u0E1B\u0E34\u0E14 \u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E40\u0E25\u0E35\u0E49\u0E22\u0E07\u0E27\u0E34\u0E07\u0E0B\u0E4C\u0E41\u0E0B\u0E48\u0E1A\u0E2A\u0E2D\u0E07\u0E0A\u0E34\u0E49\u0E19",
       "Detail": null,
@@ -295,7 +327,7 @@
       "Header": "Commart Society",
       "Tag": [
         "Education",
-        " Lifestyle"
+        "Lifestyle"
       ],
       "Intro": "\u0E2B\u0E32\u0E04\u0E19\u0E44\u0E1B\u0E0B\u0E37\u0E49\u0E2D SSD \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E04\u0E23\u0E31\u0E1A",
       "Detail": "\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E1E\u0E23\u0E30\u0E08\u0E2D\u0E21\u0E40\u0E01\u0E25\u0E49\u0E32\u0E2A\u0E34\u0E1A\u0E42\u0E21\u0E07\u0E15\u0E23\u0E07",
@@ -312,6 +344,169 @@
     "MemberCount": 0,
     "MemberMax": 2,
     "DayLeft": 6,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1008,
+    "Active": true,
+    "Author": {
+      "Username": "rutto",
+      "Email": "rutto@gmail.com",
+      "Password": "345"
+    },
+    "Detail": {
+      "Header": "Commart Society",
+      "Tag": [
+        "Lifestyle",
+        "Travel",
+        "Art"
+      ],
+      "Intro": "\u0E2B\u0E32\u0E04\u0E19\u0E44\u0E1B\u0E0B\u0E37\u0E49\u0E2D SSD \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E04\u0E23\u0E31\u0E1A",
+      "Detail": null,
+      "Place": "Bitech, BangNa"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2024-03-20",
+      "End": "2024-03-21",
+      "CloseSubmit": "2024-03-18"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 9,
+    "DayLeft": 6,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1009,
+    "Active": true,
+    "Author": null,
+    "Detail": {
+      "Header": "go Sansiri Backyard to feed a sheep",
+      "Tag": [
+        "Lifestyle",
+        "Animal",
+        "Sports"
+      ],
+      "Intro": "feed a cute animal in semi cafe semi farm to relax your mind make it a therapy by nature ",
+      "Detail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "Place": "Sansiri, Onnut"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-03-24",
+      "End": null,
+      "CloseSubmit": "2024-03-20"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 6,
+    "DayLeft": 10,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1010,
+    "Active": true,
+    "Author": null,
+    "Detail": {
+      "Header": "go Sansiri Backyard to feed a sheep",
+      "Tag": [
+        "Lifestyle",
+        "Animal",
+        "Travel"
+      ],
+      "Intro": "feed a cute animal in semi cafe semi farm to relax your mind make it a therapy by nature ",
+      "Detail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "Place": "Sansiri, Onnut"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-03-24",
+      "End": null,
+      "CloseSubmit": "2024-03-22"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 3,
+    "DayLeft": 10,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1011,
+    "Active": true,
+    "Author": null,
+    "Detail": {
+      "Header": "Let\u0027s Go Cheer Up MUT 2024",
+      "Tag": [
+        "Lifestyle",
+        "Education",
+        "Lifestyle"
+      ],
+      "Intro": "have an EXCELLENT trip to fly across many town ,then enjoy with the gorgeous thing in the world",
+      "Detail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "Place": "Mexico"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-04-04",
+      "End": null,
+      "CloseSubmit": "2024-03-24"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 10,
+    "DayLeft": 21,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1012,
+    "Active": true,
+    "Author": {
+      "Username": "rut",
+      "Email": "rut@gmail.com",
+      "Password": "123"
+    },
+    "Detail": {
+      "Header": "Let\u0027s Go Cheer Up MUT 2024",
+      "Tag": [
+        "Lifestyle",
+        "Education",
+        "Lifestyle"
+      ],
+      "Intro": "have an EXCELLENT trip to fly across many town ,then enjoy with the gorgeous thing in the world",
+      "Detail": "aaaaaaaaaaaaaaaaaa",
+      "Place": "Mexico"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-04-04",
+      "End": null,
+      "CloseSubmit": "2024-03-24"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 15,
+    "DayLeft": 21,
     "Comments": [],
     "Liked": [],
     "Joined": [],

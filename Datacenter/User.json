@@ -126,5 +126,26 @@
       "InterestedTag": []
     },
     "Noti": []
+  },
+  {
+    "Id": 0,
+    "Account": {
+      "Username": "rutto",
+      "Email": "rutto@gmail.com",
+      "Password": "345"
+    },
+    "Profile": {
+      "Caption": "",
+      "CreatedPosts": [],
+      "InterestedPosts": [
+        1002,
+        1001
+      ],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "",
+      "InterestedTag": []
+    },
+    "Noti": null
   }
 ]

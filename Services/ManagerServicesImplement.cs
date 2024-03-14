@@ -69,7 +69,6 @@ namespace RednitDev.Services
             {
                 if (user.Account.Username == username)
                 {
-
                     return user;
                 }
             }
@@ -153,6 +152,56 @@ namespace RednitDev.Services
             serializeOption.WriteIndented = true;
             string jsondata = JsonSerializer.Serialize<List<User>>(users, serializeOption);
             System.IO.File.WriteAllText("./Datacenter/user.json", jsondata);
+        }
+
+        public void ReplacePost(int postId, Post newpost)
+        {
+            var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
+            List<Post> posts;
+            try
+            {
+                posts = JsonSerializer.Deserialize<List<Post>>(postsjson)!; //! is for not to warning me,jezz
+            }
+            catch (JsonException)
+            {
+                posts = new List<Post>();
+            }
+                    Console.WriteLine("manager searching ...");
+            for (int i = 0; i < posts.Count; i++)
+            {
+                if (posts[i].Id == postId)
+                {
+                    posts[i] = newpost;
+                    Console.WriteLine("manager have repalced");
+                    Console.WriteLine(posts[i].Detail.Detail);
+                    Console.WriteLine(posts[i].Detail.Tag[0]);
+                    break;
+                }
+            }
+            var serializeOption = new JsonSerializerOptions();
+            serializeOption.WriteIndented = true;
+            string jsondata = JsonSerializer.Serialize<List<Post>>(posts, serializeOption);
+            System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
+        }
+
+        public void DeletePost(int postId)
+        {
+            var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
+            List<Post> posts;
+            try
+            {
+                posts = JsonSerializer.Deserialize<List<Post>>(postsjson)!; //! is for not to warning me,jezz
+            }
+            catch (JsonException)
+            {
+                posts = new List<Post>();
+            }
+            posts.RemoveAll(post => post.Id == postId);
+
+            var serializeOption = new JsonSerializerOptions();
+            serializeOption.WriteIndented = true;
+            string jsondata = JsonSerializer.Serialize<List<Post>>(posts, serializeOption);
+            System.IO.File.WriteAllText("./Datacenter/post.json", jsondata);
         }
     }
 }

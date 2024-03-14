@@ -620,6 +620,7 @@ public class DiscoverController : Controller
         string visibility
     )
     {
+        Console.WriteLine("start to create post");
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         var accountsjson = System.IO.File.ReadAllText("./Datacenter/account.json");
         List<Post> posts;
@@ -665,7 +666,7 @@ public class DiscoverController : Controller
             Detail = new PostDetail
             {
                 Header = header,
-                Tag = tag.Split(',').ToList(),
+                Tag = tag.Split(", ").ToList(),
                 Intro = intro,
                 Detail = detail,
                 Place = place
@@ -682,7 +683,7 @@ public class DiscoverController : Controller
             MemberCount = 0,
             MemberMax = memberMax,
             DayLeft = (int)
-                (new DateTime(startYear, startMonth, startDay) - DateTime.Today).TotalDays,
+                (new DateTime(closeYear, closeMonth, closeDay) - DateTime.Today).TotalDays,
         };
         posts.Add(newpost);
 
@@ -732,6 +733,74 @@ public class DiscoverController : Controller
         return $"""
         <div class="tagElement">{tag}</div>
         """;
+    }
+
+    public IActionResult EditPost(string id){
+        int postId = int.Parse(id);
+        Console.WriteLine("/GET to edit post id:"+ postId);
+        Post editingPost = _Manager.GetPostById(postId);
+        return View(editingPost);
+    }
+
+    [HttpPost]
+    public IActionResult EditPost(
+        int postId,
+        string header,
+        string tag,
+        string intro,
+        string detail,
+        string place,
+        int memberMax,
+        string dateType,
+        int startDay,
+        int startMonth,
+        int startYear,
+        int endDay,
+        int endMonth,
+        int endYear,
+        int closeDay,
+        int closeMonth,
+        int closeYear,
+        string requestType,
+        string visibility)   
+    {
+        string username = HttpContext.Request.Cookies["username"]!;
+        bool state = User.Identity.IsAuthenticated;
+        Account CurrentAccount = _Manager.GetAccountByUsername(username);
+        Post oldpost = _Manager.GetPostById(postId);
+        ViewBag.state = state;
+        Console.WriteLine(tag);
+            oldpost.Id = postId;
+            oldpost.Author = CurrentAccount;
+
+            oldpost.Detail.Header = header;
+            oldpost.Detail.Tag = tag.Split(',').ToList();
+            oldpost.Detail.Intro = intro;
+            oldpost.Detail.Detail = detail;
+            oldpost.Detail.Place = place;
+
+            oldpost.EventDate.DateType = dateType;
+            oldpost.EventDate.Start = new DateOnly(startYear, startMonth, startDay);
+            oldpost.EventDate.End = dateType == "multiple" ? new DateOnly(endYear, endMonth, endDay) : null;
+            oldpost.EventDate.CloseSubmit = new DateOnly(closeYear, closeMonth, closeDay);
+
+            oldpost.Requesting = requestType == "request";
+            oldpost.Visible = visibility == "public";
+            oldpost.MemberCount = 0;
+            oldpost.MemberMax = memberMax;
+            oldpost.DayLeft = (int)
+                (new DateTime(closeYear, closeMonth, closeDay) - DateTime.Today).TotalDays;
+
+            Console.WriteLine("start to change post in db");
+            Console.WriteLine(oldpost);
+            _Manager.ReplacePost(postId, oldpost);
+        return RedirectToAction("MyProfile", "Profile");
+    }
+
+    [HttpPost]
+    public IActionResult DeletePost(int postId){
+        _Manager.DeletePost(postId);
+        return RedirectToAction("MyProfile", "Profile");
     }
 }
 
