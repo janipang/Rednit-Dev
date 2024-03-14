@@ -70,8 +70,12 @@ public class AccessController : Controller
                 HttpOnly = true
             };
 
+            User user = DiscoverController.GetUser(account.Username);
+
             httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", account.Username);
+            httpContextAccessor.HttpContext.Session.SetInt32("Id", user.Id);
+            Console.WriteLine(httpContextAccessor.HttpContext.Session.GetInt32("Id"));
             HttpContext.Response.Cookies.Append("username", account.Username, cookieOptions);
             return RedirectToAction("Index", "Home");
         }
@@ -103,17 +107,11 @@ public class AccessController : Controller
     [HttpPost]
     public async Task<IActionResult> Signup(string username, string email, string password)
     {
+        Console.WriteLine("Signup");
         var account = accountService.CanAuthenticate(username, email);
         if (account == null)
         {
-            var newAccount = accountService.AddAccount(username, email, password);
-            // สร้าง User 
-            var newUser = new User();
-            newUser.Account = newAccount;
-            newUser.Profile = new Profile();
-
-            //ใส่ลงไฟล์ 
-            var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json"); //Byte Stream
+             var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json"); //Byte Stream
             List<User> users;
             try
             {
@@ -123,6 +121,14 @@ public class AccessController : Controller
             {
                 users = new List<User>();
             }
+
+            var newAccount = accountService.AddAccount(username, email, password);
+            // สร้าง User 
+            var newUser = new User();
+            newUser.Account = newAccount;
+            newUser.Profile = new Profile();
+            newUser.Id = users.Count;
+            Console.WriteLine(newUser.Id);
 
             // add user in list
             users.Add(newUser);
@@ -161,7 +167,9 @@ public class AccessController : Controller
 
             httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", newAccount.Username);
+            httpContextAccessor.HttpContext.Session.SetInt32("Id", newUser.Id);
             HttpContext.Response.Cookies.Append("username", newAccount.Username, cookieOptions);
+            Console.WriteLine(httpContextAccessor.HttpContext.Session.GetInt32("Id"));
             return RedirectToAction("Index", "Home");
         }
         ViewData["ValidateMessage"] = "Username or E-mail already in use.";
