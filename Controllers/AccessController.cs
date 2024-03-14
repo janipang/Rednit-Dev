@@ -170,7 +170,7 @@ public class AccessController : Controller
             httpContextAccessor.HttpContext.Session.SetInt32("Id", newUser.Id);
             HttpContext.Response.Cookies.Append("username", newAccount.Username, cookieOptions);
             Console.WriteLine(httpContextAccessor.HttpContext.Session.GetInt32("Id"));
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ChooseTag", "Home");
         }
         ViewData["ValidateMessage"] = "Username or E-mail already in use.";
         return View();
