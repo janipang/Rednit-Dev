@@ -28,7 +28,16 @@
         null,
         "Food",
         null,
-        null
+        null,
+        "Sport",
+        "Travel",
+        "Animal",
+        "Food",
+        "Education",
+        "Animal",
+        "Lifestyle",
+        "Travel",
+        "Art"
       ]
     },
     "Noti": [
@@ -55,8 +64,8 @@
       "Caption": "",
       "CreatedPosts": [],
       "InterestedPosts": [
-        1001,
-        1003
+        1003,
+        1001
       ],
       "JoinningPosts": [],
       "RequesingPosts": [],
@@ -72,6 +81,11 @@
       {
         "Type": "Failed",
         "IdPost": 1002,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 1008,
         "WhoRequest": null
       }
     ]
@@ -92,7 +106,13 @@
       "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg\u0026s",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 1008,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 3,
@@ -113,7 +133,13 @@
       "Image": "https://lofficielthailand.com/wp-content/uploads/2021/12/Ann-Chile-interview-Photography-by-Napat-x-Torinee10202-1-copy.jpg",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 1008,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 4,
@@ -132,5 +158,53 @@
       "InterestedTag": []
     },
     "Noti": []
+  },
+  {
+    "Id": 5,
+    "Account": {
+      "Username": "rainbow",
+      "Email": "rainbow@gmail.com",
+      "Password": "111"
+    },
+    "Profile": {
+      "Caption": "",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "",
+      "InterestedTag": []
+    },
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 1008,
+        "WhoRequest": null
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Account": {
+      "Username": "pailiu",
+      "Email": "rainbow2@gmail.com",
+      "Password": "chuang"
+    },
+    "Profile": {
+      "Caption": "no1 miss grand",
+      "CreatedPosts": [],
+      "InterestedPosts": [],
+      "JoinningPosts": [],
+      "RequesingPosts": [],
+      "Image": "https://i.pinimg.com/564x/6b/70/fe/6b70fee009636ca399925a3a40e82179.jpg",
+      "InterestedTag": []
+    },
+    "Noti": [
+      {
+        "Type": "Failed",
+        "IdPost": 1008,
+        "WhoRequest": null
+      }
+    ]
   }
 ]

@@ -27,7 +27,7 @@ public class DiscoverController : Controller
 
     public IActionResult Index()
     {
-        List<Post> posts = GetPosts();
+        List<Post> posts = GetActivePosts();
         List<Post> FeedPosts = new List<Post>();
 
         bool state = User.Identity.IsAuthenticated;
@@ -105,7 +105,7 @@ public class DiscoverController : Controller
         List<Post> posts = null;
 
         if(HttpContext.Session.GetString("FilteredPosts") == null || HttpContext.Session.GetString("FilteredPosts") == ""){
-            posts = GetPosts(); 
+            posts = GetActivePosts(); 
         }
         else{
             posts = JsonSerializer.Deserialize<List<Post>>(HttpContext.Session.GetString("FilteredPosts"));
@@ -250,6 +250,9 @@ public class DiscoverController : Controller
         if (!HaveJoined(currentPost, account))
         {
             currentPost.Joined.Add(account);
+            if(currentPost.Joined.Count == currentPost.MemberMax){
+                currentPost.Active = false;
+            }
         }
         Console.WriteLine(username + " has joined post " + postId);
 
@@ -307,6 +310,7 @@ public class DiscoverController : Controller
 
             if(currentPost.Joined.Count == currentPost.MemberMax){
                 SendRejectNotificationToOthers(currentPost, postId);
+                currentPost.Active = false;
             }
         }
         Console.WriteLine(_username + " was added to post " + postId);
@@ -356,7 +360,7 @@ public class DiscoverController : Controller
     }
 
     public IActionResult SearchKeyword(string key){
-        List<Post> posts = GetPosts();
+        List<Post> posts = GetActivePosts();
         List<Post> filteredPost = new List<Post>();
         foreach(Post post in posts){
             if(
@@ -378,7 +382,7 @@ public class DiscoverController : Controller
     }
 
     public IActionResult SearchByTag(string tag){
-        List<Post> posts = GetPosts();
+        List<Post> posts = GetActivePosts();
         List<Post> filteredPost = new List<Post>();
         foreach(Post post in posts){
             foreach(var _tag in post.Detail.Tag){
@@ -408,6 +412,17 @@ public class DiscoverController : Controller
         }
         ;
         return posts;
+    }
+
+    public static List<Post> GetActivePosts(){
+        List<Post> posts = GetPosts();
+        List<Post> activePosts = new List<Post>();
+        foreach(Post post in posts){
+            if(post.Active){
+                activePosts.Add(post);
+            }
+        } 
+        return activePosts;
     }
 
     public static Post GetPost(int id)
@@ -665,7 +680,7 @@ public class DiscoverController : Controller
             Detail = new PostDetail
             {
                 Header = header,
-                Tag = tag.Split(',').ToList(),
+                Tag = tag.Split(", ").ToList(),
                 Intro = intro,
                 Detail = detail,
                 Place = place

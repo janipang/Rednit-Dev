@@ -27,21 +27,31 @@
 </div>
 
 <script>
-    function onShowMorePostButtonClick() {
-        fetch('/Discover/GetMorePosts', { method: 'GET' })
-            .then(response => response.json())
-            .then(data => {
+    function onShowMorePostButtonClick(){
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "/Discover/GetMorePosts");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-                if (data[data.length - 1] == "a") {
+        xhr.onload = function() {
+            if (xhr.status === 200) { // Check for successful response
+                var data = JSON.parse(xhr.responseText); // Parse JSON response
+                console.log("received " + data);
+                if(data[data.length - 1] == "a"){
                     document.getElementById("show-more-button").style.display = "none";
                     data = data.substring(0, data.length - 1);
                 }
-
+                
                 // Append the fetched posts to the postContainer
                 document.getElementById("feed-area").innerHTML += data;
-            })
-            .catch(error => {
-                console.error('Error fetching more posts:', error);
-            });
+            } 
+            else {
+                console.error('Error:', xhr.status, xhr.statusText);
+            }
+
+            xhr.onerror = function(error) {
+                console.error('Error:', error);
+            };
+        }
+        xhr.send();
     }
 </script>
