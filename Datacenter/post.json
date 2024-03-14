@@ -14,7 +14,7 @@
         " Education"
       ],
       "Intro": "have an EXCELLENT trip to fly across many town ,then enjoy with the gorgeous thing in the world",
-      "Detail": "the most interesting thing that you will never forgot it , the new experience",
+      "Detail": "the most interesting thing that you will never forgot it , the new experience, i will fly i will survive eheh, i will fly with Singapore Airlines and go relax in a lounge before take off 2 hrs. i will bring a fire label to cheer up!. meet me at suvarnabhumi airport",
       "Place": "Mexico"
     },
     "EventDate": {
@@ -28,7 +28,31 @@
     "MemberCount": 0,
     "MemberMax": 15,
     "DayLeft": 21,
-    "Comments": [],
+    "Comments": [
+      {
+        "User": {
+          "Id": 2,
+          "Account": {
+            "Username": "pang",
+            "Email": "pang@gmail.com",
+            "Password": "456"
+          },
+          "Profile": {
+            "Caption": "pang hard code",
+            "CreatedPosts": [],
+            "InterestedPosts": [],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg\u0026s",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": " \u0E02\u0E2D\u0E04\u0E19\u0E44\u0E21\u0E48\u0E41\u0E1E\u0E49\u0E41\u0E14\u0E14\u0E19\u0E30\u0E04\u0E30",
+        "Date": "2024-03-14T07:54:49.0824802+07:00",
+        "Reply": null
+      }
+    ],
     "Liked": [],
     "Joined": [],
     "Requested": []
@@ -64,7 +88,13 @@
     "DayLeft": 10,
     "Comments": [],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "tak",
+        "Email": "tak@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {
@@ -98,7 +128,18 @@
     "DayLeft": 2,
     "Comments": [],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      },
+      {
+        "Username": "tak",
+        "Email": "tak@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {
@@ -129,9 +170,44 @@
     "MemberCount": 0,
     "MemberMax": 7,
     "DayLeft": 2,
-    "Comments": [],
+    "Comments": [
+      {
+        "User": {
+          "Id": 2,
+          "Account": {
+            "Username": "pang",
+            "Email": "pang@gmail.com",
+            "Password": "456"
+          },
+          "Profile": {
+            "Caption": "pang hard code",
+            "CreatedPosts": [],
+            "InterestedPosts": [],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg\u0026s",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": "\u0E2D\u0E22\u0E39\u0E48\u0E41\u0E23\u0E07\u0E04\u0E4C bronze \u0E02\u0E2D\u0E08\u0E2D\u0E22\u0E44\u0E14\u0E49\u0E21\u0E31\u0E49\u0E22\u0E04\u0E30",
+        "Date": "2024-03-14T07:56:41.5714569+07:00",
+        "Reply": null
+      }
+    ],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "pang",
+        "Email": "pang@gmail.com",
+        "Password": "456"
+      },
+      {
+        "Username": "tak",
+        "Email": "tak@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {
