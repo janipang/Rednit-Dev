@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="post-top-right-section">
-            <button>
+            <button onclick="onFavButtonClick(@Model.Id)" asp-controller="Fav" asp-action="Index">
                 <img src="~/svg/addButtonRed.svg" alt="add">
             </button>
         </div>
@@ -113,5 +113,31 @@
         console.log(postID);
         var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
         window.location.href = url;
+    }
+
+    function onFavButtonClick(postID){
+        var favIcon = document.getElementsByClassName("favIcon");
+        var thisIcon = document.getElementsByName(`${postID}`)[0];
+        console.log("fav clicked with Id = " + postID);
+        $.ajax({
+            url: '/Discover/AddToFav',
+            type: 'GET',
+            data: { postId: postID},
+            success: function(isLiked) {
+                console.log("received isLiked" + isLiked);
+                if(isLiked){
+                    thisIcon.setAttribute("stroke","#FFFFFF");
+                    thisIcon.setAttribute("fill","#FE3C72");
+                    console.log("liked post");
+                }
+                else{
+                    thisIcon.setAttribute("stroke","#FE3C72");
+                    thisIcon.setAttribute("fill","#FFFFFF");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', status, error);
+            }
+        });
     }
 </script>
