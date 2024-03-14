@@ -14,8 +14,8 @@
         1003
       ],
       "InterestedPosts": [
-        1004,
-        1005
+        1002,
+        1003
       ],
       "JoinningPosts": [],
       "RequesingPosts": [],
@@ -87,6 +87,21 @@
         "Type": "Failed",
         "IdPost": 1008,
         "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
       }
     ]
   },
@@ -111,6 +126,11 @@
         "Type": "Success",
         "IdPost": 1008,
         "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 1006,
+        "WhoRequest": null
       }
     ]
   },
@@ -125,8 +145,8 @@
       "Caption": "Real size beauty",
       "CreatedPosts": [],
       "InterestedPosts": [
-        1001,
-        1002
+        1002,
+        1001
       ],
       "JoinningPosts": [],
       "RequesingPosts": [],
@@ -137,6 +157,26 @@
       {
         "Type": "Success",
         "IdPost": 1008,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
         "WhoRequest": null
       }
     ]
@@ -175,7 +215,18 @@
       "Image": "",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 6,
@@ -193,7 +244,18 @@
       "Image": "https://i.pinimg.com/564x/6b/70/fe/6b70fee009636ca399925a3a40e82179.jpg",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+      {
+        "Type": "Failed",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 1006,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 7,
