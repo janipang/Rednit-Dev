@@ -10,11 +10,11 @@ public class FavController : Controller
 {
     public IActionResult Index()
     {
-        string username = HttpContext.Session.GetString("username")!;
-        string state = HttpContext.Session.GetString("state")!;
-        Console.WriteLine("state: " + state);
-        // ViewBag.Username = username;
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
         ViewBag.state = state;
+        string username = HttpContext.Session.GetString("username")!;
+
         var usersjson = System.IO.File.ReadAllText("./Datacenter/User.json");
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
@@ -33,6 +33,7 @@ public class FavController : Controller
         if (users != null) {
             user = users.SingleOrDefault(a => a.Account.Username == username);
         }
+        Console.WriteLine(user.Account.Username);
         var favposts = new List<Post>{};
         foreach(var x in user.Profile.InterestedPosts){
             var favpost = posts.SingleOrDefault(a => a.Id == x);

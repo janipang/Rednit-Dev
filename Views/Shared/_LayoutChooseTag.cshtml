@@ -11,28 +11,42 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RednitDev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ChooseTag">Tag</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Setting">Setting</a>
-                        </li>
-                    </ul>
+        <nav>
+            <div class="navGroup">
+                <div class="leftSide">
+                    <img src="~/svg/firewhite.svg" alt="Logo" height="35px">
+                    <a class="discovery" asp-area="" asp-controller="Home" asp-action="Index">
+                        <h1 style="font-weight: 900;">Rednit</h1>
+                    </a>
+                </div>
+                <div class="rightSide">
+                    <a class="discovery" id="discovery" asp-area="" asp-controller="Discover" asp-action="Index">Discovery</a>
+
+                    <a class="login" asp-area="" asp-controller="Access" asp-action="LogIn">Log in</a>
+
+                    <a class="create-post" asp-area="" asp-controller="Discover" asp-action="CreatePost">Create post</a>
+                    <a class="profile-pic"><img
+                            src="~/svg/ProfilePic.svg" alt="profile pic"></a>
+
+                    <div class="dropdown-hover-area">
+                        <ul class="dropdown-box">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Profile"
+                                    asp-action="MyProfile">Profile</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Noti"
+                                    asp-action="Index">Notification</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Fav"
+                                    asp-action="Index">Favorite</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Home"
+                                    asp-action="Setting">Setting</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Access" asp-action="Logout">
+                                    <p>Logout</p></b>
+                                </a></li>
+                        </ul>
+                    </div>
+
+                    @* for debugging *@
+                    @*<a class="logout" asp-area="" asp-controller="Access" asp-action="LogOut">Log out</a> *@
+
                 </div>
             </div>
         </nav>
@@ -50,7 +64,25 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        var navGroup = document.getElementsByClassName("navGroup")[0];
+        var loginLink = document.getElementsByClassName("login")[0];
+        var CreatePostLink = document.getElementsByClassName("create-post")[0];
+        var ProfileLink = document.getElementsByClassName("profile-pic")[0];
+        console.log("<Home Page> state: '@ViewBag.state'")
+        if ('@ViewBag.state' === 'True') {
+            navGroup.classList.add("isLogin");
+            loginLink.style.display = "none";
+            CreatePostLink.style.display = "flex";
+            ProfileLink.style.display = "flex";
+        }
+        else {
+            navGroup.classList.remove("isLogin");
+            loginLink.style.display = "flex";
+            CreatePostLink.style.display = "none";
+            ProfileLink.style.display = "none";
+        }
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

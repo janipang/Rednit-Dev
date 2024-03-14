@@ -36,15 +36,17 @@ a {
 nav {
     grid-area: 1 / 2 / 1 / 2;
     padding: 8vh 0vw;
-    width: 100%;
+    width: 80%;
     height: 100%;
     z-index: 5;
+    margin: 0 auto;
 }
 
+/* header detail */
 .navGroup {
     display: grid;
     grid-template-columns: 79% 21%;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 

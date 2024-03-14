@@ -25,21 +25,23 @@ public class HomeController : Controller
 
     public IActionResult ChooseTag()
     {
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
         return View();
     }
 
     public IActionResult Setting()
     {        
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
         return View();
     }
 
     public IActionResult Index()
     {
         _Manager.UpdateTimeForPost(); //update dayleft evetime that have get /home
-        // string username = HttpContext.Session.GetString("username")!;
-        // string state = HttpContext.Session.GetString("state")!;
-        // Console.WriteLine("Session state: " + state);
-        string username = HttpContext.Request.Cookies["username"]!;
         bool state = User.Identity.IsAuthenticated;
         Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
         ViewBag.state = state;

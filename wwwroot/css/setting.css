@@ -1,7 +1,6 @@
-
 .SettingBox {
     background-color: white;
-    margin: 80px 200px 20px 200px ;
+    margin: 80px 200px 20px 200px;
     width: auto;
     height: auto;
     padding: 50px;
@@ -12,6 +11,8 @@
 .EditHeader {
     font-weight: 700;
     font-size: 24px;
+    font-family: 'Kanit';
+    color: #1E1E1E;
 }
 
 .EditContainer {
@@ -23,7 +24,7 @@
     column-gap: 50px;
 }
 
-.ButtonContainer{
+.ButtonContainer {
     display: flex;
     flex-direction: column;
 }
@@ -63,7 +64,7 @@
     background-color: #F4F4F4;
     padding-left: 8px;
     font-size: 16px;
-    resize: none; 
+    resize: none;
     font-family: "Kanit", sans-serif;
 }
 
@@ -75,7 +76,7 @@
     font-size: 13px;
     color: #696969;
     text-align: right;
-    width: 500px ;
+    width: 500px;
     margin-top: 10px;
 }
 
@@ -111,7 +112,7 @@
     font-family: "Kanit", sans-serif;
 }
 
-.SaveButton{
+.SaveButton {
     font-weight: 600;
     width: 135px;
     background-color: #3CCE77;
@@ -125,40 +126,47 @@
 }
 
 @media (max-width: 1300px) {
-    .EditContainer{
-        flex-direction: column; /* Stack items in a column */
+    .EditContainer {
+        flex-direction: column;
+        /* Stack items in a column */
         align-items: flex-start;
     }
 
-    .EditContainer > div {
-        width: 100%; 
+    .EditContainer>div {
+        width: 100%;
     }
-    
-    .EditPicture{
+
+    .EditPicture {
         width: 400px;
     }
 }
 
 @media only screen and (max-width: 1000px) {
+
     #usernameInput,
     #bioInput,
     #newPassword,
     .charLimit,
     #previewImage,
     #confirmPassword {
-        width: 100%; /* Make input fields full width */
-        max-width: 100%; /* Ensure they don't overflow their containers */
+        width: 100%;
+        /* Make input fields full width */
+        max-width: 100%;
+        /* Ensure they don't overflow their containers */
     }
 
     .EditContainer {
-        flex-direction: column; /* Stack items in a column */
+        flex-direction: column;
+        /* Stack items in a column */
     }
 
     .EditPicture {
-        width: 100%; /* Make picture container full width */
+        width: 100%;
+        /* Make picture container full width */
     }
 
     .EditDetail {
-        padding-right: 0; /* Remove right padding */
+        padding-right: 0;
+        /* Remove right padding */
     }
 }
