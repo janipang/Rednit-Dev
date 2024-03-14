@@ -107,6 +107,11 @@
         "Type": "Success",
         "IdPost": 1006,
         "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
       }
     ]
   },
@@ -150,8 +155,8 @@
       "Caption": "Real size beauty",
       "CreatedPosts": [],
       "InterestedPosts": [
-        1001,
-        1002
+        1002,
+        1001
       ],
       "JoinningPosts": [],
       "RequesingPosts": [],
@@ -173,6 +178,16 @@
         "Type": "Failed",
         "IdPost": 1006,
         "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
       }
     ]
   },
@@ -186,9 +201,7 @@
     "Profile": {
       "Caption": "Kai tord Lover",
       "CreatedPosts": [],
-      "InterestedPosts": [
-        1001
-      ],
+      "InterestedPosts": [],
       "JoinningPosts": [],
       "RequesingPosts": [],
       "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjX2ia726U4-okWHizPGYw5OEin8jbU4cSZYPWzZDtHQ\u0026s",
@@ -212,7 +225,18 @@
       "Image": "",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Success",
+        "IdPost": 1006,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 6,
@@ -231,6 +255,11 @@
       "InterestedTag": []
     },
     "Noti": [
+      {
+        "Type": "Failed",
+        "IdPost": 1006,
+        "WhoRequest": null
+      },
       {
         "Type": "Failed",
         "IdPost": 1006,
