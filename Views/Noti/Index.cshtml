@@ -6,6 +6,7 @@
 <link href="~/css/component/notiCard.css" rel="stylesheet" />
 <link href="~/css/page/Noti.css" rel="stylesheet" />
 <h1>Notifications</h1>
+
 <div class="noti-container">
     @foreach(ShowNoti noti in ViewBag.noti)
     {
@@ -16,3 +17,4 @@
         @await Component.InvokeAsync("RequestedNoti", new { requestedNoti = requestedNoti })
     }
 </div>
+

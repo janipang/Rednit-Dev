@@ -1,27 +1,51 @@
 <nav class="feed-nav">
     <nav class="feed-nav-type-container">
         <div>
-            <button class="feed-nav-toggle feed-nav-button" onclick="OnButtonToggleClick(event)">Ann</button>
+            <button class="feed-nav-toggle feed-nav-butto is-selected" onclick="OnButtonToggleClick(event)">@(ViewBag.SearchTag == null || ViewBag.SearchTag == "" ? "All" : ViewBag.SearchTag)</button>
         </div>
         <div class="feed-nav-type" id="feedType">
-            <button class="feed-nav-button">All</button>
-            <button class="feed-nav-button">Food</button>
-            <button class="feed-nav-button">Lifestyle</button>
-            <button class="feed-nav-button">Sports</button>
-            <button class="feed-nav-button">Travel</button>
-            <button class="feed-nav-button">Education</button>
-            <button class="feed-nav-button">Animal</button>
-            <button class="feed-nav-button">Art</button>
+            <button class=@(ViewBag.SearchTag == null || ViewBag.SearchTag == "" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('All')">All</button>
+            <button class=@(ViewBag.SearchTag == "Food" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('Food')">Food</button>
+            <button class=@(ViewBag.SearchTag == "Lifestyle" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('Lifestyle')">Lifestyle</button>
+            <button class=@(ViewBag.SearchTag == "Sports" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('Sports')">Sports</button>
+            <button class=@(ViewBag.SearchTag == "Travel" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('Travel')">Travel</button>
+            <button class=@(ViewBag.SearchTag == "Education" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('Education')">Education</button>
+            <button class=@(ViewBag.SearchTag == "Animal" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('Animal')">Animal</button>
+            <button class=@(ViewBag.SearchTag == "Art" ? "is-selected feed-nav-button" : "feed-nav-button") onclick="onClickType('Art')">Art</button>
         </div>
 
     </nav>
     <div class="feed-nav-search-section">
-        <input class="search-text-input" type="text" onfocus="OnSearchFocus()" onblur="OnSearchBlur()">
-        <button class="search-button">Search</button>
+        <input id="search-text-input" class="search-text-input" type="text" onfocus="OnSearchFocus()" onblur="OnSearchBlur()">
+        <button class="search-button" onclick="onSearchButtonClick()">Search</button>
     </div>
 </nav>
 
 <script>
+    var focus = null;
+    function onClickType(keyword){
+        if(keyword == "All"){
+            var url = '@Url.Action("Index", "Discover")';
+            console.log(url);
+            window.location.href = url;
+        }
+        else{
+            var url = '@Url.Action("SearchByTag", "Discover")' + "?tag=" + keyword;
+            console.log(url);
+            window.location.href = url;
+        }
+    }
+
+    function onSearchButtonClick() {
+        var keyword = document.getElementById("search-text-input").value;
+        console.log(keyword);
+        if(keyword != "" && keyword != null){
+            var url = '@Url.Action("SearchKeyword", "Discover")' + '?key=' + keyword;
+            console.log(url);
+            window.location.href = url;
+        }
+    }
+
     function OnButtonToggleClick(event) {
         var feedType = document.getElementById("feedType");
         feedType.classList.toggle("active");
@@ -37,5 +61,7 @@
         var searchArea = document.getElementById("searchArea");
         searchArea.classList.remove("active");
     }
+
+    
 
 </script>
