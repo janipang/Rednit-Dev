@@ -149,8 +149,8 @@ public class DiscoverController : Controller
         ViewBag.state = state;
         HttpContext.Session.SetInt32("CurrentPostId", Id);
 
-        string username = HttpContext.Session.GetString("username");
-        User user = GetUser(username);
+        int userId = (int)HttpContext.Session.GetInt32("Id");
+        User user = GetUser(userId);
 
         if(user == null){
             ViewBag.PostType = 3;
@@ -184,8 +184,8 @@ public class DiscoverController : Controller
         }
 
         int id = (int)HttpContext.Session.GetInt32("CurrentPostId");
-        string username = HttpContext.Session.GetString("username");
-        User user = GetUser(username);
+        int userId = (int)HttpContext.Session.GetInt32("Id");
+        User user = GetUser(userId);
         Post currentPost = GetPost(id);
 
         Comment newComment = new Comment
@@ -285,12 +285,13 @@ public class DiscoverController : Controller
         );
     }
 
-    public IActionResult AcceptRequest(string _username)
+    public IActionResult AcceptRequest(int userId)
     {
         int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
-        Account account = GetAccount(_username);
+        User user = GetUser(userId);
+        Account account = user.Account;
         Post currentPost = GetPost(postId);
-        Console.WriteLine("Accept " + _username);
+        Console.WriteLine("Accept " + account.Username);
         Console.WriteLine(account);
         if (!HaveJoined(currentPost, account))
         {
@@ -303,8 +304,7 @@ public class DiscoverController : Controller
                 WhoRequest = null 
             };
 
-            User user = GetUser(_username);
-            Console.WriteLine("send success noti to" + _username + " " + user);
+            Console.WriteLine("send success noti to" + account.Username + " " + user);
             user.Noti.Add(notification);
             UpdateUser(user);
 
@@ -313,7 +313,7 @@ public class DiscoverController : Controller
                 currentPost.Active = false;
             }
         }
-        Console.WriteLine(_username + " was added to post " + postId);
+        Console.WriteLine(account.Username + " was added to post " + postId);
         UpdatePost(currentPost);
         return RedirectToAction(
             "ViewPost",
@@ -338,15 +338,17 @@ public class DiscoverController : Controller
         post.Requested = new List<Account>();
     }
 
-    public IActionResult DeclineRequest(string _username)
+    public IActionResult DeclineRequest(int userId)
     {
+        Debug.WriteLine("=== = == = = = ====");
         int postId = (int)HttpContext.Session.GetInt32("CurrentPostId");
-        Account account = GetAccount(_username);
+        User user = GetUser(userId);
+        Account account = user.Account;
         Post currentPost = GetPost(postId);
-        Console.WriteLine("Decline " + _username);
+        Console.WriteLine("Decline " +account.Username);
         Console.WriteLine(account);
         currentPost.Requested.Remove(account);
-        User user = GetUser(_username);
+        
         Noti notification = new Noti{
             Type = "Failed",
             IdPost = postId,
@@ -354,7 +356,7 @@ public class DiscoverController : Controller
         };
         user.Noti.Add(notification);
         UpdateUser(user);
-        Console.WriteLine(_username + " was rejected from post " + postId);
+        Console.WriteLine(account.Username + " was rejected from post " + postId);
         UpdatePost(currentPost);
         return RedirectToAction("ViewPost", "Discover", new { id = HttpContext.Session.GetInt32("CurrentPostId") });
     }
