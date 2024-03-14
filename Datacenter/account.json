@@ -10,34 +10,9 @@
     "Password": "789"
   },
   {
-    "Username": "pre",
-    "Email": "pre@gmail.com",
-    "Password": "147"
-  },
-  {
-    "Username": "janipang",
-    "Email": "janipang@gmail.com",
+    "Username": "pang",
+    "Email": "pang@gmail.com",
     "Password": "456"
-  },
-  {
-    "Username": "Anntonia",
-    "Email": "Anntonia@gmail.com",
-    "Password": "mut31"
-  },
-  {
-    "Username": "Jazzy",
-    "Email": "Jazzy@gmail.com",
-    "Password": "mut20"
-  },
-  {
-    "Username": "Veena",
-    "Email": "Veena@gmail.com",
-    "Password": "mut04"
-  },
-  {
-    "Username": "Anna",
-    "Email": "Anna@gmail.com",
-    "Password": "mut19"
   },
   {
     "Username": "Anchilee",
@@ -48,6 +23,15 @@
     "Username": "tak",
     "Email": "tak@gmail.com",
     "Password": "123"
-
+  },
+  {
+    "Username": "rainbow",
+    "Email": "rainbow@gmail.com",
+    "Password": "111"
+  },
+  {
+    "Username": "pailiu",
+    "Email": "rainbow2@gmail.com",
+    "Password": "chuang"
   }
 ]

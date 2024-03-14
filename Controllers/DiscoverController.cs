@@ -493,10 +493,20 @@ public class DiscoverController : Controller
         return null;
     }
 
+    public static User GetUser(int userId){
+        List<User> users = GetUsers();
+        foreach(User user in users){
+            if(user.Id == userId){
+                return user;
+            }
+        }
+        return null;
+    }
+
     public static void UpdateUser(User edittedUser){
         List<User> users = GetUsers();
         for(int i = 0; i < users.Count; i++){
-            if(users[i].Account.Username == edittedUser.Account.Username){
+            if(users[i].Id == edittedUser.Id){
                 users[i] = edittedUser;
                 break;
             }
@@ -734,3 +744,4 @@ public class DiscoverController : Controller
         """;
     }
 }
+
