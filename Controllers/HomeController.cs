@@ -102,9 +102,7 @@ public class HomeController : Controller
         DiscoverController.UpdateUser(user);
         return RedirectToAction("Setting", "Home");
     }
+        
 
-    // public async void changeUsername(string newUsername){
-    //     httpContextAccessor.HttpContext.Session.SetString("username", username);
-    // }
-    
+
 }

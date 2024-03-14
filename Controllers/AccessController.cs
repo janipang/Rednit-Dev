@@ -20,6 +20,9 @@ public class AccessController : Controller
         httpContextAccessor = _httpContextAccessor;
     }
 
+    
+
+
     public IActionResult Login()
     {
         ClaimsPrincipal claimsUser = HttpContext.User;

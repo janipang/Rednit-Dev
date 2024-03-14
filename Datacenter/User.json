@@ -1,7 +1,7 @@
 [
   {
     "Account": {
-      "Username": "rut1",
+      "Username": "rut",
       "Email": "rut@gmail.com",
       "Password": "123"
     },
@@ -81,7 +81,7 @@
           "Requested": []
         }
       ],
-      "Image": "https://i.pinimg.com/736x/b8/c6/30/b8c630260439f0ac05e715a463da1831.jpg",
+      "Image": "https://i.pinimg.com/564x/f9/91/07/f99107953850f4c0db9c537e64272865.jpg",
       "InterestedTag": [
         "Food",
         "Travel",
