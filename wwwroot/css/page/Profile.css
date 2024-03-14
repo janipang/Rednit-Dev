@@ -147,11 +147,17 @@ a {
 #posts-row {
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template: 100%/auto auto auto;
 }
 
 .post-container {
-    width: 70%;
+    width: 300px;
+
+}
+
+#content-post
+{
+    margin: 1%;
 }
 
 #your-posts p,
@@ -172,6 +178,7 @@ a {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 
 
@@ -284,7 +291,7 @@ a {
 .edit-button {
     position: absolute;
     right: 0px;
-    bottom: 20%;
+    top: 63%;
     padding: 5px 10px;
     background: #FD5564;
     border-radius: 5px;
@@ -449,6 +456,7 @@ a {
     /*body*/
     .post-container{
         width: 100%;
+
     }
     #posts-row {
         width: 100%;
