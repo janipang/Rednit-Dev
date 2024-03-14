@@ -75,7 +75,8 @@ public class AccessController : Controller
             httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", account.Username);
             httpContextAccessor.HttpContext.Session.SetInt32("Id", user.Id);
-            Console.WriteLine(httpContextAccessor.HttpContext.Session.GetInt32("Id"));
+            Console.WriteLine("id" + httpContextAccessor.HttpContext.Session.GetInt32("Id"));
+            Console.WriteLine("user" + account.Username);
             HttpContext.Response.Cookies.Append("username", account.Username, cookieOptions);
             return RedirectToAction("Index", "Home");
         }
