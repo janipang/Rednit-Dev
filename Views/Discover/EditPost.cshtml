@@ -1,17 +1,27 @@
 @{
-    Layout = "_LayoutFav";
+    Layout = "_LoginLayout";
 }
 
-<link rel="stylesheet" href="~/css/page/discover-createpost.css">
+@model RednitDev.Models.Post
+@{
+    string tags = "";
+    foreach (string t in Model.Detail!.Tag)
+    {
+        tags += t + ",";
+    }
+    tags = tags.Substring(0, tags.Length - 1);
+    @* Console.WriteLine(tags); *@
+}
+<link rel="stylesheet" href="~/css/page/discover-editpost.css" asp-append-version="true" />
 <div class="container" style="width:100%; min-height:100%;">
     <div class="view-box" style="width:100%; display:flex; flex-direction:column; align-items:center">
-        <h1 style="font-size:40px; font-weight:bold; text-align:center; color:#FFFFFF;">Create new post</h1>
         <div class="form-container">
-            <form method="post" asp-controller="Discover" asp-action="CreatePost">
+            <form method="post" asp-controller="Discover" asp-action="EditPost">
                 <div class="form-text">
                     <fieldset class="form-text-fieldset">
                         <legend for="header">Header
-                            <input type="text" name="header" placeholder="Header" maxlength="50" required>
+                            <input type="text" name="header" value="@Model.Detail.Header" placeholder="Header"
+                                maxlength="50" required>
                             <p class="length-label" id="max-header"></p>
                         </legend>
                         <legend for="tag" class="showtag">Tag
@@ -29,7 +39,7 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </button>
-                            <div class="dropdown-tag-hover-area">
+                            <div class="dropdown-hover-area">
                                 <ul class="dropdown-tag-box">
                                     <li>
                                         <div class="dropdown-tag-item" name="Food">Food</div>
@@ -56,14 +66,17 @@
                             </div>
                         </legend>
                         <legend for="intro">Intro
-                            <input type="text" name="intro" placeholder="Intro" maxlength="120" required>
+                            <input type="text" name="intro" value="@Model.Detail.Intro" placeholder="Intro"
+                                maxlength="120" required>
                             <p class="length-label" id="max-intro"></p>
                         </legend>
                         <legend for="detail">Detail
-                            <textarea type="text" name="detail" placeholder="Detail"></textarea>
+                            <textarea type="text" name="detail" value="@Model.Detail.Detail"
+                                placeholder="Detail"></textarea>
                         </legend>
                         <legend for="place">Place
-                            <input type="text" name="place" placeholder="Place" maxlength="50">
+                            <input type="text" name="place" value="@Model.Detail.Place" placeholder="Place"
+                                maxlength="50">
                             <p class="length-label" id="max-place"></p>
                         </legend>
                     </fieldset>
@@ -74,7 +87,7 @@
                         <div class="options member-max-options">
                             <div class="member-max-input-field">
                                 <button type=button class="stepper decrease-button">-</button>
-                                <input type="number" name="memberMax" min="1" max="500">
+                                <input type="number" name="memberMax" value="@Model.MemberMax" min="1" max="500">
                                 <button type=button class="stepper increase-button">+</button>
                             </div>
                             <label class="option" htmlFor="5">peoples</label>
@@ -100,15 +113,18 @@
                             <div class="date-select-card start">
                                 <div>
                                     <label for="startDay">Day</label>
-                                    <input type="number" name="startDay" placeholder="DD" required><br>
+                                    <input type="number" name="startDay" value="@Model.EventDate.Start.Day"
+                                        placeholder="DD" required><br>
                                 </div>
                                 <div>
                                     <label for="startMonth">Month</label>
-                                    <input type="number" name="startMonth" placeholder="MM" required><br>
+                                    <input type="number" name="startMonth" value="@Model.EventDate.Start.Month"
+                                        placeholder="MM" required><br>
                                 </div>
                                 <div>
                                     <label for="startYear">Year</label>
-                                    <input type="number" name="startYear" placeholder="YYYY" required><br>
+                                    <input type="number" name="startYear" value="@Model.EventDate.Start.Year"
+                                        placeholder="YYYY" required><br>
                                 </div>
                             </div>
                             <div class="to"> - </div>
@@ -135,15 +151,18 @@
                             <div class="date-select-card close">
                                 <div>
                                     <label for="CloseDay">Day</label>
-                                    <input type="number" name="closeDay" placeholder="DD" required><br>
+                                    <input type="number" name="closeDay" placeholder="DD"
+                                        value="@Model.EventDate.CloseSubmit.Day" required><br>
                                 </div>
                                 <div>
                                     <label for="CloseMonth">Month</label>
-                                    <input type="number" name="closeMonth" placeholder="MM" required><br>
+                                    <input type="number" name="closeMonth" placeholder="MM"
+                                        value="@Model.EventDate.CloseSubmit.Month" required><br>
                                 </div>
                                 <div>
                                     <label for="CloseYear">Year</label>
-                                    <input type="number" name="closeYear" placeholder="YYYY" required><br>
+                                    <input type="number" name="closeYear" placeholder="YYYY"
+                                        value="@Model.EventDate.CloseSubmit.Year" required><br>
                                 </div>
                             </div>
                             <p class="errorText error-text-submission"></p>
@@ -175,8 +194,13 @@
                             </div>
                         </div>
                     </fieldset>
-                    <input type="submit" id="submit" placeholder="Post" onClick="setEndDate">
                 </div>
+                <div class="control-bar">
+                    <button type="button" class="control-element" id="close">Close submission</button>
+                    <button type="button" class="control-element" id="delete">Delete post</button>
+                    <button type="submit" class="control-element" id="save">Save</button>
+                </div>
+                <input name="postId" type="number" value="@Model.Id" style="display:none;">
             </form>
         </div>
     </div>
@@ -185,17 +209,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
 <script>
 
+    //control
     //add tag in field
     var tagItems = document.getElementsByClassName("dropdown-tag-item");
     var dropDownBox = document.getElementsByClassName("dropdown-tag-box")[0];
     var tagInput = document.getElementsByClassName("tagInput")[0];
     var maxTag = document.getElementById("max-tag");
+
     var tagNameSetter = document.querySelector("input[name='tag']");
     var count = 0;
-    tagNameSetter.style.visibility = "hidden";
     var tagValues = [];
 
-    maxTag.textContent = `${count} / 3`
+    //pull data to display tag while GET
+    tagValues = "@tags".split(",");
+    console.log(tagValues);
+    tagInput.innerHTML = "";
+    tagValues.forEach((eachTag) => {
+        var aTag = `<div class="tagElement">${eachTag}</div>`;
+        tagInput.innerHTML += aTag;
+    });
+    tagValues.forEach(()=> {count++})
+    @* count = tagValues.ToList().length; *@
+    tagNameSetter.value = tagValues.join(", ");
+    console.log("tag value", tagNameSetter.value);
+    maxTag.textContent = count + " / 3"; 
+    
+    //end of pull data
+
+
     Array.from(tagItems).forEach((tagItem) => {
         tagItem.addEventListener("click", () => {
             $.ajax({
@@ -209,11 +250,12 @@
                     if (count < 3) {
                         console.log("Received tag HTML:", tagDiv);
                         tagInput.innerHTML += tagDiv;
-                        count++;
                         tagValues.push(tagItem.getAttribute("name"));
                         tagNameSetter.value = tagValues.join(", ");
                         console.log("tag value", tagNameSetter.value);
+                        count++;
                     }
+                    maxTag.textContent = count + " / 3"; 
                 },
                 error: function (xhr, status, error) {
                     console.error('Error:', status, error);
@@ -241,21 +283,33 @@
     var dateSelectCards = document.getElementsByClassName("date-select-card");
     var durationCard = document.getElementsByClassName("duration")[0];
 
-
+    //initial value depend on data
     dateTypeAns.forEach(choice => {
-        if (choice.value === "one") {
+        if (choice.value === "one" && "@Model.EventDate.DateType" == "one") {
+            choice.checked = true;
+            console.log(choice.value);
+        }
+        else if (choice.value === "multiple" && "@Model.EventDate.DateType" == "multiple") {
             choice.checked = true;
             console.log(choice.value);
         }
     });
     requestAns.forEach(choice => {
-        if (choice.value === "open") {
+        if (choice.value === "open" && "@Model.Requesting" == "False") {
+            choice.checked = true;
+            console.log(choice.value);
+        }
+        else if (choice.value === "request" && "@Model.Requesting" == "True") {
             choice.checked = true;
             console.log(choice.value);
         }
     });
     visibilityAns.forEach(choice => {
-        if (choice.value === "public") {
+        if (choice.value === "public" && "@Model.Visible" == "True") {
+            choice.checked = true;
+            console.log(choice.value);
+        }
+        else if (choice.value === "private" && "@Model.Visible" == "False") {
             choice.checked = true;
             console.log(choice.value);
         }
@@ -299,7 +353,7 @@
     var memberMaxInput = document.getElementsByName("memberMax")[0];
     var increaseButton = document.getElementsByClassName("increase-button")[0];
     var decreaseButton = document.getElementsByClassName("decrease-button")[0];
-    memberMaxInput.value = 1;
+    memberMaxInput.value = @Model.MemberMax; //initial value
     memberMaxInput.placeholder = "1";
 
     increaseButton.addEventListener("click", () => {
@@ -318,12 +372,14 @@
     //display maxlenght input
     var maxLenghtLabels = document.getElementsByClassName("length-label");
     Array.from(maxLenghtLabels).forEach((eachLabel) => {
-        var inputField = document.getElementsByName(eachLabel.id.slice(4))[0];
-        inputField.addEventListener("input", () => {
-            eachLabel.innerText = inputField.value.length + " / " + inputField.maxLength;
-        })
-        eachLabel.innerText = 0 + " / " + inputField.maxLength;
-
+        
+            var inputField = document.getElementsByName(eachLabel.id.slice(4))[0];
+            if (inputField.name != "tag"){
+                inputField.addEventListener("input", () => {
+                    eachLabel.innerText = inputField.value.length + " / " + inputField.maxLength;
+                })
+                eachLabel.innerText = inputField.value.length + " / " + inputField.maxLength;
+            }
     });
     //zone of validating date input
 
@@ -440,6 +496,10 @@
         }
     }
 
-    var submitButton = document.getElementById("submit");
-    submitButton.addEventListener("click", CheckErrorBeforeSubmit);
+    var saveButton = document.getElementById("save");
+
+    saveButton.addEventListener("click", function () {
+        console.log("near to submit");
+        saveButton.form.submit();
+    });
 </script>

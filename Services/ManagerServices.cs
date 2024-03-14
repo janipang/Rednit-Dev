@@ -10,5 +10,7 @@ namespace RednitDev.Services
         public void UpdateTimeForPost();
         public void UpdateMemberForPost();
         public void UpdateUser(User updatedUser);
+        public void ReplacePost(int postId, Post newpost);
+        public void DeletePost(int postId);
     }
 }
