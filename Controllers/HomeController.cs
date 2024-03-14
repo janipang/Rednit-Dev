@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Linq.Expressions;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Drawing;
+using RednitDev.Services;
 
 
 namespace RednitDev.Controllers;
@@ -108,10 +109,6 @@ public class HomeController : Controller
         return RedirectToAction("Setting", "Home");
     }
         
-
-
-}
-
     public bool AddToFav(int postId)
     {
         string username = HttpContext.Request.Cookies["username"]!;

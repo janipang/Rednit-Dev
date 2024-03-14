@@ -1,6 +1,5 @@
 [
   {
-
     "Id": 0,
     "Account": {
       "Username": "rut",
@@ -8,7 +7,6 @@
       "Password": "123"
     },
     "Profile": {
-
       "Caption": "\u0E23\u0E39\u0E1B\u0E41\u0E1B\u0E49\u0E07 account \u0E23\u0E38\u0E08\u0E19\u0E4C",
       "CreatedPosts": [
         1001,
@@ -25,19 +23,16 @@
       "InterestedTag": [
         "gaming",
         "tft player"
-
       ]
     },
     "Noti": [
       {
         "Type": "Success",
-
         "IdPost": 1001,
         "WhoRequest": null
       },
       {
         "Type": "Failed",
-
         "IdPost": 1002,
         "WhoRequest": null
       }
@@ -53,7 +48,6 @@
     "Profile": {
       "Caption": "",
       "CreatedPosts": [],
-
       "InterestedPosts": [
         1001,
         1003
@@ -125,9 +119,7 @@
     "Profile": {
       "Caption": "Kai tord Lover",
       "CreatedPosts": [],
-      "InterestedPosts": [
-        1002
-      ],
+      "InterestedPosts": [],
       "JoinningPosts": [],
       "RequesingPosts": [],
       "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjX2ia726U4-okWHizPGYw5OEin8jbU4cSZYPWzZDtHQ\u0026s",
