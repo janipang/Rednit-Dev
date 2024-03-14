@@ -82,6 +82,11 @@
         "Type": "Failed",
         "IdPost": 1002,
         "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 1008,
+        "WhoRequest": null
       }
     ]
   },
@@ -101,7 +106,13 @@
       "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg\u0026s",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 1008,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 3,
@@ -122,7 +133,13 @@
       "Image": "https://lofficielthailand.com/wp-content/uploads/2021/12/Ann-Chile-interview-Photography-by-Napat-x-Torinee10202-1-copy.jpg",
       "InterestedTag": []
     },
-    "Noti": []
+    "Noti": [
+      {
+        "Type": "Success",
+        "IdPost": 1008,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 4,
