@@ -5,11 +5,6 @@
     "Password": "123"
   },
   {
-    "Username": "pang",
-    "Email": "pang@gmail.com",
-    "Password": "456"
-  },
-  {
     "Username": "chom",
     "Email": "chom@gmail.com",
     "Password": "789"
@@ -53,5 +48,6 @@
     "Username": "tak",
     "Email": "tak@gmail.com",
     "Password": "123"
+
   }
 ]

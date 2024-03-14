@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using RednitDev.Models;
 using RednitDev.Services;
+using System.IO;
+using System.Text.Json;
 
 namespace RednitDev.Controllers;
 
@@ -100,11 +102,35 @@ public class AccessController : Controller
         if (account == null)
         {
             var newAccount = accountService.AddAccount(username, email, password);
-            List<Claim> claims = new List<Claim>()
+            // สร้าง User 
+            var newUser = new User();
+            newUser.Account = newAccount;
+            newUser.Profile = new Profile();
+
+            //ใส่ลงไฟล์ 
+            var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json"); //Byte Stream
+            List<User> users;
+            try
             {
-                new Claim(ClaimTypes.NameIdentifier, newAccount.Username),
-                new Claim("OtherProperties", "Example Role")
-            };
+                users = JsonSerializer.Deserialize<List<User>>(usersJson); // can read 
+            }
+            catch (JsonException)
+            {
+                users = new List<User>();
+            }
+
+            // add user in list
+            users.Add(newUser);
+            var serializeOption = new JsonSerializerOptions();
+            serializeOption.WriteIndented = true;
+            string jsonData = JsonSerializer.Serialize<List<User>>(users, serializeOption);
+            System.IO.File.WriteAllText("./Datacenter/User.json", jsonData);
+
+            //cookies
+            List<Claim> claims = new List<Claim>() {
+                    new Claim(ClaimTypes.NameIdentifier, newAccount.Username),
+                    new Claim("OtherProperties", "Example Role")
+                };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(
                 claims,
@@ -131,7 +157,6 @@ public class AccessController : Controller
             httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", newAccount.Username);
             HttpContext.Response.Cookies.Append("username", newAccount.Username, cookieOptions);
-
             return RedirectToAction("Index", "Home");
         }
         ViewData["ValidateMessage"] = "Username or E-mail already in use.";
