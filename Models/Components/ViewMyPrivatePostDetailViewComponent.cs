@@ -29,6 +29,12 @@ namespace RednitDev.Components{
                 Console.WriteLine("img -> " + _user.Profile.Image);
             }
 
+            ViewBag.RequestedId = new List<int>();
+            foreach(var account in post.Requested){
+                User _user =  DiscoverController.GetUser(account.Username);
+                ViewBag.RequestedId.Add(_user.Id);
+            }
+
             return View(post);
         }
     }
