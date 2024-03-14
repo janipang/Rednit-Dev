@@ -49,6 +49,7 @@ a {
 }
 
 form {
+    position: relative;
     width: 82%;
     display: grid;
     grid-template: 10% 10% 80%/ 100%;
@@ -73,7 +74,7 @@ form {
 form p {
     position: absolute;
     left: 1%;
-    top: 65%;
+    top: 50%;
     font-size: 12px;
     font-weight: 550;
     color: #FE4A4A;
@@ -146,6 +147,14 @@ form button {
         font-size: 14px;
 
     }
+    form p {
+        position: absolute;
+        left: 1%;
+        top: 52%;
+        font-size: 12px;
+        font-weight: 550;
+        color: #FE4A4A;
+    }
 
     /*footer*/
     .content {
@@ -208,7 +217,7 @@ form button {
     }
     form p
     {
-        top: 61.5%;
+        top: 80%;
     }
     form button
     {
@@ -317,7 +326,7 @@ form button {
     }
     form p
     {
-        top: 61.5%;
+        top: 80%;
     }
     form button
     {

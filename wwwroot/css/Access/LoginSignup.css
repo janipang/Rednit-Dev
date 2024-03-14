@@ -49,6 +49,7 @@ a {
 }
 
 form {
+    position: relative;
     width: 82%;
     display: grid;
     grid-template: 4% 4% 4% 8%/ 100%;
@@ -74,7 +75,7 @@ form {
 form p {
     position: absolute;
     left: 1%;
-    top: 65%;
+    top: 53%;
     font-size: 12px;
     font-weight: 550;
     color: #FE4A4A;
@@ -133,6 +134,15 @@ form button {
     }
 
     /*body*/
+
+    form p {
+        position: absolute;
+        left: 1%;
+        top: 54%;
+        font-size: 12px;
+        font-weight: 550;
+        color: #FE4A4A;
+    }
     .loginGroup h1 {
         margin-top: 8%;
         margin-bottom: 8%;
@@ -237,7 +247,7 @@ form button {
     }
 
     form p {
-        top: 61.5%;
+        top: 110%;
     }
 
     form button {
@@ -360,7 +370,7 @@ form button {
     }
 
     form p {
-        top: 61.5%;
+        top: 110%;
     }
 
     form button {

@@ -15,7 +15,20 @@
             {
                 <p>@ViewData["ValidateMessage"]</p>
             }
-            <button type="submit" asp-controller = "Home" asp-action = "ChooseTag">Sign up</button>
+            <button onclick="isCorrect()"type="submit" asp-controller = "access" asp-action = "Signup">Sign up</button>
+            <script>
+                function isCorrect()
+                {
+                    if (@ViewData["ValidateMessage"] != null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            </script>
             
         </form>
         <div class="question">

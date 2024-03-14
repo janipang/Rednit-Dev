@@ -95,7 +95,8 @@ public class AccessController : Controller
         ClaimsPrincipal claimsUser = HttpContext.User;
         if (claimsUser.Identity.IsAuthenticated) // Login
         {
-            return RedirectToAction("Index", "Home");
+            Console.WriteLine("ChooseTag");
+            return RedirectToAction("ChooseTag", "Home");
         }
         return View();
     }
@@ -162,7 +163,7 @@ public class AccessController : Controller
             httpContextAccessor.HttpContext.Session.SetString("state", "online");
             httpContextAccessor.HttpContext.Session.SetString("username", newAccount.Username);
             HttpContext.Response.Cookies.Append("username", newAccount.Username, cookieOptions);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ChooseTag", "Home");
         }
         ViewData["ValidateMessage"] = "Username or E-mail already in use.";
         return View();
