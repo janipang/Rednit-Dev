@@ -544,5 +544,39 @@
     "Liked": [],
     "Joined": [],
     "Requested": []
+  },
+  {
+    "Id": 1010,
+    "Active": true,
+    "Author": {
+      "Username": "rut",
+      "Email": "rut@gmail.com",
+      "Password": "123"
+    },
+    "Detail": {
+      "Header": "Rut",
+      "Tag": [
+        "Art",
+        "Food"
+      ],
+      "Intro": "Rut",
+      "Detail": "Rut",
+      "Place": "Rut"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2025-02-02",
+      "End": null,
+      "CloseSubmit": "2025-02-01"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 3,
+    "DayLeft": 325,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
   }
 ]

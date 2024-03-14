@@ -33,7 +33,7 @@ public class FavController : Controller
         if (users != null) {
             user = users.SingleOrDefault(a => a.Account.Username == username);
         }
-        Console.WriteLine(user.Account.Username);
+        //Console.WriteLine(user.Account.Username);
         var favposts = new List<Post>{};
         foreach(var x in user.Profile.InterestedPosts){
             var favpost = posts.SingleOrDefault(a => a.Id == x);
