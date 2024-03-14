@@ -1,12 +1,32 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using RednitDev.Controllers;
 using RednitDev.Models;
+using RednitDev.Services;
 
 namespace RednitDev.Components{
     public class PostViewComponent: ViewComponent
     {
+        
+        private ManagerService _Manager;
+        public PostViewComponent(ManagerService managerService)
+        {
+            _Manager = managerService;
+        }
         public async Task<IViewComponentResult> InvokeAsync(Post post)
         {
+            string username = post.Author.Username;
+            User user = _Manager.GetUserByUsername(username);
+            Console.WriteLine("author name " + username);
+            ViewBag.ProfileImage = user.Profile.Image;
+
+            ViewBag.JoinedImage = new List<string>();
+            foreach(var account in post.Joined){
+                User _user = _Manager.GetUserByUsername(account.Username);
+                ViewBag.JoinedImage.Add(_user.Profile.Image);
+                Console.WriteLine("img -> " + _user.Profile.Image);
+            }
+
             return View(post);
         }
 
@@ -18,19 +38,26 @@ namespace RednitDev.Components{
             }
             for (int i = (int)MathF.Min(4, post.Joined.Count); i > 0; i--)
             {
+                User _user = DiscoverController.GetUser(post.Joined[i - 1].Username);
                 images += $"""
                         <img class="member-icon member-z-index-{i}"
-                        src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                        src={_user.Profile.Image}
                         alt="member image">
                 """;     
             }
+            string username = post.Author.Username;
+            User user = DiscoverController.GetUser(username);
+            string ProfileImage = user.Profile.Image;
+
+            
+
             return $"""
 <div class="post-container">
     <div class="post-top-section">
         <div class="post-top-left-section">
             <button class="post-user-image-container">
                 <img class="post-user-image"
-                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                    src={ProfileImage}
                     alt="profile image">
             </button>
             <div class="side-user-image">
