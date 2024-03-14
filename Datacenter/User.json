@@ -48,7 +48,6 @@
     "Profile": {
       "Caption": "",
       "CreatedPosts": [],
-
       "InterestedPosts": [
         1001,
         1003
@@ -120,9 +119,7 @@
     "Profile": {
       "Caption": "Kai tord Lover",
       "CreatedPosts": [],
-      "InterestedPosts": [
-        1002
-      ],
+      "InterestedPosts": [],
       "JoinningPosts": [],
       "RequesingPosts": [],
       "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjX2ia726U4-okWHizPGYw5OEin8jbU4cSZYPWzZDtHQ\u0026s",

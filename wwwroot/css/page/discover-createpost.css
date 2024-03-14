@@ -39,7 +39,7 @@ input[type="number"] {
     font-size: 16px;
 }
 
-.tagInput{
+.tagInput {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -60,13 +60,13 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-legend[for="tag"]{
+legend[for="tag"] {
     position: relative;
 }
 
-.addTag{
-    position:absolute;
-    bottom:5%;
+.addTag {
+    position: absolute;
+    bottom: 23%;
     right: -34px;
 }
 
@@ -80,6 +80,7 @@ legend[for="tag"]{
 }
 
 .dropdown-tag-box {
+    min-width: fit-content;
     width: 8vw;
     list-style: none;
     display: flex;
@@ -115,7 +116,7 @@ legend[for="tag"]{
     padding: 5px 10px;
 }
 
-.tagElement{
+.tagElement {
     background-color: #C4C4C4;
     padding: 5px 10px;
     border-radius: 200px;
@@ -134,11 +135,11 @@ textarea {
     margin: 5px 0px;
 }
 
-.length-label{
+.length-label {
     font-size: 12px;
     font-weight: 500;
     text-align: end;
-    color:#C4C4C4;
+    color: #C4C4C4;
     /* padding:0px 10px; */
 }
 
@@ -258,7 +259,7 @@ input[type="number"]::-webkit-inner-spin-button,
     -webkit-appearance: none;
 }
 
-.errorText{
+.errorText {
     display: none;
     color: #ff3333;
 }
@@ -422,7 +423,8 @@ form {
     .member-max-fieldset {
         width: 80%;
     }
-    .member-max-input-field{
+
+    .member-max-input-field {
         width: 70%;
     }
 
@@ -451,6 +453,10 @@ form {
         display: flex;
         flex-direction: column;
         grid-gap: 0px;
+    }
+
+    .dropdown-hover-area {
+        right: 4vw;
     }
 
     .member-max-fieldset {
