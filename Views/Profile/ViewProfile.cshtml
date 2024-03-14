@@ -53,7 +53,6 @@
                         </div>
 
                     </div>
-                    <a>Edit</a>
                 </div>
             </div>
             @{
@@ -65,12 +64,13 @@
                         <div id="posts-row">
                             @foreach (var idPost in ViewBag.user.Profile.CreatedPosts)
                             {
-                                @await Component.InvokeAsync("ProfilePost", new { idPost = idPost })
+                                @await Component.InvokeAsync("OtherProfilePost", new { idPost = idPost })
                             }
 
                         </div>
                     </div>
                 }
             }
+        </div>
     </div>
 </div>
