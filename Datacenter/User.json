@@ -26,17 +26,17 @@
       ]
     },
     "Noti": [
-          {
-              "Type" : "Success",
-              "IdPost" : 1001,
-              "WhoRequest" : null
-          },
-          {
-              "Type" : "Failed",
-              "IdPost" : 1002,
-              "WhoRequest" : null
-          }
-      ]
+      {
+        "Type": "Success",
+        "IdPost": 1001,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 1002,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 1,
@@ -58,17 +58,17 @@
       "InterestedTag": []
     },
     "Noti": [
-          {
-              "Type" : "Success",
-              "IdPost" : 1001,
-              "WhoRequest" : null
-          },
-          {
-              "Type" : "Failed",
-              "IdPost" : 1002,
-              "WhoRequest" : null
-          }
-      ]
+      {
+        "Type": "Success",
+        "IdPost": 1001,
+        "WhoRequest": null
+      },
+      {
+        "Type": "Failed",
+        "IdPost": 1002,
+        "WhoRequest": null
+      }
+    ]
   },
   {
     "Id": 2,
@@ -80,10 +80,7 @@
     "Profile": {
       "Caption": "pang hard code",
       "CreatedPosts": [],
-      "InterestedPosts": [
-        1001,
-        1002
-      ],
+      "InterestedPosts": [],
       "JoinningPosts": [],
       "RequesingPosts": [],
       "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg&s",
