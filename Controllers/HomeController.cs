@@ -84,14 +84,20 @@ public class HomeController : Controller
     }
 
     public IActionResult EditProfile(string username, string bio, string newPass, string confirmPass, string image) {
-        string realUsername = HttpContext.Request.Cookies["username"];
-        Console.WriteLine("realUsername " + realUsername);
-        User user = DiscoverController.GetUser(realUsername);
+        int userId = (int)HttpContext.Session.GetInt32("Id");
+        Console.WriteLine("realUsername " + userId);
+        User user = DiscoverController.GetUser(userId);
         Console.WriteLine("user " + user);
         Console.WriteLine(username + bio + newPass + confirmPass + image);
         if (newPass != null && newPass != "" && confirmPass != "" && confirmPass != null) {
             if (newPass == confirmPass) {
                 user.Account.Password = newPass;
+                List<Account> accounts = DiscoverController.GetAccounts();
+                accounts[userId].Password = newPass;
+                var serializeOption = new JsonSerializerOptions();
+                serializeOption.WriteIndented = true;
+                string jsondata = JsonSerializer.Serialize<List<Account>>(accounts, serializeOption);
+                System.IO.File.WriteAllText("./Datacenter/account.json", jsondata);
             }
         }
         if (image != null && image != "") {
@@ -99,7 +105,12 @@ public class HomeController : Controller
         }
         if (username != null && username != "") {
             user.Account.Username = username;
-            
+            List<Account> accounts = DiscoverController.GetAccounts();
+            accounts[userId].Username = username;
+            var serializeOption = new JsonSerializerOptions();
+            serializeOption.WriteIndented = true;
+            string jsondata = JsonSerializer.Serialize<List<Account>>(accounts, serializeOption);
+            System.IO.File.WriteAllText("./Datacenter/account.json", jsondata);
         }
         if (bio != null && bio != "") {
             user.Profile.Caption = bio;
