@@ -211,7 +211,10 @@
     "Profile": {
       "Caption": "",
       "CreatedPosts": [],
-      "InterestedPosts": [],
+      "InterestedPosts": [
+        1002,
+        1001
+      ],
       "JoinningPosts": [],
       "RequesingPosts": [],
       "Image": "",
