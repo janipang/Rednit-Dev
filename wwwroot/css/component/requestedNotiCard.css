@@ -68,3 +68,23 @@ button {
 .Re-post-bottom-right-section {
     width: 90%;
 }
+@media screen and (max-width: 1275px) {
+    .Re-noti-card {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1160px) {
+    .Re-noti-card {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 1065px) {
+    .Re-noti-card {
+        width: 58%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .Re-noti-card {
+        width: 60%;
+    }
+}
