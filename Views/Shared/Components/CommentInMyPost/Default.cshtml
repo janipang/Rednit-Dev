@@ -4,18 +4,18 @@
         <div class="comment-top-section">
             <button class="post-user-image-container">
                 <img class="post-user-image"
-                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                    src=@Model.User.Profile.Image
                     alt="profile image">
             </button>
             <div>
-                <p class="post-detail-username">Anntonia</p>
-                <p class="post-comment-time">5 days ago</p>
+                <p class="post-detail-username">@Model.User.Account.Username</p>
+                <p class="post-comment-time">@Model.Date</p>
             </div>
         </div>
         <div class="comment-detail-section">
             @Model.Content
         </div>
-        @if (Model.Reply == null)
+        @* @if (Model.Reply == null)
         {
             <button class="comment-reply-button" onclick="onReplyButtonClick(@Model.Id)">
                 Reply
@@ -23,7 +23,7 @@
         }
         <button class="comment-reply-button">
             Delete
-        </button>
+        </button> *@
     </div>
     @if (@Model.Reply != null)
     {

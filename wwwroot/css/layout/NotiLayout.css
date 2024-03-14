@@ -318,16 +318,11 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+
     .navGroup {
         grid-template-columns: 58% 42%;
     }
-
     .leftSide img {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 0;
-        margin-right: 4%;
-    }
 }
 
 @media screen and (max-width: 670px) {
@@ -426,4 +421,5 @@ footer {
         margin-left: 0;
         margin-right: 4%;
     }
+
 }
