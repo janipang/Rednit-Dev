@@ -5,5 +5,4 @@ public class EventDate
     public DateOnly Start { get; set; }
     public DateOnly? End { get; set; }
     public DateOnly? CloseSubmit { get; set; }
-
 }

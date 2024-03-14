@@ -2,7 +2,6 @@ namespace RednitDev.Models;
 public class Post
 {
     public int Id { get; set; }
-
     public bool Active { get; set; } = true;
     public Account? Author { get; set; }
     public PostDetail? Detail { get; set; }

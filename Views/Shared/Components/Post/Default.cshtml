@@ -4,11 +4,11 @@
         <div class="post-top-left-section">
             <button class="post-user-image-container">
                 <img class="post-user-image"
-                    src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                    src=@ViewBag.ProfileImage
                     alt="profile image">
             </button>
             <div class="side-user-image">
-                <button class="post-username">Anntonia</button>
+                <button class="post-username">@Model.Author.Username</button>
                 <div class="other-detail">
                     <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round"/>
@@ -32,10 +32,10 @@
             @foreach(var tag in @Model.Detail.Tag){
                 <div class="tag">@tag</div>
             }
-            <button>
+            <button onClick="onFavButtonClick(@Model.Id)">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"
                     style="margin-left: 5px">
-                    <path
+                    <path class="favIcon" name="@Model.Id"
                         d="M10.8889 18H18M18 18H25.1111M18 18V25.1111M18 18V10.8889M18 34C15.8989 34 13.8183 33.5861 11.8771 32.7821C9.93586 31.978 8.17203 30.7994 6.68629 29.3137C5.20055 27.828 4.022 26.0641 3.21793 24.1229C2.41385 22.1817 2 20.1012 2 18C2 15.8989 2.41385 13.8183 3.21793 11.8771C4.022 9.93586 5.20055 8.17203 6.68629 6.68629C8.17203 5.20055 9.93586 4.022 11.8771 3.21793C13.8183 2.41385 15.8989 2 18 2C22.2435 2 26.3131 3.68571 29.3137 6.68629C32.3143 9.68687 34 13.7565 34 18C34 22.2435 32.3143 26.3131 29.3137 29.3137C26.3131 32.3143 22.2435 34 18 34Z"
                         stroke="#FE3C72" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -68,7 +68,9 @@
                     d="M1.88889 18.8889H15.1111C16.1528 18.8889 17 18.0417 17 17V3.77778C17 2.73606 16.1528 1.88889 15.1111 1.88889H13.2222V0H11.3333V1.88889H5.66667V0H3.77778V1.88889H1.88889C0.847167 1.88889 0 2.73606 0 3.77778V17C0 18.0417 0.847167 18.8889 1.88889 18.8889ZM15.1111 5.66667L15.1121 17H1.88889V5.66667H15.1111Z"
                     fill="#434343" />
             </svg>
-            <span>20/4/2024</span>
+            <span>
+                @("" + Model.EventDate.Start + (Model.EventDate.DateType != "one" ? " - " + Model.EventDate.End : ""))
+            </span>
         </div>
         <div>
             <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +84,7 @@
                 @for (int i = (int)MathF.Min(4, Model.Joined.Count); i > 0; i--)
                 {
                         <img class="member-icon member-z-index-@(i)"
-                            src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                            src=@(ViewBag.JoinedImage[i - 1])
                             alt="member image">
                 }
                 @if(Model.Joined.Count > 4){
@@ -97,8 +99,35 @@
 
 <script>
     function onMoreDetailButtonClick(postID){
-        console.log(postID);
+        
         var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
+        console.log(url);
         window.location.href = url;
+    }
+
+    function onFavButtonClick(postID){
+        var favIcon = document.getElementsByClassName("favIcon");
+        var thisIcon = document.getElementsByName(`${postID}`)[0];
+        console.log("fav clicked with Id = " + postID);
+        $.ajax({
+            url: '/Discover/AddToFav',
+            type: 'GET',
+            data: { postId: postID},
+            success: function(isLiked) {
+                console.log("received isLiked" + isLiked);
+                if(isLiked){
+                    thisIcon.setAttribute("stroke","#FFFFFF");
+                    thisIcon.setAttribute("fill","#FE3C72");
+                    console.log("liked post");
+                }
+                else{
+                    thisIcon.setAttribute("stroke","#FE3C72");
+                    thisIcon.setAttribute("fill","#FFFFFF");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', status, error);
+            }
+        });
     }
 </script>

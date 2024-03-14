@@ -8,30 +8,59 @@
       "Password": "456"
     },
     "Detail": {
-      "Header": "go to chonburi",
+      "Header": "Let\u0027s Go Cheer Up MUT 2024",
       "Tag": [
-        "beach",
-        "beach",
-        "beach"
+        "Lifestyle",
+        " Education"
       ],
-      "Intro": "go to have a scuba diver",
-      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-      "Place": "sataheep, chonburi"
+      "Intro": "have an EXCELLENT trip to fly across many town ,then enjoy with the gorgeous thing in the world",
+      "Detail": "the most interesting thing that you will never forgot it , the new experience, i will fly i will survive eheh, i will fly with Singapore Airlines and go relax in a lounge before take off 2 hrs. i will bring a fire label to cheer up!. meet me at suvarnabhumi airport",
+      "Place": "Mexico"
     },
     "EventDate": {
       "DateType": "one",
-      "Start": "2022-12-31",
-      "End": "2024-11-25",
-      "CloseSubmit": "2024-11-25"
+      "Start": "2024-04-04",
+      "End": null,
+      "CloseSubmit": "2024-03-24"
     },
     "Requesting": false,
-    "Visible": false,
-    "MemberCount": 5,
-    "MemberMax": 0,
-    "DayLeft": 3,
-    "Comments": [],
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 15,
+    "DayLeft": 21,
+    "Comments": [
+      {
+        "User": {
+          "Id": 2,
+          "Account": {
+            "Username": "pang",
+            "Email": "pang@gmail.com",
+            "Password": "456"
+          },
+          "Profile": {
+            "Caption": "pang hard code",
+            "CreatedPosts": [],
+            "InterestedPosts": [],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg\u0026s",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": " \u0E02\u0E2D\u0E04\u0E19\u0E44\u0E21\u0E48\u0E41\u0E1E\u0E49\u0E41\u0E14\u0E14\u0E19\u0E30\u0E04\u0E30",
+        "Date": "2024-03-14T07:54:49.0824802+07:00",
+        "Reply": null
+      }
+    ],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "tak",
+        "Email": "tak@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {
@@ -43,150 +72,178 @@
       "Password": "456"
     },
     "Detail": {
-      "Header": "go to chonburi",
+      "Header": "go Sansiri Backyard to feed a sheep",
       "Tag": [
-        "beach",
-        "beach",
-        "beach"
+        "Lifestyle",
+        " Animal"
       ],
-      "Intro": "go to have a scuba diver",
-      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-      "Place": "sataheep, chonburi"
+      "Intro": "feed a cute animal in semi cafe semi farm to relax your mind make it a therapy by nature ",
+      "Detail": "go by BTS then bus or Taxi , or see you at destination before noon",
+      "Place": "Sansiri, Onnut"
     },
     "EventDate": {
       "DateType": "one",
-      "Start": "2022-12-31",
-      "End": "2024-11-25",
-      "CloseSubmit": "2024-11-25"
+      "Start": "2024-03-24",
+      "End": null,
+      "CloseSubmit": "2024-03-20"
     },
     "Requesting": false,
-    "Visible": false,
-    "MemberCount": 5,
-    "MemberMax": 0,
-    "DayLeft": 3,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 3,
+    "DayLeft": 10,
     "Comments": [],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "tak",
+        "Email": "tak@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {
     "Id": 1003,
     "Active": true,
     "Author": {
-      "Username": null,
-      "Email": null,
-      "Password": null
+      "Username": "pang",
+      "Email": "pang@gmail.com",
+      "Password": "456"
     },
     "Detail": {
-      "Header": "go to chonburi",
+      "Header": "exercise for prevent allergic",
       "Tag": [
-        "beach",
-        "beach",
-        "beach"
+        "Sports",
+        " Lifestyle"
       ],
-      "Intro": "go to have a scuba diver",
-      "Detail": "go to beach, eat crab, snap shot, hot and apicy, cilly vibes, five province, since i been with you, go to relax, syntax error.",
-      "Place": "sataheep, chonburi"
+      "Intro": "go running every thursday and thuesday after school",
+      "Detail": "please bring your backpack and water to drink preventing heatstroke, and beware of PM 2.5",
+      "Place": "KMITL Stadium"
     },
     "EventDate": {
-      "DateType": "one",
-      "Start": "2022-12-31",
-      "End": "2024-11-25",
-      "CloseSubmit": "2024-11-25"
+      "DateType": "multiple",
+      "Start": "2024-03-16",
+      "End": "2024-04-16",
+      "CloseSubmit": "2024-03-20"
     },
-    "Requesting": true,
-    "Visible": false,
-    "MemberCount": 5,
-    "MemberMax": 0,
-    "DayLeft": 3,
-    "Comments": [
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 5,
+    "DayLeft": 2,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [
       {
-        "User": null,
-        "Content": "Love you from Philipines.",
-        "Date": null,
-        "Reply": {
-          "User": null,
-          "Content": "\u0E2A\u0E2D\u0E07\u0E21\u0E37\u0E2D\u0E01\u0E23\u0E32\u0E1A\u0E25\u0E07",
-          "Date": null,
-          "Reply": null
-        }
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
       },
       {
-        "User": null,
-        "Content": "gfhhg",
-        "Date": null,
-        "Reply": null
+        "Username": "tak",
+        "Email": "tak@gmail.com",
+        "Password": "123"
       }
     ],
-    "Liked": [],
-    "Joined": [],
     "Requested": []
   },
   {
     "Id": 1004,
     "Active": true,
     "Author": {
-      "Username": "pang",
-      "Email": "pang@gmail.com",
-      "Password": "456"
+      "Username": "rut",
+      "Email": "rut@gmail.com",
+      "Password": "123"
     },
     "Detail": {
-      "Header": "dancing on the floor",
+      "Header": "\u0E2B\u0E32\u0E04\u0E19\u0E25\u0E07\u0E41\u0E23\u0E07\u0E04\u0E4C TFT",
       "Tag": [
-        "dance",
-        "dance",
-        "dance"
+        "Sports"
       ],
-      "Intro": "outside we have the cars full on road ,no different to people who pay attemp for their dreams",
-      "Detail": "our life is not such easy, but it\u0027s no so difficult let\u0027s them flow with the song yaew naew taew naew naew tah nah naew.",
-      "Place": "Musketeers"
+      "Intro": "\u0E23\u0E31\u0E1A\u0E2A\u0E21\u0E38\u0E04\u0E23\u0E1C\u0E39\u0E49\u0E21\u0E35\u0E43\u0E08\u0E23\u0E31\u0E01\u0E21\u0E32\u0E1E\u0E31\u0E12\u0E19\u0E32\u0E1D\u0E35\u0E21\u0E37\u0E2D \u0E08\u0E32\u0E01 \u0E23\u0E38\u0E08\u0E19\u0E4C \u0E13 \u0E04\u0E31\u0E19\u0E17\u0E23\u0E35",
+      "Detail": "\u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E40\u0E02\u0E49\u0E32\u0E40\u0E01\u0E21\u0E2B\u0E25\u0E31\u0E07\u0E2A\u0E35\u0E48\u0E42\u0E21\u0E07\u0E17\u0E38\u0E01\u0E27\u0E31\u0E19 \u0E02\u0E2D\u0E43\u0E2B\u0E49\u0E40\u0E25\u0E34\u0E01\u0E04\u0E25\u0E32\u0E2A\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E23\u0E35\u0E1A\u0E15\u0E32\u0E21\u0E44\u0E1B \u0E43\u0E04\u0E23\u0E40\u0E25\u0E48\u0E19\u0E44\u0E21\u0E48\u0E0A\u0E27\u0E19\u0E21\u0E35\u0E42\u0E01\u0E23\u0E18\u0E04\u0E23\u0E31\u0E1A",
+      "Place": "Online"
     },
     "EventDate": {
-      "DateType": "one",
-      "Start": "2004-03-15",
-      "End": null,
-      "CloseSubmit": "2004-02-22"
+      "DateType": "multiple",
+      "Start": "2024-03-16",
+      "End": "2024-04-15",
+      "CloseSubmit": "2024-03-15"
     },
     "Requesting": false,
     "Visible": true,
-    "MemberCount": 5,
-    "MemberMax": 20,
-    "DayLeft": 3,
-    "Comments": [],
+    "MemberCount": 0,
+    "MemberMax": 7,
+    "DayLeft": 2,
+    "Comments": [
+      {
+        "User": {
+          "Id": 2,
+          "Account": {
+            "Username": "pang",
+            "Email": "pang@gmail.com",
+            "Password": "456"
+          },
+          "Profile": {
+            "Caption": "pang hard code",
+            "CreatedPosts": [],
+            "InterestedPosts": [],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg\u0026s",
+            "InterestedTag": []
+          },
+          "Noti": []
+        },
+        "Content": "\u0E2D\u0E22\u0E39\u0E48\u0E41\u0E23\u0E07\u0E04\u0E4C bronze \u0E02\u0E2D\u0E08\u0E2D\u0E22\u0E44\u0E14\u0E49\u0E21\u0E31\u0E49\u0E22\u0E04\u0E30",
+        "Date": "2024-03-14T07:56:41.5714569+07:00",
+        "Reply": null
+      }
+    ],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "pang",
+        "Email": "pang@gmail.com",
+        "Password": "456"
+      },
+      {
+        "Username": "tak",
+        "Email": "tak@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {
     "Id": 1005,
     "Active": true,
     "Author": {
-      "Username": "pang",
-      "Email": "pang@gmail.com",
-      "Password": "456"
+      "Username": "rut",
+      "Email": "rut@gmail.com",
+      "Password": "123"
     },
     "Detail": {
-      "Header": "find some cat",
+      "Header": "\u0E40\u0E01\u0E47\u0E1A\u0E1C\u0E49\u0E32\u0E43\u0E2B\u0E49\u0E2B\u0E19\u0E48\u0E2D\u0E22\u0E04\u0E23\u0E31\u0E1A",
       "Tag": [
-        "my home",
-        "my home",
-        "my home"
+        "Lifestyle"
       ],
-      "Intro": "35 december let\u0027s go eat out at AKA siam the take a photo centralworld",
-      "Detail": "hiuhiuhiu",
-      "Place": "aaaaaaaaa"
+      "Intro": "\u0E1C\u0E21\u0E25\u0E37\u0E21\u0E15\u0E30\u0E01\u0E23\u0E49\u0E32\u0E1C\u0E49\u0E32\u0E44\u0E27\u0E49\u0E23\u0E49\u0E32\u0E19\u0E0B\u0E31\u0E01\u0E1C\u0E49\u0E32 \u0E2D\u0E35\u0E01\u0E0A\u0E31\u0E48\u0E27\u0E42\u0E21\u0E07\u0E1D\u0E19\u0E15\u0E01\u0E1C\u0E21\u0E01\u0E25\u0E31\u0E1A\u0E44\u0E1B\u0E44\u0E21\u0E48\u0E17\u0E31\u0E19\u0E04\u0E23\u0E31\u0E1A",
+      "Detail": "\u0E04\u0E48\u0E32\u0E08\u0E49\u0E32\u0E07 200 \u0E42\u0E2D\u0E19\u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E40\u0E1E\u0E22\u0E4C \u0E02\u0E2D\u0E04\u0E19\u0E21\u0E35\u0E43\u0E08",
+      "Place": "\u0E40\u0E01\u0E01\u0E35 1"
     },
     "EventDate": {
       "DateType": "one",
-      "Start": "2013-12-01",
+      "Start": "2024-03-14",
       "End": null,
-      "CloseSubmit": "2022-12-11"
+      "CloseSubmit": "2024-03-14"
     },
     "Requesting": false,
     "Visible": true,
-    "MemberCount": 5,
-    "MemberMax": 10,
-    "DayLeft": 3,
+    "MemberCount": 0,
+    "MemberMax": 1,
+    "DayLeft": 0,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -196,32 +253,65 @@
     "Id": 1006,
     "Active": true,
     "Author": {
-      "Username": "pang",
-      "Email": "pang@gmail.com",
-      "Password": "456"
+      "Username": "tak",
+      "Email": "tak@gmail.com",
+      "Password": "123"
     },
     "Detail": {
-      "Header": "find some cat",
+      "Header": "\u0E44\u0E01\u0E48\u0E17\u0E2D\u0E14\u0E44\u0E2E\u0E42\u0E0B\u0E1E\u0E23\u0E38\u0E48\u0E07\u0E19\u0E35\u0E49",
       "Tag": [
-        "my home",
-        "my home",
-        "my home"
+        "Food",
+        " Lifestyle"
       ],
-      "Intro": "35 december let\u0027s go eat out at AKA siam the take a photo centralworld",
-      "Detail": "wwwwwwwwwwwwwwwwwwwwwwww",
-      "Place": "aaaaaaaaa"
+      "Intro": "\u0E1D\u0E32\u0E01\u0E08\u0E2D\u0E07\u0E42\u0E15\u0E4A\u0E30\u0E01\u0E48\u0E2D\u0E19\u0E23\u0E49\u0E32\u0E19\u0E1B\u0E34\u0E14 \u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E40\u0E25\u0E35\u0E49\u0E22\u0E07\u0E27\u0E34\u0E07\u0E0B\u0E4C\u0E41\u0E0B\u0E48\u0E1A\u0E2A\u0E2D\u0E07\u0E0A\u0E34\u0E49\u0E19",
+      "Detail": null,
+      "Place": "\u0E44\u0E01\u0E48\u0E17\u0E2D\u0E14\u0E44\u0E2E\u0E42\u0E0B"
     },
     "EventDate": {
       "DateType": "one",
-      "Start": "2013-12-01",
+      "Start": "2024-03-16",
       "End": null,
-      "CloseSubmit": "2022-11-11"
+      "CloseSubmit": "2024-03-15"
     },
     "Requesting": false,
     "Visible": true,
-    "MemberCount": 5,
-    "MemberMax": 10,
-    "DayLeft": 3,
+    "MemberCount": 0,
+    "MemberMax": 3,
+    "DayLeft": 2,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1007,
+    "Active": true,
+    "Author": {
+      "Username": "tak",
+      "Email": "tak@gmail.com",
+      "Password": "123"
+    },
+    "Detail": {
+      "Header": "Commart Society",
+      "Tag": [
+        "Education",
+        " Lifestyle"
+      ],
+      "Intro": "\u0E2B\u0E32\u0E04\u0E19\u0E44\u0E1B\u0E0B\u0E37\u0E49\u0E2D SSD \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E04\u0E23\u0E31\u0E1A",
+      "Detail": "\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E1E\u0E23\u0E30\u0E08\u0E2D\u0E21\u0E40\u0E01\u0E25\u0E49\u0E32\u0E2A\u0E34\u0E1A\u0E42\u0E21\u0E07\u0E15\u0E23\u0E07",
+      "Place": "Bitech, BangNa"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-03-20",
+      "End": null,
+      "CloseSubmit": "2024-03-18"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 2,
+    "DayLeft": 6,
     "Comments": [],
     "Liked": [],
     "Joined": [],

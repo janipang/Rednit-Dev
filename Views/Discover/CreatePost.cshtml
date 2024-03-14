@@ -13,8 +13,46 @@
                             <input type="text" name="header" placeholder="Header" maxlength="50" required>
                             <p class="length-label" id="max-header"></p>
                         </legend>
-                        <legend for="tag">Tag
-                            <input type="text" name="tag" placeholder="Tag" required>
+                        <legend for="tag" class="showtag">Tag
+                            <input name="tag" maxlength="3">
+                            <div class="tagInput">
+                                Tag
+                            </div>
+                            <p class="length-label" id="max-tag"></p>
+                            <button type="button" class="addTag">
+                                <svg width="30" height="30" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px">
+                                    <path class="favIcon"
+                                        d="M10.8889 18H18M18 18H25.1111M18 18V25.1111M18 18V10.8889M18 34C15.8989 34 13.8183 33.5861 11.8771 32.7821C9.93586 31.978 8.17203 30.7994 6.68629 29.3137C5.20055 27.828 4.022 26.0641 3.21793 24.1229C2.41385 22.1817 2 20.1012 2 18C2 15.8989 2.41385 13.8183 3.21793 11.8771C4.022 9.93586 5.20055 8.17203 6.68629 6.68629C8.17203 5.20055 9.93586 4.022 11.8771 3.21793C13.8183 2.41385 15.8989 2 18 2C22.2435 2 26.3131 3.68571 29.3137 6.68629C32.3143 9.68687 34 13.7565 34 18C34 22.2435 32.3143 26.3131 29.3137 29.3137C26.3131 32.3143 22.2435 34 18 34Z"
+                                        stroke="#FE3C72" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="dropdown-hover-area">
+                                <ul class="dropdown-tag-box">
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Food">Food</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Lifestyle">Lifestyle</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Sports">Sports</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Travel">Travel</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Education">Education</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Animal">Animal</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-tag-item" name="Art">Art</div>
+                                    </li>
+                                </ul>
+                            </div>
                         </legend>
                         <legend for="intro">Intro
                             <input type="text" name="intro" placeholder="Intro" maxlength="120" required>
@@ -145,6 +183,47 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
 <script>
+
+    //add tag in field
+    var tagItems = document.getElementsByClassName("dropdown-tag-item");
+    var dropDownBox = document.getElementsByClassName("dropdown-tag-box")[0];
+    var tagInput = document.getElementsByClassName("tagInput")[0];
+    var maxTag = document.getElementById("max-tag");
+    var tagNameSetter = document.querySelector("input[name='tag']");
+    var count = 0;
+    tagNameSetter.style.visibility = "hidden";
+    var tagValues = [];
+
+    maxTag.textContent = `${count} / 3`
+    Array.from(tagItems).forEach((tagItem) => {
+        console.log("hello" + tagItem);
+        tagItem.addEventListener("click", () => {
+            $.ajax({
+                url: '/Discover/AddTag',
+                type: 'GET',
+                data: { tag: tagItem.getAttribute("name") },
+                success: function (tagDiv) {
+                    if (count == 0) {
+                        tagInput.innerHTML = "";
+                    }
+                    if (count < 3) {
+                        console.log("Received tag HTML:", tagDiv);
+                        tagInput.innerHTML += tagDiv;
+                        count++;
+                        tagValues.push(tagItem.getAttribute("name"));
+                        tagNameSetter.value = tagValues.join(", ");
+                        console.log("tag value", tagNameSetter.value);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', status, error);
+                }
+            });
+        });
+    });
+
+
+
     var dateTypeAns = document.getElementsByName("dateType");
     var requestAns = document.getElementsByName("requestType");
     var visibilityAns = document.getElementsByName("visibility");
@@ -341,7 +420,8 @@
 
 
     //this is doesn't work
-    @* var errors = document.getElementsByClassName("errorText");
+    var errors = document.getElementsByClassName("errorText");
+
     function haveTextError() {
         if (errors[0].style.display == "none" && errors[1].style.display == "none") {
             return false
@@ -361,5 +441,5 @@
     }
 
     var submitButton = document.getElementById("submit");
-    submitButton.addEventListener("click", CheckErrorBeforeSubmit); *@
+    submitButton.addEventListener("click", CheckErrorBeforeSubmit);
 </script>

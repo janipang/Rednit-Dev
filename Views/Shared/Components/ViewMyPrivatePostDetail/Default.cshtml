@@ -10,7 +10,7 @@
                     <path d="M9 4V8.5L12 10" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
                 <span class="post-detail-remaining-day ">
-                    20 Days left
+                    @(Model.DayLeft) Day@(Model.DayLeft > 1 ? "s" : "") left
                 </span>
             </div>
         </div>
@@ -39,7 +39,7 @@
                         }
                         else
                         {
-                            foreach (Account accout in Model.Requested)
+                            foreach (var accout in Model.Requested)
                             {
                                 <div class="manage-request-row">
                                     <div class="user-request">
@@ -72,10 +72,10 @@
     <div class="post-creator-section">
         <button class="post-user-image-container">
             <img class="post-user-image"
-                src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                src=@ViewBag.ProfileImage
                 alt="profile image">
         </button>
-        <p class="post-detail-username">Anntonia</p>
+        <p class="post-detail-username">@Model.Author.Username</p>
     </div>
     <div class="post-detail-detail-section">
         @Model.Detail.Detail
@@ -102,7 +102,7 @@
                     d="M1.88889 18.8889H15.1111C16.1528 18.8889 17 18.0417 17 17V3.77778C17 2.73606 16.1528 1.88889 15.1111 1.88889H13.2222V0H11.3333V1.88889H5.66667V0H3.77778V1.88889H1.88889C0.847167 1.88889 0 2.73606 0 3.77778V17C0 18.0417 0.847167 18.8889 1.88889 18.8889ZM15.1111 5.66667L15.1121 17H1.88889V5.66667H15.1111Z"
                     fill="#434343" />
             </svg>
-            <span>20/4/2024</span>
+            <span>@("" + Model.EventDate.Start + (Model.EventDate.DateType != "one" ? " - " + Model.EventDate.End : ""))</span>
         </div>
         <div style="margin-top: 0;">
             <div class="post-detail-member-container">
@@ -117,7 +117,7 @@
                         @for (int i = (int)MathF.Min(4, Model.Joined.Count); i > 0; i--)
                         {
                             <img class="member-icon member-z-index-@(i)"
-                                src="https://citalks.com/_next/image?url=https%3A%2F%2Fd7t122vj03qui.cloudfront.net%2Fimages%2Fhost_images%2F2023%2F11%2F6551c79ade496.jpeg&w=640&q=75"
+                                src=@(ViewBag.JoinedImage[i - 1])
                                 alt="member image">
                         }
                         @if (Model.Joined.Count > 4)

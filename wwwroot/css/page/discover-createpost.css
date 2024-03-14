@@ -39,8 +39,89 @@ input[type="number"] {
     font-size: 16px;
 }
 
+.tagInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+    width: 98%;
+    background-color: #F4F4F4;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1%;
+    margin: 5px 0px;
+    font-size: 16px;
+    color: #696969;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+legend[for="tag"] {
+    position: relative;
+}
+
+.addTag {
+    position: absolute;
+    bottom: 23%;
+    right: -34px;
+}
+
+.dropdown-hover-area {
+    display: none;
+    padding: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+
+}
+
+.dropdown-tag-box {
+    min-width: fit-content;
+    width: 8vw;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #F9F9F9;
+    border-radius: 5px;
+    padding: 15px;
+    font-weight: 500;
+    z-index: 10;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.dropdown-tag-item:hover {
+    background-color: #B0B0B0;
+}
+
+.dropdown-hover-area:hover {
+    display: flex;
+    cursor: pointer;
+}
+
+.addTag:hover+.dropdown-hover-area {
+    display: flex;
+    z-index: 50;
+}
+
+.dropdown-tag-item {
+    width: fit-content;
+    color: #FFFFFF;
+    background-color: #C4C4C4;
+    border-radius: 200px;
+    padding: 5px 10px;
+}
+
+.tagElement {
+    background-color: #C4C4C4;
+    padding: 5px 10px;
+    border-radius: 200px;
+    margin: 0px 5px;
+    color: #FFFFFF;
 }
 
 textarea {
@@ -54,11 +135,11 @@ textarea {
     margin: 5px 0px;
 }
 
-.length-label{
+.length-label {
     font-size: 12px;
     font-weight: 500;
     text-align: end;
-    color:#C4C4C4;
+    color: #C4C4C4;
     /* padding:0px 10px; */
 }
 
@@ -178,7 +259,7 @@ input[type="number"]::-webkit-inner-spin-button,
     -webkit-appearance: none;
 }
 
-.errorText{
+.errorText {
     display: none;
     color: #ff3333;
 }
@@ -272,7 +353,7 @@ fieldset {
 form {
     display: grid;
     grid-template: 1fr / 6fr 4fr;
-    grid-gap: 40px;
+    grid-gap: 70px;
     width: 100%
 }
 
@@ -342,7 +423,8 @@ form {
     .member-max-fieldset {
         width: 80%;
     }
-    .member-max-input-field{
+
+    .member-max-input-field {
         width: 70%;
     }
 
@@ -370,6 +452,11 @@ form {
     form {
         display: flex;
         flex-direction: column;
+        grid-gap: 0px;
+    }
+
+    .dropdown-hover-area {
+        right: 4vw;
     }
 
     .member-max-fieldset {

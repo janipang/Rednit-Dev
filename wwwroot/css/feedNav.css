@@ -35,9 +35,14 @@
     border-radius: 16.5px;
 }
 
-.feed-nav-button:first-child {
+.is-selected {
     background-color: #E7E7E7;
     color: #1e1e1e;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 4px 15px;
+    margin: 0 5px;
+    border-radius: 16.5px;
 }
 
 .feed-nav-search-section {
@@ -119,9 +124,14 @@
         margin-bottom: 20px;
     }
 
-    .feed-nav-button:first-child{
+    .is-selected{
+        background-color: #E7E7E7;
         color: #696969;
-        background-color: inherit;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 4px 15px;
+        margin: 0 5px;
+        border-radius: 16.5px;
     }
 
     .feed-nav-toggle {

@@ -295,6 +295,10 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+    .navGroup {
+        grid-template-columns: 60% 40%;
+    }
+
     .navGroup.isLogin {
         grid-template-columns: 45% 55%;
     }
@@ -398,9 +402,18 @@ footer {
 }
 
 @media screen and (max-width: 540px) {
-    .navGroup.isLogin {
-        grid-template-columns: 45% 55%;
+    .navGroup {
+        grid-template-columns: 72% 28%;
     }
+
+    .navGroup.isLogin {
+        grid-template-columns: 60% 40%;
+    }
+    
+    #discovery {
+        display: none;
+    }
+
     .dropdown-hover-area {
         padding: 25px 15px;
         right: calc(4vw - 15px);
@@ -412,6 +425,10 @@ footer {
 }
 
 @media screen and (max-width: 430px) {
+
+    .navGroup {
+        grid-template-columns: 65% 35%;
+    }
 
     .leftSide img {
         margin-top: 0;

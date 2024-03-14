@@ -33,6 +33,7 @@ public class NotiController : Controller
         // ดึง noti 
         List<Noti> userNoti = user.Noti; // ฝั่ง post ส่งมาให้ ผั่งแป้ง
         var noti = new List<ShowNoti>{}; // noti ที่รุจน์จะต้องเอาไปแสดง 
+        var requestedNoti = new List<ShowRequestedNoti>{};
         foreach(var n in userNoti)
         {
             var post = posts.SingleOrDefault(a => a.Id == n.IdPost);
@@ -47,14 +48,28 @@ public class NotiController : Controller
             {
                 text = "Sorry, can't join.";
             }
+            if (n.Type != "Request")
+            {
+                var temp = new ShowNoti();
+                temp.Header = header;
+                temp.Type = n.Type;
+                temp.Text = text;
+                temp.IdPost = n.IdPost;
+                noti.Add(temp);
+            }
+            else  if (n.Type == "Request")
+            {
+                var temp2 = new ShowRequestedNoti();
+                var requestedUser = users.SingleOrDefault(a => a.Account.Username == n.WhoRequest.Username);
+                temp2.Img = requestedUser.Profile.Image;
+                temp2.Header = header;
+                temp2.Type = n.Type;
+                temp2.IdPost = n.IdPost;
+                requestedNoti.Add(temp2);
+            }
 
-            var temp = new ShowNoti();
-            temp.Header = header;
-            temp.Type = n.Type;
-            temp.Text = text;
-            temp.IdPost = n.IdPost;
-            noti.Add(temp);
         }
+        ViewBag.requestedNoti = requestedNoti;
         ViewBag.noti = noti;
         return View();
     }
