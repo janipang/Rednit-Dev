@@ -1,0 +1,25 @@
+@model RednitDev.Models.Account;
+@{
+    ViewData["Title"] = "Sign up";
+    Layout = "_LoginLayout";
+}
+<link href="~/css/Access/LoginSignup.css" rel="stylesheet" />
+<div class="space">
+    <div class="loginGroup">
+        <h1>Create account</h1>
+        <form asp-controller="Access" asp-action="Signup" method="post">
+            <input asp-for="Username" type="text" id="username" placeholder="Username" required>
+            <input asp-for="Email" type="text" id="email" placeholder="Email" required>
+            <input asp-for="Password" type="password" id="password" placeholder="Password" required>
+            @if (ViewData["ValidateMessage"] != null)
+            {
+                <p>@ViewData["ValidateMessage"]</p>
+            }
+            <button type="submit" asp-controller = "Home" asp-action = "ChooseTag">Sign up</button>
+        </form>
+        <div class="question">
+            <p>Already have an account?</p>
+            <a id="login" asp-area="" asp-controller="Access" asp-action="Login">Log in</a>
+        </div>
+    </div>
+</div>

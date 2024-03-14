@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Favourites";
+    Layout = "_LayoutFav";
+}
+@model IEnumerable<RednitDev.Models.Post>
+<link href="~/css/page/Fav.css" rel="stylesheet" />
+<h1>My Favourites</h1>
+<div class="posts-container">
+    @foreach (var post in Model)
+    {
+        @await Component.InvokeAsync("FavPost", new { post = post })
+    }
+</div>

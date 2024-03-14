@@ -1,0 +1,116 @@
+@{
+    ViewData["Title"] = "ChooseTag";
+    Layout = "_LayoutNoti";
+}
+
+
+<link rel="stylesheet" href="/css/chooseTag.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<h1 style="color:white; text-align:center; font-weight:bold; margin-top:10px; margin-bottom:30px; font-size:40px;">Choose your interests</h1>
+<p style="color:white; text-align:center; font-size: 16px; margin-bottom:80px; ">Get better posts recommendation</p>
+
+<section style="margin: 50px;">
+    <div class="TagRow">
+        <div id="tag1" class="TagBox" onclick="clickButton(this, 'food')">
+            <img class="SvgImage" src="/svg/food.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Food</span>
+        </div>
+        <div id="tag2" class="TagBox" onclick="clickButton(this, 'lifeStyle')">
+            <img class="SvgImage" src="/svg/lifeStyle.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Lifestyle</span>
+        </div>
+        <div id="tag3" class="TagBox" onclick="clickButton(this, 'sport')">
+            <img class="SvgImage" src="/svg/sport.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Sport</span>
+        </div>
+        <div id="tag4" class="TagBox" onclick="clickButton(this, 'travel')">
+            <img class="SvgImage" src="/svg/travel.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Travel</span>
+        </div>
+        <div id="tag5" class="TagBox" onclick="clickButton(this, 'education')">
+            <img class="SvgImage" src="/svg/education.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Education</span>
+        </div>
+        <div id="tag6" class="TagBox" onclick="clickButton(this, 'animal')">
+            <img class="SvgImage" src="/svg/animal.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Animal</span>
+        </div>
+        <div id="tag7" class="TagBox" onclick="clickButton(this, 'art')">
+            <img class="SvgImage" src="/svg/art.svg" style="margin-top:5px;"/>
+            <span class="TextInBox">Art</span>
+        </div>
+    </div>
+</section>
+
+<div style="display: flex; justify-content:center; align-items:center;">
+    <button class="SubmitButton" onclick="submitButton()">
+        Submit
+    </button>
+</div>
+
+<script>
+    var count = 0;
+    function clickButton(button, svgName) {
+        var svgImage = button.querySelector('.SvgImage');
+        var spanText = button.querySelector('.TextInBox');
+
+        if (svgImage && spanText) {
+            if (svgImage.src.endsWith(svgName + ".svg") && count < 3) {
+                svgImage.src = "/svg/" + svgName + "Clicked.svg";
+                spanText.style.color = "#FE3C72";
+                button.style.backgroundColor = "white";
+                count++;
+            } else if (svgImage.src.endsWith("Clicked.svg")) {
+                svgImage.src = "/svg/" + svgName + ".svg";
+                spanText.style.color = "rgb(255, 255, 255)";
+                button.style.backgroundColor = "transparent";
+                count--;
+            }
+        }
+    }
+
+    function submitButton() {
+        var tags = [];
+        for (var i = 1; i <= 7; i+=1) {
+            var tag = document.getElementById("tag" + i);
+            if (tag.style.backgroundColor == "white") {
+                tags.push(i);
+            }
+        }
+        var url = '@Url.Action("AddInterestedTag", "Home")' + "?";
+        for (var i = 0; i < 3; i+=1) {
+            if (tags.length < i + 1) {
+                tags.push("");
+            }
+            if (tags[i] == 1) {
+                tags[i] = "Food";
+            }
+            if (tags[i] == 2) {
+                tags[i] = "Lifestyle";
+            }
+            if (tags[i] == 3) {
+                tags[i] = "Sport";
+            }
+            if (tags[i] == 4) {
+                tags[i] = "Travel";
+            }
+            if (tags[i] == 5) {
+                tags[i] = "Education";
+            }
+            if (tags[i] == 6) {
+                tags[i] = "Animal";
+            }
+            if (tags[i] == 7) {
+                tags[i] = "Art";
+            }
+            url += "tag" + (i+1) + "=" + tags[i] + "&"; 
+        }
+        url = url.substring(0, url.length-1);
+        console.log(url);
+        window.location.href = url;
+    }
+</script>
+

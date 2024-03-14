@@ -1,0 +1,52 @@
+@model RednitDev.Models.Post
+<div class="post-container">
+    <div class="top-section">
+        <div class="header">
+            <p>@Model.Detail.Header</p>
+            <div class="day-container">
+                <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z"
+                        stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M9 4V8.5L12 10" stroke="#AAAAAA" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="ramaining-day">
+                    @(Model.DayLeft) Day@(Model.DayLeft > 1 ? "s" : "") left
+                </span>
+            </div>
+
+        </div>
+        <div class="tag-section">
+            @foreach (var tag in Model.Detail.Tag)
+            {
+                <div class="tag">@tag</div>
+            }
+        </div>
+    </div>
+    <div class="bar-line"></div>
+    <div class="bottom-section">
+        <div class="detail">
+            <div class="place">
+                <img src="~/svg/pinGray.svg" alt="pinGray" height="19px" />
+                <span>@Model.Detail.Place</span>
+            </div>
+            <div class = "calendar">
+                <img src="~/svg/calendarGray.svg" alt="calendarGray" height="17px" />
+                <span>@Model.EventDate.CloseSubmit</span>
+            </div>
+            <div class="group">
+                <img src="~/svg/groupGray.svg" alt="groupGray" height="16px" />
+                <div>@(Model.MemberCount)/@(Model.MemberMax)</div>
+            </div>
+        </div>
+        <button Class="edit-button" onclick="onMoreDetailButtonClick(@Model.Id)">More Detail</button>
+    </div>
+</div>
+<script>
+    function onMoreDetailButtonClick(postID){
+
+        var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
+        console.log(url);
+        window.location.href = url;
+    }
+</script>

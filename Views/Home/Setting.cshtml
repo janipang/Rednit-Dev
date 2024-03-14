@@ -1,0 +1,112 @@
+@{
+    ViewData["Title"] = "Setting";
+    Layout = "_LayoutNoti";
+}
+
+<link rel="stylesheet" href="/css/setting.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<h1 style="color:white; text-align:center; font-weight:bold; margin-top:10px; margin-bottom:50px; font-size:40px;">Setting</h1>
+<div class="SettingBox">
+    <div class="EditHeader">Edit your account</div>
+    <div class="EditContainer">
+        <div class="EditDetail">
+            <div class="InputBox">
+                <p style="margin-left: 5px;">Username</p>
+                <input type="text" id="usernameInput" name="usernameInput" placeholder="Username">
+                <p class="charLimit" id="charUserLimit">0/15</p>
+            </div>
+
+            <div class="InputBox">
+                <p style="margin-left: 5px";>Bio</p>
+                <textarea id="bioInput" name="bioInput" placeholder="Bio"></textarea>
+                <p class="charLimit" id="charBioLimit">0/200</p>
+            </div>
+
+            <button id="changePasswordButton">Change password</button>
+            <div class="ChangePasswordBox">
+                <div class="InputBox">
+                    <p style="margin-left: 5px;">New password</p>
+                    <input type="text" id="newPassword" name="newPassword" placeholder="New password">
+                    <p style="font-size: 13px; color:#434343; margin-top:10px; margin-left: 5px;">Minimum 6 characters</p>
+                </div>
+                <div class="InputBox">
+                    <p style="margin-left: 5px">Confirm password</p>
+                    <input type="text" id="confirmPassword" name="confirmPassword" placeholder="Confirm password">
+                    <p style="font-size: 13px; color:#434343; margin-top:10px; margin-left: 5px;">Make sure they match!</p>
+                </div>
+            </div>
+                
+        </div>
+
+        <div class=EditPicture>
+            <p style="margin-top:30px">Profile picture</p>
+            @* <form action="/upload" method="post" enctype="multipart/form-data">
+                <img id="previewImage" src="#" alt="Preview Image" style="display: none; max-width: 450px; max-height: 450px;">
+                <br>
+                <label for="fileInput"></label>
+                <input type="file" id="fileInput" name="fileInput" accept="image/*">
+            </form> *@
+            <input type="text" id="imageInput" name="imageInput" placeholder="Profile Picture Link">
+        </div>
+    </div>
+<button class="SaveButton" onclick="submit()">Save setting</button>
+</div>
+
+<script>
+    const usernameInput = document.getElementById('usernameInput');
+    const bioInput = document.getElementById('bioInput');
+    const charUserLimit = 15;
+    const charBioLimit = 200;
+
+    @* usernameInput.value = @ViewBag.username;
+    bioInput.value = @ViewBag.bio;
+    document.getElementById("imageInput").value = @ViewBag.image; *@
+
+    usernameInput.addEventListener('input', function() {
+        const inputLength = this.value.length;
+        document.getElementById('charUserLimit').textContent = inputLength + '/' + charUserLimit;
+        if (inputLength > charUserLimit) {
+            this.value = this.value.substring(0, charUserLimit);
+            document.getElementById('charUserLimit').textContent = charUserLimit + '/' + charUserLimit;
+        }
+    });
+
+    bioInput.addEventListener('input', function() {
+        const inputLength = this.value.length;
+        document.getElementById('charBioLimit').textContent = inputLength + '/' + charBioLimit;
+        if (inputLength > charBioLimit) {
+            this.value = this.value.substring(0, charBioLimit);
+            document.getElementById('charBioLimit').textContent = charBioLimit + '/' + charBioLimit;
+        }
+    });
+
+    const previewImage = document.getElementById('previewImage');
+
+    const changePasswordBox = document.getElementsByClassName('ChangePasswordBox')[0];
+    const changePasswordButton = document.getElementById('changePasswordButton');
+
+    changePasswordBox.style.display = 'none';
+
+    changePasswordButton.addEventListener('click', function() {
+        if (changePasswordBox.style.display === 'none') {
+            changePasswordBox.style.display = 'block';
+        }
+        else {
+            changePasswordBox.style.display = 'none';
+        }
+    });
+
+    function submit() {
+        var url = '@Url.Action("EditProfile", "Home")' + "?" + "username=" + usernameInput.value + "&" + 
+        "bio=" + bioInput.value + "&" + 
+        "newPass=" + document.getElementById("newPassword").value + "&" +
+        "confirmPass=" + document.getElementById("confirmPassword").value + "&" +
+        "image=" + document.getElementById("imageInput").value;
+        console.log(url);
+        window.location.href = url;
+    }
+</script>

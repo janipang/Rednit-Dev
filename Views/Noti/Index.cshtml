@@ -1,0 +1,22 @@
+
+@{
+    ViewData["Title"] = "Notification";
+    Layout = "_LayoutNoti";
+}
+<link href="~/css/component/requestedNotiCard.css" rel="stylesheet" />
+<link href="~/css/component/notiCard.css" rel="stylesheet" />
+<link href="~/css/page/Noti.css" rel="stylesheet" />
+<h1>Notifications</h1>
+
+<div class="noti-container">
+    @foreach(ShowNoti noti in ViewBag.noti)
+    {
+        @await Component.InvokeAsync("Noti", new { noti = noti }) 
+    }
+    @foreach(ShowRequestedNoti requestedNoti in ViewBag.requestedNoti)
+    {
+        @await Component.InvokeAsync("RequestedNoti", new { requestedNoti = requestedNoti })
+    }
+</div>
+
+

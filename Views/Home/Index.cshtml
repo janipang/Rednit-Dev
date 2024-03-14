@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
     Layout = "_LayoutHome";
 }
+@model IEnumerable<RednitDev.Models.Post>
 
 <div class="container" style="width:100%; margin:0px; padding:0px;">
 
@@ -21,7 +22,7 @@
     <section class="cards">
         <div class="cards-container">
             <div class="activity-card">
-                <img class="activity-pic" src="~/svg/find.svg" alt="find_svg" />
+                <img class="activity-pic" src="~/svg/finding.svg" alt="find_svg" />
                 <div class="activity-info">
                     <h3>
                         Find
@@ -32,7 +33,7 @@
                 </div>
             </div>
             <div class="activity-card">
-                <img class="activity-pic" src="~/svg/joined.svg" alt="join_svg"/>
+                <img class="activity-pic" src="~/svg/joined.svg" alt="join_svg" />
                 <div class="activity-info">
                     <h3>
                         Join
@@ -43,7 +44,7 @@
                 </div>
             </div>
             <div class="activity-card">
-                <img class="activity-pic" src="~/svg/explore.svg" alt="explore_svg"/>
+                <img class="activity-pic" src="~/svg/explore.svg" alt="explore_svg" />
                 <div class="activity-info">
                     <h3>
                         Explore
@@ -89,66 +90,18 @@
 
     @* hot post *@
     <section class="hotpost">
-        <div class="heading">
-            <img src="~/svg/fire.svg" alt="fire_svg" height="100%" />
+        <div class="hotpost-heading">
+            <img src="~/svg/fire.svg" alt="fire_svg" height="100%"/>
             <h1>Hot post</h1>
-            <img src="~/svg/fire.svg" alt="fire_svg" height="100%" style="margin:0px 10px;" />
+            <img src="~/svg/fire.svg" alt="fire_svg" height="100%"/>
         </div>
 
         @* posts container *@
         <div class="posts-container">
-            <div class="post-card">
-                <div class="author-detail" style="display:flex; justify-content:flex-start;">
-                    <img class="profile-img" src="https://avatars.githubusercontent.com/u/93817826?v=4" alt="profile"
-                        height="60px" width="60px" style="object-fit:cover; border-radius:1000px;">
-                    <div class="profile-info" style="margin:0px 15px;">
-                        <h3 class="profile-name" style="margin:0px; color:#FD5564; font-size:22px; font-weight:500;">
-                            Janipang</h3>
-                        <span class="profile-time" style="display:flex; align-items:center; padding:0px;">
-                            <img src="~/svg/timegrey.svg" style="margin:0 5px 0 0;" />
-                            <p style="margin:0px; padding:0px; color:grey;">3 hours ago</p>
-                        </span>
-                    </div>
-                </div>
-                <div class="text-detail">
-                    <h1 style="font-size:24px; font-weight:500;">หาคนทำสมุดระบายสีแจกเด็ก</h1>
-                    <p style="font-size:16px;">ต้องการเพื่อนเข้าร่วมกลุ่มอีก 4 คน ขอคนตั้งใจทำงาน ขยัน ไม่อู้ รักศิลปะ
-                        ไม่ใช้เอไอในการเจนรูป</p>
-                </div>
-                <div class="bottom">
-                    <div class="placetimetag-detail"></div>
-                    <button
-                        style="background:#FD5564; border:none; border-radius:10px; font-weight:500; font-size:20px; color:#FFFFFF; padding:10px 25px; box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, .15);">
-                        More Detail
-                    </button>
-                </div>
-            </div>
-            <div class="post-card">
-                <div class="author-detail" style="display:flex; justify-content:flex-start;">
-                    <img class="profile-img" src="https://avatars.githubusercontent.com/u/93817826?v=4" alt="profile"
-                        height="60px" width="60px" style="object-fit:cover; border-radius:1000px;">
-                    <div class="profile-info" style="margin:0px 15px;">
-                        <h3 class="profile-name" style="margin:0px; color:#FD5564; font-size:22px; font-weight:500;">
-                            Janipang</h3>
-                        <span class="profile-time" style="display:flex; align-items:center; padding:0px;">
-                            <img src="~/svg/timegrey.svg" style="margin:0 5px 0 0;" />
-                            <p style="margin:0px; padding:0px; color:grey;">3 hours ago</p>
-                        </span>
-                    </div>
-                </div>
-                <div class="text-detail">
-                    <h1 style="font-size:24px; font-weight:500;">หาคนทำสมุดระบายสีแจกเด็ก</h1>
-                    <p style="font-size:16px;">ต้องการเพื่อนเข้าร่วมกลุ่มอีก 4 คน ขอคนตั้งใจทำงาน ขยัน ไม่อู้ รักศิลปะ
-                        ไม่ใช้เอไอในการเจนรูป</p>
-                </div>
-                <div class="bottom">
-                    <div class="placetimetag-detail"></div>
-                    <button
-                        style="background:#FD5564; border:none; border-radius:10px; font-weight:500; font-size:20px; color:#FFFFFF; padding:10px 25px; box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, .15);">
-                        More Detail
-                    </button>
-                </div>
-            </div>
+                @foreach (var post in Model)
+                {
+                    @await Component.InvokeAsync("HotPost", new { post = post })
+                }
         </div>
     </section>
 

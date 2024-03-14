@@ -2,6 +2,48 @@
     ViewData["Title"] = "Discover";
     Layout = "_LayoutDiscover";
 }
-<div>
-    Hello Feed
+@model IEnumerable<RednitDev.Models.Post>
+@{
+    Layout = "_LayoutDiscover";
+}
+<div class="discover-container">
+    <h1 class="feed-header">Let’s join new groups!</h1>
+    @await Component.InvokeAsync("FeedNavBar")
+    <div class="feed-container">
+        <div class="feed-area" id="feed-area">
+            @foreach (var post in Model)
+            {
+                @await Component.InvokeAsync("Post", new { post = post })
+            }
+        </div>
+        <div class="search-area">
+            @await Component.InvokeAsync("HotSearch")
+        </div>
+    </div>
+    @if (ViewBag.HasMorePost)
+    {
+        <button class="show-more-post-button" onclick="onShowMorePostButtonClick()" id="show-more-button">
+            Show more
+        </button>
+    }
 </div>
+
+<script>
+    function onShowMorePostButtonClick(){
+        fetch('/Discover/GetMorePosts', { method: 'GET' })
+        .then(response => response.json())
+        .then(data => {
+            
+            if(data[data.length - 1] == "a"){
+                document.getElementById("show-more-button").style.display = "none";
+                data = data.substring(0, data.length - 1);
+            }
+            
+            // Append the fetched posts to the postContainer
+            document.getElementById("feed-area").innerHTML += data;
+        })
+        .catch(error => {
+            console.error('Error fetching more posts:', error);
+        });
+    }
+</script>
