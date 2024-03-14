@@ -26,9 +26,24 @@ public class ProfileController : Controller
     public IActionResult MyProfile()
     {
         // ดึง username
-        string username = HttpContext.Request.Cookies["username"] ?? "No data";
-        Console.WriteLine("User: " + username);
+        int idPost = (int)HttpContext.Session.GetInt32("Id");
 
+        var user = GetUser(idPost);
+        onlineUser = user;
+
+        Console.WriteLine("User: +" + user.Account.Email);
+        Console.WriteLine("RequesingPosts: +" + user.Profile.RequesingPosts);
+        ViewBag.user = user;
+
+        return View();
+    }
+    
+    public IActionResult ViewProfile(int idUser)
+    {
+        return View();
+    }
+    public static User GetUser(int idUser)
+    {
         //อ่านไฟล์ user 
         var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json");
 
@@ -41,22 +56,8 @@ public class ProfileController : Controller
         {
             users = new List<User>();
         };
-
         Console.WriteLine("users: " + users.Count);
-
-        var user = users.SingleOrDefault(x => x.Account.Username == username);
-        onlineUser = user;
-
-        Console.WriteLine("User: +" + user.Account.Email);
-        Console.WriteLine("RequesingPosts: +" + user.Profile.RequesingPosts);
-        ViewBag.user = user;
-
-        return View();
+        var user = users.SingleOrDefault(x => x.Id == idUser);
+        return user;
     }
-    
-    public IActionResult ViewProfile(Account account, User user)
-    {
-        return View();
-    }
-
 }
