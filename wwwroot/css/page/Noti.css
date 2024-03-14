@@ -2,3 +2,10 @@ h1{
     color: white;
     text-align: center;
 }
+.noti-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2%;
+}

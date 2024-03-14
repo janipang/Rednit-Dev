@@ -1,31 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-p,h1,h2,h3,h4,h5,h6, a, input{
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+input {
     font-family: 'Montserrat';
 }
-a{
+
+a {
     text-decoration: none;
 }
-.space{
+
+.space {
     width: 100%;
-    height: 90vh;
+    height: 82vh;
 }
-.loginGroup{
+
+.loginGroup {
     display: flex;
     flex-direction: column;
     width: 46%;
-    height: 87%;
     margin: 0 auto;
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF), rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
 }
 
-.loginGroup h1{
-    margin-top: 7%;
-    margin-bottom: 7%;
+.loginGroup h1 {
+    margin-top: 6%;
+    margin-bottom: 6%;
     font-style: normal;
     font-weight: 800;
     font-size: 36px;
@@ -36,68 +47,68 @@ a{
     background-clip: text;
     color: #FD5564;
 }
-form{
+
+form {
     position: relative;
-    height: 42vh;
-    width: 78%;
-    display: flex;
+    width: 82%;
+    display: grid;
+    grid-template: 4% 4% 4% 8%/ 100%;
     align-self: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
 }
-#username, 
+
+#username,
 #password,
-#email{
+#email {
     padding: 0;
     height: 7vh;
     width: 100%;
     background: #EEEEEE;
     border-radius: 5px;
     border-width: 0;
-
     text-indent: 10px;
     color: #AAAAAA;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
 }
-form p
-{
+
+form p {
     position: absolute;
-    left: 0;
-    top: 75%;
+    left: 1%;
+    top: 53%;
     font-size: 12px;
     font-weight: 550;
     color: #FE4A4A;
 }
-form button{
+
+form button {
     height: 7vh;
     width: 100%;
     background: linear-gradient(0deg, #FE3C72, #FE3C72), linear-gradient(90deg, #FF4D00 0%, #FE3C72 100%, #944A33 100%);
     border-radius: 5px;
     border-width: 0;
-
     color: white;
     font-family: 'Kanit';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 30px;
     /* identical to box height */
     text-align: center;
-    letter-spacing: 0.02em;
 
 }
 
-.question{
-    margin: auto auto;
-    display: flex;
-    flex-direction: row;
-    width: 44%;
-    justify-content: space-between;
+.question {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    column-gap: 5%;
+    width: 20%;
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    margin: 5%;
 }
-.question p{
+
+.question p {
     font-style: normal;
     font-weight: 550;
     font-size: 16px;
@@ -105,7 +116,8 @@ form button{
     color: #AAAAAA;
 
 }
-.question a{
+
+.question a {
     font-style: normal;
     font-weight: 650 !important;
     font-size: 16px;
@@ -119,10 +131,18 @@ form button{
     /*nav bar*/
     .navGroup {
         grid-template-columns: 68% 32%;
-        ;
     }
 
     /*body*/
+
+    form p {
+        position: absolute;
+        left: 1%;
+        top: 54%;
+        font-size: 12px;
+        font-weight: 550;
+        color: #FE4A4A;
+    }
     .loginGroup h1 {
         margin-top: 8%;
         margin-bottom: 8%;
@@ -130,7 +150,10 @@ form button{
     }
 
     .question {
-        width: 57%;
+        width: 25%;
+        top: 59%;
+        left: 32.5%;
+        margin: 5%;
     }
 
     .question p,
@@ -179,32 +202,66 @@ form button{
     }
 
     /*body*/
-    .space
-    {
-        height: 63vh;
+    form {
+        width: 82%;
+        display: grid;
+        grid-template: 100%/ 100%;
+        align-self: center;
     }
-    .loginGroup
+    #username
     {
+        height: 6vh;     
+    }
+    #email {
+        height: 6vh; 
+        top: -20%;
+        position: relative;
+    }
+    #password
+    {
+        height: 6vh; 
+        top: -60%;
+        position: relative;
+    }
+    form button{
+        height: 6vh;
+        position: relative;
+        top: 25%;
+    }
+    .loginGroup {
         height: 100%;
         width: 55%;
     }
+
     .loginGroup h1 {
         margin-top: 8%;
         margin-bottom: 8%;
         font-size: 31px;
     }
-    form p
-    {
-        top: 61.5%;
+
+    form {
+        width: 82%;
+        display: grid;
+        grid-template: 50% 50%/ 100%;
+        align-self: center;
     }
-    form button
-    {
-        margin-top: 3%;
+
+    form p {
+        top: 110%;
     }
+
+    form button {
+        /* margin-top: 3%; */
+        margin-bottom: 3%;
+    }
+
     .question {
         grid-template-columns: 75% 25%;
         column-gap: 0;
         width: 65%;
+        position: relative;
+        top: 23%;
+        left: 15%;
     }
 
     .question p,
@@ -221,18 +278,22 @@ form button{
         grid-template: 50% 50%/ 56% 44%;
         margin: 0 auto;
     }
-    .logo img, .leftSide img{
+
+    .logo img,
+    .leftSide img {
         margin-top: 0;
         margin-bottom: 0;
         margin-left: 0;
         margin-right: 4%;
     }
+
     .logo h1 {
         text-align: center;
         color: #FD5564;
         font-size: 32px;
         font-weight: 900;
     }
+
     .follow,
     .contact {
         margin-top: 0%;
@@ -242,22 +303,25 @@ form button{
         grid-area: 2 / 1 /3 / 2;
         margin-left: 2%;
     }
-    .contact{
+
+    .contact {
         grid-area: 2 / 2 / 3 / 3;
     }
-    .contact>p
-    {
+
+    .contact>p {
         margin-bottom: 7%;
     }
-    .phone
-    {
+
+    .phone {
         margin-bottom: 6%;
     }
-    footer{
+
+    footer {
         width: 100%;
-        padding:5vh 0vw; 
+        padding: 5vh 0vw;
         height: 45vh;
     }
+
     .block {
         z-index: -2;
         position: relative;
@@ -265,6 +329,7 @@ form button{
         height: 29vh;
         background-color: #FFFFFF;
     }
+
     .bg {
         z-index: -1;
         position: relative;
@@ -273,49 +338,53 @@ form button{
 }
 
 /*Smart Phone*/
-@media screen and (max-width: 430px){
+@media screen and (max-width: 430px) {
+
     /*nav bar*/
     .navGroup {
         grid-template-columns: 63% 37%;
         width: 67%;
     }
-    .rightSide .discovery
-    {
+
+    .rightSide .discovery {
         display: none;
     }
+
     /*body*/
-    .space
-    {
-        height: 58vh;
+    .space{
+        height: 70vh;
     }
-    .loginGroup
-    {
+    .loginGroup {
         height: 100%;
         width: 65%;
     }
+
     .loginGroup h1 {
         margin-top: 10%;
         margin-bottom: 9;
         font-size: 24px;
     }
-    form{
+
+    form {
         width: 80%;
     }
-    form p
-    {
-        top: 61.5%;
+
+    form p {
+        top: 110%;
     }
-    form button
-    {
+
+    form button {
         height: 6vh;
         font-size: 18px;
-        margin-top: 5%;
     }
-    #username, #password
-    {
+
+    #username,
+    #password,
+    #email {
         height: 6vh;
         font-size: 14px;
     }
+
     .question {
         grid-template-columns: 100%;
         column-gap: 0;
@@ -336,18 +405,22 @@ form button{
         grid-template: 40% 30% 30%/ 100%;
         margin: 0 auto;
     }
-    .logo img, .leftSide img{
+
+    .logo img,
+    .leftSide img {
         margin-top: 0;
         margin-bottom: 0;
         margin-left: 0;
         margin-right: 4%;
     }
+
     .logo h1 {
         text-align: center;
         color: #FD5564;
         font-size: 32px;
         font-weight: 900;
     }
+
     .follow,
     .contact {
         margin-top: 0%;
@@ -357,41 +430,44 @@ form button{
         grid-area: 2 / 1 / 3 / 2;
         margin-left: 2%;
     }
-    .contact{
+
+    .contact {
         grid-area: 3 / 1 / 4 / 2;
         margin-left: 2%;
         margin-top: 10%;
     }
-    .contact>p
-    {
+
+    .contact>p {
         margin-bottom: 7%;
     }
-    .phone
-    {
+
+    .phone {
         margin-bottom: 6%;
     }
-    footer{
+
+    footer {
         width: 100%;
-        padding:5vh 0vw; 
+        padding: 5vh 0vw;
         height: 45vh;
     }
+
     .block {
         z-index: -2;
         position: relative;
         top: -21%;
-        height: 48vh;
+        height: 42vh;
         background-color: #FFFFFF;
     }
+
     .bg {
         z-index: -1;
         position: relative;
         top: 35%;
     }
 
-    .bg img
-    {
+    .bg img {
         width: 140%;
         overflow-x: hidden;
     }
-    
+
 }

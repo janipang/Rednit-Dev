@@ -1,0 +1,90 @@
+* {
+    font-family: "Montserrat";
+}
+.profile-image {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.Re-top-text {
+    color: #FD5564;
+    font-size: 14px;
+    font-weight: 700;
+    align-self: flex-start;
+}
+.Re-post-name {
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;
+    align-self: flex-start;
+}
+.user-name {
+    padding-top: 3px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.detail {
+    padding-top: 3px;
+    color: gray;
+}
+.Re-bot-text{
+    font-size: 15px;
+    font-weight:600;
+    align-self: flex-start;
+}
+.Re-noti-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+    height: 20vh;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.Re-left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3%;
+}
+.Re-right-side {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 2%;
+}
+button {
+    background: #FD5564;
+    border-radius: 5px;
+    width: 120%;
+    height: 4vh;
+    border: 0px;
+    color: white;
+}
+.Re-post-bottom-right-section {
+    width: 90%;
+}
+@media screen and (max-width: 1275px) {
+    .Re-noti-card {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1160px) {
+    .Re-noti-card {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 1065px) {
+    .Re-noti-card {
+        width: 58%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .Re-noti-card {
+        width: 60%;
+    }
+}

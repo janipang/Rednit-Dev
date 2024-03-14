@@ -4,17 +4,16 @@ h1{
     padding-bottom: 2%;
 }
 .posts-container {
-    /* padding: 25px; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 45vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
     width: 100%;
+    place-items: center;
 }
 @media screen and (max-width: 940px) {
     .posts-container {
+        display: flex;
         flex-direction: column;
-        height: 85vh;
+        height: 85%;
         align-items: center;
     }
 }

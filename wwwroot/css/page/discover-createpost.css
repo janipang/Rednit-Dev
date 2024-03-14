@@ -70,7 +70,7 @@ legend[for="tag"] {
     right: -34px;
 }
 
-.dropdown-hover-area {
+.dropdown-tag-hover-area {
     display: none;
     padding: 0px;
     position: absolute;
@@ -98,12 +98,12 @@ legend[for="tag"] {
     background-color: #B0B0B0;
 }
 
-.dropdown-hover-area:hover {
+.dropdown-tag-hover-area:hover {
     display: flex;
     cursor: pointer;
 }
 
-.addTag:hover+.dropdown-hover-area {
+.addTag:hover+.dropdown-tag-hover-area {
     display: flex;
     z-index: 50;
 }
@@ -455,7 +455,7 @@ form {
         grid-gap: 0px;
     }
 
-    .dropdown-hover-area {
+    .dropdown-tag-hover-area {
         right: 4vw;
     }
 

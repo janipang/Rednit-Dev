@@ -15,7 +15,8 @@ p {
 
 .post-container {
     padding: 20px;
-    width: 35%;
+    width: 70%;
+    height: 60%;
     display: grid;
     grid-template: 2fr 6fr 3fr / 1fr;
     border-radius: 5px;
@@ -243,12 +244,13 @@ p {
 }
 @media screen and (max-width: 1440px) {
     .post-container {
-        width: 35%;
+        width: 80%;
     }
 }
 @media screen and (max-width: 1080px) {
     .post-container {
         grid-template: 2fr 5fr 4fr / 1fr;
+        height: 80%;
     }
     .post-bottom-down {
         display: grid;
@@ -283,6 +285,7 @@ p {
     .post-container {
         width: calc(100% - 200px);
         height: 43%;
+        margin: 2%;
     }
 
     .post-bottom--down {

@@ -1,0 +1,77 @@
+* {
+    font-family: "Montserrat";
+}
+.top-text {
+    color: #FD5564;
+    font-size: 14px;
+    font-weight: 700;
+    align-self: flex-start;
+}
+.post-name {
+    font-size: 20px;
+    font-weight: 600;
+    align-self: flex-start;
+}
+.bot-text{
+    font-size: 15px;
+    font-weight:600;
+    align-self: flex-start;
+}
+.noti-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+    height: 20vh;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+.left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3%;
+}
+.right-side {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 2%;
+}
+.post-bottom-right-section {
+    width: 70%;
+}
+button {
+    background: #FD5564;
+    border-radius: 5px;
+    width: 100%;
+    height: 4vh;
+    border: 0px;
+    color: white;
+    font-weight: 600;
+}
+@media screen and (max-width: 1275px) {
+    .noti-card {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1160px) {
+    .noti-card {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 1065px) {
+    .noti-card {
+        width: 58%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .noti-card {
+        width: 60%;
+    }
+}

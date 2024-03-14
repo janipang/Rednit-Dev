@@ -21,10 +21,12 @@ using Microsoft.Identity.Client;
 
 public class ProfileController : Controller
 {
-    public User onlineUser;
     [Authorize]
     public IActionResult MyProfile()
     {
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
         // ดึง username
         string username = HttpContext.Request.Cookies["username"] ?? "No data";
         Console.WriteLine("User: " + username);
@@ -45,7 +47,6 @@ public class ProfileController : Controller
         Console.WriteLine("users: " + users.Count);
 
         var user = users.SingleOrDefault(x => x.Account.Username == username);
-        onlineUser = user;
 
         Console.WriteLine("User: +" + user.Account.Email);
         Console.WriteLine("RequesingPosts: +" + user.Profile.RequesingPosts);
@@ -54,8 +55,37 @@ public class ProfileController : Controller
         return View();
     }
     
-    public IActionResult ViewProfile(Account account, User user)
+    public IActionResult ViewProfile(int idUser)
     {
+        bool state = User.Identity.IsAuthenticated;
+        Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        ViewBag.state = state;
+
+        // ดึง username
+        string username = HttpContext.Request.Cookies["username"] ?? "No data";
+        Console.WriteLine("User: " + username);
+
+        //อ่านไฟล์ user 
+        var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json");
+
+        List<User> users;
+        try
+        {
+            users = JsonSerializer.Deserialize<List<User>>(usersJson); //! is for not to warning me,jezz
+        }
+        catch (JsonException)
+        {
+            users = new List<User>();
+        };
+
+        Console.WriteLine("users: " + users.Count);
+
+        var user = users.SingleOrDefault(x => x.Id == idUser);
+
+        Console.WriteLine("User: +" + user.Account.Email);
+        Console.WriteLine("RequesingPosts: +" + user.Profile.RequesingPosts);
+        ViewBag.user = user;
+
         return View();
     }
 

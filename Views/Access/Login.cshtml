@@ -11,7 +11,7 @@
         <form asp-action="Login" asp-controller="Access" method="post">
             <input asp-for="Username" type="text" id="username" placeholder="Username" required>
             <input asp-for="Password" type="password" id="password" placeholder="Password" required>
-            @if(ViewData["ValidateMessage"] != null)
+            @if (ViewData["ValidateMessage"] != null)
             {
                 <p>@ViewData["ValidateMessage"]</p>
             }
