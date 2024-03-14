@@ -10,6 +10,11 @@ public class NotiController : Controller
 {
     public IActionResult Index()
     {
+
+        // bool state = User.Identity.IsAuthenticated;
+        // Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
+        // ViewBag.state = state;
+
         var username =  HttpContext.Request.Cookies["username"]; 
         var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json"); //Byte Stream
         var postsJson = System.IO.File.ReadAllText("./Datacenter/post.json"); //Byte Stream
@@ -65,6 +70,7 @@ public class NotiController : Controller
                 temp2.Header = header;
                 temp2.Type = n.Type;
                 temp2.IdPost = n.IdPost;
+                temp2.WhoRequest =n.WhoRequest.Username;
                 requestedNoti.Add(temp2);
             }
 

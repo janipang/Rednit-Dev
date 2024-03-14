@@ -102,8 +102,15 @@
                 </div>
             </div>
             <div class="post-bottom-right-section">
-                <button class="show-detail-button">More Detail</button>
+                <button class="show-detail-button" onclick="onMoreDetailButtonClick(@Model.Id)">More Detail</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function onMoreDetailButtonClick(postID){
+        console.log(postID);
+        var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
+        window.location.href = url;
+    }
+</script>
