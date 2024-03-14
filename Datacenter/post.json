@@ -358,5 +358,56 @@
     "Liked": [],
     "Joined": [],
     "Requested": []
+  },
+  {
+    "Id": 1008,
+    "Active": false,
+    "Author": {
+      "Username": "tak",
+      "Email": "tak@gmail.com",
+      "Password": "123"
+    },
+    "Detail": {
+      "Header": "Go to Mut2024",
+      "Tag": [
+        "Food",
+        "Lifestyle",
+        "Sports"
+      ],
+      "Intro": "Mong sam ma nae",
+      "Detail": "ggggggggggggggggggg",
+      "Place": "Mexico"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2024-12-12",
+      "End": null,
+      "CloseSubmit": "2024-12-10"
+    },
+    "Requesting": true,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 3,
+    "DayLeft": 273,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [
+      {
+        "Username": "pang",
+        "Email": "pang@gmail.com",
+        "Password": "456"
+      },
+      {
+        "Username": "Anchilee",
+        "Email": "Anna@gmail.com",
+        "Password": "mut27"
+      },
+      {
+        "Username": "rainbow",
+        "Email": "rainbow@gmail.com",
+        "Password": "111"
+      }
+    ],
+    "Requested": []
   }
 ]

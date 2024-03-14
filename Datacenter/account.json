@@ -33,5 +33,15 @@
     "Username": "pailiu",
     "Email": "rainbow2@gmail.com",
     "Password": "chuang"
+  },
+  {
+    "Username": "newUser",
+    "Email": "newuser@gmail.com",
+    "Password": "newuser"
+  },
+  {
+    "Username": "newuser00",
+    "Email": "newuser00@gmail.com",
+    "Password": "123"
   }
 ]
