@@ -661,6 +661,7 @@ public class DiscoverController : Controller
         {
             Id = idGenerator,
             Author = CurrentAccount,
+
             Detail = new PostDetail
             {
                 Header = header,

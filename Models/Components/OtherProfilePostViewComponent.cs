@@ -5,7 +5,7 @@ using System.IO;
 using System.Text.Json;
 namespace RednitDev.Components
 {
-    public class ProfilePostViewComponent : ViewComponent
+    public class OtherProfilePostViewComponent : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync(int idPost)
         {

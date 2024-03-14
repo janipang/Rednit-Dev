@@ -45,5 +45,6 @@ namespace RednitDev.Services
             System.IO.File.WriteAllText("./Datacenter/account.json", jsonData);
             return newAccount;
         }
+
     }
 }

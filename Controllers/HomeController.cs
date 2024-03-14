@@ -38,6 +38,7 @@ public class HomeController : Controller
         Console.WriteLine("Cookie state: " + @User.Identity.IsAuthenticated);
         ViewBag.state = state;
 
+
         var postsjson = System.IO.File.ReadAllText("./Datacenter/post.json");
         List<Post> posts;
         try
