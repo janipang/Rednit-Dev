@@ -54,7 +54,13 @@
       }
     ],
     "Liked": [],
-    "Joined": [],
+    "Joined": [
+      {
+        "Username": "rut",
+        "Email": "rut@gmail.com",
+        "Password": "123"
+      }
+    ],
     "Requested": []
   },
   {

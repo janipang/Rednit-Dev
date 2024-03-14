@@ -323,6 +323,8 @@ footer {
         grid-template-columns: 58% 42%;
     }
     .leftSide img {
+        margin: 0px;
+    }
 }
 
 @media screen and (max-width: 670px) {
