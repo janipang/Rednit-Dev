@@ -33,10 +33,9 @@
             <div class="rightSide">
                 <a class="discovery" asp-area="" asp-controller="Discover" asp-action="Index">Discovery</a>
 
-                <a class="login" asp-area="" asp-controller="Access" asp-action="LogIn">Log in</a>
-
                 <a class="create-post" asp-area="" asp-controller="Discover" asp-action="CreatePost">Create post</a>
-                <a class="profile-pic"><img src="~/svg/ProfilePic.svg" alt="profile pic"></a>
+                <a class="profile-pic"><img
+                        src="~/svg/ProfilePic.svg" alt="profile pic"></a>
 
                 <div class="dropdown-hover-area">
                     <ul class="dropdown-box">
@@ -44,10 +43,10 @@
                                 asp-action="MyProfile">Profile</a></li>
                         <li><a class="dropdown-item" asp-area="" asp-controller="Noti"
                                 asp-action="Index">Notification</a></li>
-                        <li><a class="dropdown-item" asp-area="" asp-controller="Fav" asp-action="Index">Favorite</a>
-                        </li>
-                        <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Setting">Setting</a>
-                        </li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Fav"
+                                asp-action="Index">Favorite</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Profile"
+                                asp-action="Setting">Setting</a></li>
                         <li><a class="dropdown-item" asp-area="" asp-controller="Access" asp-action="Logout">
                                 <p>Logout</p></b>
                             </a></li>
@@ -55,7 +54,6 @@
                 </div>
             </div>
         </div>
-
     </nav>
     <div class="container">
         <main>

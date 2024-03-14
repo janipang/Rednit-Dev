@@ -1,0 +1,27 @@
+@model RednitDev.Models.ShowNoti
+<div class="noti-card">
+    <div class="left-side">
+        <div class="top-text">
+        @if (Model.Type == "Success"){
+            <p>Have Fun joining this group</p>
+        }
+        else {
+            <p>Sorry, can't join</p>
+        }
+        </div>
+        <div class="post-name">@Model.Header</div>
+        <div class="bot-text">@Model.Text</div>
+    </div>
+    <div class="right-side">
+        <div class="post-bottom-right-section">
+            <button class="show-detail-button" onclick="onMoreDetailButtonClick(@Model.IdPost)">More Detail</button>
+        </div>
+    </div>
+</div>
+<script>
+    function onMoreDetailButtonClick(postID){
+        console.log(postID);
+        var url = '@Url.Action("ViewPost", "Discover")' + '?id=' + encodeURIComponent(postID + "");
+        window.location.href = url;
+    }
+</script>
