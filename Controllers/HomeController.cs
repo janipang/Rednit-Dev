@@ -5,7 +5,12 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using RednitDev.Models;
-using RednitDev.Services;
+using System.IO;
+using System.Text.Json;
+using System.Linq.Expressions;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Drawing;
+
 
 namespace RednitDev.Controllers;
 
@@ -23,7 +28,7 @@ public class HomeController : Controller
     }
 
     public IActionResult Setting()
-    {
+    {        
         return View();
     }
 
@@ -55,6 +60,58 @@ public class HomeController : Controller
         return View(hotposts);
     }
 
+    public IActionResult AddInterestedTag(string tag1, string tag2, string tag3)
+    {
+        string username = HttpContext.Request.Cookies["username"];
+        Console.WriteLine("username " + username);
+        User user = DiscoverController.GetUser(username);
+        Console.WriteLine("user " + user);
+        if (tag1 != "") {
+            Console.WriteLine("tag1");
+            user.Profile.InterestedTag.Add(tag1);
+        }
+        if (tag2 != "") {
+            Console.WriteLine("tag2");
+            user.Profile.InterestedTag.Add(tag2);
+        }
+        if (tag3 != "") {
+            Console.WriteLine("tag3");
+            user.Profile.InterestedTag.Add(tag3);
+        }
+        DiscoverController.UpdateUser(user);
+        return RedirectToAction("Index", "Home");
+    }
+
+    public IActionResult EditProfile(string username, string bio, string newPass, string confirmPass, string image) {
+        string realUsername = HttpContext.Request.Cookies["username"];
+        Console.WriteLine("realUsername " + realUsername);
+        User user = DiscoverController.GetUser(realUsername);
+        Console.WriteLine("user " + user);
+        Console.WriteLine(username + bio + newPass + confirmPass + image);
+        if (newPass != null && newPass != "" && confirmPass != "" && confirmPass != null) {
+            if (newPass == confirmPass) {
+                user.Account.Password = newPass;
+            }
+        }
+        if (image != null && image != "") {
+            user.Profile.Image = image;
+        }
+        if (username != null && username != "") {
+            user.Account.Username = username;
+            
+        }
+        if (bio != null && bio != "") {
+            user.Profile.Caption = bio;
+        }
+        
+        DiscoverController.UpdateUser(user);
+        return RedirectToAction("Setting", "Home");
+    }
+        
+
+
+}
+
     public bool AddToFav(int postId)
     {
         string username = HttpContext.Request.Cookies["username"]!;
@@ -83,3 +140,4 @@ public class HomeController : Controller
         return (isLiked);
     }
 }
+

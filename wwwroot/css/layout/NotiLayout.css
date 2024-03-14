@@ -12,6 +12,7 @@ body{
     background-repeat:no-repeat;
     background-size:100% 100%;
     font-family: 'Montserrat', sans-serif;
+    /* background-size: cover; */
 }
 
 
@@ -43,6 +44,7 @@ nav{
 .rightSide{
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 .discovery{
     text-align: center;
@@ -173,6 +175,7 @@ footer{
     height: 5vh;
     background-color: #FFFFFF;
 }
+
 
 /*Labtop*/
 @media screen and (max-width: 1024px) {
