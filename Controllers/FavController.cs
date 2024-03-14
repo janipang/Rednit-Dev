@@ -25,7 +25,7 @@ public class FavController : Controller
         {
             posts = new List<Post>();
         };
-        List<Post> favposts = posts.Take(2).ToList();
+        List<Post> favposts = posts.Take(4).ToList();
     
         return View(favposts);
     }

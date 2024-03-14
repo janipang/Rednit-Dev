@@ -5,5 +5,6 @@ public class ShowRequestedNoti
     public string? Type {get; set; }
     public int IdPost {get; set;}
     public string? Img {get;set;}
+    public string? WhoRequest {get;set;}
     
 }
