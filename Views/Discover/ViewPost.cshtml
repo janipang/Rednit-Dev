@@ -1,7 +1,8 @@
 @{
     ViewData["Title"] = "PostDetail";
-    Layout = "_LoginLayout";
+    Layout = "_LayoutFav";
 }
+<link rel="stylesheet" href="~/css/postDetail.css">
 @if(ViewBag.PostType == 0){
     @await Component.InvokeAsync("ViewMyPostDetail", new { post = Model})
 }

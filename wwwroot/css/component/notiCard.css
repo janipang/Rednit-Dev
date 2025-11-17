@@ -25,6 +25,8 @@
     height: 20vh;
     background-color: white;
     border-radius: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 
 }
 .left-side{
@@ -52,4 +54,24 @@ button {
     border: 0px;
     color: white;
     font-weight: 600;
+}
+@media screen and (max-width: 1275px) {
+    .noti-card {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1160px) {
+    .noti-card {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 1065px) {
+    .noti-card {
+        width: 58%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .noti-card {
+        width: 60%;
+    }
 }

@@ -244,12 +244,13 @@ p {
 }
 @media screen and (max-width: 1440px) {
     .post-container {
-        width: 35%;
+        width: 80%;
     }
 }
 @media screen and (max-width: 1080px) {
     .post-container {
         grid-template: 2fr 5fr 4fr / 1fr;
+        height: 80%;
     }
     .post-bottom-down {
         display: grid;
