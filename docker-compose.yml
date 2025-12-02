@@ -1,0 +1,9 @@
+services:
+  web: 
+    ports: 
+      - "5000:5000"
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      -  ./Datacenter:/app/Datacenter
