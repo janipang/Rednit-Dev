@@ -9,13 +9,7 @@ RUN dotnet restore "RednitDev.csproj"
 COPY "Program.cs" "appsettings.json" "appsettings.Development.json" ./
 COPY "Properties/" "./Properties"
 
-# cause of docker COPY can't copy directory itself, so separate them to copy content of all directory instead
-COPY "Models/" "./Models"
-COPY "Views/" "./Views"
-COPY "Services/" "./Services"
-COPY "wwwroot/" "./wwwroot"
-COPY "Controllers/" "./Controllers"
-COPY "Datacenter/" "./Datacenter"
+COPY . .
 
 RUN dotnet publish --no-restore -c Release -o "/app/publish"
 
