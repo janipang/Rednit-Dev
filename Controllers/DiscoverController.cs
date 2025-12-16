@@ -466,6 +466,7 @@ public class DiscoverController : Controller
                 activePosts.Add(post);
             }
         }
+        activePosts.Reverse();
         return activePosts;
     }
 
