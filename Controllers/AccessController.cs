@@ -112,7 +112,7 @@ public class AccessController : Controller
         var account = accountService.CanAuthenticate(username, email);
         if (account == null)
         {
-             var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json"); //Byte Stream
+             var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json"); //Byte Stream
             List<User> users;
             try
             {

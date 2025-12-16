@@ -151,7 +151,7 @@ namespace RednitDev.Services
             var serializeOption = new JsonSerializerOptions();
             serializeOption.WriteIndented = true;
             string jsondata = JsonSerializer.Serialize<List<User>>(users, serializeOption);
-            System.IO.File.WriteAllText("./Datacenter/user.json", jsondata);
+            System.IO.File.WriteAllText("./Datacenter/User.json", jsondata);
         }
 
         public void ReplacePost(int postId, Post newpost)
