@@ -1,8 +1,8 @@
 # REDNIT
-### Join, team up, endless fun awaits!
+**Join, team up, endless fun awaits!**
 
 ## reach us by your device
-[rednit.janipang.dev]([URL](https://rednit.janipang.dev))
+[Rednit](https://rednit.janipang.dev)
 
 ## run app in local
 - install dependencies
