@@ -317,3 +317,5 @@ $RECYCLE.BIN/
 *.lnk
 
 project.razor.vscode.bin
+
+.env

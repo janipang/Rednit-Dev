@@ -28,7 +28,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 15,
-    "DayLeft": -607,
+    "DayLeft": -620,
     "Comments": [
       {
         "User": {
@@ -181,7 +181,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 3,
-    "DayLeft": -618,
+    "DayLeft": -631,
     "Comments": [],
     "Liked": [],
     "Joined": [
@@ -226,7 +226,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 5,
-    "DayLeft": -626,
+    "DayLeft": -639,
     "Comments": [],
     "Liked": [],
     "Joined": [
@@ -270,7 +270,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 5,
-    "DayLeft": -313,
+    "DayLeft": -326,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -304,7 +304,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 10,
-    "DayLeft": -625,
+    "DayLeft": -638,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -338,7 +338,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 5,
-    "DayLeft": 10736,
+    "DayLeft": 10723,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -371,7 +371,46 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 3,
-    "DayLeft": 8,
+    "DayLeft": -12,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [
+      {
+        "Username": "Anchilee",
+        "Email": "Anna@gmail.com",
+        "Password": "mut27"
+      }
+    ],
+    "Requested": []
+  },
+  {
+    "Id": 1008,
+    "Active": true,
+    "Author": {
+      "Username": "Anchilee",
+      "Email": "Anna@gmail.com",
+      "Password": "mut27"
+    },
+    "Detail": {
+      "Header": "Go SEA Games #33 Parade!",
+      "Tag": [
+        "Sports"
+      ],
+      "Intro": "Go walking a fashion show at SEA Games #33 open ceremony, at Rajamangala Stadium",
+      "Detail": "Having a Parade fashion show in Thai costume sponsored by Sirinya Closet in SEA Games #33 Opening Ceremony, Thailand",
+      "Place": "Rajamangala Stadium, Bangkok"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2026-01-15",
+      "End": null,
+      "CloseSubmit": "2025-12-31"
+    },
+    "Requesting": true,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 11,
+    "DayLeft": 31,
     "Comments": [],
     "Liked": [],
     "Joined": [],
