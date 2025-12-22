@@ -32,7 +32,7 @@ public class ProfileController : Controller
         Console.WriteLine("User: " + username);
 
         //อ่านไฟล์ user 
-        var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json");
+        var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json");
 
         List<User> users;
         try
@@ -66,7 +66,7 @@ public class ProfileController : Controller
         Console.WriteLine("User: " + username);
 
         //อ่านไฟล์ user 
-        var usersJson = System.IO.File.ReadAllText("./Datacenter/user.json");
+        var usersJson = System.IO.File.ReadAllText("./Datacenter/User.json");
 
         List<User> users;
         try
