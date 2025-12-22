@@ -28,7 +28,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 15,
-    "DayLeft": -620,
+    "DayLeft": -625,
     "Comments": [
       {
         "User": {
@@ -181,7 +181,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 3,
-    "DayLeft": -631,
+    "DayLeft": -636,
     "Comments": [],
     "Liked": [],
     "Joined": [
@@ -226,7 +226,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 5,
-    "DayLeft": -639,
+    "DayLeft": -644,
     "Comments": [],
     "Liked": [],
     "Joined": [
@@ -270,7 +270,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 5,
-    "DayLeft": -326,
+    "DayLeft": -331,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -304,7 +304,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 10,
-    "DayLeft": -638,
+    "DayLeft": -643,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -338,7 +338,7 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 5,
-    "DayLeft": 10723,
+    "DayLeft": 10718,
     "Comments": [],
     "Liked": [],
     "Joined": [],
@@ -371,14 +371,52 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 3,
-    "DayLeft": -12,
-    "Comments": [],
+    "DayLeft": -17,
+    "Comments": [
+      {
+        "User": {
+          "Id": 15,
+          "Account": {
+            "Username": "janipang",
+            "Email": "janipang@gmail.com",
+            "Password": "janipang"
+          },
+          "Profile": {
+            "Caption": "biobiobiobio",
+            "CreatedPosts": [
+              1014
+            ],
+            "InterestedPosts": [
+              1001,
+              1002
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://i.pinimg.com/originals/06/a4/27/06a4273ceb47d6866e45b12d1ba228bc.gif",
+            "InterestedTag": [
+              "Food",
+              "Lifestyle",
+              "Animal"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "The way is run container locally, then get a cloudfare tunnel",
+        "Date": "2025-12-16T10:16:30.5703069+00:00",
+        "Reply": null
+      }
+    ],
     "Liked": [],
     "Joined": [
       {
         "Username": "Anchilee",
         "Email": "Anna@gmail.com",
         "Password": "mut27"
+      },
+      {
+        "Username": "janipang",
+        "Email": "janipang@gmail.com",
+        "Password": "janipang"
       }
     ],
     "Requested": []
@@ -410,10 +448,535 @@
     "Visible": true,
     "MemberCount": 0,
     "MemberMax": 11,
-    "DayLeft": 31,
+    "DayLeft": 26,
+    "Comments": [
+      {
+        "User": {
+          "Id": 2,
+          "Account": {
+            "Username": "pang",
+            "Email": "pang@gmail.com",
+            "Password": "456"
+          },
+          "Profile": {
+            "Caption": "pang hard code",
+            "CreatedPosts": [
+              1027,
+              1028,
+              1029,
+              1007,
+              1009
+            ],
+            "InterestedPosts": [
+              1001
+            ],
+            "JoinningPosts": [
+              1004
+            ],
+            "RequesingPosts": [
+              1005
+            ],
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFA1GLURktJ5kBQpkPx2mCk414NxGfV7R3CvgoiFhYHg\u0026s",
+            "InterestedTag": []
+          },
+          "Noti": [
+            {
+              "Type": "Success",
+              "IdPost": 1008,
+              "WhoRequest": null
+            },
+            {
+              "Type": "Failed",
+              "IdPost": 1006,
+              "WhoRequest": null
+            }
+          ]
+        },
+        "Content": "Sounds Surprising!",
+        "Date": "2025-12-16T08:21:48.5773641+00:00",
+        "Reply": null
+      }
+    ],
+    "Liked": [],
+    "Joined": [],
+    "Requested": [
+      {
+        "Username": "pang",
+        "Email": "pang@gmail.com",
+        "Password": "456"
+      }
+    ]
+  },
+  {
+    "Id": 1009,
+    "Active": true,
+    "Author": {
+      "Username": "pang",
+      "Email": "pang@gmail.com",
+      "Password": "456"
+    },
+    "Detail": {
+      "Header": "Celebration for my first Cloudfare tunnel",
+      "Tag": [
+        "Education"
+      ],
+      "Intro": "Comes to celebrate my achievement at Laohu Shabu, for my first website from our attempt.",
+      "Detail": "I\u0027ve deployed Rednit, a gorgeous teams matching project with our 5 members team attept.\r\nJust clicked www.rednit.janipang.dev !",
+      "Place": "Laohu Shabu, Ladkrabang"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2026-05-31",
+      "End": null,
+      "CloseSubmit": "2026-05-19"
+    },
+    "Requesting": true,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 4,
+    "DayLeft": 162,
+    "Comments": [
+      {
+        "User": {
+          "Id": 15,
+          "Account": {
+            "Username": "janipang",
+            "Email": "janipang@gmail.com",
+            "Password": "janipang"
+          },
+          "Profile": {
+            "Caption": "biobiobiobio",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002,
+              1003
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://i.pinimg.com/originals/06/a4/27/06a4273ceb47d6866e45b12d1ba228bc.gif",
+            "InterestedTag": [
+              "Food",
+              "Lifestyle",
+              "Animal"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "It has some bug ka.",
+        "Date": "2025-12-16T09:42:10.4911933+00:00",
+        "Reply": null
+      },
+      {
+        "User": {
+          "Id": 15,
+          "Account": {
+            "Username": "janipang",
+            "Email": "janipang@gmail.com",
+            "Password": "janipang"
+          },
+          "Profile": {
+            "Caption": "biobiobiobio",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002,
+              1003
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://i.pinimg.com/originals/06/a4/27/06a4273ceb47d6866e45b12d1ba228bc.gif",
+            "InterestedTag": [
+              "Food",
+              "Lifestyle",
+              "Animal"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "add me to collaborator to fix",
+        "Date": "2025-12-16T09:42:29.246186+00:00",
+        "Reply": null
+      }
+    ],
+    "Liked": [],
+    "Joined": [],
+    "Requested": [
+      {
+        "Username": "janipang",
+        "Email": "janipang@gmail.com",
+        "Password": "janipang"
+      }
+    ]
+  },
+  {
+    "Id": 1010,
+    "Active": true,
+    "Author": {
+      "Username": "nawat.tv",
+      "Email": "nawat@gmail.com",
+      "Password": "Password@1"
+    },
+    "Detail": {
+      "Header": "MGI All Stars 1st Edition",
+      "Tag": [
+        "Lifestyle"
+      ],
+      "Intro": "Are you exciting? MGI All Stars",
+      "Detail": null,
+      "Place": null
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2026-02-01",
+      "End": "2026-02-28",
+      "CloseSubmit": "2026-01-20"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 80,
+    "DayLeft": 43,
     "Comments": [],
     "Liked": [],
     "Joined": [],
     "Requested": []
+  },
+  {
+    "Id": 1011,
+    "Active": true,
+    "Author": {
+      "Username": "nawat.tv",
+      "Email": "nawat@gmail.com",
+      "Password": "Password@1"
+    },
+    "Detail": {
+      "Header": "MGI All Stars 1st Edition",
+      "Tag": [
+        "Lifestyle"
+      ],
+      "Intro": "Are you exciting? MGI All Stars",
+      "Detail": "\u0E1C\u0E21\u0E1E\u0E39\u0E14\u0E15\u0E23\u0E07 \u0E46 \u0E19\u0E30 \u0E40\u0E27\u0E17\u0E35\u0E19\u0E35\u0E49\u0E1C\u0E21\u0E17\u0E33\u0E21\u0E32\u0E43\u0E2B\u0E49\u0E04\u0E19\u0E17\u0E35\u0E48\u0E22\u0E31\u0E07\u0E21\u0E35\u0E44\u0E1F\u0E08\u0E23\u0E34\u0E07 \u0E46 \u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E25\u0E48\u0E32\u0E2D\u0E14\u0E35\u0E15 \u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E2D\u0E18\u0E34\u0E1A\u0E32\u0E22\u0E40\u0E22\u0E2D\u0E30 \u0E27\u0E31\u0E19\u0E19\u0E35\u0E49\u0E04\u0E38\u0E13\u0E1E\u0E23\u0E49\u0E2D\u0E21 \u0E04\u0E38\u0E13\u0E01\u0E47\u0E21\u0E32 \u0E1C\u0E39\u0E49\u0E0A\u0E19\u0E30\u0E23\u0E31\u0E1A\u0E44\u0E1B\u0E40\u0E25\u0E22 100,000 USD \u0E44\u0E14\u0E49\u0E15\u0E33\u0E41\u0E2B\u0E19\u0E48\u0E07\u0E41\u0E25\u0E49\u0E27\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E08\u0E1A \u0E04\u0E38\u0E13\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E0A\u0E21\u0E1B\u0E4C \u0E44\u0E21\u0E48\u0E21\u0E35\u0E2B\u0E32\u0E22 \u0E44\u0E21\u0E48\u0E21\u0E35\u0E1E\u0E31\u0E01 \u0E16\u0E49\u0E32\u0E04\u0E38\u0E13\u0E40\u0E01\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 \u0E0A\u0E19\u0E30 \u0E15\u0E34\u0E14\u0E15\u0E48\u0E2D\u0E01\u0E31\u0E19 3 \u0E04\u0E23\u0E31\u0E49\u0E07 \u0E1C\u0E21\u0E43\u0E2B\u0E49\u0E44\u0E1B\u0E40\u0E25\u0E22 1,000,000 USD \u0E1E\u0E39\u0E14\u0E0A\u0E31\u0E14 \u0E46 \u0E15\u0E23\u0E07\u0E19\u0E35\u0E49 \u0E40\u0E27\u0E17\u0E35\u0E19\u0E35\u0E49\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E17\u0E35\u0E48\u0E25\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E40\u0E25\u0E48\u0E19 \u0E46 \u0E43\u0E04\u0E23\u0E21\u0E31\u0E48\u0E19\u0E43\u0E08\u0E27\u0E48\u0E32\u0E15\u0E31\u0E27\u0E40\u0E2D\u0E07\u0E22\u0E31\u0E07\u0E44\u0E2B\u0E27 \u0E22\u0E31\u0E07\u0E21\u0E35\u0E02\u0E2D\u0E07 \u0E01\u0E47\u0E02\u0E36\u0E49\u0E19\u0E21\u0E32\u0E1E\u0E34\u0E2A\u0E39\u0E08\u0E19\u0E4C MGI All Stars \u0E1C\u0E21\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E2B\u0E49\u0E41\u0E25\u0E49\u0E27\u0E04\u0E23\u0E31\u0E1A\r\n\r\n#savegamin  #missgrandinternational #missgrandthailand #missgrand #\u0E2D\u0E34\u0E07\u0E1F\u0E49\u0E32\u0E27\u0E23\u0E32\u0E2B\u0E30 #\u0E41\u0E2D\u0E19\u0E42\u0E17\u0E40\u0E19\u0E35\u0E22 #missuniverse #mut2024 #tpn #missuniversethailand #\u0E01\u0E32\u0E21\u0E34\u0E19 #\u0E01\u0E32\u0E21\u0E34\u0E19\u0E0A\u0E32\u0E25\u0E35 #\u0E01\u0E32\u0E21\u0E34\u0E19\u0E41\u0E19\u0E47\u0E01\u0E0A\u0E32\u0E25\u0E35 #bitcoin #bitcoinnews #gold #\u0E2B\u0E21\u0E35\u0E40\u0E19\u0E22 #butterbear \r\n#\u0E41\u0E1A\u0E19\u0E41\u0E19\u0E47\u0E01\u0E0A\u0E32\u0E25\u0E35 #diwali #diwalispecialsong  #missuniversephilippines #\u0E2B\u0E25\u0E34\u0E07\u0E2D\u0E2D\u0E21\u0E04\u0E23\u0E31\u0E49\u0E07\u0E41\u0E23\u0E01 #alien #mystery",
+      "Place": "Bravo BKK"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2026-02-01",
+      "End": "2026-02-28",
+      "CloseSubmit": "2026-01-20"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 1,
+    "DayLeft": 43,
+    "Comments": [
+      {
+        "User": {
+          "Id": 15,
+          "Account": {
+            "Username": "janipang",
+            "Email": "janipang@gmail.com",
+            "Password": "janipang"
+          },
+          "Profile": {
+            "Caption": "biobiobiobio",
+            "CreatedPosts": [
+              1014
+            ],
+            "InterestedPosts": [
+              1001,
+              1002,
+              1003
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://i.pinimg.com/originals/06/a4/27/06a4273ceb47d6866e45b12d1ba228bc.gif",
+            "InterestedTag": [
+              "Food",
+              "Lifestyle",
+              "Animal"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "\u0E23\u0E31\u0E1A\u0E04\u0E19\u0E40\u0E14\u0E35\u0E22\u0E27 \u0E25\u0E47\u0E2D\u0E04\u0E21\u0E07\u0E23\u0E36\u0E40\u0E1B\u0E25\u0E48\u0E32\u0E04\u0E30",
+        "Date": "2025-12-16T09:54:21.1973535+00:00",
+        "Reply": null
+      }
+    ],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1012,
+    "Active": true,
+    "Author": {
+      "Username": "nawat.tv",
+      "Email": "nawat@gmail.com",
+      "Password": "Password@1"
+    },
+    "Detail": {
+      "Header": "MGI All Stars 1st Edition",
+      "Tag": [
+        "Lifestyle"
+      ],
+      "Intro": "Are you exciting? MGI All Stars",
+      "Detail": "\u0E1C\u0E21\u0E1E\u0E39\u0E14\u0E15\u0E23\u0E07 \u0E46 \u0E19\u0E30 \u0E40\u0E27\u0E17\u0E35\u0E19\u0E35\u0E49\u0E1C\u0E21\u0E17\u0E33\u0E21\u0E32\u0E43\u0E2B\u0E49\u0E04\u0E19\u0E17\u0E35\u0E48\u0E22\u0E31\u0E07\u0E21\u0E35\u0E44\u0E1F\u0E08\u0E23\u0E34\u0E07 \u0E46 \u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E25\u0E48\u0E32\u0E2D\u0E14\u0E35\u0E15 \u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E2D\u0E18\u0E34\u0E1A\u0E32\u0E22\u0E40\u0E22\u0E2D\u0E30 \u0E27\u0E31\u0E19\u0E19\u0E35\u0E49\u0E04\u0E38\u0E13\u0E1E\u0E23\u0E49\u0E2D\u0E21 \u0E04\u0E38\u0E13\u0E01\u0E47\u0E21\u0E32 \u0E1C\u0E39\u0E49\u0E0A\u0E19\u0E30\u0E23\u0E31\u0E1A\u0E44\u0E1B\u0E40\u0E25\u0E22 100,000 USD \u0E44\u0E14\u0E49\u0E15\u0E33\u0E41\u0E2B\u0E19\u0E48\u0E07\u0E41\u0E25\u0E49\u0E27\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E08\u0E1A \u0E04\u0E38\u0E13\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E0A\u0E21\u0E1B\u0E4C \u0E44\u0E21\u0E48\u0E21\u0E35\u0E2B\u0E32\u0E22 \u0E44\u0E21\u0E48\u0E21\u0E35\u0E1E\u0E31\u0E01 \u0E16\u0E49\u0E32\u0E04\u0E38\u0E13\u0E40\u0E01\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 \u0E0A\u0E19\u0E30 \u0E15\u0E34\u0E14\u0E15\u0E48\u0E2D\u0E01\u0E31\u0E19 3 \u0E04\u0E23\u0E31\u0E49\u0E07 \u0E1C\u0E21\u0E43\u0E2B\u0E49\u0E44\u0E1B\u0E40\u0E25\u0E22 1,000,000 USD \u0E1E\u0E39\u0E14\u0E0A\u0E31\u0E14 \u0E46 \u0E15\u0E23\u0E07\u0E19\u0E35\u0E49 \u0E40\u0E27\u0E17\u0E35\u0E19\u0E35\u0E49\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E17\u0E35\u0E48\u0E25\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E40\u0E25\u0E48\u0E19 \u0E46 \u0E43\u0E04\u0E23\u0E21\u0E31\u0E48\u0E19\u0E43\u0E08\u0E27\u0E48\u0E32\u0E15\u0E31\u0E27\u0E40\u0E2D\u0E07\u0E22\u0E31\u0E07\u0E44\u0E2B\u0E27 \u0E22\u0E31\u0E07\u0E21\u0E35\u0E02\u0E2D\u0E07 \u0E01\u0E47\u0E02\u0E36\u0E49\u0E19\u0E21\u0E32\u0E1E\u0E34\u0E2A\u0E39\u0E08\u0E19\u0E4C MGI All Stars \u0E1C\u0E21\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E2B\u0E49\u0E41\u0E25\u0E49\u0E27\u0E04\u0E23\u0E31\u0E1A\r\n\r\n#savegamin #missgrandinternational #missgrandthailand #missgrand #\u0E2D\u0E34\u0E07\u0E1F\u0E49\u0E32\u0E27\u0E23\u0E32\u0E2B\u0E30 #\u0E41\u0E2D\u0E19\u0E42\u0E17\u0E40\u0E19\u0E35\u0E22 #missuniverse #mut2024 #tpn #missuniversethailand #\u0E01\u0E32\u0E21\u0E34\u0E19 #\u0E01\u0E32\u0E21\u0E34\u0E19\u0E0A\u0E32\u0E25\u0E35 #\u0E01\u0E32\u0E21\u0E34\u0E19\u0E41\u0E19\u0E47\u0E01\u0E0A\u0E32\u0E25\u0E35 #bitcoin #bitcoinnews #gold #\u0E2B\u0E21\u0E35\u0E40\u0E19\u0E22 #butterbear #\u0E41\u0E1A\u0E19\u0E41\u0E19\u0E47\u0E01\u0E0A\u0E32\u0E25\u0E35 #diwali #diwalispecialsong #missuniversephilippines #\u0E2B\u0E25\u0E34\u0E07\u0E2D\u0E2D\u0E21\u0E04\u0E23\u0E31\u0E49\u0E07\u0E41\u0E23\u0E01 #alien #mystery",
+      "Place": "Bravo BKK"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2026-02-01",
+      "End": "2026-02-28",
+      "CloseSubmit": "2026-01-20"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 80,
+    "DayLeft": 43,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [
+      {
+        "Username": "janipang",
+        "Email": "janipang@gmail.com",
+        "Password": "janipang"
+      },
+      {
+        "Username": "pang",
+        "Email": "pang@gmail.com",
+        "Password": "456"
+      }
+    ],
+    "Requested": []
+  },
+  {
+    "Id": 1013,
+    "Active": true,
+    "Author": {
+      "Username": "nawat.tv",
+      "Email": "nawat@gmail.com",
+      "Password": "Password@1"
+    },
+    "Detail": {
+      "Header": "\u0E40\u0E0A\u0E34\u0E0D\u0E0A\u0E27\u0E19\u0E1C\u0E39\u0E49\u0E1B\u0E23\u0E30\u0E01\u0E27\u0E14\u0E21\u0E34\u0E2A\u0E41\u0E01\u0E23\u0E19\u0E14\u0E4C\u0E2F \u0E08\u0E33\u0E25\u0E2D\u0E07\u0E40\u0E2B\u0E15\u0E38\u0E41\u0E15\u0E07\u0E42\u0E21\u0E15\u0E01\u0E40\u0E23\u0E37\u0E2D",
+      "Tag": [
+        "Lifestyle",
+        "Travel"
+      ],
+      "Intro": "\u0E02\u0E2D\u0E0A\u0E27\u0E19\u0E1C\u0E39\u0E49\u0E1B\u0E23\u0E30\u0E01\u0E27\u0E14\u0E21\u0E34\u0E2A\u0E41\u0E01\u0E23\u0E19\u0E14\u0E4C\u0E2F \u0E40\u0E1B\u0E47\u0E19\u0E2D\u0E32\u0E2A\u0E32\u0E2A\u0E21\u0E31\u0E04\u0E23\u0E08\u0E33\u0E25\u0E2D\u0E07\u0E40\u0E2B\u0E15\u0E38\u0E41\u0E15\u0E07\u0E42\u0E21\u0E15\u0E01\u0E40\u0E23\u0E37\u0E2D\u0E04\u0E23\u0E31\u0E1A",
+      "Detail": "\u0E1C\u0E39\u0E49\u0E40\u0E02\u0E49\u0E32\u0E1B\u0E23\u0E30\u0E01\u0E27\u0E14\u0E21\u0E34\u0E2A\u0E41\u0E01\u0E23\u0E19\u0E14\u0E4C\u0E44\u0E17\u0E22\u0E41\u0E25\u0E19\u0E14\u0E4C 2026 \u0E44\u0E21\u0E48\u0E04\u0E27\u0E23\u0E1E\u0E25\u0E32\u0E14\r\n\r\n1. \u0E1C\u0E39\u0E49\u0E2B\u0E0D\u0E34\u0E07\u0E04\u0E25\u0E49\u0E32\u0E22\u0E41\u0E15\u0E07\u0E42\u0E21 \u0E04\u0E27\u0E32\u0E21\u0E2A\u0E39\u0E07\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 165-170 \u0E40\u0E0B\u0E19\u0E15\u0E34\u0E40\u0E21\u0E15\u0E23 \u0E19\u0E49\u0E33\u0E2B\u0E19\u0E31\u0E01\u0E1B\u0E23\u0E30\u0E21\u0E32\u0E13 45-52 \u0E01\u0E34\u0E42\u0E25\u0E01\u0E23\u0E31\u0E21 \u0E27\u0E48\u0E32\u0E22\u0E19\u0E49\u0E33\u0E44\u0E14\u0E49\u0E41\u0E02\u0E47\u0E07\u0E41\u0E23\u0E07 \r\n\r\n2. \u0E1C\u0E39\u0E49\u0E17\u0E35\u0E48\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E04\u0E25\u0E49\u0E32\u0E22\u0E41\u0E0B\u0E19 \u0E1C\u0E39\u0E49\u0E2B\u0E0D\u0E34\u0E07-\u0E1C\u0E39\u0E49\u0E0A\u0E32\u0E22\u0E17\u0E35\u0E48\u0E41\u0E1B\u0E25\u0E07\u0E40\u0E1E\u0E28\u0E40\u0E1B\u0E47\u0E19\u0E2B\u0E0D\u0E34\u0E07\u0E41\u0E25\u0E49\u0E27 \u0E04\u0E27\u0E32\u0E21\u0E2A\u0E39\u0E07\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 165-170 \u0E40\u0E0B\u0E19\u0E15\u0E34\u0E40\u0E21\u0E15\u0E23 \u0E19\u0E49\u0E33\u0E2B\u0E19\u0E31\u0E01\u0E1B\u0E23\u0E30\u0E21\u0E32\u0E13 45-52 \u0E01\u0E34\u0E42\u0E25\u0E01\u0E23\u0E31\u0E21 \u0E27\u0E48\u0E32\u0E22\u0E19\u0E49\u0E33\u0E44\u0E14\u0E49\u0E41\u0E02\u0E47\u0E07\u0E41\u0E23\u0E07 \r\n\r\n\u0E43\u0E04\u0E23\u0E2A\u0E19\u0E43\u0E08\u0E40\u0E02\u0E49\u0E32\u0E23\u0E48\u0E27\u0E21\u0E01\u0E32\u0E23\u0E40\u0E1B\u0E47\u0E19\u0E2D\u0E32\u0E2A\u0E32\u0E2A\u0E21\u0E31\u0E04\u0E23\u0E04\u0E23\u0E31\u0E49\u0E07\u0E19\u0E35\u0E49 \u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E2A\u0E48\u0E07\u0E23\u0E39\u0E1B\u0E16\u0E48\u0E32\u0E22 \u0E0A\u0E37\u0E48\u0E2D \u0E41\u0E25\u0E30\u0E40\u0E1A\u0E2D\u0E23\u0E4C\u0E42\u0E17\u0E23.\u0E43\u0E19\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E41\u0E1F\u0E19\u0E40\u0E1E\u0E08\u0E19\u0E35\u0E49 \u0E2B\u0E23\u0E37\u0E2D\u0E2A\u0E48\u0E07\u0E44\u0E1B\u0E23\u0E29\u0E13\u0E35\u0E22\u0E4C\u0E2B\u0E23\u0E37\u0E2D\u0E1D\u0E32\u0E01\u0E44\u0E27\u0E49\u0E17\u0E35\u0E48 \u0E2D.\u0E1B\u0E32\u0E19\u0E40\u0E17\u0E1E \u0E1E\u0E31\u0E27\u0E1E\u0E07\u0E29\u0E4C\u0E1E\u0E31\u0E19\u0E18\u0E4C \u0E1A\u0E49\u0E32\u0E19\u0E1E\u0E23\u0E30\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C \u0E16\u0E19\u0E19\u0E1E\u0E23\u0E30\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C \u0E41\u0E02\u0E27\u0E07\u0E0A\u0E19\u0E30\u0E2A\u0E07\u0E04\u0E23\u0E32\u0E21 \u0E40\u0E02\u0E15\u0E1E\u0E23\u0E30\u0E19\u0E04\u0E23 \u0E01\u0E23\u0E38\u0E07\u0E40\u0E17\u0E1E\u0E2F 10200  \u0E2B\u0E23\u0E37\u0E2D\u0E15\u0E34\u0E14\u0E15\u0E48\u0E2D\u0E0A\u0E21\u0E23\u0E21\u0E0A\u0E48\u0E27\u0E22\u0E40\u0E2B\u0E25\u0E37\u0E2D\u0E40\u0E2B\u0E22\u0E37\u0E48\u0E2D\u0E2D\u0E32\u0E0A\u0E0D\u0E32\u0E01\u0E23\u0E23\u0E21 \u0E42\u0E17\u0E23. 09-3153-2423 \u0E08\u0E36\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19\u0E21\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E17\u0E23\u0E32\u0E1A \u0E01\u0E14\u0E44\u0E25\u0E01\u0E4C \u0E41\u0E25\u0E30\u0E0A\u0E48\u0E27\u0E22\u0E01\u0E31\u0E19\u0E41\u0E0A\u0E23\u0E4C\u0E2B\u0E32\u0E04\u0E19\u0E40\u0E2B\u0E21\u0E37\u0E2D\u0E19\u0E41\u0E15\u0E07\u0E42\u0E21\u0E41\u0E25\u0E30\u0E41\u0E0B\u0E19\u0E14\u0E49\u0E27\u0E22\u0E04\u0E23\u0E31\u0E1A",
+      "Place": "\u0E17\u0E48\u0E32\u0E40\u0E23\u0E37\u0E2D\u0E41\u0E21\u0E48\u0E19\u0E49\u0E33\u0E40\u0E08\u0E49\u0E32\u0E1E\u0E23\u0E30\u0E22\u0E32"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2026-02-28",
+      "End": null,
+      "CloseSubmit": "2026-02-20"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 10,
+    "DayLeft": 70,
+    "Comments": [
+      {
+        "User": {
+          "Id": 16,
+          "Account": {
+            "Username": "annejkn01.official",
+            "Email": "anne01@gmail.com",
+            "Password": "Password@1"
+          },
+          "Profile": {
+            "Caption": "\uD83D\uDC9DMom of Two",
+            "CreatedPosts": [],
+            "InterestedPosts": [],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://img2.pic.in.th/pic/313227928_647076673785776_1634060549831027177_nff45f81c108e01a5.jpg",
+            "InterestedTag": [
+              "Lifestyle",
+              "Travel",
+              "Art"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "\u0E02\u0E2D\u0E2A\u0E21\u0E31\u0E04\u0E23\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E0B\u0E19\u0E04\u0E48\u0E30 \u0E41\u0E1B\u0E25\u0E07\u0E40\u0E1E\u0E28\u0E41\u0E25\u0E49\u0E27\u0E04\u0E48\u0E30",
+        "Date": "2025-12-16T09:33:59.6919324+00:00",
+        "Reply": null
+      },
+      {
+        "User": {
+          "Id": 16,
+          "Account": {
+            "Username": "annejkn01.official",
+            "Email": "anne01@gmail.com",
+            "Password": "Password@1"
+          },
+          "Profile": {
+            "Caption": "\uD83D\uDC9DMom of Two",
+            "CreatedPosts": [],
+            "InterestedPosts": [],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://img2.pic.in.th/pic/313227928_647076673785776_1634060549831027177_nff45f81c108e01a5.jpg",
+            "InterestedTag": [
+              "Lifestyle",
+              "Travel",
+              "Art"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "\u0E2A\u0E2D\u0E1A\u0E16\u0E32\u0E21\u0E40\u0E1E\u0E34\u0E48\u0E21\u0E40\u0E15\u0E34\u0E21\u0E04\u0E48\u0E30 \u0E21\u0E35\u0E04\u0E48\u0E32\u0E08\u0E49\u0E32\u0E07\u0E44\u0E2B\u0E21\u0E04\u0E30 \u0E1E\u0E2D\u0E14\u0E35\u0E08\u0E30\u0E40\u0E2D\u0E32\u0E44\u0E1B\u0E08\u0E48\u0E32\u0E22\u0E2B\u0E19\u0E35\u0E49\u0E2B\u0E38\u0E49\u0E19\u0E01\u0E39\u0E49\u0E04\u0E48\u0E30",
+        "Date": "2025-12-16T09:34:34.7490434+00:00",
+        "Reply": null
+      },
+      {
+        "User": {
+          "Id": 15,
+          "Account": {
+            "Username": "janipang",
+            "Email": "janipang@gmail.com",
+            "Password": "janipang"
+          },
+          "Profile": {
+            "Caption": "biobiobiobio",
+            "CreatedPosts": [],
+            "InterestedPosts": [
+              1001,
+              1002,
+              1003
+            ],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://i.pinimg.com/originals/06/a4/27/06a4273ceb47d6866e45b12d1ba228bc.gif",
+            "InterestedTag": [
+              "Food",
+              "Lifestyle",
+              "Animal"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "\u0E08\u0E48\u0E32\u0E22\u0E2B\u0E38\u0E49\u0E19\u0E01\u0E39\u0E49\u0E21\u0E32\u0E01\u0E48\u0E2D\u0E19\u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21\u0E04\u0E30 \u0E1E\u0E2D\u0E14\u0E35\u0E23\u0E16\u0E17\u0E35\u0E48\u0E1A\u0E49\u0E32\u0E19\u0E15\u0E34\u0E14\u0E44\u0E1F\u0E41\u0E19\u0E19\u0E0B\u0E4C \u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E21\u0E35\u0E15\u0E31\u0E07\u0E08\u0E48\u0E32\u0E22\u0E40\u0E25\u0E22\u0E04\u0E48\u0E30",
+        "Date": "2025-12-16T09:41:07.7964205+00:00",
+        "Reply": null
+      },
+      {
+        "User": {
+          "Id": 16,
+          "Account": {
+            "Username": "annejkn01.official",
+            "Email": "anne01@gmail.com",
+            "Password": "Password@1"
+          },
+          "Profile": {
+            "Caption": "\uD83D\uDC9DMom of Two",
+            "CreatedPosts": [],
+            "InterestedPosts": [],
+            "JoinningPosts": [],
+            "RequesingPosts": [],
+            "Image": "https://img2.pic.in.th/pic/313227928_647076673785776_1634060549831027177_nff45f81c108e01a5.jpg",
+            "InterestedTag": [
+              "Lifestyle",
+              "Travel",
+              "Art"
+            ]
+          },
+          "Noti": []
+        },
+        "Content": "\u0E17\u0E38\u0E01\u0E01\u0E32\u0E23\u0E25\u0E07\u0E17\u0E38\u0E19\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E48\u0E22\u0E07\u0E04\u0E48\u0E30",
+        "Date": "2025-12-16T09:55:31.7249584+00:00",
+        "Reply": null
+      }
+    ],
+    "Liked": [],
+    "Joined": [],
+    "Requested": []
+  },
+  {
+    "Id": 1014,
+    "Active": true,
+    "Author": {
+      "Username": "janipang",
+      "Email": "janipang@gmail.com",
+      "Password": "janipang"
+    },
+    "Detail": {
+      "Header": "\u0E44\u0E1B\u0E14\u0E39\u0E1E\u0E23\u0E30\u0E23\u0E32\u0E0A\u0E34\u0E19\u0E35\u0E41\u0E02\u0E48\u0E07\u0E40\u0E23\u0E37\u0E2D\u0E43\u0E1A",
+      "Tag": [
+        "Sports"
+      ],
+      "Intro": "\u0E19\u0E31\u0E48\u0E07\u0E23\u0E16\u0E15\u0E39\u0E49\u0E44\u0E1B\u0E14\u0E39\u0E01\u0E35\u0E2C\u0E32\u0E0B\u0E35\u0E40\u0E01\u0E21\u0E2A\u0E4C 2 \u0E27\u0E31\u0E19 \u0E41\u0E15\u0E48\u0E16\u0E49\u0E32\u0E44\u0E17\u0E22\u0E40\u0E02\u0E49\u0E32\u0E23\u0E2D\u0E1A\u0E01\u0E47\u0E15\u0E48\u0E2D\u0E35\u0E01\u0E27\u0E31\u0E19\u0E04\u0E48\u0E30",
+      "Detail": "\u0E44\u0E1B\u0E1E\u0E31\u0E17\u0E22\u0E32 \u0E44\u0E1B\u0E14\u0E39\u0E41\u0E02\u0E48\u0E07\u0E40\u0E23\u0E37\u0E2D \u0E44\u0E1B\u0E2B\u0E32\u0E02\u0E2D\u0E07\u0E01\u0E34\u0E19 \u0E44\u0E1B\u0E2A\u0E2D\u0E07\u0E27\u0E31\u0E19 \u0E44\u0E1B\u0E19\u0E2D\u0E19\u0E42\u0E2E\u0E2A\u0E40\u0E17\u0E25",
+      "Place": "Pattaya, Thailand"
+    },
+    "EventDate": {
+      "DateType": "one",
+      "Start": "2026-01-15",
+      "End": null,
+      "CloseSubmit": "2026-01-02"
+    },
+    "Requesting": false,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 9,
+    "DayLeft": 26,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [
+      {
+        "Username": "pang",
+        "Email": "pang@gmail.com",
+        "Password": "456"
+      }
+    ],
+    "Requested": []
+  },
+  {
+    "Id": 1015,
+    "Active": true,
+    "Author": {
+      "Username": "pang",
+      "Email": "pang@gmail.com",
+      "Password": "456"
+    },
+    "Detail": {
+      "Header": "\u201C\u0E1A\u0E34\u0E4A\u0E01\u0E40\u0E21\u0E32\u0E19\u0E4C\u0E40\u0E17\u0E48\u0E19 15\u201D \u0E0A\u0E27\u0E19\u0E17\u0E38\u0E01\u0E04\u0E19\u0E23\u0E31\u0E1A\u0E1E\u0E25\u0E31\u0E07\u0E1A\u0E27\u0E01\u0E2A\u0E48\u0E07\u0E17\u0E49\u0E32\u0E22\u0E1B\u0E35",
+      "Tag": [
+        "Lifestyle",
+        "Travel"
+      ],
+      "Intro": "6-7 \u0E18.\u0E04. \u0E19\u0E35\u0E49 \u201C\u0E1A\u0E34\u0E4A\u0E01\u0E40\u0E21\u0E32\u0E19\u0E4C\u0E40\u0E17\u0E48\u0E19 15\u201D \u0E0A\u0E27\u0E19\u0E17\u0E38\u0E01\u0E04\u0E19\u0E23\u0E31\u0E1A\u0E1E\u0E25\u0E31\u0E07\u0E1A\u0E27\u0E01\u0E2A\u0E48\u0E07\u0E17\u0E49\u0E32\u0E22\u0E1B\u0E35 \u0E01\u0E31\u0E1A\u0E40\u0E17\u0E28\u0E01\u0E32\u0E25\u0E14\u0E19\u0E15\u0E23\u0E35\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E0D\u0E48\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E44\u0E17\u0E22 \u0E08\u0E31\u0E14\u0E43\u0E2B\u0E0D\u0E48 14 \u0E40\u0E27\u0E17\u0E35 \u0E41\u0E25\u0E30\u0E44\u0E25\u0E19\u0E4C\u0E2D\u0E31\u0E1B\u0E28",
+      "Detail": "\u0E19\u0E31\u0E1A\u0E16\u0E2D\u0E22\u0E2B\u0E25\u0E31\u0E07\u0E2D\u0E35\u0E01\u0E44\u0E21\u0E48\u0E19\u0E32\u0E19\u0E40\u0E01\u0E34\u0E19\u0E23\u0E2D \u0E40\u0E17\u0E28\u0E01\u0E32\u0E25\u0E14\u0E19\u0E15\u0E23\u0E35\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E0D\u0E48\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E44\u0E17\u0E22\u0E01\u0E33\u0E25\u0E31\u0E07\u0E08\u0E30\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07 \u0E43\u0E19\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C\u0E17\u0E35\u0E48 6 \u0E41\u0E25\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C\u0E17\u0E35\u0E48 7 \u0E18\u0E31\u0E19\u0E27\u0E32\u0E04\u0E21 2568 \u0E13 \u0E14\u0E34 \u0E42\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19 \u0E40\u0E02\u0E32\u0E43\u0E2B\u0E0D\u0E48 \u0E01\u0E31\u0E1A \u201CPepsi presents Big Mountain Music Festival \u0E04\u0E23\u0E31\u0E49\u0E07\u0E17\u0E35\u0E48 15\u201D (\u0E40\u0E1B\u0E4A\u0E1B\u0E0B\u0E35\u0E48 \u0E1E\u0E23\u0E35\u0E40\u0E0B\u0E19\u0E15\u0E4C \u0E1A\u0E34\u0E4A\u0E01\u0E40\u0E21\u0E32\u0E19\u0E4C\u0E40\u0E17\u0E48\u0E19 \u0E21\u0E34\u0E27\u0E2A\u0E34\u0E04 \u0E40\u0E1F\u0E2A\u0E15\u0E34\u0E27\u0E31\u0E25 \u0E04\u0E23\u0E31\u0E49\u0E07\u0E17\u0E35\u0E48 15) \u0E42\u0E14\u0E22\u0E1C\u0E39\u0E49\u0E08\u0E31\u0E14\u0E1D\u0E35\u0E21\u0E37\u0E2D\u0E14\u0E35\u0E17\u0E35\u0E48\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E04\u0E27\u0E32\u0E21\u0E1B\u0E23\u0E30\u0E17\u0E31\u0E1A\u0E43\u0E08\u0E43\u0E2B\u0E49\u0E1C\u0E39\u0E49\u0E40\u0E02\u0E49\u0E32\u0E23\u0E48\u0E27\u0E21\u0E07\u0E32\u0E19\u0E21\u0E32\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E15\u0E48\u0E2D\u0E40\u0E19\u0E37\u0E48\u0E2D\u0E07\u0E17\u0E38\u0E01\u0E1B\u0E35\u0E2D\u0E22\u0E48\u0E32\u0E07 \u201CGAYRAY\u201D \u0E2B\u0E19\u0E48\u0E27\u0E22\u0E07\u0E32\u0E19\u0E20\u0E32\u0E22\u0E43\u0E15\u0E49 GMM SHOW\r\n\r\n\u0E04\u0E23\u0E1A\u0E23\u0E2D\u0E1A 15 \u0E1B\u0E35\u0E17\u0E31\u0E49\u0E07\u0E17\u0E35 \u0E07\u0E32\u0E19\u0E19\u0E35\u0E49\u0E08\u0E31\u0E14\u0E43\u0E2B\u0E0D\u0E48\u0E41\u0E25\u0E30\u0E1E\u0E34\u0E40\u0E28\u0E29\u0E01\u0E27\u0E48\u0E32\u0E17\u0E35\u0E48\u0E40\u0E04\u0E22 \u0E40\u0E19\u0E49\u0E19\u0E22\u0E49\u0E33\u0E01\u0E32\u0E23\u0E40\u0E1B\u0E47\u0E19\u0E1A\u0E17\u0E2A\u0E23\u0E38\u0E1B\u0E02\u0E2D\u0E07\u0E27\u0E07\u0E01\u0E32\u0E23\u0E40\u0E1E\u0E25\u0E07\u0E44\u0E17\u0E22\u0E17\u0E35\u0E48\u0E04\u0E23\u0E1A\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 \u0E41\u0E25\u0E30\u0E2A\u0E14\u0E43\u0E2B\u0E21\u0E48 \u0E44\u0E21\u0E48\u0E21\u0E35\u0E40\u0E2D\u0E32\u0E17\u0E4C \u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E31\u0E49\u0E07\u0E41\u0E15\u0E48\u0E18\u0E35\u0E21\u0E43\u0E2B\u0E21\u0E48\u0E17\u0E35\u0E48\u0E04\u0E34\u0E14\u0E21\u0E32\u0E41\u0E1A\u0E1A\u0E44\u0E21\u0E48\u0E21\u0E35\u0E0B\u0E49\u0E33 \u201C\u0E21\u0E31\u0E19 \u0E21\u0E07\u0E04\u0E25 \u0E21\u0E32\u0E01\u201D \u0E17\u0E35\u0E48\u0E08\u0E30\u0E0A\u0E27\u0E19\u0E17\u0E38\u0E01\u0E04\u0E19\u0E21\u0E32\u0E23\u0E31\u0E1A\u0E1E\u0E25\u0E31\u0E07\u0E1A\u0E27\u0E01\u0E41\u0E25\u0E30\u0E04\u0E27\u0E32\u0E21\u0E17\u0E23\u0E07\u0E08\u0E33\u0E14\u0E35\u0E46 \u0E2A\u0E48\u0E07\u0E17\u0E49\u0E32\u0E22\u0E1B\u0E35 \u0E43\u0E19\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E04\u0E23\u0E1A\u0E23\u0E2D\u0E1A\u0E1B\u0E35\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E19\u0E35\u0E49\u0E44\u0E1B\u0E14\u0E49\u0E27\u0E22\u0E01\u0E31\u0E19 \u0E43\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E02\u0E2D\u0E07\u0E40\u0E27\u0E17\u0E35 \u0E1B\u0E35\u0E19\u0E35\u0E49\u0E21\u0E35\u0E40\u0E22\u0E2D\u0E30\u0E16\u0E36\u0E07 14 \u0E40\u0E27\u0E17\u0E35 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E14\u0E35\u0E44\u0E0B\u0E19\u0E4C\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E0D\u0E48\u0E02\u0E36\u0E49\u0E19 \u0E2A\u0E19\u0E38\u0E01\u0E02\u0E36\u0E49\u0E19 \u0E41\u0E25\u0E30\u0E41\u0E1B\u0E25\u0E01\u0E43\u0E2B\u0E21\u0E48\u0E21\u0E32\u0E01\u0E02\u0E36\u0E49\u0E19 \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E42\u0E22\u0E07\u0E1C\u0E39\u0E49\u0E04\u0E19\u0E40\u0E02\u0E49\u0E32\u0E01\u0E31\u0E1A\u0E17\u0E38\u0E01\u0E41\u0E19\u0E27\u0E40\u0E1E\u0E25\u0E07 \u0E17\u0E31\u0E49\u0E07\u0E1B\u0E47\u0E2D\u0E1A \u0E23\u0E47\u0E2D\u0E01 \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E49 \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E0A\u0E35\u0E27\u0E34\u0E15 \u0E2B\u0E21\u0E2D\u0E25\u0E33 \u0E41\u0E25\u0E30\u0E25\u0E39\u0E01\u0E17\u0E38\u0E48\u0E07 \u0E41\u0E1A\u0E48\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 7 \u0E40\u0E27\u0E17\u0E35 \u0E41\u0E25\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 7 \u0E40\u0E27\u0E17\u0E35",
+      "Place": "Khao Yai, Ko Rat"
+    },
+    "EventDate": {
+      "DateType": "multiple",
+      "Start": "2025-12-26",
+      "End": "2025-12-27",
+      "CloseSubmit": "2025-12-25"
+    },
+    "Requesting": true,
+    "Visible": true,
+    "MemberCount": 0,
+    "MemberMax": 7,
+    "DayLeft": 6,
+    "Comments": [],
+    "Liked": [],
+    "Joined": [],
+    "Requested": [
+      {
+        "Username": "janipang",
+        "Email": "janipang@gmail.com",
+        "Password": "janipang"
+      }
+    ]
   }
 ]
