@@ -1,3 +1,8 @@
+# REDNIT
+**Join, team up, endless fun awaits!**
+
+## reach us by your device
+[Rednit](https://rednit.janipang.dev)
 
 ## run app in local
 - install dependencies
@@ -15,4 +20,3 @@
 ### way2 - using docker compose
 - run command
 `docker compose up -d`
-
